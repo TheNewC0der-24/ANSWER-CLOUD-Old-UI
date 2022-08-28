@@ -10,14 +10,14 @@ const Create = () => {
 
     const navigate = useNavigate();
 
-    const [custom, setCustom] = useState(false);
+    // const [custom, setCustom] = useState(false);
     const [disabled, setDisabled] = useState(false);
     const [certificate, setCertificate] = useState(false);
 
-    const handleCustom = () => {
-        setCustom(!custom);
-        setDisabled(!disabled);
-    }
+    // const handleCustom = () => {
+    //     setCustom(!custom);
+    //     setDisabled(!disabled);
+    // }
 
     const handleCertificate = () => {
         setCertificate(!certificate);
