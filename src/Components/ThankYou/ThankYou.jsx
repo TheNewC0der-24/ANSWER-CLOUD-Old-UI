@@ -15,15 +15,15 @@ const ThankYou = () => {
                         <div className="card-body">
                             <div className={`${styles.row} row`}>
                                 <div className="col-md-6 m-auto">
-                                    <h1 className='mb-5'>Thank You</h1>
-                                    <h5 className='text-secondary'>For creating the interaction with test
+                                    <h1 className='mb-3'>Thank You</h1>
+                                    {/* <h5 className='text-secondary'>For creating the interaction with test
                                         ID XYZ
-                                    </h5>
+                                    </h5> */}
                                     <h5 className='text-secondary'>
-                                        Below is the interaction link created.
+                                        The interaction response link is below.
                                     </h5>
                                     <Link to="/form" target="_blank">
-                                        <button className='btn btn-dark mt-3'>Go To Form</button>
+                                        <button className='btn btn-dark mt-3'>Go To Answer Bot</button>
                                     </Link>
                                 </div>
                                 <div className="col-md-6 m-auto">

@@ -42,9 +42,9 @@ const Interaction = () => {
           <thead className="table-dark">
             <tr>
               <th scope="col">Test ID</th>
-              <th scope="col">Job/Course Title</th>
+              <th scope="col">Interaction Title</th>
               <th scope="col">Track</th>
-              <th scope="col">Candidate Form</th>
+              <th scope="col">Answer Bots</th>
             </tr>
           </thead>
           <tbody>

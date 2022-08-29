@@ -225,18 +225,16 @@ const ContentRatings = () => {
                     </tbody>
                 </table>
                 <h5 className='mt-5 mb-3'>Question Specific Content Ratings :</h5>
-                <div className='card mt-5 mb-3' style={{ border: "2.5px solid #000" }}>
-                    <div className="card-body d-flex justify-content-center mx-auto">
-                        <ReactApexChart
-                            setState={setState}
-                            options={state.options}
-                            series={state.series}
-                            type="bar"
-                            height={500}
-                            width={1000}
-                            style={{ borderColor: "#000" }}
-                        />
-                    </div>
+                <div className='d-flex justify-content-center mx-auto mt-5'>
+                    <ReactApexChart
+                        setState={setState}
+                        options={state.options}
+                        series={state.series}
+                        type="bar"
+                        height={500}
+                        width={1000}
+                        style={{ borderColor: "#000" }}
+                    />
                 </div>
 
                 {/* <table className="table table-bordered text-center mb-5" style={{ borderColor: "#c4933b" }}>

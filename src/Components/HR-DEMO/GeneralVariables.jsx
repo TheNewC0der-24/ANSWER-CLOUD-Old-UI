@@ -6,6 +6,8 @@ import { FaVolumeUp, FaCloud, FaRibbon } from "react-icons/fa";
 import { BsEmojiSmileFill } from "react-icons/bs";
 import { SiGrammarly } from "react-icons/si";
 
+import wc from "../../assets/Images/wordcloud.jpg"
+
 // import ReactApexChart from 'react-apexcharts';
 
 const GeneralVariables = () => {
@@ -140,10 +142,10 @@ const GeneralVariables = () => {
                             <h5 className={`${styles.cardHeader} card-header text-white`}><AiFillDashboard className={`me-1 ${styles.icon}`} />Pace</h5>
                             <div className="card-body">
                                 <h6 align="justify" className='card-text'>
-                                    <strong>Words per minute : </strong>pace
+                                    <strong>Words per minute : 90 words/minute</strong>
                                 </h6>
                                 <h6 align="justify" className='card-text'>
-                                    <strong>Ideal words per minute : </strong> 140-160 words/minute
+                                    <strong>Ideal words per minute : </strong> 110 words/minute
                                 </h6>
                                 <div className='mb-3'>
                                     <div className="progress">
@@ -166,7 +168,7 @@ const GeneralVariables = () => {
                             <h5 className={`${styles.cardHeader} card-header text-white`}><FaRibbon className={`${styles.icon} me-1`} />Gesture</h5>
                             <div className="card-body">
                                 <h6 align="justify" className='card-text'>
-                                    <strong>Gesture Score : </strong>Estimated_Gesture_score
+                                    <strong>Gesture Score : </strong>B
                                 </h6>
                                 <div className='mb-3'>
                                     <div className="progress">
@@ -192,9 +194,12 @@ const GeneralVariables = () => {
                         <div className={`${styles.card} card border-dark h-100`}>
                             <h5 className={`${styles.cardHeader} card-header text-white`}><FaCloud className={`${styles.icon} me-1`} />Word Cloud</h5>
                             <div className="card-body">
+                                <img className='img-fluid d-flex justify-content-center mx-auto' src={wc} width={300} alt="cloud" />
                                 <h6 align="justify" className='card-text'>
-                                    <strong>Takeaway : </strong>Volume is in range of 1-100. We align with decibel calculations * Hertz is the unit of pitch
-                                    calculation. It is associated with the frequency of the audio signals.
+                                    <strong>Takeaway : </strong>The word cloud indicates the frequency with which the keywords are used in any conversation.
+                                    This indicates if the conversation is perceived as "contextual" by others. E.g a salesman is likely to use the words sales
+                                    and quote in his typical conversations compared to other job function words. If the objective of the conversation is to
+                                    highlight a particular aspect, the word cloud would indicate how effectively you did the same by the choice of words.
                                 </h6>
                             </div>
                         </div>
@@ -204,7 +209,7 @@ const GeneralVariables = () => {
                             <h5 className={`${styles.cardHeader} card-header text-white`}><BsEmojiSmileFill className={`${styles.icon} me-1`} />Sentiment Analysis</h5>
                             <div className="card-body">
                                 <h6 align="justify" className='card-text'>
-                                    <strong>Aggregate dominant Sentiment : </strong>Sentiment_score
+                                    <strong>Aggregate dominant Sentiment : </strong>60%
                                 </h6>
                                 <div className='mb-3'>
                                     <div className="progress">
@@ -214,7 +219,7 @@ const GeneralVariables = () => {
                                         <div className="progress-bar bg-warning" role="progressbar" style={{ width: "20%" }} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                                         <div className="progress-bar bg-danger" role="progressbar" style={{ width: "20%" }} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                                    <input type="range" className="form-range" value={50} min="0" max="100" id="customRange2" disabled />
+                                    <input type="range" className="form-range" value={60} min="0" max="100" id="customRange2" disabled />
                                 </div>
                                 <h6 align="justify" className='card-text'>
                                     <strong>Takeaway : </strong>This shows how your emotions are understood by the people. While most candidates display
@@ -229,7 +234,7 @@ const GeneralVariables = () => {
                     <h5 className={`${styles.cardHeader} card-header text-white`}><SiGrammarly className={`${styles.icon} me-1`} />Grammar and Accent Score</h5>
                     <div className="card-body">
                         <h6 align="justify" className='card-text'>
-                            <strong>Grammar and Accent Score : </strong>grammar_score
+                            <strong>Grammar and Accent Score : </strong>C
                         </h6>
                         <div className="mb-3">
                             <div className="progress">
@@ -243,14 +248,9 @@ const GeneralVariables = () => {
                         </div>
 
                         <h6 align="justify" className='card-text'>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non laboriosam enim atque omnis, facilis
-                            laudantium aliquam aperiam. Veniam autem ut ducimus iure, perferendis suscipit earum et, blanditiis
-                            nemo quis, dignissimos ad excepturi expedita laborum quibusdam quod magni odio quisquam vel rerum
-                            totam illum animi itaque sint. Inventore iure corporis suscipit consequatur eaque quis obcaecati
-                            unde atque, rem qui repellendus modi itaque repudiandae rerum explicabo aliquid ea sunt dignissimos
-                            deleniti excepturi necessitatibus! Quod rerum, consectetur, atque velit quis beatae nostrum illum
-                            facilis ab, suscipit culpa unde sequi! Suscipit vero et exercitationem id, eaque dignissimos fuga
-                            magnam eligendi aliquid reprehenderit quis. Eum.
+                            Grammatical accuracy makes your speech shine. Sometimes a heavier accent can affect how people can process our voice and grammar.
+                            This score indicates the cohort of the grammar and accent friendliness as perceived by others. One must work on their grammar,
+                            accent and speed simultaneously to improve their scores in this department.
                         </h6>
                     </div>
                 </div>
@@ -260,7 +260,7 @@ const GeneralVariables = () => {
                         <div className="row">
                             <div className="col-md-6">
                                 <h6 align="justify" className='card-text'>
-                                    <strong>Volume Scale (0-100) : "volume"</strong>
+                                    <strong>Volume Scale (0-100) : </strong>60Db
                                 </h6>
                                 <h6 align="justify" className='card-text mb-5'>
                                     <strong>Ideal Volume Scale : </strong>70-80 Db
@@ -284,7 +284,7 @@ const GeneralVariables = () => {
                             </div>
                             <div className="col-md-6">
                                 <h6 align="justify" className='card-text'>
-                                    <strong>Pitch Range : "pitch"</strong>
+                                    <strong>Pitch Range : </strong>200-400 Hertz
                                 </h6>
                                 <h6 align="justify" className='card-text mb-5'>
                                     <strong>Ideal Pitch Range : </strong>650-850 Hertz

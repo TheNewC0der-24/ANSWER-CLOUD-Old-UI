@@ -55,8 +55,8 @@ const Create = () => {
                                     </div>
                                     <div className="col-md-4">
                                         <div className="mb-3">
-                                            <label htmlFor="job" className="form-label fw-bold">Job Title / Course Title*</label>
-                                            <input type="text" className="form-control" placeholder='Enter Job role' id="job" />
+                                            <label htmlFor="interaction" className="form-label fw-bold">Interaction Title*</label>
+                                            <input type="text" className="form-control" placeholder='Enter Interaction title' id="interaction" />
                                         </div>
                                     </div>
                                     <div className="col-md-4">

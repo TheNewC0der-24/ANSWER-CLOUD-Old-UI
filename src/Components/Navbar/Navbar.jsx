@@ -4,6 +4,7 @@ import styles from './Navbar.module.css';
 
 import { FaBars, FaSearch, FaTimes } from 'react-icons/fa';
 
+import brand from '../../assets/Images/brand.png';
 
 const Navbar = () => {
 
@@ -31,6 +32,7 @@ const Navbar = () => {
                 <div className="container-fluid">
                     <Link className="navbar-brand fw-bold fs-3" to="/">
                         <span className={`${styles.navbarBrand}`}>a</span>CLOUD
+                        {/* <img className='img-fluid' src={brand} height={100} alt="aCloud" /> */}
                     </Link>
                     <button onClick={handleClick} className={`${styles.navbarToggler} navbar-toggler`} type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 
@@ -59,7 +61,7 @@ const Navbar = () => {
                             </button>
                             <Link onClick={handleClick} className="mt-1" to="/profile">
                                 <img
-                                    src="https://via.placeholder.com/32"
+                                    src="https://gravatar.com/avatar/21396bf8a2c260311eaca86416ef5db7?s=400&d=mp&r=x"
                                     alt="avatar"
                                     className={styles.avatar}
                                 />
