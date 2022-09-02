@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Login.module.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -6,9 +6,60 @@ import login from '../../assets/Images/login.svg';
 
 import { CgLogIn } from 'react-icons/cg';
 
+import axios from 'axios';
+
 const Login = () => {
 
     const navigate = useNavigate();
+    const notesInitial = [];
+    const [notes, setNotes] = useState(notesInitial);
+    const [create, setCreate] = useState({email: "", password: ""});
+
+    // const handleCustom = () => {
+    //     setCustom(!custom);
+    //     setDisabled(!disabled);
+    // }
+
+    // const handleCertificate = () => {
+    //     setCertificate(!certificate);
+    //     setDisabled(!disabled);
+    // }
+
+    const handleClick = (e) => {
+        e.preventDefault();
+        navigate('/');
+        setCreate({email: "", password: ""});
+
+    //     axios.post("https://jsonplaceholder.typicode.com/todos/1", {
+    //       method: "POST",
+    //     headers: {
+    //           'Content-Type': 'application/json',
+    //         },
+    //       data:(create.detail,create.job,create.positionCode)
+    //   })
+    //       .then(res => {
+    //         console.log(res.data);
+    //         setNotes(notes.concat(res.data));
+    //       })
+
+          
+            const note = {"id": "61322f195153781a8ca8d0e06",
+              "email":   create.email,
+              "password": create.password,
+          };
+              console.log(note);
+              setNotes(notes.concat(note));
+              console.log("Adding a new one data")
+              console.log(notes.concat(note));
+          
+              console.log("Adding a new data")
+              console.log(notes);
+        }
+        
+    const handleOnChange = (e) => {
+        setCreate ({...create, [e.target.name]: e.target.value});
+    }
+
 
     return (
         <>
@@ -25,15 +76,15 @@ const Login = () => {
                                 <p className='text-center text-muted mt-3 mb-5'>Enter your details and start journey with us.</p>
                                 <form>
                                     <div className="mb-4">
-                                        <input type="email" className='form-control' id="email" placeholder="Email" />
+                                        <input type="email" className='form-control' id="email" onChange={handleOnChange} name='email' value={create.email} placeholder="Email" />
                                         <div id="emailHelp" className="form-text text-dark fw-bold">We'll never share your email with anyone else.</div>
                                     </div>
                                     <div className="mb-3">
-                                        <input type="password" className='form-control' id="password" placeholder="Password" />
+                                        <input type="password" className='form-control' id="password" onChange={handleOnChange} name='password' value={create.password} placeholder="Password" />
                                     </div>
                                     <p onClick={() => navigate('/resetPassword')} id="forgetPassword" className={`${styles.forgotPassword} text-end text-dark mb-3 fw-bold`} style={{ cursor: 'pointer' }}>Forgot Password ?</p>
                                     <div className="mb-5 col-3 d-grid mx-auto">
-                                        <button type="button" className="btn btn-dark"><CgLogIn className='me-1' />Login</button>
+                                        <button type="button" onClick={handleClick} className="btn btn-dark"><CgLogIn className='me-1' />Login</button>
                                     </div>
                                     <p className='text-center'>New User ? <span onClick={() => navigate('/register')} className='ms-1 text-dark fw-bold text-decoration-underline' style={{ cursor: 'pointer' }}>Create Account</span></p>
                                 </form>

@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Create.module.css';
 
 import { useNavigate } from 'react-router-dom';
 
 import Quesans from '../Modal/QuesAns';
 import Skills from '../Modal/Skills';
+
+import axios from 'axios';
 
 const Create = () => {
 
@@ -13,7 +15,10 @@ const Create = () => {
     const [custom, setCustom] = useState(false);
     const [disabled, setDisabled] = useState(false);
     const [certificate, setCertificate] = useState(false);
-
+    const notesInitial = [];
+    const [notes, setNotes] = useState(notesInitial);
+    const [create, setCreate] = useState({detail: "", job: "", positionCode:"", track:"", mode:"", certificate:"", instruction:"", description:""});
+  
     const handleCustom = () => {
         setCustom(!custom);
         setDisabled(!disabled);
@@ -27,7 +32,52 @@ const Create = () => {
     const handleClick = (e) => {
         e.preventDefault();
         navigate('/access');
+        setCreate({detail: "", job: "", positionCode: "", track: "", mode:"", certificate: "", instruction:"", description:""});
+
+    //     axios.post("https://jsonplaceholder.typicode.com/todos/1", {
+    //       method: "POST",
+    //     headers: {
+    //           'Content-Type': 'application/json',
+    //         },
+    //       data:(create.detail,create.job,create.positionCode)
+    //   })
+    //       .then(res => {
+    //         console.log(res.data);
+    //         setNotes(notes.concat(res.data));
+    //       })
+
+          
+            const note = {"id": "61322f195153781a8ca8d0e06",
+              "detail":   create.detail,
+              "job": create.job,
+              "positionCode": create.positionCode,
+              "track": create.track,
+              "mode": create.mode,
+              "certificate": create.certificate,
+              "instruction": create.instruction,
+              "description": create.description
+          };
+              console.log(note);
+              setNotes(notes.concat(note));
+              console.log("Adding a new one data")
+              console.log(notes.concat(note));
+          
+              console.log("Adding a new data")
+              console.log(notes);
+        }
+        
+// useEffect(() => {
+//   axios.get('')
+//     .then(res => {
+//       console.log(res.data);
+//       // setData(res.data);
+//     })
+// });
+        
+    const handleOnChange = (e) => {
+        setCreate ({...create, [e.target.name]: e.target.value});
     }
+        
 
     return (
         <>
@@ -50,19 +100,19 @@ const Create = () => {
                                     <div className="col-md-4">
                                         <div className="mb-3">
                                             <label htmlFor="detail" className="form-label fw-bold">Company/Institute Name*</label>
-                                            <input type="text" className="form-control" placeholder='Enter company/institute name' id="companyName" />
+                                            <input onChange={handleOnChange} type="text" name='detail' value={create.detail} className="form-control" placeholder='Enter company/institute name' id="companyName" />
                                         </div>
                                     </div>
                                     <div className="col-md-4">
                                         <div className="mb-3">
                                             <label htmlFor="job" className="form-label fw-bold">Job Title / Course Title*</label>
-                                            <input type="text" className="form-control" placeholder='Enter Job role' id="job" />
+                                            <input onChange={handleOnChange} type="text" name='job' value={create.job} className="form-control" placeholder='Enter Job role' id="job" />
                                         </div>
                                     </div>
                                     <div className="col-md-4">
                                         <div className="mb-3">
                                             <label htmlFor="positionCode" className="form-label fw-bold">Test ID</label>
-                                            <input type="number" className="form-control" placeholder='Enter 6-digit code' id="positionCode" />
+                                            <input type="number" onChange={handleOnChange} name='positionCode' value={create.positionCode} className="form-control" placeholder='Enter 6-digit code' id="positionCode" />
                                         </div>
                                     </div>
                                 </div>
@@ -70,7 +120,7 @@ const Create = () => {
                                     <div className="col-md-6">
                                         <div className="mb-3">
                                             <label htmlFor="track" className="form-label fw-bold">Track/Domain :</label>
-                                            <select className="form-select" id='track' aria-label="Default select example">
+                                            <select className="form-select" id='track' onChange={handleOnChange} name='track' value={create.track} aria-label="Default select example">
                                                 <option value="Select...">Select...</option>
                                                 {/* <option value="Custom-A">Custom-A</option>
                                                 <option value="Custom-B">Custom-B</option> */}
@@ -84,7 +134,7 @@ const Create = () => {
                                     <div className="col-md-6">
                                         <div className="mb-3">
                                             <label htmlFor="mode" className="form-label fw-bold">Interaction Mode</label>
-                                            <select className="form-select" id='mode' aria-label="Default select example">
+                                            <select className="form-select" id='mode' onChange={handleOnChange} name='mode' value={create.mode} aria-label="Default select example">
                                                 <option value="Select">Select...</option>
                                                 <option value="Audio">Audio</option>
                                                 <option value="Video">Video</option>
@@ -134,7 +184,7 @@ const Create = () => {
                                                 </label>
                                                 {
                                                     certificate &&
-                                                    <input type="text" className="form-control mt-2 mb-3" id="certificate" placeholder='Certificate Name' />
+                                                    <input type="text" className="form-control mt-2 mb-3" id="certificate" onChange={handleOnChange} name='certificate' value={create.certificate} placeholder='Certificate Name' />
                                                 }
                                             </div>
                                         </div>
@@ -144,14 +194,14 @@ const Create = () => {
                                 <div className="row">
                                     <div className="col-md-6">
                                         <div className="mb-3">
-                                            <label htmlFor="description" className="form-label fw-bold">Instruction</label>
-                                            <input type="text" className="form-control" placeholder='Your instruction' id="instruction" />
+                                            <label htmlFor="instruction" className="form-label fw-bold">Instruction</label>
+                                            <input type="text" className="form-control" placeholder='Your instruction' id="instruction" onChange={handleOnChange} name='instruction' value={create.instruction} />
                                         </div>
                                     </div>
                                     <div className="col-md-6">
                                         <div className="mb-3">
                                             <label htmlFor="description" className="form-label fw-bold">Description</label>
-                                            <input type="text" className="form-control" placeholder='Your description' id="description" />
+                                            <input type="text" className="form-control" placeholder='Your description' id="description" onChange={handleOnChange} name='description' value={create.description}/>
                                         </div>
                                     </div>
                                 </div>

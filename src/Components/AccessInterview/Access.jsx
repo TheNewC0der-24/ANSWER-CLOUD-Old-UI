@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Access.module.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -7,6 +7,10 @@ import { FaTelegram, FaWhatsapp, FaSlack, FaWpforms } from 'react-icons/fa';
 const Access = () => {
 
     const navigate = useNavigate();
+    const notesInitial = [];
+    const [notes, setNotes] = useState(notesInitial);
+    const [create, setCreate] = useState({accessCode: "", expiryDate: "", phoneNo: "", whoInitiate: "", whoInitiate:"", form: ""});
+
 
     const handleBack = (e) => {
         e.preventDefault();
@@ -16,6 +20,48 @@ const Access = () => {
     const handleSave = (e) => {
         e.preventDefault();
         navigate('/notification&message');
+        setCreate({accessCode: "", expiryDate: "", phoneNo: "", whoInitiate: "", whoInitiates:"", form: ""});
+
+        //     axios.post("https://jsonplaceholder.typicode.com/todos/1", {
+    //       method: "POST",
+    //     headers: {
+    //           'Content-Type': 'application/json',
+    //         },
+    //       data:(create.detail,create.job,create.positionCode)
+    //   })
+    //       .then(res => {
+    //         console.log(res.data);
+    //         setNotes(notes.concat(res.data));
+    //       })
+        
+        const note = {"id": "61322f195153781a8ca8d0e06",
+              "accessCode":   create.accessCode,
+              "expiryDate": create.expiryDate,
+              "phoneNo": create.phoneNo,
+              "whoInitiate": create.whoInitiate,
+              "whoInitiates": create.whoInitiate,
+              "form": create.form
+          };
+              console.log(note);
+              setNotes(notes.concat(note));
+              console.log("Adding a new one data")
+              console.log(notes.concat(note));
+          
+              console.log("Adding a new data")
+              console.log(notes);
+    }
+
+                
+    // useEffect(() => {
+    //   axios.get('')
+    //     .then(res => {
+    //       console.log(res.data);
+    //       // setData(res.data);
+    //     })
+    // });
+
+    const handleOnChange = (e) => {
+        setCreate ({...create, [e.target.name]: e.target.value});
     }
 
     return (
@@ -37,19 +83,19 @@ const Access = () => {
                                     <div className="col-md-6">
                                         <div className="mb-3">
                                             <label htmlFor="accessCode" className="form-label fw-bold">Access Code</label>
-                                            <input type="number" className="form-control" placeholder='Enter 6-digit access code' id="accessCode" aria-describedby="accessHelp" />
+                                            <input type="number" onChange={handleOnChange} name='acccessCode' value={create.accesCode} className="form-control" placeholder='Enter 6-digit access code' id="accessCode" aria-describedby="accessHelp" />
                                         </div>
                                     </div>
                                     <div className="col-md-6">
                                         <div className="mb-3">
                                             <label htmlFor="expiryDate" className="form-label fw-bold">Expiry Date</label>
-                                            <input type="date" className="form-control" id="expiryDate" />
+                                            <input type="date" className="form-control" onChange={handleOnChange} name='expiryDate' value={create.expiryDate} id="expiryDate" />
                                         </div>
                                     </div>
                                 </div>
                                 <div className="mb-2">
                                     <label htmlFor="phoneNo" className="form-label  fw-bold">Phone Number List</label>
-                                    <input className="form-control" type="file" id="formFile" />
+                                    <input className="form-control" type="file" onChange={handleOnChange} name='phoneNo' value={create.phoneNo} id="formFile" />
                                 </div>
                                 <button className='btn btn-outline-dark button mb-3 me-2'>View List</button>
                                 <button className='btn btn-dark button mb-3'>Upload</button>
@@ -58,7 +104,7 @@ const Access = () => {
                                     <div className="col-md-6">
                                         <div className="mb-3">
                                             <label htmlFor="whoInitiate" className="form-label fw-bold">Who can Initiate ?</label>
-                                            <select className="form-select" id='whoInitiate'>
+                                            <select className="form-select" id='whoInitiate' onChange={handleOnChange} name='whoInitiate' value={create.whoInitiate}>
                                                 <option value="Select">Select...</option>
                                                 <option value="Bot">Bot</option>
                                                 <option value="User">User</option>
@@ -67,8 +113,8 @@ const Access = () => {
                                     </div>
                                     <div className="col-md-6">
                                         <div className="mb-3">
-                                            <label htmlFor="whoInitiate" className="form-label fw-bold">Timer</label>
-                                            <select className="form-select" id='whoInitiate' aria-label="Default select example">
+                                            <label htmlFor="whoInitiates" className="form-label fw-bold">Timer</label>
+                                            <select className="form-select" id='whoInitiates' onChange={handleOnChange} name='whoInitiates' value={create.whoInitiates} aria-label="Default select example">
                                                 <option value="Select">Select...</option>
                                                 <option value="15 minutes">15 minutes</option>
                                                 <option value="20 minutes">20 minutes</option>
@@ -138,25 +184,25 @@ const Access = () => {
                                         <div className="mb-3">
                                             <label htmlFor="channel" className="form-label fw-bold">Channel</label>
                                             <div className="form-check">
-                                                <input disabled className="form-check-input" type="checkbox" id="telegram" />
+                                                <input disabled className="form-check-input" type="checkbox" id="telegram"/>
                                                 <label className="form-check-label" htmlFor="telegram">
                                                     <FaTelegram className='me-1' style={{ color: '#0088cc' }} />Telegram
                                                 </label>
                                             </div>
                                             <div className="form-check">
-                                                <input disabled className="form-check-input" type="checkbox" id="whatsapp" />
+                                                <input disabled className="form-check-input" type="checkbox" id="whatsapp"/>
                                                 <label className="form-check-label" htmlFor="whatsapp">
                                                     <FaWhatsapp className='me-1' style={{ color: '#25d366' }} />Whatsapp
                                                 </label>
                                             </div>
                                             <div className="form-check">
-                                                <input disabled className="form-check-input" type="checkbox" id="slack" />
+                                                <input disabled className="form-check-input" type="checkbox" id="slack"/>
                                                 <label className="form-check-label" htmlFor="slack">
                                                     <FaSlack className='me-1' style={{ color: '#E01E5A' }} />Slack
                                                 </label>
                                             </div>
                                             <div className="form-check mb-3">
-                                                <input className="form-check-input" type="checkbox" defaultChecked id="form" />
+                                                <input className="form-check-input" type="checkbox" defaultChecked id="form" onChange={handleOnChange} name='form' value={create.form}/>
                                                 <label className="form-check-label" htmlFor="form">
                                                     <FaWpforms className='me-1' />Form
                                                 </label>
