@@ -4,7 +4,7 @@ const Interaction = () => {
   return (
     <>
       <div className="container">
-        <div className="card" style={{ border: "2.5px solid #000" }}>
+        <div className="card border-0">
           <div className="card-body" style={{ color: "#0b3c47" }}>
             <h3 className="card-title text-center">INTRODUCTION</h3>
             <p align='justify'>

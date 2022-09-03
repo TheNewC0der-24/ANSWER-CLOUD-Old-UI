@@ -87,13 +87,13 @@ const Form = () => {
               <h3>Interaction Title</h3>
             </div>
             <div className="card-body">
-              <label className="form-label fw-bold">Test Description :</label>
+              <label className="form-label fw-bold">Description :</label>
               <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id
                 explicabo modi nemo ab inventore minus in quidem nobis illo.
                 Quos?
               </p>
-              <label className="form-label fw-bold">Test Instruction :</label>
+              <label className="form-label fw-bold">Instruction :</label>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Asperiores suscipit consequatur dolores molestias voluptas
@@ -142,7 +142,7 @@ const Form = () => {
                 <hr style={{ color: "#000", borderTop: "2px solid", opacity: "1" }} />
                 <div className={`${display ? "" : "d-none"}`}>
                   <ul className="list-group">
-                    <h5 className="list-group-item bg-dark text-white fw-bold" aria-current="true">Instructions :</h5>
+                    <h5 className="list-group-item bg-dark text-white fw-bold" aria-current="true">System Instructions :</h5>
                     <li className="list-group-item">Please make sure you are in the center of the camera.</li>
                     <li className="list-group-item">Make sure you have good lighting.</li>
                     <li className="list-group-item">Use Professional dress when recording.</li>

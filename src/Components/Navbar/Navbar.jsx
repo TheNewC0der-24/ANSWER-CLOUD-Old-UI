@@ -4,6 +4,7 @@ import styles from './Navbar.module.css';
 
 import { FaBars, FaSearch, FaTimes } from 'react-icons/fa';
 
+import brand from "../../assets/Images/brand.png";
 
 const Navbar = () => {
 
@@ -24,13 +25,17 @@ const Navbar = () => {
                         font-weight: bold !important;
                         border-bottom: 3px solid #6c757d !important;
                     }
+
+                    .button {
+                        border-radius : 0;
+                    }
                 `}
             </style>
 
             <nav className={`${styles.navbar} navbar navbar-expand-lg bg-white sticky-top`}>
                 <div className="container-fluid">
                     <Link className="navbar-brand fw-bold fs-3" to="/">
-                        <span className={`${styles.navbarBrand}`}>a</span>CLOUD
+                        <img src={brand} alt="brand" width={150} className="img-fluid" />
                     </Link>
                     <button onClick={handleClick} className={`${styles.navbarToggler} navbar-toggler`} type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 
@@ -44,13 +49,13 @@ const Navbar = () => {
                                 <NavLink onClick={handleClick} className={`${styles.navLink} nav-link`} to="/">Dashboard</NavLink>
                             </li>
                             <li className={`${styles.navItem} nav-item`}>
-                                <NavLink onClick={handleClick} activeclassname='active' className={`${styles.navLink} nav-link`} aria-current="page" to="/create">Create Interaction</NavLink>
+                                <NavLink onClick={handleClick} activeclassname='active' className={`${styles.navLink} nav-link`} aria-current="page" to="/create">Internal Bots</NavLink>
                             </li>
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <NavLink onClick={handleClick} className={`${styles.navLink} nav-link disabled`} to="/access">Access Details</NavLink>
-                            </li>
+                            </li> */}
                             <li className="nav-item">
-                                <NavLink onClick={handleClick} className={`${styles.navLink} nav-link disabled`} to="/notification&message">Notification & Message</NavLink>
+                                <NavLink onClick={handleClick} className={`${styles.navLink} nav-link disabled`} to="/notification&message">External Bots</NavLink>
                             </li>
                         </ul>
                         <div className={`${styles.buttons} d-flex gap-2`}>
@@ -59,7 +64,7 @@ const Navbar = () => {
                             </button>
                             <Link onClick={handleClick} className="mt-1" to="/profile">
                                 <img
-                                    src="https://via.placeholder.com/32"
+                                    src="https://gravatar.com/avatar/21396bf8a2c260311eaca86416ef5db7?s=400&d=mp&r=x"
                                     alt="avatar"
                                     className={styles.avatar}
                                 />
