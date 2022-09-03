@@ -37,7 +37,7 @@ const Notification = () => {
 
                 <div className='d-flex justify-content-center mx-auto'>
                     <div className='mb-3'>
-                        <label className="form-label fw-bold">Bot Needed ?</label>
+                        <label className="form-label fw-bold fs-1">Bot Needed ?</label>
                         <div className='d-flex gap-3'>
                             <div className="form-check">
                                 <input disabled={isNeeded ? false : true} onClick={handleNeeded} className="form-check-input" type="radio" name="botNeed" id="no" defaultChecked />
