@@ -172,7 +172,7 @@ const Create = () => {
                             </form>
                             <hr />
                             <div className="d-grid col-3 ms-auto">
-                                <button onClick={handleClick} type="submit" className="btn btn-dark button">Save and Continue</button>
+                                <button onClick={handleClick} type="submit" className="btn btn-dark button">Submit and Continue</button>
                             </div>
                         </div>
                     </div>
