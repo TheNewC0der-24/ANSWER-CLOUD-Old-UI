@@ -27,6 +27,7 @@ const Logo = () => {
             </Link>
           </div>
           <h4>Date : <span>interaction.created_at(date)</span></h4>
+          <h4>Mentor : <span>Automated</span></h4>
 
 
         </div>

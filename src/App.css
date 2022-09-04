@@ -5,12 +5,12 @@ body {
 
 p {
   color: #6c757d !important;
-  font-size: larger;
+  /* font-size: larger; */
 }
 
-label {
+/* label {
   font-size: larger;
-}
+} */
 
 input,
 textarea,
