@@ -37,8 +37,8 @@ const Notification = () => {
 
                 <div className='d-flex justify-content-center mx-auto'>
                     <div className='mb-3'>
-                        <label className="form-label fw-bold fs-1">Bot Needed ?</label>
-                        <div className='d-flex gap-3'>
+                        <label className="form-label fw-bold fs-1">Do you need external bot ?</label>
+                        <div className='d-flex justify-content-center mx-auto gap-3'>
                             <div className="form-check">
                                 <input disabled={isNeeded ? false : true} onClick={handleNeeded} className="form-check-input" type="radio" name="botNeed" id="no" defaultChecked />
                                 <label className="form-check-label" htmlFor="no">
@@ -254,16 +254,14 @@ const Notification = () => {
                                 </div>
                             </div>
                         </div>
-                        <hr />
-                        <div className="d-flex justify-content-end me-auto gap-3">
-                            <button onClick={handleBack} className='btn btn-outline-secondary button'>Back</button>
-                            <button onClick={handleSubmit} type='submit' className='btn btn-dark button'>Submit</button>
-                        </div>
-
                     </div>
                 }
 
-
+                <hr />
+                <div className="d-flex justify-content-end me-auto gap-3">
+                    <button onClick={handleBack} className='btn btn-outline-secondary button'>Back</button>
+                    <button onClick={handleSubmit} type='submit' className='btn btn-dark button'>Submit</button>
+                </div>
 
             </div>
         </>
