@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './Notification.module.css';
+import styles from './ExternalBot.module.css';
 import { useNavigate } from 'react-router-dom';
 
 import { FaTelegram, FaWhatsapp, FaSlack, FaWpforms } from 'react-icons/fa';
@@ -9,7 +9,7 @@ const Notification = () => {
 
     const handleBack = (e) => {
         e.preventDefault();
-        navigate('/create');
+        navigate('/internalbot');
     }
 
     const handleSubmit = () => {

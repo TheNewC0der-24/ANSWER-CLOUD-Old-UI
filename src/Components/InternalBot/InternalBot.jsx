@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './Create.module.css';
+import styles from './InternalBot.module.css';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -26,7 +26,7 @@ const Create = () => {
 
     const handleClick = (e) => {
         e.preventDefault();
-        navigate('/notification&message');
+        navigate('/externalbot');
     }
 
     return (

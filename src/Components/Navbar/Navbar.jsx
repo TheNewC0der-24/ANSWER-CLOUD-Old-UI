@@ -46,16 +46,16 @@ const Navbar = () => {
                     <div className={`${toggle ? "" : "collapse"} navbar-collapse`} id="navbarSupportedContent">
                         <ul className="navbar-nav mx-5 gap-2 mx-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <NavLink onClick={handleClick} className={`${styles.navLink} nav-link`} to="/">Dashboard</NavLink>
+                                <NavLink activeclassname='active' onClick={handleClick} className={`${styles.navLink} nav-link`} to="/">Dashboard</NavLink>
                             </li>
                             <li className={`${styles.navItem} nav-item`}>
-                                <NavLink onClick={handleClick} activeclassname='active' className={`${styles.navLink} nav-link`} aria-current="page" to="/create">Internal Bots</NavLink>
+                                <NavLink onClick={handleClick} className={`${styles.navLink} nav-link`} aria-current="page" to="/internalbot">Internal Bots</NavLink>
                             </li>
                             {/* <li className="nav-item">
                                 <NavLink onClick={handleClick} className={`${styles.navLink} nav-link disabled`} to="/access">Access Details</NavLink>
                             </li> */}
                             <li className="nav-item">
-                                <NavLink onClick={handleClick} className={`${styles.navLink} nav-link disabled`} to="/notification&message">External Bots</NavLink>
+                                <NavLink onClick={handleClick} className={`${styles.navLink} nav-link disabled`} to="/externalbot">External Bots</NavLink>
                             </li>
                         </ul>
                         <div className={`${styles.buttons} d-flex gap-2`}>

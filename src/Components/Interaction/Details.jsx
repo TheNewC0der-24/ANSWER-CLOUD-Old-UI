@@ -3,6 +3,7 @@ import styles from './Details.module.css';
 // import Skills from '../Modal/Skills';
 
 import { FaTelegram, FaWhatsapp, FaSlack, FaWpforms } from 'react-icons/fa';
+import { NavLink } from 'react-router-dom';
 
 const Details = () => {
 
@@ -28,13 +29,18 @@ const Details = () => {
   }
 
   const handleClone = () => {
-    window.location = "/create";
+    window.location = "/internalbot";
   }
 
   return (
     <>
       <style jsx="true">
         {`
+             .active {
+                  color: #fff !important;
+                  border: 0 !important;
+              }
+
              .button {
                border-radius: 0;
              }
@@ -61,6 +67,10 @@ const Details = () => {
               </div>
             </div>
             <div className={`${styles.modal} modal-body`}>
+              <div className="btn-group my-3">
+                <NavLink activeclassname='active' to="/" className="btn btn-dark active" aria-current="page">Internal Bot</NavLink>
+                <NavLink to="/" className="btn btn-outline-dark">External Bot</NavLink>
+              </div>
               <div className='container'>
                 <div className='d-grid col-md-12 mx-auto'>
                   <div className='card border-dark'>

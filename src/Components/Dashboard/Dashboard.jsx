@@ -81,13 +81,25 @@ const Dashboard = () => {
                 </div>
                 <h5>What can you do today?</h5>
                 <div className="d-flex flex-wrap gap-2 mt-3">
-                    <button onClick={() => navigate('/create')} className='btn btn-dark'>Create Internal Bot</button>
+                    <button onClick={() => navigate('/internalbot')} className='btn btn-dark'>Create Internal Bot <lord-icon
+                        src="https://cdn.lordicon.com/udwhdpod.json"
+                        trigger="loop"
+                        stroke="100"
+                        colors="primary:#ffffff,secondary:#ffffff"
+                        style={{ width: "30px", height: "30px" }}>
+                    </lord-icon>
+                    </button>
+                    <button className='btn btn-dark'>Create Experience <lord-icon
+                        src="https://cdn.lordicon.com/udwhdpod.json"
+                        trigger="loop"
+                        stroke="100"
+                        colors="primary:#ffffff,secondary:#ffffff"
+                        style={{ width: "30px", height: "30px" }}></lord-icon>
+                    </button>
                     <button onClick={() => navigate('/interaction')} className='btn btn-dark'>View Interaction</button>
                     <button onClick={() => navigate('/viewReport')} className='btn btn-dark'>View Candidate Reports</button>
                     <button onClick={() => navigate('/teams')} className='btn btn-dark'>Teams</button>
-                    <button className='btn btn-dark'>Create Experience</button>
                 </div>
-
             </div>
         </>
     )
