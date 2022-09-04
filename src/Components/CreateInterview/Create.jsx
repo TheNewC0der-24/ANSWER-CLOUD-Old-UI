@@ -12,9 +12,15 @@ const Create = () => {
 
     const [disabled, setDisabled] = useState(false);
     const [certificate, setCertificate] = useState(false);
+    const [name, setName] = useState(false);
 
     const handleCertificate = () => {
         setCertificate(!certificate);
+        setDisabled(!disabled);
+    }
+
+    const handleName = () => {
+        setName(!name);
         setDisabled(!disabled);
     }
 
@@ -36,7 +42,7 @@ const Create = () => {
                 <div className='d-grid col-md-9 mx-auto'>
                     <div className='card border-dark'>
                         <h3 className={`${styles.cardHeader} card-header text-center mb-3 bg-dark text-white`}>
-                            Create Interaction
+                            Create Internal Bot
                         </h3>
                         <div className="card-body">
                             <form>
@@ -101,27 +107,55 @@ const Create = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className='mb-3'>
-                                    <label className="form-label fw-bold">Generate Certificate</label>
-                                    <div className='d-flex gap-3'>
-                                        <div className="form-check">
-                                            <input disabled={certificate ? false : true} onClick={handleCertificate} className="form-check-input" type="radio" name="generateCertificate" id="no" defaultChecked />
-                                            <label className="form-check-label" htmlFor="no">
-                                                No
-                                            </label>
+                                <div className="row">
+                                    <div className="col-md-6">
+                                        <div className='mb-3'>
+                                            <label className="form-label fw-bold">Generate Certificate</label>
+                                            <div className='d-flex gap-3'>
+                                                <div className="form-check">
+                                                    <input disabled={certificate ? false : true} onClick={handleCertificate} className="form-check-input" type="radio" name="generateCertificate" id="no" defaultChecked />
+                                                    <label className="form-check-label" htmlFor="no">
+                                                        No
+                                                    </label>
+                                                </div>
+                                                <div className="form-check">
+                                                    <input disabled={certificate ? true : false} onClick={handleCertificate} className="form-check-input" type="radio" name="generateCertificate" id="yes" />
+                                                    <label className="form-check-label" htmlFor="yes">
+                                                        Yes
+                                                    </label>
+                                                    {
+                                                        certificate &&
+                                                        <input type="text" className="form-control mt-2 mb-3" id="certificate" placeholder='Certificate Name' />
+                                                    }
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div className="form-check">
-                                            <input disabled={certificate ? true : false} onClick={handleCertificate} className="form-check-input" type="radio" name="generateCertificate" id="yes" />
-                                            <label className="form-check-label" htmlFor="yes">
-                                                Yes
-                                            </label>
-                                            {
-                                                certificate &&
-                                                <input type="text" className="form-control mt-2 mb-3" id="certificate" placeholder='Certificate Name' />
-                                            }
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className='mb-3'>
+                                            <label className="form-label fw-bold">Mentor Name(in Report)</label>
+                                            <div className='d-flex gap-3'>
+                                                <div className="form-check">
+                                                    <input disabled={name ? false : true} onClick={handleName} className="form-check-input" type="radio" name="mentorName" id="noName" defaultChecked />
+                                                    <label className="form-check-label" htmlFor="noName">
+                                                        No
+                                                    </label>
+                                                </div>
+                                                <div className="form-check">
+                                                    <input disabled={name ? true : false} onClick={handleName} className="form-check-input" type="radio" name="mentorName" id="yesName" />
+                                                    <label className="form-check-label" htmlFor="yesName">
+                                                        Yes
+                                                    </label>
+                                                    {
+                                                        name &&
+                                                        <input type="text" className="form-control mt-2 mb-3" id="mentorname" placeholder='Mentor Name' />
+                                                    }
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div className="row">
                                     <div className="col-md-6">
                                         <div className="mb-3">
