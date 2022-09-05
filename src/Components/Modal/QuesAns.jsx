@@ -180,7 +180,7 @@ const Quesans = () => {
                               className="form-select"
                               id="rated"
                             >
-                              <option selected>Select...</option>
+                              <option selected value="Select...">Select...</option>
                               <option>Yes</option>
                               <option>No</option>
                             </select>

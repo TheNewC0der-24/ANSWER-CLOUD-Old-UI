@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import styles from './InternalBot.module.css';
 
-import { useNavigate } from 'react-router-dom';
+import internalbot from '../../assets/Images/internalbot.svg';
+
+import { Link, useNavigate } from 'react-router-dom';
 
 import Quesans from '../Modal/QuesAns';
 import Skills from '../Modal/Skills';
@@ -38,12 +40,29 @@ const Create = () => {
                     }
                 `}
             </style>
-            <div className='container my-5'>
-                <div className='d-grid col-md-9 mx-auto'>
-                    <div className='card border-dark'>
-                        <h3 className={`${styles.cardHeader} card-header text-center mb-3 bg-dark text-white`}>
+            <div className='container d-flex justify-content-between my-3'>
+                <h3>Internal Bot</h3>
+                <nav aria-label="breadcrumb">
+                    <ol className="breadcrumb">
+                        <li className="breadcrumb-item">
+                            <Link to="/" className={`${styles.navigate} text-dark text-decoration-none`} >
+                                aCloud
+                            </Link>
+                        </li>
+                        <li className="breadcrumb-item" aria-current="page">Internal Bot</li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div className="row my-4 mx-auto">
+                <div className="col-md-4">
+                    <img className='img-fluid m-auto' src={internalbot} alt="internalbot" />
+                </div>
+                <div className='col-md-8 m-auto'>
+                    <div className='card border-0'>
+                        {/* <h3 className={`${styles.cardHeader} card-header text-center mb-3 bg-dark text-white`}>
                             Create Internal Bot
-                        </h3>
+                        </h3> */}
                         <div className="card-body">
                             <form>
                                 <div className="row">
@@ -193,6 +212,7 @@ const Create = () => {
                     </div>
                 </div>
             </div>
+            {/* </div> */}
             <Quesans />
             <Skills />
         </>

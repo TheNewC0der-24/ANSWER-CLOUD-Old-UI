@@ -89,7 +89,7 @@ const Dashboard = () => {
                         style={{ width: "30px", height: "30px" }}>
                     </lord-icon>
                     </button>
-                    <button className='btn btn-dark'>Create Experience <lord-icon
+                    <button onClick={() => navigate('/experience')} className='btn btn-dark'>Create Experience <lord-icon
                         src="https://cdn.lordicon.com/udwhdpod.json"
                         trigger="loop"
                         stroke="100"
