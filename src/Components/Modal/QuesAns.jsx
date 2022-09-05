@@ -229,7 +229,7 @@ const Quesans = () => {
                   type="button"
                   className="btn btn-outline-secondary mx-1"
                   data-bs-toggle="modal"
-                  data-bs-target="#exampleModal4"
+                  data-bs-target="#internalBotModal"
                 >
                   Close
                 </button>

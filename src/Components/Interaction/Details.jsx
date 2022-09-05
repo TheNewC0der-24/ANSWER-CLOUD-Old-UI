@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import styles from './Details.module.css';
-// import Skills from '../Modal/Skills';
+import Skills from "../Modal/Skills";
 
 import { FaTelegram, FaWhatsapp, FaSlack, FaWpforms } from 'react-icons/fa';
-import { NavLink } from 'react-router-dom';
 
 const Details = () => {
 
@@ -11,6 +10,7 @@ const Details = () => {
 
   const [isNeeded, setIsNeeded] = useState(false);
   const [disabled, setDisabled] = useState(false);
+  const [name, setName] = useState(false);
 
   const handleNeeded = () => {
     setIsNeeded(!isNeeded);
@@ -28,6 +28,11 @@ const Details = () => {
     setDisabled(!disabled);
   }
 
+  const handleName = () => {
+    setName(!name);
+    setDisabled(!disabled);
+  }
+
   const handleClone = () => {
     window.location = "/internalbot";
   }
@@ -36,21 +41,16 @@ const Details = () => {
     <>
       <style jsx="true">
         {`
-             .active {
-                  color: #fff !important;
-                  border: 0 !important;
-              }
-
              .button {
                border-radius: 0;
              }
            `}
       </style>
 
-      {/* Create Interaction */}
+      {/* Internal Bot */}
       <div
         className="modal fade modal-xl"
-        id="exampleModal4"
+        id="internalBotModal"
         tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
@@ -67,15 +67,16 @@ const Details = () => {
               </div>
             </div>
             <div className={`${styles.modal} modal-body`}>
-              <div className="btn-group my-3">
-                <NavLink activeclassname='active' to="/" className="btn btn-dark active" aria-current="page">Internal Bot</NavLink>
-                <NavLink to="/" className="btn btn-outline-dark">External Bot</NavLink>
+              <div className="btn-group">
+                <button className="btn btn-dark" aria-current="page">Internal Bot</button>
+                <button data-bs-target="#exampleModalToggle3" data-bs-toggle="modal" className="btn btn-outline-dark">External Bot</button>
               </div>
+              <hr />
               <div className='container'>
                 <div className='d-grid col-md-12 mx-auto'>
                   <div className='card border-dark'>
                     <h3 className={`${styles.cardHeader} card-header text-center mb-3 bg-dark text-white`}>
-                      Create Interaction
+                      Create Internal Bot
                     </h3>
                     <div className="card-body">
                       <form>
@@ -140,24 +141,51 @@ const Details = () => {
                             </div>
                           </div>
                         </div>
-                        <div className='mb-3'>
-                          <label className="form-label fw-bold">Generate Certificate</label>
-                          <div className='d-flex gap-3'>
-                            <div className="form-check">
-                              <input disabled={certificate ? false : true} onClick={handleCertificate} className="form-check-input" type="radio" name="generateCertificate" id="no" defaultChecked />
-                              <label className="form-check-label" htmlFor="no">
-                                No
-                              </label>
+                        <div className="row">
+                          <div className="col-md-6">
+                            <div className='mb-3'>
+                              <label className="form-label fw-bold">Generate Certificate</label>
+                              <div className='d-flex gap-3'>
+                                <div className="form-check">
+                                  <input disabled={certificate ? false : true} onClick={handleCertificate} className="form-check-input" type="radio" name="generateCertificate" id="no" defaultChecked />
+                                  <label className="form-check-label" htmlFor="no">
+                                    No
+                                  </label>
+                                </div>
+                                <div className="form-check">
+                                  <input disabled={certificate ? true : false} onClick={handleCertificate} className="form-check-input" type="radio" name="generateCertificate" id="yes" />
+                                  <label className="form-check-label" htmlFor="yes">
+                                    Yes
+                                  </label>
+                                  {
+                                    certificate &&
+                                    <input type="text" className="form-control mt-2 mb-3" id="certificate" placeholder='Certificate Name' />
+                                  }
+                                </div>
+                              </div>
                             </div>
-                            <div className="form-check">
-                              <input disabled={certificate ? true : false} onClick={handleCertificate} className="form-check-input" type="radio" name="generateCertificate" id="yes" />
-                              <label className="form-check-label" htmlFor="yes">
-                                Yes
-                              </label>
-                              {
-                                certificate &&
-                                <input disabled={disableButton} type="text" className="form-control mt-2 mb-3" id="certificate" placeholder='Certificate Name' />
-                              }
+                          </div>
+                          <div className="col-md-6">
+                            <div className='mb-3'>
+                              <label className="form-label fw-bold">Mentor Name(in Report)</label>
+                              <div className='d-flex gap-3'>
+                                <div className="form-check">
+                                  <input disabled={name ? false : true} onClick={handleName} className="form-check-input" type="radio" name="mentorName" id="noName" defaultChecked />
+                                  <label className="form-check-label" htmlFor="noName">
+                                    No
+                                  </label>
+                                </div>
+                                <div className="form-check">
+                                  <input disabled={name ? true : false} onClick={handleName} className="form-check-input" type="radio" name="mentorName" id="yesName" />
+                                  <label className="form-check-label" htmlFor="yesName">
+                                    Yes
+                                  </label>
+                                  {
+                                    name &&
+                                    <input type="text" className="form-control mt-2 mb-3" id="mentorname" placeholder='Mentor Name' />
+                                  }
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -192,7 +220,7 @@ const Details = () => {
                       </form>
                       <hr />
                       <div className="d-grid col-3 ms-auto">
-                        <button disabled={disableButton} type="submit" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal" className="btn btn-dark button">Save and Continue</button>
+                        <button disabled={disableButton} type="submit" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal" className="btn btn-dark button">Submit</button>
                       </div>
                     </div>
                   </div>
@@ -205,213 +233,7 @@ const Details = () => {
           </div>
         </div>
       </div>
-      {/* <Skills /> */}
-
-      {/* <div
-        className="modal fade modal-xl"
-        id="exampleModalToggle2"
-        tabIndex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className='modal-header d-flex justify-content-between'>
-              <h1 className="modal-title" id="exampleModalLabel">
-                Details
-              </h1>
-              <div className='d-flex gap-2'>
-                <button onClick={handleClone} className='btn btn-outline-secondary button'>Clone</button>
-                <button onClick={handleEdit} className='btn btn-dark button'>Edit Details</button>
-              </div>
-            </div>
-            <div className={`${styles.modal} modal-body`}>
-              <div className='container'>
-                <div className='d-grid col-md-12 mx-auto'>
-                  <div className='card border-dark'>
-                    <h3 className={`${styles.cardHeader} text-center mb-4 card-header bg-dark text-white`}>Access Details</h3>
-                    <div className="card-body">
-                      <form>
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="mb-3">
-                              <label htmlFor="accessCode" className="form-label fw-bold">Access Code</label>
-                              <input disabled={disableButton} type="number" className="form-control" placeholder='Enter 6-digit access code' id="accessCode" aria-describedby="accessHelp" />
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="mb-3">
-                              <label htmlFor="expiryDate" className="form-label fw-bold">Expiry Date</label>
-                              <input disabled={disableButton} type="date" className="form-control" id="expiryDate" />
-                            </div>
-                          </div>
-                        </div>
-                        <div className="mb-2">
-                          <label htmlFor="phoneNo" className="form-label  fw-bold">Phone Number List</label>
-                          <input disabled={disableButton} className="form-control" type="file" id="formFile" />
-                        </div>
-                        <button className='btn btn-dark button mb-3'>View List</button>
-
-                        <div className="row">
-                          <div className="col-md-6">
-                            <div className="mb-3">
-                              <label htmlFor="whoInitiate" className="form-label fw-bold">Who can Initiate ?</label>
-                              <select className="form-select" id='whoInitiate'>
-                                <option value="Select">Select...</option>
-                                <option value="Bot">Bot</option>
-                                <option value="User">User</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div className="col-md-6">
-                            <div className="mb-3">
-                              <label htmlFor="whoInitiate" className="form-label fw-bold">Timer</label>
-                              <select className="form-select" id='whoInitiate' aria-label="Default select example">
-                                <option value="Select">Select...</option>
-                                <option value="15 minutes">15 minutes</option>
-                                <option value="20 minutes">20 minutes</option>
-                                <option value="30 minutes">30 minutes</option>
-                                <option value="45 minutes">45 minutes</option>
-                                <option value="60 minutes">60 minutes</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="row">
-                          <div className="col-md-4">
-                            <div className='mb-3'>
-                              <label htmlFor="email" className="form-label fw-bold">Collect Email</label>
-                              <div className="form-check">
-                                <input disabled={disableButton} className="form-check-input" type="radio" name="collectEmail" id="yes" />
-                                <label className="form-check-label" htmlFor="yes">
-                                  Yes
-                                </label>
-                              </div>
-                              <div className="form-check">
-                                <input disabled={disableButton} className="form-check-input" type="radio" name="collectEmail" id="no" defaultChecked />
-                                <label className="form-check-label" htmlFor="no">
-                                  No
-                                </label>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="col-md-4">
-                            <div className='mb-3'>
-                              <label htmlFor="collectResume" className="form-label fw-bold">Collect Resume</label>
-                              <div className="form-check">
-                                <input disabled={disableButton} className="form-check-input" type="radio" name="CollectResume" id="yesResume" />
-                                <label className="form-check-label" htmlFor="yesResume">
-                                  Yes
-                                </label>
-                              </div>
-                              <div className="form-check">
-                                <input disabled={disableButton} className="form-check-input" type="radio" name="CollectResume" id="noResume" defaultChecked />
-                                <label className="form-check-label" htmlFor="noResume">
-                                  No
-                                </label>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="col-md-4">
-                            <div className='mb-3'>
-                              <label htmlFor="feedbackMessage" className="form-label fw-bold">Candidate Feedback Message</label>
-                              <div className="form-check">
-                                <input disabled={disableButton} className="form-check-input" type="radio" name="CandidateFeedback" id="yesFeedbackMessage" />
-                                <label className="form-check-label" htmlFor="yesFeedbackMessage">
-                                  Yes
-                                </label>
-                              </div>
-                              <div className="form-check">
-                                <input disabled={disableButton} className="form-check-input" type="radio" name="CandidateFeedback" id="noFeedbackMessage" defaultChecked />
-                                <label className="form-check-label" htmlFor="noFeedbackMessage">
-                                  No
-                                </label>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="row">
-                          <div className="col-md-4">
-                            <div className="mb-3">
-                              <label htmlFor="channel" className="form-label fw-bold">Channel</label>
-                              <div className="form-check">
-                                <input disabled={disableButton} className="form-check-input" type="checkbox" id="telegram" />
-                                <label className="form-check-label" htmlFor="telegram">
-                                  <FaTelegram className='me-1' style={{ color: '#0088cc' }} />Telegram
-                                </label>
-                              </div>
-                              <div className="form-check">
-                                <input disabled={disableButton} className="form-check-input" type="checkbox" id="whatsapp" />
-                                <label className="form-check-label" htmlFor="whatsapp">
-                                  <FaWhatsapp className='me-1' style={{ color: '#25d366' }} />Whatsapp
-                                </label>
-                              </div>
-                              <div className="form-check">
-                                <input disabled={disableButton} className="form-check-input" type="checkbox" id="slack" />
-                                <label className="form-check-label" htmlFor="slack">
-                                  <FaSlack className='me-1' style={{ color: '#E01E5A' }} />Slack
-                                </label>
-                              </div>
-                              <div className="form-check mb-3">
-                                <input disabled={disableButton} className="form-check-input" type="checkbox" defaultChecked id="form" />
-                                <label className="form-check-label" htmlFor="form">
-                                  <FaWpforms className='me-1' />Form
-                                </label>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="col-md-4">
-                            <div className='mb-3'>
-                              <label htmlFor="candidateID" className="form-label fw-bold">Collect Candidate ID</label>
-                              <div className="form-check">
-                                <input disabled={disableButton} className="form-check-input" type="radio" name="CollectID" id="yesId" />
-                                <label className="form-check-label" htmlFor="yesId">
-                                  Yes
-                                </label>
-                              </div>
-                              <div className="form-check">
-                                <input disabled={disableButton} className="form-check-input" type="radio" name="CollectID" id="noId" defaultChecked />                                     <label className="form-check-label" htmlFor="noId">
-                                  No
-                                </label>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="col-md-4">
-                            <div className='mb-3'>
-                              <label htmlFor="voiceMatch" className="form-label fw-bold">Voice Match</label>
-                              <div className="form-check">
-                                <input disabled={disableButton} className="form-check-input" type="radio" name="VoiceMatch" id="yesMatch" />
-                                <label className="form-check-label" htmlFor="yesMatch">
-                                  Yes
-                                </label>
-                              </div>
-                              <div className="form-check">
-                                <input disabled={disableButton} className="form-check-input" type="radio" name="VoiceMatch" id="noMatch" defaultChecked />
-                                <label className="form-check-label" htmlFor="noMatch">
-                                  No
-                                </label>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <hr />
-                        <div className="d-flex justify-content-end me-auto gap-3">
-                          <button type="button" className="btn btn-outline-secondary button" data-bs-target="#exampleModal4" data-bs-toggle="modal">Back</button>
-                          <button type="button" className="btn btn-dark button" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Save and Continue</button>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="modal-footer">
-              <button type="button" className="btn btn-dark" data-bs-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
+      <Skills />
 
       {/* External Bots */}
 
@@ -428,14 +250,25 @@ const Details = () => {
               <h1 className="modal-title" id="exampleModalLabel">
                 Details
               </h1>
+              <div className='d-flex gap-2'>
+                <button onClick={handleClone} className='btn btn-outline-secondary button'>Clone</button>
+                <button onClick={handleEdit} className='btn btn-dark button'>Edit Details</button>
+              </div>
             </div>
             <div className={`${styles.modal} modal-body`}>
-              <div className="container mb-4">
+              <div className="btn-group" role="group" aria-label="Basic radio toggle button group">
+                <input data-bs-target="#internalBotModal" data-bs-toggle="modal" type="radio" className="btn-check" name="btnradio" id="bot1" autocomplete="off" />
+                <label className="btn btn-outline-dark" htmlFor="bot1">Internal Bot</label>
 
+                <input type="radio" className="btn-check" name="btnradio" id="bot2" autocomplete="off" checked />
+                <label className="btn btn-outline-dark" htmlFor="bot2">External Bot</label>
+              </div>
+              <hr />
+              <div className="container mb-4">
                 <div className='d-flex justify-content-center mx-auto'>
                   <div className='mb-3'>
-                    <label className="form-label fw-bold">Bot Needed ?</label>
-                    <div className='d-flex gap-3'>
+                    <label className="form-label fw-bold fs-1">Do you need external bot ?</label>
+                    <div className='d-flex justify-content-center mx-auto gap-3'>
                       <div className="form-check">
                         <input disabled={isNeeded ? false : true} onClick={handleNeeded} className="form-check-input" type="radio" name="botNeed" id="no" defaultChecked />
                         <label className="form-check-label" htmlFor="no">
@@ -652,19 +485,20 @@ const Details = () => {
                       </div>
                     </div>
                     <hr />
-                    <div className="d-flex justify-content-end me-auto gap-3">
-                      <button
-                        type="button"
-                        className="btn btn-outline-secondary button"
-                        data-bs-target="#exampleModal4"
-                        data-bs-toggle="modal"
-                      >
-                        Back
-                      </button>
+                    <div className="d-grid col-3 ms-auto">
+                      {/* <button
+                    type="button"
+                    className="btn btn-outline-secondary button"
+                    data-bs-target="#internalBotModal"
+                    data-bs-toggle="modal"
+                  >
+                    Back
+                  </button> */}
                       <button type="submit" className="btn btn-dark button">Submit</button>
                     </div>
                   </div>
                 }
+
               </div>
             </div>
             <div className="modal-footer">

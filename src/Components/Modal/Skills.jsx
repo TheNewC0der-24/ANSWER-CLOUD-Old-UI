@@ -68,7 +68,9 @@ const Track = () => {
                 <button
                   type="button"
                   className="btn btn-outline-secondary mx-1"
-                  data-bs-dismiss="modal"
+                  // data-bs-dismiss="modal"
+                  data-bs-toggle="modal"
+                  data-bs-target="#internalBotModal"
                 >
                   Close
                 </button>
