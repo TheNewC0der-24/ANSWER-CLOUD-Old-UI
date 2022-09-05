@@ -51,20 +51,46 @@ const Experience = () => {
                                             </div>
                                         </div>
                                     </div>
-
                                     <div className="row">
                                         <div className="col-md-6">
+                                            <div className="mb-3">
+                                                <label htmlFor="mentorTalk" className="form-label fw-bold">Mentor Talk*</label>
+                                                <input type="url" className="form-control" placeholder='Paste link here' id="mentorTalk" />
+                                            </div>
+                                        </div>
+                                        <div className="col-md-6">
+                                            <div className="mb-3">
+                                                <label htmlFor="libraryType" className="form-label fw-bold">Library Type</label>
+                                                <select className="form-select" id='libraryType' aria-label="Default select example">
+                                                    <option value="Select">Select...</option>
+                                                    <option value="Career">Career</option>
+                                                    <option value="Business">Business</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-md-4">
                                             <div className="mb-3">
                                                 <label htmlFor="interaction" className="form-label fw-bold">Interaction Title*</label>
                                                 <input type="text" className="form-control" placeholder='Enter Interaction title' id="interaction" />
                                             </div>
                                         </div>
-                                        <div className="col-md-6">
+                                        <div className="col-md-4">
+                                            <div className="mb-3">
+                                                <label htmlFor="interactionLink" className="form-label fw-bold">Interaction Link*</label>
+                                                <input type="url" className="form-control" placeholder='Enter organization name' id="interactionLink" />
+                                            </div>
+                                        </div>
+                                        <div className="col-md-4">
                                             <div className="mb-3">
                                                 <label htmlFor="experienceType" className="form-label fw-bold">Experience Type*</label>
                                                 <input type="text" className="form-control" placeholder='Enter experience type' id="experienceType" />
                                             </div>
-                                            {/* <div className="mb-3">
+                                        </div>
+                                    </div>
+
+                                    {/* <div className="mb-3">
                                             <label htmlFor="mode" className="form-label fw-bold">Interaction Mode</label>
                                             <select className="form-select" id='mode' aria-label="Default select example">
                                                 <option value="Select">Select...</option>
@@ -75,8 +101,6 @@ const Experience = () => {
                                                 <option value="Text">Text</option>
                                             </select>
                                         </div> */}
-                                        </div>
-                                    </div>
                                 </form>
                                 <hr />
                                 <div className="d-grid col-3 ms-auto">
@@ -86,7 +110,7 @@ const Experience = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     )
 }
