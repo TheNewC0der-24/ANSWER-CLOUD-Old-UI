@@ -3,6 +3,7 @@ import styles from './Login.module.css';
 import { useNavigate } from 'react-router-dom';
 
 import login from '../../assets/Images/login.svg';
+import brand from '../../assets/Images/brand.png';
 
 import { CgLogIn } from 'react-icons/cg';
 
@@ -20,9 +21,10 @@ const Login = () => {
                                 <h3 className='text-dark'>Login</h3>
                                 <hr style={{ color: "#000", borderTop: "2px solid", opacity: "1" }} />
                                 <h5 className="card-title text-center mt-5">
-                                    Welcome to Talent  <span className='bg-dark text-white p-2'>Sumo</span>
+                                    Welcome to
+                                    <img src={brand} width={150} alt="brand" className='img-fluid' />
                                 </h5>
-                                <p className='text-center text-muted mt-3 mb-5'>Enter your details and start journey with us.</p>
+                                <p className='text-center text-muted mt-3 mb-5'>Enter your credentials and start journey with us.</p>
                                 <form>
                                     <div className="mb-4">
                                         <input type="email" className='form-control' id="email" placeholder="Email" />
