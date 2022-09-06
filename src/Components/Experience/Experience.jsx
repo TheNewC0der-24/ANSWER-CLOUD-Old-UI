@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './Experience.module.css';
 import { Link } from 'react-router-dom';
 
+import ExperienceModal from '../Modal/ExperienceModal';
+
 import experiencebot from '../../assets/Images/experiencebot.svg';
 
 const Experience = () => {
@@ -69,38 +71,16 @@ const Experience = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="row">
-                                        <div className="col-md-4">
-                                            <div className="mb-3">
-                                                <label htmlFor="interaction" className="form-label fw-bold">Interaction Title*</label>
-                                                <input type="text" className="form-control" placeholder='Enter Interaction title' id="interaction" />
-                                            </div>
-                                        </div>
-                                        <div className="col-md-4">
-                                            <div className="mb-3">
-                                                <label htmlFor="interactionLink" className="form-label fw-bold">Interaction Link*</label>
-                                                <input type="url" className="form-control" placeholder='Enter organization name' id="interactionLink" />
-                                            </div>
-                                        </div>
-                                        <div className="col-md-4">
-                                            <div className="mb-3">
-                                                <label htmlFor="experienceType" className="form-label fw-bold">Experience Type*</label>
-                                                <input type="text" className="form-control" placeholder='Enter experience type' id="experienceType" />
-                                            </div>
-                                        </div>
+                                    <div className="d-flex justify-content-between mb-3">
+                                        <label htmlFor="question" className="form-label fw-bold">Create Interaction</label>
+                                        <button type="button" className="btn btn-outline-secondary button" data-bs-toggle="modal" data-bs-target="#experienceModal">Add</button>
                                     </div>
 
-                                    {/* <div className="mb-3">
-                                            <label htmlFor="mode" className="form-label fw-bold">Interaction Mode</label>
-                                            <select className="form-select" id='mode' aria-label="Default select example">
-                                                <option value="Select">Select...</option>
-                                                <option value="Audio">Audio</option>
-                                                <option value="Video">Video</option>
-                                                <option value="MCQ">MCQ</option>
-                                                <option value="Image">Image</option>
-                                                <option value="Text">Text</option>
-                                            </select>
-                                        </div> */}
+                                    <div className="row">
+                                        <div className="col-md-4">
+
+                                        </div>
+                                    </div>
                                 </form>
                                 <hr />
                                 <div className="d-grid col-3 ms-auto">
@@ -110,7 +90,8 @@ const Experience = () => {
                         </div>
                     </div>
                 </div>
-            </div >
+            </div>
+            <ExperienceModal />
         </>
     )
 }
