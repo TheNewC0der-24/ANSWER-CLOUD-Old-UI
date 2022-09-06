@@ -43,13 +43,16 @@ const ExperienceModal = () => {
                                     <thead>
                                         <tr className="table-secondary">
                                             <th className="text-center" scope="col">
+                                                Experience Type:
+                                            </th>
+                                            <th className="text-center" scope="col">
                                                 Interaction Title:
                                             </th>
                                             <th className="text-center" scope="col">
-                                                Interaction Link:
+                                                Interaction Mode:
                                             </th>
                                             <th className="text-center" scope="col">
-                                                Experience Type:
+                                                Interaction Link:
                                             </th>
                                         </tr>
                                     </thead>
@@ -57,14 +60,27 @@ const ExperienceModal = () => {
                                         {[...Array(noOfRows)].map((index) => {
                                             return (
                                                 <tr key={index}>
+
+                                                    <td>
+                                                        <input type="text" className="form-control" placeholder='Enter experience type' id="experienceType" />
+                                                    </td>
                                                     <td>
                                                         <input type="text" className="form-control" placeholder='Enter Interaction title' id="interaction" />
                                                     </td>
                                                     <td>
-                                                        <input type="url" className="form-control" placeholder='Paste link here' id="interactionLink" />
+                                                        <select
+                                                            className="form-select"
+                                                            id="interactionMode"
+                                                            aria-label="Default select example"
+                                                        >
+                                                            <option value="Select...">Select...</option>
+                                                            <option value="Audio">Audio</option>
+                                                            <option value="Video">Video</option>
+                                                            <option value="MCQ">MCQ</option>
+                                                        </select>
                                                     </td>
                                                     <td>
-                                                        <input type="text" className="form-control" placeholder='Enter experience type' id="experienceType" />
+                                                        <input type="url" className="form-control" placeholder='Paste link here' id="interactionLink" />
                                                     </td>
                                                 </tr>
                                             );
