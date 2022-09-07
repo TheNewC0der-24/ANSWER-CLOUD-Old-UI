@@ -54,9 +54,9 @@ const Navbar = () => {
                             <li className="nav-item">
                                 <NavLink onClick={handleClick} className={`${styles.navLink} nav-link disabled`} to="/externalbot">External Bots</NavLink>
                             </li>
-                            {/* <li className="nav-item">
+                            <li className="nav-item">
                                 <NavLink onClick={handleClick} className={`${styles.navLink} nav-link`} to="/experience">Create Experience</NavLink>
-                            </li> */}
+                            </li>
                         </ul>
                         <div className={`${styles.buttons} d-flex gap-2`}>
                             <button onClick={() => navigate('/interaction')} className={`${styles.search}`}>

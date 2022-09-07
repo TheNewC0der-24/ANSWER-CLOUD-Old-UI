@@ -33,7 +33,7 @@ import Thanks from './Components/Videos/ThankYou';
 import Responses from './Components/Responses/Responses';
 import Image from './Components/ImageUpload/Image';
 import Text from './Components/Text/Text';
-// import Experience from './Components/Experience/Experience';
+import Experience from './Components/Experience/Experience';
 
 function App() {
 
@@ -46,7 +46,7 @@ function App() {
           <Route exact path='/internalbot' element={<InternalBot />} />
           {/* <Route exact path='/access' element={<Access />} /> */}
           <Route exact path='/externalbot' element={<ExternalBot />} />
-          {/* <Route exact path='/experience' element={<Experience />} /> */}
+          <Route exact path='/experience' element={<Experience />} />
           <Route exact path='/thankyou' element={<ThankYou />} />
           <Route exact path='/interaction' element={<Interaction />} />
           <Route exact path='/profile' element={<Profile />} />
