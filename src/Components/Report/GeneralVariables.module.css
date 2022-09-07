@@ -2,12 +2,17 @@
     transform: translateY(-2px);
 }
 
+.para {
+    font-family: 'Mukta', sans-serif;
+    font-size: 22px;
+}
+
 .card {
     border-radius: 0;
     border: none;
 }
 
 .cardHeader {
-    background-color: #505F79 !important;
+    background-color: #2e3134 !important;
     border-radius: 0 !important;
 }
