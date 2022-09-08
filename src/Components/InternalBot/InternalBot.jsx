@@ -106,8 +106,8 @@ const Create = () => {
                                                 <option value="Audio">Audio</option>
                                                 <option value="Video">Video</option>
                                                 <option value="MCQ">MCQ</option>
-                                                <option value="Image">Image</option>
-                                                <option value="Text">Text</option>
+                                                {/* <option value="Image">Image</option>
+                                                <option value="Text">Text</option> */}
                                             </select>
                                         </div>
                                     </div>

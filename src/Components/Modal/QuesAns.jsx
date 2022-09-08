@@ -121,8 +121,8 @@ const Quesans = () => {
                               <option>Audio</option>
                               <option>Video</option>
                               <option>MCQ</option>
-                              <option>Image</option>
-                              <option>Text</option>
+                              {/* <option>Image</option>
+                              <option>Text</option> */}
                               <option>Resume Link</option>
                             </select>
                           </td>
