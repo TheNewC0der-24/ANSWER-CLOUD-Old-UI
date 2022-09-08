@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Details.module.css';
 import Skills from "../Modal/Skills";
 
 import { FaTelegram, FaWhatsapp, FaSlack, FaWpforms } from 'react-icons/fa';
+
+import axios from 'axios';
 
 const Details = () => {
 
@@ -37,17 +39,29 @@ const Details = () => {
     window.location = "/internalbot";
   }
 
+  const [data, setData] = useState([]);
+
+    useEffect(() => {
+      axios.get('response.json')
+        .then(res => {
+          // console.log(res.data.results);
+          setData(res.data.results);
+        })
+    });
+
   return (
     <>
       <style jsx="true">
         {`
              .button {
                border-radius: 0;
-             }
-           `}
+              }
+              `}
       </style>
 
       {/* Internal Bot */}
+      {data.slice(0,1).map(item=>(
+        <>
       <div
         className="modal fade modal-xl"
         id="internalBotModal"
@@ -84,19 +98,19 @@ const Details = () => {
                           <div className="col-md-4">
                             <div className="mb-3">
                               <label htmlFor="detail" className="form-label fw-bold">Company/Institute Name*</label>
-                              <input disabled={disableButton} type="text" className="form-control" placeholder='Enter company/institute name' id="companyName" />
+                              <input disabled={disableButton} type="text" value={item.institute_name} className="form-control" placeholder='Enter company/institute name' id="companyName" />
                             </div>
                           </div>
                           <div className="col-md-4">
                             <div className="mb-3">
                               <label htmlFor="interaction" className="form-label fw-bold">Interaction Title*</label>
-                              <input disabled={disableButton} type="text" className="form-control" placeholder='Enter Interaction title' id="interaction" />
+                              <input disabled={disableButton} type="text" className="form-control" value={item.job_title} placeholder='Enter Interaction title' id="interaction" />
                             </div>
                           </div>
                           <div className="col-md-4">
                             <div className="mb-3">
                               <label htmlFor="positionCode" className="form-label fw-bold">Test ID</label>
-                              <input disabled={disableButton} type="number" className="form-control" placeholder='Enter 6-digit code' id="positionCode" />
+                              <input disabled={disableButton} type="number" className="form-control" value={item.total_question} placeholder='Enter 6-digit code' id="positionCode" />
                             </div>
                           </div>
                         </div>
@@ -105,7 +119,7 @@ const Details = () => {
                             <div className="mb-3">
                               <label htmlFor="track" className="form-label fw-bold">Track/Domain :</label>
                               <select className="form-select" id='track' aria-label="Default select example">
-                                <option value="Select...">Select...</option>
+                                <option value="Select...">{"" ? "Select..." : item.track}</option>
                                 <option value="Sales">Sales</option>
                                 <option value="Service">Service</option>
                                 <option value="HR">HR</option>
@@ -117,7 +131,7 @@ const Details = () => {
                             <div className="mb-3">
                               <label htmlFor="mode" className="form-label fw-bold">Interaction Mode</label>
                               <select className="form-select" id='mode' aria-label="Default select example">
-                                <option value="Select">Select...</option>
+                                <option value="Select">{"" ? "Select..." : item.interaction_mode}</option>
                                 <option value="Audio">Audio</option>
                                 <option value="Video">Video</option>
                                 <option value="MCQ">MCQ</option>
@@ -131,13 +145,13 @@ const Details = () => {
                           <div className="col-md-6">
                             <div className="mb-3">
                               <label htmlFor="accessCode" className="form-label fw-bold">Access Code</label>
-                              <input disabled={disableButton} type="number" className="form-control" placeholder='Enter 6-digit access code' id="accessCode" aria-describedby="accessHelp" />
+                              <input disabled={disableButton} type="number" value={item.total_question} className="form-control" placeholder='Enter 6-digit access code' id="accessCode" aria-describedby="accessHelp" />
                             </div>
                           </div>
                           <div className="col-md-6">
                             <div className="mb-3">
                               <label htmlFor="expiryDate" className="form-label fw-bold">Expiry Date</label>
-                              <input disabled={disableButton} type="date" className="form-control" id="expiryDate" />
+                              <input disabled={disableButton} value={item.expiry_date} type="date" className="form-control" id="expiryDate" />
                             </div>
                           </div>
                         </div>
@@ -159,7 +173,7 @@ const Details = () => {
                                   </label>
                                   {
                                     certificate &&
-                                    <input type="text" className="form-control mt-2 mb-3" id="certificate" placeholder='Certificate Name' />
+                                    <input type="text" className="form-control mt-2 mb-3" value={item.generate_certificate} id="certificate" placeholder='Certificate Name' />
                                   }
                                 </div>
                               </div>
@@ -182,7 +196,7 @@ const Details = () => {
                                   </label>
                                   {
                                     name &&
-                                    <input type="text" className="form-control mt-2 mb-3" id="mentorname" placeholder='Mentor Name' />
+                                    <input type="text" className="form-control mt-2 mb-3" value={item.who_can_initiate} id="mentorname" placeholder='Mentor Name' />
                                   }
                                 </div>
                               </div>
@@ -193,13 +207,13 @@ const Details = () => {
                           <div className="col-md-6">
                             <div className="mb-3">
                               <label htmlFor="description" className="form-label fw-bold">Instruction</label>
-                              <input disabled={disableButton} type="text" className="form-control" placeholder='Your instruction' id="instruction" />
+                              <input disabled={disableButton} type="text" className="form-control" value={item.job_instruction} placeholder='Your instruction' id="instruction" />
                             </div>
                           </div>
                           <div className="col-md-6">
                             <div className="mb-3">
                               <label htmlFor="description" className="form-label fw-bold">Description</label>
-                              <input disabled={disableButton} type="text" className="form-control" placeholder='Your description' id="description" />
+                              <input disabled={disableButton} type="text" className="form-control" value={item.job_describtion} placeholder='Your description' id="description" />
                             </div>
                           </div>
                         </div>
@@ -303,8 +317,8 @@ const Details = () => {
                             <div className="col-md-6">
                               <div className="mb-3">
                                 <label htmlFor="whoInitiate" className="form-label fw-bold">Who can Initiate ?</label>
-                                <select className="form-select" id='whoInitiate'>
-                                  <option value="Select">Select...</option>
+                                <select className="form-select" value={item.who_can_initiate} id='whoInitiate'>
+                                  <option value="Select">{"" ? "Select..." : item.who_can_initiate}</option>
                                   <option value="Bot">Bot</option>
                                   <option value="User">User</option>
                                 </select>
@@ -313,8 +327,8 @@ const Details = () => {
                             <div className="col-md-6">
                               <div className="mb-3">
                                 <label htmlFor="whoInitiate" className="form-label fw-bold">Timer</label>
-                                <select className="form-select" id='whoInitiate' aria-label="Default select example">
-                                  <option value="Select">Select...</option>
+                                <select className="form-select" value={item.timer} id='whoInitiate' aria-label="Default select example">
+                                  <option value="Select">{"" ? "Select..." : item.timer}</option>
                                   <option value="15 minutes">15 minutes</option>
                                   <option value="20 minutes">20 minutes</option>
                                   <option value="30 minutes">30 minutes</option>
@@ -439,16 +453,16 @@ const Details = () => {
                             <form>
                               <div className="mb-3">
                                 <label htmlFor="emailOne" className="form-label fw-bold">Report sent to Email-1</label>
-                                <input type="email" className="form-control" id="emailOne" />
+                                <input type="email" className="form-control" value={item.report_type} id="emailOne" />
                               </div>
                               <div className="mb-3">
                                 <label htmlFor="emailTwo" className="form-label fw-bold">Report sent to Email-2</label>
-                                <input type="email" className="form-control" id="emailTwo" />
+                                <input type="email" className="form-control" value={item.report_type} id="emailTwo" />
                               </div>
                               <div className="mb-3">
                                 <label className="form-label fw-bold" htmlFor="report">Report sent to User</label>
-                                <select className="form-select" id='report' aria-label="Default select example">
-                                  <option value="Select">Select...</option>
+                                <select className="form-select" value={item.report_type} id='report' aria-label="Default select example">
+                                  <option value="Select">{"" ? "Select..." : item.report_type}</option>
                                   <option value="Yes">Yes</option>
                                   <option value="No">No</option>
                                 </select>
@@ -465,19 +479,19 @@ const Details = () => {
                             <form>
                               <div className="mb-3">
                                 <label htmlFor="welcome" className="form-label fw-bold">Interaction Welcome Message</label>
-                                <textarea className="form-control interaction" id="welcome" rows="1"></textarea>
+                                <textarea className="form-control interaction" value={item.report_type} id="welcome" rows="1"></textarea>
                               </div>
                               <div className="mb-3">
                                 <label htmlFor="instruction" className="form-label fw-bold">Interaction Instruction message</label>
-                                <textarea className="form-control interaction" id="instruction" rows="1"></textarea>
+                                <textarea className="form-control interaction" value={item.report_type} id="instruction" rows="1"></textarea>
                               </div>
                               <div className="mb-3">
                                 <label htmlFor="completion" className="form-label fw-bold">Interaction Completion Message</label>
-                                <textarea className="form-control interaction" id="completion" rows="1"></textarea>
+                                <textarea className="form-control interaction" value={item.report_type} id="completion" rows="1"></textarea>
                               </div>
                               <div className="mb-3">
                                 <label htmlFor="dark" className="form-label fw-bold">Bot Message</label>
-                                <textarea className="form-control interaction" id="dark" rows="1"></textarea>
+                                <textarea className="form-control interaction" value={item.report_type} id="dark" rows="1"></textarea>
                               </div>
                             </form>
                           </div>
@@ -491,7 +505,7 @@ const Details = () => {
                     className="btn btn-outline-secondary button"
                     data-bs-target="#internalBotModal"
                     data-bs-toggle="modal"
-                  >
+                    >
                     Back
                   </button> */}
                       <button type="submit" className="btn btn-dark button">Submit</button>
@@ -507,6 +521,8 @@ const Details = () => {
           </div>
         </div>
       </div>
+      </>
+        ))}
     </>
   )
 }

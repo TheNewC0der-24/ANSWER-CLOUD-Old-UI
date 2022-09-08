@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './ForgetPassword.module.css';
 
 import password from '../../assets/Images/password.png';
 
+import axios from 'axios';
+
 const ForgetPassword = () => {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+      axios.get('response.json')
+        .then(res => {
+          console.log(res.data.results);
+          setData(res.data.results);
+        })
+    });
+
     return (
         <>
             <div className="container">
@@ -14,15 +26,19 @@ const ForgetPassword = () => {
                             <img src={password} className={`${styles.img} d-flex justify-content-center mx-auto mt-3 img-fluid p-3`} alt="forget password" width={"150px"} />
                             <h5 className="text-center my-3">Your New Password Must Be Different <br />from Previously Used Password.</h5>
                             <form>
+                            {data.slice(0,1).map(item => (
+                                <>
                                 <div className="mb-3">
-                                    <input type="password" className='form-control' id="password" placeholder="Password" />
+                                    <input type="password" className='form-control' value={item.report_type} id="password" placeholder="Password" />
                                 </div>
                                 <div className="mb-3">
-                                    <input type="password" className='form-control' id="confirmPassword" placeholder="Confirm Password" />
+                                    <input type="password" className='form-control' value={item.interaction_mode} id="confirmPassword" placeholder="Confirm Password" />
                                 </div>
                                 <div className='d-flex justify-content-center mx-auto'>
                                     <button className='btn btn-dark'>Reset Password</button>
                                 </div>
+                                </>
+                            ))}
                             </form>
                         </div>
                     </div>

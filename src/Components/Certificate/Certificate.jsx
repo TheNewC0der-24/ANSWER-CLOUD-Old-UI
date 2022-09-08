@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Certificate.module.css';
 
 import logo from '../../assets/Images/Certificate.svg';
 
+import axios from 'axios';
+
 const Certificate = () => {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+      axios.get('response.json')
+        .then(res => {
+          console.log(res.data.results);
+          setData(res.data.results);
+        })
+    });
+
     return (
         <>
             <div className="container mt-5">
@@ -16,8 +28,10 @@ const Certificate = () => {
                         <div className="card-body text-center">
                             <img src={logo} className={`${styles.img} img-fluid rounded-circle d-flex mx-auto`} width="150px" alt="logo" />
                             <h5 className="card-title mt-3">This is awarded to</h5>
-                            <h1 className="card-text">
-                                John Doe
+                            {data.slice(0,1).map(item=>(
+                                <>
+                                <h1 className="card-text">
+                                {item.who_can_initiate}
                             </h1>
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id consequatur repudiandae vel error,
                                 explicabo consectetur ipsa repellat cum tempora laboriosam ducimus laborum commodi ipsam consequuntur
@@ -25,9 +39,11 @@ const Certificate = () => {
                                 dignissimos laudantium tempora, dolorem magni quisquam ea saepe impedit ut ratione, nemo blanditiis.
                             </p>
                             <div className='mt-5 d-flex justify-content-between mx-5'>
-                                <p className={styles.para}>Track</p>
-                                <p className={styles.para}>Date</p>
+                                <p className={styles.para}>{item.track}</p>
+                                <p className={styles.para}>{item.updated_at}</p>
                             </div>
+                            </>
+                                ))}
                         </div>
                     </div>
                 </div>

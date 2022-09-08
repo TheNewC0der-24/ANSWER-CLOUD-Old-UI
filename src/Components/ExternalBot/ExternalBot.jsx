@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./ExternalBot.module.css";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -52,6 +52,7 @@ const Notification = () => {
   const [isNeeded, setIsNeeded] = useState(false);
   const [disabled, setDisabled] = useState(false);
   const [create, setCreate] = useState([]);
+  const [data, setData] = useState([]);
 
   const handleNeeded = () => {
     setIsNeeded(!isNeeded);
@@ -62,6 +63,14 @@ const Notification = () => {
     setCreate({ ...create, [e.target.name]: e.target.value });
   };
 
+    useEffect(() => {
+      axios.get('response.json')
+        .then(res => {
+          console.log(res.data.results);
+          setData(res.data.results);
+        })
+    });
+
   return (
     <>
       <style jsx="true">
@@ -71,6 +80,8 @@ const Notification = () => {
           }
         `}
       </style>
+      {data.slice(0,1).map(create=>(
+        <>
       <div className="container d-flex justify-content-between my-3">
         <h3>Internal Bot</h3>
         <nav aria-label="breadcrumb">
@@ -79,7 +90,7 @@ const Notification = () => {
               <Link
                 to="/"
                 className={`${styles.navigate} text-dark text-decoration-none`}
-              >
+                >
                 aCloud
               </Link>
             </li>
@@ -118,7 +129,7 @@ const Notification = () => {
                   type="radio"
                   name="botNeed"
                   id="yes"
-                />
+                  />
                 <label className="form-check-label" htmlFor="yes">
                   Yes
                 </label>
@@ -132,7 +143,7 @@ const Notification = () => {
             <div className="card border-dark h-100 mb-3">
               <h3
                 className={`${styles.headingNotify} card-header bg-dark text-white text-center`}
-              >
+                >
                 External Bot
               </h3>
               <div className="card-body">
@@ -154,7 +165,7 @@ const Notification = () => {
                         <label
                           htmlFor="whoInitiate"
                           className="form-label fw-bold"
-                        >
+                          >
                           Who can Initiate ?
                         </label>
                         <select
@@ -163,7 +174,7 @@ const Notification = () => {
                           onChange={handleOnChange}
                           name="who_can_initiate"
                           value={create.who_can_initiate}
-                        >
+                          >
                           <option value="Select">Select...</option>
                           <option value="Bot">Bot</option>
                           <option value="User">User</option>
@@ -175,7 +186,7 @@ const Notification = () => {
                         <label
                           htmlFor="whoInitiate"
                           className="form-label fw-bold"
-                        >
+                          >
                           Timer
                         </label>
                         <select
@@ -185,7 +196,7 @@ const Notification = () => {
                           name="timer"
                           value={create.timer}
                           aria-label="Default select example"
-                        >
+                          >
                           <option value="Select">Select...</option>
                           <option value="15 minutes">15 minutes</option>
                           <option value="20 minutes">20 minutes</option>
@@ -211,7 +222,7 @@ const Notification = () => {
                             onChange={handleOnChange}
                             value="yes"
                             id="yes"
-                          />
+                            />
                           <label className="form-check-label" htmlFor="yes">
                             Yes
                           </label>
@@ -225,7 +236,7 @@ const Notification = () => {
                             value="no"
                             id="no"
                             defaultChecked
-                          />
+                            />
                           <label className="form-check-label" htmlFor="no">
                             No
                           </label>
@@ -237,7 +248,7 @@ const Notification = () => {
                         <label
                           htmlFor="collectResume"
                           className="form-label fw-bold"
-                        >
+                          >
                           Collect Resume
                         </label>
                         <div className="form-check">
@@ -248,11 +259,11 @@ const Notification = () => {
                             onChange={handleOnChange}
                             value="yes"
                             id="yesResume"
-                          />
+                            />
                           <label
                             className="form-check-label"
                             htmlFor="yesResume"
-                          >
+                            >
                             Yes
                           </label>
                         </div>
@@ -265,11 +276,11 @@ const Notification = () => {
                             value="no"
                             id="noResume"
                             defaultChecked
-                          />
+                            />
                           <label
                             className="form-check-label"
                             htmlFor="noResume"
-                          >
+                            >
                             No
                           </label>
                         </div>
@@ -280,7 +291,7 @@ const Notification = () => {
                         <label
                           htmlFor="feedbackMessage"
                           className="form-label fw-bold"
-                        >
+                          >
                           Candidate Feedback Message
                         </label>
                         <div className="form-check">
@@ -291,11 +302,11 @@ const Notification = () => {
                             onChange={handleOnChange}
                             value="yes"
                             id="yesFeedbackMessage"
-                          />
+                            />
                           <label
                             className="form-check-label"
                             htmlFor="yesFeedbackMessage"
-                          >
+                            >
                             Yes
                           </label>
                         </div>
@@ -308,11 +319,11 @@ const Notification = () => {
                             value="no"
                             id="noFeedbackMessage"
                             defaultChecked
-                          />
+                            />
                           <label
                             className="form-check-label"
                             htmlFor="noFeedbackMessage"
-                          >
+                            >
                             No
                           </label>
                         </div>
@@ -332,11 +343,11 @@ const Notification = () => {
                             className="form-check-input"
                             type="checkbox"
                             id="telegram"
-                          />
+                            />
                           <label
                             className="form-check-label"
                             htmlFor="telegram"
-                          >
+                            >
                             <FaTelegram
                               className="me-1"
                               style={{ color: "#0088cc" }}
@@ -350,15 +361,15 @@ const Notification = () => {
                             className="form-check-input"
                             type="checkbox"
                             id="whatsapp"
-                          />
+                            />
                           <label
                             className="form-check-label"
                             htmlFor="whatsapp"
-                          >
+                            >
                             <FaWhatsapp
                               className="me-1"
                               style={{ color: "#25d366" }}
-                            />
+                              />
                             Whatsapp
                           </label>
                         </div>
@@ -368,12 +379,12 @@ const Notification = () => {
                             className="form-check-input"
                             type="checkbox"
                             id="slack"
-                          />
+                            />
                           <label className="form-check-label" htmlFor="slack">
                             <FaSlack
                               className="me-1"
                               style={{ color: "#E01E5A" }}
-                            />
+                              />
                             Slack
                           </label>
                         </div>
@@ -383,7 +394,7 @@ const Notification = () => {
                             type="checkbox"
                             defaultChecked
                             id="form"
-                          />
+                            />
                           <label className="form-check-label" htmlFor="form">
                             <FaWpforms className="me-1" />
                             Form
@@ -407,7 +418,7 @@ const Notification = () => {
                             onChange={handleOnChange}
                             value="yes"
                             id="yesId"
-                          />
+                            />
                           <label className="form-check-label" htmlFor="yesId">
                             Yes
                           </label>
@@ -421,7 +432,7 @@ const Notification = () => {
                             value="no"
                             id="noId"
                             defaultChecked
-                          />
+                            />
                           <label className="form-check-label" htmlFor="noId">
                             No
                           </label>
@@ -438,7 +449,7 @@ const Notification = () => {
                 <div className="card border-dark">
                   <h3
                     className={`${styles.headingNotify} card-header bg-dark text-white text-center`}
-                  >
+                    >
                     Interaction Notification
                   </h3>
                   <div className="card-body">
@@ -447,7 +458,7 @@ const Notification = () => {
                         <label
                           htmlFor="report_send_to_email_one"
                           className="form-label fw-bold"
-                        >
+                          >
                           Report sent to Email-1
                         </label>
                         <input
@@ -457,13 +468,13 @@ const Notification = () => {
                           onChange={handleOnChange}
                           name="report_send_to_email_one"
                           value={create.report_send_to_email_one}
-                        />
+                          />
                       </div>
                       <div className="mb-3">
                         <label
                           htmlFor="report_send_to_email_two"
                           className="form-label fw-bold"
-                        >
+                          >
                           Report sent to Email-2
                         </label>
                         <input
@@ -473,13 +484,13 @@ const Notification = () => {
                           onChange={handleOnChange}
                           name="report_send_to_email_two"
                           value={create.report_send_to_email_two}
-                        />
+                          />
                       </div>
                       <div className="mb-3">
                         <label
                           className="form-label fw-bold"
                           htmlFor="report_send_to_user"
-                        >
+                          >
                           Report sent to User
                         </label>
                         <select
@@ -489,7 +500,7 @@ const Notification = () => {
                           name="report_send_to_user"
                           value={create.report_send_to_user}
                           aria-label="Default select example"
-                        >
+                          >
                           <option value="Select">Select...</option>
                           <option value="Yes">Yes</option>
                           <option value="No">No</option>
@@ -504,7 +515,7 @@ const Notification = () => {
                 <div className={`${styles.right} card border-dark`}>
                   <h3
                     className={`${styles.headingMsg} card-header bg-dark text-white text-center`}
-                  >
+                    >
                     Bot Message
                   </h3>
                   <div className="card-body">
@@ -513,7 +524,7 @@ const Notification = () => {
                         <label
                           htmlFor="interaction_welcome_message"
                           className="form-label fw-bold"
-                        >
+                          >
                           Interaction Welcome Message
                         </label>
                         <textarea
@@ -523,13 +534,13 @@ const Notification = () => {
                           name="interaction_welcome_message"
                           value={create.interaction_welcome_message}
                           rows="1"
-                        ></textarea>
+                          ></textarea>
                       </div>
                       <div className="mb-3">
                         <label
                           htmlFor="interaction_instruction_message"
                           className="form-label fw-bold"
-                        >
+                          >
                           Interaction Instruction message
                         </label>
                         <textarea
@@ -539,13 +550,13 @@ const Notification = () => {
                           name="interaction_instruction_message"
                           value={create.interaction_instruction_message}
                           rows="1"
-                        ></textarea>
+                          ></textarea>
                       </div>
                       <div className="mb-3">
                         <label
                           htmlFor="interaction_completion_message"
                           className="form-label fw-bold"
-                        >
+                          >
                           Interaction Completion Message
                         </label>
                         <textarea
@@ -555,13 +566,13 @@ const Notification = () => {
                           name="interaction_completion_message"
                           value={create.interaction_completion_message}
                           rows="1"
-                        ></textarea>
+                          ></textarea>
                       </div>
                       <div className="mb-3">
                         <label
                           htmlFor="bot_warning_message"
                           className="form-label fw-bold"
-                        >
+                          >
                           Bot Message
                         </label>
                         <textarea
@@ -571,7 +582,7 @@ const Notification = () => {
                           name="bot_warning_message"
                           value={create.bot_warning_message}
                           rows="1"
-                        ></textarea>
+                          ></textarea>
                       </div>
                     </form>
                   </div>
@@ -586,18 +597,20 @@ const Notification = () => {
           <button
             onClick={handleBack}
             className="btn btn-outline-secondary button"
-          >
+            >
             Back
           </button>
           <button
             onClick={handleSubmit}
             type="submit"
             className="btn btn-dark button"
-          >
+            >
             Submit
           </button>
         </div>
       </div>
+      </>
+      ))}
     </>
   );
 };

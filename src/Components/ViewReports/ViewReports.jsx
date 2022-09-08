@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './ViewReports.module.css';
 
 import { Link } from 'react-router-dom';
 
+import axios from 'axios';
+
 const ViewReports = () => {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+      axios.get('response.json')
+        .then(res => {
+          console.log(res.data.results);
+          setData(res.data.results);
+        })
+    });
     return (
         <>
             <style jsx="true">
@@ -47,12 +58,14 @@ const ViewReports = () => {
                             </tr>
                         </thead>
                         <tbody>
+                            {data.map(item=>(
+                                <>
                             <tr>
-                                <td>64747</td>
-                                <td>Bhavya Khurana</td>
+                                <td>{item.id}</td>
+                                <td>{item.who_can_initiate}</td>
                                 <td>
                                     <Link to="/response" target="_blank">
-                                        <button className='btn btn-dark button'>123456</button>
+                                        <button className='btn btn-dark button'>{item.id}</button>
                                     </Link>
                                 </td>
                                 <td>
@@ -70,7 +83,9 @@ const ViewReports = () => {
                                     </Link>
                                 </td>
                             </tr>
-                            <tr>
+                                </>
+                            ))}
+                            {/* <tr>
                                 <td>64747</td>
                                 <td>Bhavya Khurana</td>
                                 <td>
@@ -111,7 +126,7 @@ const ViewReports = () => {
                                         </button>
                                     </Link>
                                 </td>
-                            </tr>
+                            </tr> */}
                         </tbody>
                     </table>
 

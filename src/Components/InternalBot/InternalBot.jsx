@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./InternalBot.module.css";
 
 import internalbot from "../../assets/Images/internalbot.svg";
@@ -17,6 +17,7 @@ const Create = () => {
   const [certificate, setCertificate] = useState(false);
   const [name, setName] = useState(false);
   const [create, setCreate] = useState([]);
+  const[data, setData] = useState([]);
 
   const handleCertificate = () => {
     setCertificate(!certificate);
@@ -65,6 +66,14 @@ const Create = () => {
       setCreate({ ...create, [e.target.name]: e.target.value });
     };
 
+    useEffect(() => {
+      axios.get('response.json')
+        .then(res => {
+          console.log(res.data.results);
+          setData(res.data.results);
+        })
+    });
+
   return (
     <>
       <style jsx="true">
@@ -108,13 +117,15 @@ const Create = () => {
                         </h3> */}
             <div className="card-body">
               <form>
+                {data.slice(0,1).map(create=>(
+                  <>
               <div className="row">
                   <div className="col-md-4">
                     <div className="mb-3">
                       <label
                         htmlFor="institute_name"
                         className="form-label fw-bold"
-                      >
+                        >
                         Company/Institute Name*
                       </label>
                       <input
@@ -125,7 +136,7 @@ const Create = () => {
                         className="form-control"
                         placeholder="Enter company/institute name"
                         id="institute_name"
-                      />
+                        />
                     </div>
                   </div>
                   <div className="col-md-4">
@@ -141,7 +152,7 @@ const Create = () => {
                         className="form-control"
                         placeholder="Enter Interaction title"
                         id="job_title"
-                      />
+                        />
                     </div>
                   </div>
                   <div className="col-md-4">
@@ -157,7 +168,7 @@ const Create = () => {
                         className="form-control"
                         placeholder="Enter 6-digit code"
                         id="test_code"
-                      />
+                        />
                     </div>
                   </div>
                 </div>
@@ -174,7 +185,7 @@ const Create = () => {
                         name="track"
                         value={create.track}
                         aria-label="Default select example"
-                      >
+                        >
                         <option value="Select...">Select...</option>
                         <option value="Sales">Sales</option>
                         <option value="Service">Service</option>
@@ -195,7 +206,7 @@ const Create = () => {
                         name="interaction_mode"
                         value={create.interaction_mode}
                         aria-label="Default select example"
-                      >
+                        >
                         <option value="Select">Select...</option>
                         <option value="Audio">Audio</option>
                         <option value="Video">Video</option>
@@ -212,7 +223,7 @@ const Create = () => {
                       <label
                         htmlFor="access_code"
                         className="form-label fw-bold"
-                      >
+                        >
                         Access Code
                       </label>
                       <input
@@ -224,7 +235,7 @@ const Create = () => {
                         name="access_code"
                         value={create.access_code}
                         aria-describedby="accessHelp"
-                      />
+                        />
                     </div>
                   </div>
                   <div className="col-md-6">
@@ -232,7 +243,7 @@ const Create = () => {
                       <label
                         htmlFor="expiry_date"
                         className="form-label fw-bold"
-                      >
+                        >
                         Expiry Date
                       </label>
                       <input
@@ -242,7 +253,7 @@ const Create = () => {
                         onChange={handleOnChange}
                         name="expiry_date"
                         value={create.expiry_date}
-                      />
+                        />
                     </div>
                   </div>
                 </div>
@@ -264,7 +275,7 @@ const Create = () => {
                         onChange={handleOnChange}
                         name="generate_certificate"
                         value="no"
-                      />
+                        />
                           <label className="form-check-label" htmlFor="no">
                             No
                           </label>
@@ -279,7 +290,7 @@ const Create = () => {
                         onChange={handleOnChange}
                         name="generate_certificate"
                         value="yes"
-                      />
+                        />
                           <label className="form-check-label" htmlFor="yes">
                             Yes
                           </label>
@@ -290,9 +301,9 @@ const Create = () => {
                             id="generate_certificate_text"
                             placeholder="Certificate Name"
                             onChange={handleOnChange}
-                          name="generate_certificate_text"
-                          value={create.generate_certificate_text}
-                          />
+                            name="generate_certificate_text"
+                            value={create.generate_certificate_text}
+                            />
                           )}
                         </div>
                       </div>
@@ -313,9 +324,9 @@ const Create = () => {
                             id="noName"
                             defaultChecked
                             onChange={handleOnChange}
-                        name="mentor_name"
-                        value="no"
-                          />
+                            name="mentor_name"
+                            value="no"
+                            />
                           <label className="form-check-label" htmlFor="noName">
                             No
                           </label>
@@ -328,21 +339,21 @@ const Create = () => {
                             type="radio"
                             id="yesName"
                             onChange={handleOnChange}
-                        name="mentor_name"
-                        value="yes"
-                          />
+                            name="mentor_name"
+                            value="yes"
+                            />
                           <label className="form-check-label" htmlFor="yesName">
                             Yes
                           </label>
                           {name && (
                             <input
-                              type="text"
-                              className="form-control mt-2 mb-3"
-                              id="mentorname"
-                              placeholder="Mentor Name"
-                              onChange={handleOnChange}
-                          name="mentor_name_text"
-                          value={create.mentor_name_text}
+                            type="text"
+                            className="form-control mt-2 mb-3"
+                            id="mentorname"
+                            placeholder="Mentor Name"
+                            onChange={handleOnChange}
+                            name="mentor_name_text"
+                            value={create.mentor_name_text}
                             />
                           )}
                         </div>
@@ -357,7 +368,7 @@ const Create = () => {
                       <label
                         htmlFor="job_instruction"
                         className="form-label fw-bold"
-                      >
+                        >
                         Instruction
                       </label>
                       <input
@@ -368,7 +379,7 @@ const Create = () => {
                         onChange={handleOnChange}
                         name="job_instruction"
                         value={create.job_instruction}
-                      />
+                        />
                     </div>
                   </div>
                   <div className="col-md-6">
@@ -387,7 +398,7 @@ const Create = () => {
                         onChange={handleOnChange}
                         name="job_description"
                         value={create.job_description}
-                      />
+                        />
                     </div>
                   </div>
                 </div>
@@ -405,7 +416,7 @@ const Create = () => {
                         className="btn btn-outline-secondary button"
                         data-bs-toggle="modal"
                         data-bs-target="#exampleModal1"
-                      >
+                        >
                         Add
                       </button>
                     </div>
@@ -421,12 +432,14 @@ const Create = () => {
                         className="btn btn-outline-secondary button"
                         data-bs-toggle="modal"
                         data-bs-target="#exampleModal"
-                      >
+                        >
                         Add
                       </button>
                     </div>
                   </div>
                 </div>
+                </>
+              ))}
               </form>
               <hr />
               <div className="d-grid col-3 ms-auto">
