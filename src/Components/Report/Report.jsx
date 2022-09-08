@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import Logo from "./Logo";
 import Introduction from "./Introduction";
@@ -13,31 +13,52 @@ import Footer from "./Footer";
 import Interpretation from "./Interpretation";
 import SkillsSelection from "./SkillsSelection";
 
+import { FaDownload } from "react-icons/fa";
+
+import ReactToPrint from "react-to-print";
+
 const Report = () => {
+
+  const reportRef = useRef();
+
   return (
     <>
-      <div className="container my-5" style={{ backgroundColor: "#f3f4f8" }}>
-        <Logo />
-        <FeedbackSnapshot />
-        <hr />
-        <Introduction />
-        <hr />
-        <Interpretation />
-        <hr />
-        <SkillsSelection />
-        <hr />
-        <InteractionScorecard />
-        <hr />
-        <DomainRatings />
-        <hr />
-        <RatingVariables />
-        <hr />
-        <GeneralVariables />
-        <hr />
-        <ContentRatings />
-        <hr />
-        <InteractionTranscript />
-        <Footer />
+      <ReactToPrint
+        trigger={() => {
+          return (
+            <div className="container mt-5">
+              <button className="btn btn-dark">Download Report<FaDownload className="ms-2" /></button>
+            </div>
+          );
+        }}
+        content={() => reportRef.current}
+      />
+
+
+      <div ref={reportRef} className="container my-5" style={{ backgroundColor: "#f3f4f8" }}>
+        <div className="container">
+          <Logo />
+          <FeedbackSnapshot />
+          <hr />
+          <Introduction />
+          <hr />
+          <Interpretation />
+          <hr />
+          <SkillsSelection />
+          <hr />
+          <InteractionScorecard />
+          <hr />
+          <DomainRatings />
+          <hr />
+          <RatingVariables />
+          <hr />
+          <GeneralVariables />
+          <hr />
+          <ContentRatings />
+          <hr />
+          <InteractionTranscript />
+          <Footer />
+        </div>
       </div>
     </>
   );

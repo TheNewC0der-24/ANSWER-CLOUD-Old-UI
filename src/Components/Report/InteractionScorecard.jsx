@@ -53,7 +53,7 @@ const InteractionScorecard = () => {
                 }
             },
             xaxis: {
-                categories: ['Likeability', 'Confidence', 'Energy', 'Fluency', 'Charm'],
+                categories: ['Likeability & Trust', 'Confidence and Fluency', 'Energy and Adaptability', 'Communication skills', 'Empathy & Charm'],
                 labels: {
                     show: true,
                     style: {
@@ -69,7 +69,7 @@ const InteractionScorecard = () => {
                 breakpoint: 500,
                 options: {
                     chart: {
-                        width: '100%',
+                        width: '400px',
                         height: '100%',
                     }
                 },
@@ -92,7 +92,7 @@ const InteractionScorecard = () => {
                     <span className="badge text-center" style={{ backgroundColor: "#0e1013", borderRadius: "0" }}>Interaction Scorecard</span>
                 </h1>
                 <div className="row mt-5">
-                    <div className="img-fluid col-md-6 m-auto">
+                    <div className="col-md-7 m-auto">
                         <div className="card" style={{ border: "2px solid #0e1013", borderRadius: "0" }}>
                             <div className='mt-5 d-flex justify-content-center'>
                                 <ReactApexChart
@@ -101,14 +101,14 @@ const InteractionScorecard = () => {
                                     options={state.options}
                                     series={state.series}
                                     type="radar"
-                                    width={450}
-                                    height={450}
+                                    width={700}
+                                    height={550}
                                     style={{ borderColor: "#000" }}
                                 />
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-6 m-auto">
+                    <div className="col-md-5 m-auto">
                         {/* <div className="card h-100" style={{ border: "2.5px solid #000" }}>
                             <div className="card-body"> */}
                         <div className={styles.para}>

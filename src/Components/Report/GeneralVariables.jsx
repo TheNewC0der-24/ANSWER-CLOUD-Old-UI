@@ -6,6 +6,8 @@ import { FaVolumeUp, FaCloud, FaRibbon } from "react-icons/fa";
 import { BsEmojiSmileFill } from "react-icons/bs";
 import { SiGrammarly } from "react-icons/si";
 
+import wc from '../../assets/Images/wordcloud.jpg'
+
 // import ReactApexChart from 'react-apexcharts';
 
 const GeneralVariables = () => {
@@ -138,12 +140,12 @@ const GeneralVariables = () => {
                 </h1>
                 <div className={styles.para}>
                     <p className='my-5 text-center'>
-                        <strong><em>Please note that the parameters in this section are some of the raw data that may be used for calculation of other
+                        <em>Please note that the parameters in this section are some of the raw data that may be used for calculation of other
                             scores but they are not directly an input to the overall cohort ranking. This is because as a standalone input they
                             do not give us a representative level of performance. We are including this in the report for the sake of
                             completeness so that the aspirant has an advanced understanding of their performance. The colored range bar and the
                             dot plot on the line indicates the possible performance ranges (Red = Avoid, Green = Acceptable, Yellow = Needs
-                            improvement) compared to the current performance (dot plot).</em></strong>
+                            improvement) compared to the current performance (dot plot).</em>
                     </p>
                     <div className="row row-cols-1 row-cols-md-2 justify-content-center g-4">
                         <div className="col">
@@ -209,16 +211,10 @@ const GeneralVariables = () => {
                             <div className={`${styles.card} card border-dark h-100`}>
                                 <h3 className={`${styles.cardHeader} card-header text-white`}><FaCloud className={`${styles.icon} me-1`} />Word Cloud</h3>
                                 <div className="card-body">
+                                    <img src={wc} alt="wordCloud" />
                                     <p align="justify" className='card-text'>
                                         <strong>Why Consider this : </strong>Please take a moment to reflect on the words
                                         used in this virtual interaction. This also reflects how the other speakers in the situation perceive you and what they are likely to remember about you once the interaction is over. Please take a moment to reflect and craft alternate answers if these are not the words and context you wish to convey to your audience.
-                                    </p>
-                                    <p className='text-center my-5'>
-                                        <strong>
-                                            <em>
-                                                **Volume is in the range of 1-100. We align with decibel calculations * Hertz is the unit of pitch calculation. It is associated with the frequency of the audio signals
-                                            </em>
-                                        </strong>
                                     </p>
                                 </div>
                             </div>

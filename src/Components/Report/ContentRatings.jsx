@@ -16,7 +16,7 @@ const ContentRatings = () => {
                         goals: [
                             {
                                 name: 'Target Score',
-                                value: 90,
+                                value: 80,
                                 strokeHeight: 5,
                                 strokeColor: '#000000'
                             }
@@ -28,7 +28,7 @@ const ContentRatings = () => {
                         goals: [
                             {
                                 name: 'Target Score',
-                                value: 90,
+                                value: 80,
                                 strokeHeight: 5,
                                 strokeColor: '#000000'
                             }
@@ -40,7 +40,7 @@ const ContentRatings = () => {
                         goals: [
                             {
                                 name: 'Target Score',
-                                value: 90,
+                                value: 80,
                                 strokeHeight: 5,
                                 strokeColor: '#000000'
                             }
@@ -52,7 +52,7 @@ const ContentRatings = () => {
                         goals: [
                             {
                                 name: 'Target Score',
-                                value: 90,
+                                value: 80,
                                 strokeHeight: 5,
                                 strokeColor: '#000000'
                             }
@@ -64,7 +64,7 @@ const ContentRatings = () => {
                         goals: [
                             {
                                 name: 'Target Score',
-                                value: 90,
+                                value: 80,
                                 strokeHeight: 5,
                                 strokeColor: '#000000'
                             }
@@ -76,7 +76,7 @@ const ContentRatings = () => {
                         goals: [
                             {
                                 name: 'Target Score',
-                                value: 90,
+                                value: 80,
                                 strokeHeight: 5,
                                 strokeColor: '#000000'
                             }
@@ -88,7 +88,7 @@ const ContentRatings = () => {
                         goals: [
                             {
                                 name: 'Target Score',
-                                value: 90,
+                                value: 80,
                                 strokeHeight: 5,
                                 strokeColor: '#000000'
                             }
@@ -100,7 +100,7 @@ const ContentRatings = () => {
                         goals: [
                             {
                                 name: 'Target Score',
-                                value: 90,
+                                value: 80,
                                 strokeHeight: 5,
                                 strokeColor: '#000000'
                             }
@@ -112,7 +112,7 @@ const ContentRatings = () => {
                         goals: [
                             {
                                 name: 'Target Score',
-                                value: 90,
+                                value: 80,
                                 strokeHeight: 5,
                                 strokeColor: '#000000'
                             }
@@ -124,7 +124,7 @@ const ContentRatings = () => {
                         goals: [
                             {
                                 name: 'Target Score',
-                                value: 90,
+                                value: 80,
                                 strokeHeight: 5,
                                 strokeColor: '#000000'
                             }
