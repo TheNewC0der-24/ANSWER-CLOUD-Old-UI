@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import axios from 'axios';
 
@@ -61,6 +61,16 @@ const Quesans = () => {
   const handChange = (e) => {
     setCreate({ ...create, [e.target.name]: e.target.value });
   };
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios.get('response.json')
+      .then(res => {
+        console.log(res.data.results);
+        setData(res.data.results);
+      })
+  });
 
   const style = {
     height: "200px",
@@ -138,6 +148,9 @@ const Quesans = () => {
                   <tbody>
                     {[...Array(noOfRows)].map((index) => {
                       return (
+                        <>
+                        {data.slice(0,1).map(create=>(
+                            <>
                         <tr key={index}>
                           <td>
                             <textarea
@@ -147,7 +160,7 @@ const Quesans = () => {
                               onChange={handChange}
                         name="question"
                         value={create.question}
-                            ></textarea>
+                        ></textarea>
                           </td>
                           <td>
                             <select
@@ -157,7 +170,7 @@ const Quesans = () => {
                               className="form-select"
                               id="answer"
                               aria-label="Default select example"
-                            >
+                              >
                               <option>Select...</option>
                               <option>Audio</option>
                               <option>Video</option>
@@ -205,7 +218,7 @@ const Quesans = () => {
                               onChange={handChange}
                               name="mcq_option_four"
                               value={create.mcq_option_four}
-                            ></textarea>
+                              ></textarea>
                           </td>
                           <td style={display}>
                             <select
@@ -214,7 +227,7 @@ const Quesans = () => {
                               onChange={handChange}
                               name="mcq_option"
                               value={create.mcq_option}
-                            >
+                              >
                               <option value="Select...">Select...</option>
                               <option value="Option 1">Option 1</option>
                               <option value="Option 2">Option 2</option>
@@ -261,6 +274,9 @@ const Quesans = () => {
                             </select>
                           </td>
                         </tr>
+                    </>
+                  ))}
+                  </>
                       );
                     })}
                   </tbody>

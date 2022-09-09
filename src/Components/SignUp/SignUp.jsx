@@ -17,15 +17,15 @@ const SignUp = () => {
     navigate("/");
     axios
       .post(
-        "response.json",
+        "https://talentsumo.sansbrix.com/api/register",
         {
-          firstName: create.firstName,
-          lastName: create.lastName,
           username: create.username,
-          email: create.email,
           password: create.password,
-          confirmPassword: create.confirmPassword,
-          invitationCode: create.invitationCode,
+          first_name: create.first_name,
+          last_name: create.last_name,
+          email: create.email,
+          // confirmPassword: create.confirmPassword,
+          invitation_code: create.invitation_code,
         },
         {
           method: "POST",
@@ -77,10 +77,10 @@ const SignUp = () => {
                         <input
                           type="text"
                           className="form-control"
-                          id="firstName"
+                          id="first_name"
                           onChange={handleOnChange}
-                        name="firstName"
-                        value={create.firstName}
+                        name="first_name"
+                        value={create.first_name}
                           placeholder="First Name"
                         />
                       </div>
@@ -90,10 +90,10 @@ const SignUp = () => {
                         <input
                           type="text"
                           className="form-control"
-                          id="lastName"
+                          id="last_name"
                           onChange={handleOnChange}
-                        name="lastName"
-                        value={create.lastName}
+                        name="last_name"
+                        value={create.last_name}
                           placeholder="Last Name"
                         />
                       </div>
@@ -146,8 +146,8 @@ const SignUp = () => {
                       className="form-control"
                       id="inviteCode"
                       onChange={handleOnChange}
-                        name="invitationCode"
-                        value={create.invitationCode}
+                        name="invitation_code"
+                        value={create.invitation_code}
                       placeholder="Invitation Code"
                     />
                   </div>
