@@ -7,13 +7,6 @@ const Quesans = () => {
   const [display, setDisplay] = useState({ display: "none" });
   const [rated, setRated] = useState({ display: "none" });
 
-  const [videoLink, setVideoLink] = useState(false);
-  const [disabled, setDisabled] = useState(false);
-
-  const handleLink = () => {
-    setVideoLink(!videoLink);
-    setDisabled(!disabled);
-  }
 
   const handleOnChange = (event) => {
     setText(event.target.value);
