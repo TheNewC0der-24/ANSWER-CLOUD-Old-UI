@@ -7,6 +7,14 @@ const Quesans = () => {
   const [display, setDisplay] = useState({ display: "none" });
   const [rated, setRated] = useState({ display: "none" });
 
+  const [videoLink, setVideoLink] = useState(false);
+  const [disabled, setDisabled] = useState(false);
+
+  const handleLink = () => {
+    setVideoLink(!videoLink);
+    setDisabled(!disabled);
+  }
+
   const handleOnChange = (event) => {
     setText(event.target.value);
     if (event.target.value === "MCQ") {
@@ -70,6 +78,12 @@ const Quesans = () => {
                         Question:
                       </th>
                       <th className="text-center" scope="col">
+                        Video Context:
+                      </th>
+                      <th className="text-center" scope="col">
+                        Hints/Description:
+                      </th>
+                      <th className="text-center" scope="col">
                         Answer Format:
                       </th>
                       <th style={display} className="text-center" scope="col">
@@ -108,6 +122,12 @@ const Quesans = () => {
                               id="question"
                               rows="1"
                             ></textarea>
+                          </td>
+                          <td>
+                            <input type="text" className="form-control" id="videolink" placeholder='Paste your link here' />
+                          </td>
+                          <td>
+                            <input type="text" className="form-control" id="hint" placeholder='Hints/Description' />
                           </td>
                           <td>
                             <select
