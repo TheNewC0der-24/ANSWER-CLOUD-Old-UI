@@ -31,8 +31,10 @@ const AudioRecording = () => {
   const [counter, setCounter] = useState(0);
 
   useEffect(() => {
-    let intervalId;
 
+    
+    let intervalId;
+    
     if (isActive) {
       intervalId = setInterval(() => {
         const secondCounter = counter % 60;
@@ -53,17 +55,17 @@ const AudioRecording = () => {
         setCounter((counter) => counter + 1);
       }, 650);
     }
-
+    
     return () => clearInterval(intervalId);
   }, [isActive, counter]);
-
+  
+  
   function stopTimer() {
     setIsActive(false);
     setCounter(0);
     setSecond("00");
     setMinute("00");
   }
-
   const {
     startRecording,
     stopRecording,
@@ -78,7 +80,7 @@ const AudioRecording = () => {
   const handleNext = () => {
     navigate('/mcq')
     axios
-      .post(
+    .post(
         "response.json",
         {
           audio: mediaBlobUrl,
@@ -93,17 +95,32 @@ const AudioRecording = () => {
       .then((res) => {
         console.log(res.data);
       });
-  }
+    }
+    
+    // const [data, setData] = useState([]);
+  
+    // useEffect(() => {
+    //   axios.get('response.json')
+    //     .then(res => {
+    //       console.log(res.data.results);
+    //       setData(res.data.results);
+    //     })
+    // });
 
-  return (
+    return (
     <>
       <div className={`${styles.container} container mt-5 mb-5`}>
         <div className="row h-100">
           <div className="col-md-4 bg-dark">
             <div className="d-flex flex-column">
+              {/* {data.slice(0,1).map(item=>(
+                  <> */}
               <div className='d-flex justify-content-center'>
                 <video src={mediaBlobUrl} controls />
+                {/* <h1 className="text-white">{item.report_type}</h1> */}
               </div>
+                  {/* </>
+              ))} */}
               <div className='d-flex justify-content-center fs-1 text-white'>
                 <span className="minute">{minute}</span>
                 <span>:</span>

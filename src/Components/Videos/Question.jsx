@@ -50,6 +50,17 @@ const Question = () => {
 
   //   return () => clearInterval(intervalId);
   // }, [isActive, counter]);
+
+  // const [data, setData] = useState([]);
+
+  // useEffect(() => {
+  //   axios.get('response.json')
+  //     .then(res => {
+  //       console.log(res.data.results);
+  //       setData(res.data.results);
+  //     })
+  // });
+
   const [isActive, setIsActive] = useState(false);
   
   const {
@@ -124,16 +135,23 @@ const Question = () => {
               >
                 Idle
               </h5>
+              {/* {data.slice(0,1).map(item=>(
+                <> */}
               {status !== "stopped" ? (
                 <VideoPreview stream={previewStream} />
               ) : (
+                <>
+                {/* <h1 className="text-white">{item.report_type}</h1> */}
                 <video
-                  className="w-100"
-                  src={mediaBlobUrl}
-                  height={300}
-                  controls
+                className="w-100"
+                src={mediaBlobUrl}
+                height={300}
+                controls
                 />
+                </>
               )}
+                {/* </>
+              ))} */}
               {/* <div className='d-flex justify-content-center fs-1 text-white'>
                 <span className="minute">{minute}</span>
                 <span>:</span>
