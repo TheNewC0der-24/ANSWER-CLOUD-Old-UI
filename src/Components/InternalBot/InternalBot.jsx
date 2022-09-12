@@ -271,7 +271,7 @@ const Create = () => {
                         className="form-check-input"
                         type="radio"
                         id="no"
-                        defaultChecked
+                        defaultChecked={create.is_active ? false : true}
                         onChange={handleOnChange}
                         name="generate_certificate"
                         value="no"
@@ -287,6 +287,7 @@ const Create = () => {
                         className="form-check-input"
                         type="radio"
                         id="yes"
+                        defaultChecked={create.is_active ? true : false}
                         onChange={handleOnChange}
                         name="generate_certificate"
                         value="yes"
