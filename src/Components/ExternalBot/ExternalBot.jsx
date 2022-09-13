@@ -34,7 +34,7 @@ const Notification = () => {
                 `}
             </style>
             <div className='container d-flex justify-content-between my-3'>
-                <h3>Internal Bot</h3>
+                <h3>External Bot</h3>
                 <nav aria-label="breadcrumb">
                     <ol className="breadcrumb">
                         <li className="breadcrumb-item">
