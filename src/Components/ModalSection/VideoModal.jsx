@@ -1,8 +1,5 @@
 import React from "react";
-<<<<<<< HEAD
-=======
 import video from "../../assets/Videos/Video-1.mp4";
->>>>>>> 59684c0 (15-09-2022)
 
 const VideoModal = () => {
   return (
@@ -27,9 +24,12 @@ const VideoModal = () => {
             </div>
             <div className="modal-body">
               <div className="ratio ratio-16x9">
+                {/* <iframe width="703" height="395" src="https://www.youtube.com/embed/GedLli_YXEI" title="If The Weeknd made lofi hip hop radio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
                 <iframe
-                  src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
+                  // src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
+                  src={video}
                   title="YouTube video"
+                  width="703" height="395"
                   allowFullScreen
                 ></iframe>
               </div>

@@ -44,7 +44,7 @@ const Mcq = () => {
                                 </label>
                             </div>
                             <hr />
-                            <button onClick={() => navigate("/imageUpload")} className="btn btn-dark float-end mb-3">Save and Next</button>
+                            <button onClick={() => navigate("/thanks")} className="btn btn-dark float-end mb-3">Save and Next</button>
                         </div>
                     </div>
                 </div>

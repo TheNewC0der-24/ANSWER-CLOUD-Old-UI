@@ -14,7 +14,7 @@ const Logo = () => {
   return (
     <>
       <div className={`${styles.row} my-5 row`}>
-        <h1 className="text-center my-3">
+        <h1 className="text-center my-3 text-decoration-underline">
           job_title Feedback
         </h1>
         <div className="col-md-6 mt-auto ">

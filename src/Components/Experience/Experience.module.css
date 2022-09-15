@@ -1,0 +1,8 @@
+.cardHeader {
+    border-bottom: 2px solid #000;
+}
+
+.navigate:hover {
+    color: #0d6efd !important;
+    text-decoration: underline !important;
+}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './ContentRatings.module.css';
 
 import ReactApexChart from 'react-apexcharts';
 
@@ -15,7 +16,7 @@ const ContentRatings = () => {
                         goals: [
                             {
                                 name: 'Target Score',
-                                value: 90,
+                                value: 80,
                                 strokeHeight: 5,
                                 strokeColor: '#000000'
                             }
@@ -27,7 +28,7 @@ const ContentRatings = () => {
                         goals: [
                             {
                                 name: 'Target Score',
-                                value: 90,
+                                value: 80,
                                 strokeHeight: 5,
                                 strokeColor: '#000000'
                             }
@@ -39,7 +40,7 @@ const ContentRatings = () => {
                         goals: [
                             {
                                 name: 'Target Score',
-                                value: 90,
+                                value: 80,
                                 strokeHeight: 5,
                                 strokeColor: '#000000'
                             }
@@ -51,7 +52,7 @@ const ContentRatings = () => {
                         goals: [
                             {
                                 name: 'Target Score',
-                                value: 90,
+                                value: 80,
                                 strokeHeight: 5,
                                 strokeColor: '#000000'
                             }
@@ -63,7 +64,7 @@ const ContentRatings = () => {
                         goals: [
                             {
                                 name: 'Target Score',
-                                value: 90,
+                                value: 80,
                                 strokeHeight: 5,
                                 strokeColor: '#000000'
                             }
@@ -75,7 +76,7 @@ const ContentRatings = () => {
                         goals: [
                             {
                                 name: 'Target Score',
-                                value: 90,
+                                value: 80,
                                 strokeHeight: 5,
                                 strokeColor: '#000000'
                             }
@@ -87,7 +88,7 @@ const ContentRatings = () => {
                         goals: [
                             {
                                 name: 'Target Score',
-                                value: 90,
+                                value: 80,
                                 strokeHeight: 5,
                                 strokeColor: '#000000'
                             }
@@ -99,7 +100,7 @@ const ContentRatings = () => {
                         goals: [
                             {
                                 name: 'Target Score',
-                                value: 90,
+                                value: 80,
                                 strokeHeight: 5,
                                 strokeColor: '#000000'
                             }
@@ -111,7 +112,7 @@ const ContentRatings = () => {
                         goals: [
                             {
                                 name: 'Target Score',
-                                value: 90,
+                                value: 80,
                                 strokeHeight: 5,
                                 strokeColor: '#000000'
                             }
@@ -123,7 +124,7 @@ const ContentRatings = () => {
                         goals: [
                             {
                                 name: 'Target Score',
-                                value: 90,
+                                value: 80,
                                 strokeHeight: 5,
                                 strokeColor: '#000000'
                             }
@@ -141,7 +142,7 @@ const ContentRatings = () => {
                     show: false,
                 },
             },
-            colors: ['#505F79'],
+            colors: ['#5f6368'],
             dataLabels: {
                 enabled: true,
                 formatter: (value) => {
@@ -154,7 +155,7 @@ const ContentRatings = () => {
                 showForSingleSeries: true,
                 customLegendItems: ['Actual Score', 'Target Score'],
                 markers: {
-                    fillColors: ['#505F79', '#000000']
+                    fillColors: ['#5f6368', '#000000']
                 }
             },
             yaxis: {
@@ -190,16 +191,20 @@ const ContentRatings = () => {
     return (
         <>
             <div className='container'>
-                <h3 className='text-center mb-3' style={{ color: "#0b3c47" }}>CONTENT RATINGS</h3>
-                <h6 align="justify" className='mb-4 text-secondary'>We evaluate the content of the responses not only by the best possible answer to that
-                    question but using our context cloud we are further enhancing the accuracy of what of answers might be relevant to
-                    what kind of situation. Any candidate taking time to understand and align to the context in which he is operating
-                    and using industry specific terminologies to articulate his point of view is likely to do well in the content
-                    ratings. The top cohort rating (A) on more than 75% of the questions denotes high degree of proficiency and
-                    accuracy in his answers.
-                </h6>
-                <table className="table table-bordered text-center" style={{ borderColor: "#505F79" }}>
-                    <thead className='text-white' style={{ backgroundColor: "#505F79" }}>
+                <h1 className="mb-5">
+                    <span className="badge text-center" style={{ backgroundColor: "#0e1013", borderRadius: "0" }}>Content Ratings</span>
+                </h1>
+                <div className={styles.para}>
+                    <p align="justify" className='mb-4'>We evaluate the content of the responses not only by the best possible answer to that
+                        question but using our context cloud we are further enhancing the accuracy of what of answers might be relevant to
+                        what kind of situation. Any candidate taking time to understand and align to the context in which he is operating
+                        and using industry specific terminologies to articulate his point of view is likely to do well in the content
+                        ratings. The top cohort rating (A) on more than 75% of the questions denotes high degree of proficiency and
+                        accuracy in his answers.
+                    </p>
+                </div>
+                <table className="table table-bordered text-center my-5" style={{ borderColor: "#2e3134", fontSize: "22px" }}>
+                    <thead className='text-white' style={{ backgroundColor: "#2e3134" }}>
                         <tr>
                             <th scope="col">Match Score</th>
                             <th scope="col">Meaning</th>
@@ -224,8 +229,16 @@ const ContentRatings = () => {
                         </tr>
                     </tbody>
                 </table>
-                <h5 className='mt-5 mb-3'>Question Specific Content Ratings :</h5>
-                <div className='card mt-5 mb-3' style={{ border: "2.5px solid #000" }}>
+                <h3 className='mt-5 mb-3'>Question Specific Content Ratings :</h3>
+                <div className={styles.para}>
+                    <p align="justify">
+                        The chart below illustrates the content ratings for each answer, in percentage terms. The dotted lines at the 80%
+                        score mark denote the “aspiration line” which should be target content ratings. In our experimentation we have
+                        found aspirants consistently hitting these benchmarks command great authority on the content.
+
+                    </p>
+                </div>
+                <div className='card mt-5 mb-3' style={{ border: "2px solid #2e3134", borderRadius: "0" }}>
                     <div className="card-body d-flex justify-content-center mx-auto">
                         <ReactApexChart
                             setState={setState}
@@ -238,25 +251,6 @@ const ContentRatings = () => {
                         />
                     </div>
                 </div>
-
-                {/* <table className="table table-bordered text-center mb-5" style={{ borderColor: "#c4933b" }}>
-                    <thead style={{ backgroundColor: "#c4933b" }}>
-                        <tr>
-                            <th scope="col">Question #</th>
-                            <th scope="col">Rating</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>60%</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>70%</td>
-                        </tr>
-                    </tbody>
-                </table> */}
 
                 <div className='card-footer border-dark text-end'>
                     <strong>Overall Content Rating :</strong> <code>Content_score</code> of a <code>Interaction_ID</code>

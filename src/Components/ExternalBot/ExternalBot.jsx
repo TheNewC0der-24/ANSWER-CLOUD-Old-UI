@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import styles from './Notification.module.css';
-import { useNavigate } from 'react-router-dom';
+import styles from './ExternalBot.module.css';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { FaTelegram, FaWhatsapp, FaSlack, FaWpforms } from 'react-icons/fa';
 
@@ -9,7 +9,7 @@ const Notification = () => {
 
     const handleBack = (e) => {
         e.preventDefault();
-        navigate('/create');
+        navigate('/internalbot');
     }
 
     const handleSubmit = () => {
@@ -33,8 +33,20 @@ const Notification = () => {
                     }
                 `}
             </style>
-            <div className="container mt-5 mb-4">
-
+            <div className='container d-flex justify-content-between my-3'>
+                <h3>External Bot</h3>
+                <nav aria-label="breadcrumb">
+                    <ol className="breadcrumb">
+                        <li className="breadcrumb-item">
+                            <Link to="/" className={`${styles.navigate} text-dark text-decoration-none`} >
+                                aCloud
+                            </Link>
+                        </li>
+                        <li className="breadcrumb-item" aria-current="page">External Bot</li>
+                    </ol>
+                </nav>
+            </div>
+            <div className="container my-4 mx-auto">
                 <div className='d-flex justify-content-center mx-auto'>
                     <div className='mb-3'>
                         <label className="form-label fw-bold fs-1">Do you need external bot ?</label>

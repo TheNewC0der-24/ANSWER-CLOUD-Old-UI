@@ -2,8 +2,8 @@ import React from 'react';
 import styles from './Responses.module.css';
 import VideoModal from '../ModalSection/VideoModal.jsx';
 import AudioModal from '../ModalSection/AudioModal.jsx';
-import ImageModal from '../ModalSection/ImageModal';
-import TextModal from '../ModalSection/TextModal';
+// import ImageModal from '../ModalSection/ImageModal';
+// import TextModal from '../ModalSection/TextModal';
 
 const Responses = () => {
     return (
@@ -105,7 +105,7 @@ const Responses = () => {
                     </div>
                 </div>
             </div>
-            <div className={`${styles.container} container p-3 my-5`}>
+            {/* <div className={`${styles.container} container p-3 my-5`}>
                 <h5>Question-1 :</h5>
                 <div className={`${styles.card} card border-0`}>
                     <div className="card-body">
@@ -118,8 +118,8 @@ const Responses = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className={`${styles.container} container p-3 my-5`}>
+            </div> */}
+            {/* <div className={`${styles.container} container p-3 my-5`}>
                 <h5>Question-1 :</h5>
                 <div className={`${styles.card} card border-0`}>
                     <div className="card-body">
@@ -132,11 +132,11 @@ const Responses = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
             <VideoModal />
             <AudioModal />
-            <ImageModal />
-            <TextModal />
+            {/* <ImageModal />
+            <TextModal /> */}
         </>
     )
 }

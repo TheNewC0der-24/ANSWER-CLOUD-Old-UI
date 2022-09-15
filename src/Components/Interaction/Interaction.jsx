@@ -50,7 +50,7 @@ const Interaction = () => {
           <tbody>
             {data.map(item => (
               <tr>
-                <td data-bs-toggle="modal" data-bs-target="#exampleModal4" style={{ cursor: "pointer" }}>{item.id}</td>
+                <td data-bs-toggle="modal" data-bs-target="#internalBotModal" style={{ cursor: "pointer" }}>{item.id}</td>
                 <td>{item.job_title}</td>
                 <td>{item.track}</td>
                 <td>

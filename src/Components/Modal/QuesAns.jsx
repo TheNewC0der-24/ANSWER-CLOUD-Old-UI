@@ -7,6 +7,7 @@ const Quesans = () => {
   const [display, setDisplay] = useState({ display: "none" });
   const [rated, setRated] = useState({ display: "none" });
 
+
   const handleOnChange = (event) => {
     setText(event.target.value);
     if (event.target.value === "MCQ") {
@@ -70,6 +71,12 @@ const Quesans = () => {
                         Question:
                       </th>
                       <th className="text-center" scope="col">
+                        Video Context:
+                      </th>
+                      <th className="text-center" scope="col">
+                        Hints/Description:
+                      </th>
+                      <th className="text-center" scope="col">
                         Answer Format:
                       </th>
                       <th style={display} className="text-center" scope="col">
@@ -110,6 +117,12 @@ const Quesans = () => {
                             ></textarea>
                           </td>
                           <td>
+                            <input type="text" className="form-control" id="videolink" placeholder='Paste your link here' />
+                          </td>
+                          <td>
+                            <input type="text" className="form-control" id="hint" placeholder='Hints/Description' />
+                          </td>
+                          <td>
                             <select
                               onChange={handleOnChange}
                               value={text}
@@ -121,8 +134,8 @@ const Quesans = () => {
                               <option>Audio</option>
                               <option>Video</option>
                               <option>MCQ</option>
-                              <option>Image</option>
-                              <option>Text</option>
+                              {/* <option>Image</option>
+                              <option>Text</option> */}
                               <option>Resume Link</option>
                             </select>
                           </td>
@@ -180,7 +193,7 @@ const Quesans = () => {
                               className="form-select"
                               id="rated"
                             >
-                              <option selected>Select...</option>
+                              <option selected value="Select...">Select...</option>
                               <option>Yes</option>
                               <option>No</option>
                             </select>
@@ -229,7 +242,7 @@ const Quesans = () => {
                   type="button"
                   className="btn btn-outline-secondary mx-1"
                   data-bs-toggle="modal"
-                  data-bs-target="#exampleModal4"
+                  data-bs-target="#internalBotModal"
                 >
                   Close
                 </button>
