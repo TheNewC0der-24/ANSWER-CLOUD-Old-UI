@@ -21,7 +21,7 @@ const Dashboard = () => {
             <div className="container my-5">
                 <div className="row mb-4">
                     <div className="col-md-7 m-auto">
-                        <div className={`${styles.card} card h-100`}>
+                        <div className={`${styles.card} card border-0`}>
                             <div className="card-body">
                                 <div className={`${styles.row} row`}>
                                     <div className="col-md-6">
@@ -39,7 +39,7 @@ const Dashboard = () => {
                         </div>
                     </div>
                     <div className="col-md-5 m-auto">
-                        <div className={`${styles.cardCarousel} card border-dark`}>
+                        <div className={`${styles.cardCarousel} card border-0`}>
                             <div className="card-body">
                                 <Carousel
                                     autoFocus={true}

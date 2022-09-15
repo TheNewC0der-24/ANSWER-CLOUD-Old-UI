@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import styles from './Question.module.css';
 import { useNavigate } from "react-router-dom";
 import { useReactMediaRecorder } from "react-media-recorder";
+import video1 from '../../assets/Videos/Video-1.mp4';
 
 const VideoPreview = ({ stream }) => {
   const videoRef = useRef(null);
@@ -18,37 +19,10 @@ const VideoPreview = ({ stream }) => {
 };
 
 const Question = () => {
-  // const [second, setSecond] = useState("00");
-  // const [minute, setMinute] = useState("00");
   const [isActive, setIsActive] = useState(false);
-  // const [counter, setCounter] = useState(0);
 
-  // useEffect(() => {
-  //   let intervalId;
-
-  //   if (isActive) {
-  //     intervalId = setInterval(() => {
-  //       const secondCounter = counter % 60;
-  //       const minuteCounter = Math.floor(counter / 60);
-
-  //       let computedSecond =
-  //         String(secondCounter).length === 1
-  //           ? `0${secondCounter}`
-  //           : secondCounter;
-  //       let computedMinute =
-  //         String(minuteCounter).length === 1
-  //           ? `0${minuteCounter}`
-  //           : minuteCounter;
-
-  //       setSecond(computedSecond);
-  //       setMinute(computedMinute);
-
-  //       setCounter((counter) => counter + 1);
-  //     }, 650);
-  //   }
-
-  //   return () => clearInterval(intervalId);
-  // }, [isActive, counter]);
+  const [time, setTime] = useState({ s: 0, m: 2 });
+  const [interv, setInterv] = useState();
 
   const {
     status,
@@ -77,21 +51,134 @@ const Question = () => {
     }
 
     setIsActive(!isActive);
-
+    run();
+    setInterv(setInterval(run, 1000));
     document.getElementById("instruction").innerHTML = isActive ? "Paused" : "Started";
   }
 
   const handleStopRecording = () => {
-    pauseRecording();
     stopRecording();
     setIsActive(isActive);
-    document.getElementById("instruction").innerHTML = "Stopped";
+    pauseRecording();
+    clearInterval(interv);
+    document.getElementById("instruction").innerHTML = "Saved";
+    document.getElementById("note").innerHTML = "Your answer is Saved";
+    // document.getElementById("instruction").innerHTML = "Stopped";
+  }
 
+  var updatedS = time.s, updatedM = time.m;
+
+  const run = () => {
+    if (updatedM === 0 && updatedS === 0) {
+      // stopRecording();
+      handleStopRecording();
+      document.getElementById("instruction").innerHTML = "Saved";
+      return;
+    }
+    if (updatedS === 0) {
+      updatedM--;
+      updatedS = 60;
+    }
+    updatedS--;
+    return setTime({ m: updatedM, s: updatedS });
   }
 
   return (
     <>
-      <div className={`${styles.container} container my-5`}>
+      <div className='container my-4'>
+        <div className="card border-0 shadow">
+          <div className="card-body">
+            <h3 className='mb-4'>1/4</h3>
+            <h5>Tell me about yourself ?</h5>
+            <h6>Hint : Speak about your educational background, skills, experience, etc.</h6>
+            <hr />
+            <div className='d-flex justify-content-between'>
+              <div className='d-flex flex-wrap gap-2'>
+                <button onClick={handleStartRecording} className={`${isActive ? "btn-warning" : "btn-success"} btn `}>{isActive ? "Pause" : "Answer"}</button>
+                {
+                  isActive && (
+                    <button onClick={handleStopRecording} className="btn btn-danger">Save Answer</button>
+
+                  )
+                }
+                <button className={`${isActive ? "" : "d-none"} btn btn-outline-dark`} onClick={() => window.location.reload()}>Retake Answer</button>
+              </div>
+              <div className='d-flex flex-wrap gap-2'>
+                <button onClick={handleNext} className='btn btn-dark'>Next</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className='container my-5'>
+        <div className="row">
+          <div className="col-md-6">
+            <div className="card h-100 border-0 bg-light shadow">
+              <h5 className="card-header bg-white">Video Context</h5>
+              <div className="card-body">
+                <div className="ratio ratio-16x9">
+                  <video
+                    src={video1}
+                    title="YouTube video"
+                    controls
+                    autoPlay
+                  ></video>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className={`${styles.card} card h-100 border-0 shadow`}>
+              <div className='card-header bg-white d-flex flex-wrap justify-content-between'>
+                <h5 id='instruction'>Answer Box</h5>
+                <div className='d-flex flex-wrap gap-2'>
+                  <span>time remaining for this question</span><h5>{time.m >= 10 ? time.m : "0" + time.m}&nbsp;:&nbsp;{time.s >= 10 ? time.s : "0" + time.s}</h5>
+                </div>
+              </div>
+              <div className="card-body">
+                <h5 className={`${isActive && 'd-none'} text-center alert alert-primary`} id="note">Answer recording starts after you hit "Answer" button above.</h5>
+                {
+                  isActive && (
+                    <div className="ratio ratio-16x9">
+                      {status !== "stopped" ? (
+                        <VideoPreview stream={previewStream} />
+                      ) : (
+                        <video src={mediaBlobUrl} controls />
+                      )}
+                    </div>
+                  )
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* <div className="container">
+        <div className="row my-5">
+          <div className="col-md-6">
+            <div className="card h-100 shadow border-0">
+              <div className="card-body">
+                <h3>1/4</h3>
+                <h5>Tell me about yourself ?</h5>
+                <h6>Hint : Speak about your educational background, skills, experience, etc.</h6>
+                <hr />
+                <button onClick={handleNext} className='btn btn-dark'>Next</button>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className={`${styles.card} card h-100 shadow border-0`}>
+              <div className="card-body">
+                <VideoRecorder />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> */}
+
+
+      {/* <div className={`${styles.container} container my-5`}>
         <div className="row">
           <div className="col-md-4 bg-dark">
             <div className='d-flex justify-content-center align-items-center flex-column'>
@@ -101,11 +188,6 @@ const Question = () => {
               ) : (
                 <video className='w-100' src={mediaBlobUrl} height={300} controls />
               )}
-              {/* <div className='d-flex justify-content-center fs-1 text-white'>
-                <span className="minute">{minute}</span>
-                <span>:</span>
-                <span className="second">{second}</span>
-              </div> */}
               <button className='btn btn-light mt-3' onClick={() => window.location.reload()}>Retake</button>
               <div className='d-flex justify-content-center mx-auto gap-3 my-3'>
                 <button onClick={handleStartRecording} className={`${isActive ? "btn-warning" : "btn-success"} btn `}>{isActive ? "Pause Recording" : "Start Recording"}</button>
@@ -121,9 +203,9 @@ const Question = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   )
 }
 
-export default Question
+export default Question;

@@ -38,10 +38,34 @@ const Create = () => {
                     }
                 `}
             </style>
+<<<<<<< HEAD:src/Components/CreateInterview/Create.jsx
             <div className='container my-5'>
                 <div className='d-grid col-md-9 mx-auto'>
                     <div className='card border-dark'>
                         <h3 className={`${styles.cardHeader} card-header text-center mb-3 bg-dark text-white`}>
+=======
+            <div className='container d-flex justify-content-between my-3'>
+                <h3>Internal Bot</h3>
+                <nav aria-label="breadcrumb">
+                    <ol className="breadcrumb">
+                        <li className="breadcrumb-item">
+                            <Link to="/" className={`${styles.navigate} text-dark text-decoration-none`} >
+                                aCloud
+                            </Link>
+                        </li>
+                        <li className="breadcrumb-item" aria-current="page">Internal Bot</li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div className="row my-4 mx-auto">
+                <div className="col-md-4">
+                    <img className='img-fluid m-auto' src={internalbot} alt="internalbot" />
+                </div>
+                <div className='col-md-8  m-auto'>
+                    <div className='card shadow border-0'>
+                        {/* <h3 className={`${styles.cardHeader} card-header text-center mb-3 bg-dark text-white`}>
+>>>>>>> 59684c0 (15-09-2022):src/Components/InternalBot/InternalBot.jsx
                             Create Internal Bot
                         </h3>
                         <div className="card-body">
@@ -109,6 +133,27 @@ const Create = () => {
                                 </div>
                                 <div className="row">
                                     <div className="col-md-6">
+                                        <div className="mb-3">
+                                            <label htmlFor="emailOne" className="form-label fw-bold">Report sent to Email-1</label>
+                                            <input type="email" className="form-control" id="emailOne" />
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="mb-3">
+                                            <label htmlFor="timer" className="form-label fw-bold">Timer</label>
+                                            <select className="form-select" id='timer' aria-label="Default select example">
+                                                <option value="Select">Select...</option>
+                                                <option value="15 minutes">15 minutes</option>
+                                                <option value="20 minutes">20 minutes</option>
+                                                <option value="30 minutes">30 minutes</option>
+                                                <option value="45 minutes">45 minutes</option>
+                                                <option value="60 minutes">60 minutes</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col-md-4">
                                         <div className='mb-3'>
                                             <label className="form-label fw-bold">Generate Certificate</label>
                                             <div className='d-flex gap-3'>
@@ -131,7 +176,7 @@ const Create = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-md-6">
+                                    <div className="col-md-4">
                                         <div className='mb-3'>
                                             <label className="form-label fw-bold">Mentor Name(in Report)</label>
                                             <div className='d-flex gap-3'>
@@ -154,8 +199,26 @@ const Create = () => {
                                             </div>
                                         </div>
                                     </div>
+                                    <div className="col-md-4">
+                                        <div className='mb-3'>
+                                            <label className="form-label fw-bold">Report Sent to Candidate</label>
+                                            <div className='d-flex gap-3'>
+                                                <div className="form-check">
+                                                    <input className="form-check-input" type="radio" name="reportSent" id="notSend" defaultChecked />
+                                                    <label className="form-check-label" htmlFor="notSend">
+                                                        No
+                                                    </label>
+                                                </div>
+                                                <div className="form-check">
+                                                    <input className="form-check-input" type="radio" name="reportSent" id="yesSend" />
+                                                    <label className="form-check-label" htmlFor="yesSend">
+                                                        Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-
                                 <div className="row">
                                     <div className="col-md-6">
                                         <div className="mb-3">

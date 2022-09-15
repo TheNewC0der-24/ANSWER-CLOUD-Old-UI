@@ -1,4 +1,8 @@
 import React from "react";
+<<<<<<< HEAD
+=======
+import video from "../../assets/Videos/Video-1.mp4";
+>>>>>>> 59684c0 (15-09-2022)
 
 const VideoModal = () => {
   return (
