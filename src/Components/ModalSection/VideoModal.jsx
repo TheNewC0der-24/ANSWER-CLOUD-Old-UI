@@ -1,5 +1,5 @@
 import React from "react";
-import video from "../../assets/Images/Video-1.mp4";
+import video from "../../assets/Videos/Video-1.mp4";
 
 const VideoModal = () => {
   return (

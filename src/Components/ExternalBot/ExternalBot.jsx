@@ -70,17 +70,10 @@ const Notification = () => {
                 {
                     isNeeded &&
                     <div>
-                        <div className='card border-dark h-100 mb-3'>
-                            <h3 className={`${styles.headingNotify} card-header bg-dark text-white text-center`}>External Bot</h3>
+                        <div className='card border-0 shadow mb-3'>
+                            {/* <h3 className={`${styles.heading} card-header bg-dark text-white text-center`}>External Bot</h3> */}
                             <div className="card-body">
                                 <form>
-                                    <div className="mb-2">
-                                        <label htmlFor="phoneNo" className="form-label  fw-bold">Phone Number List</label>
-                                        <input className="form-control" type="file" id="formFile" />
-                                    </div>
-                                    <button className='btn btn-outline-dark button mb-3 me-2'>View List</button>
-                                    <button className='btn btn-dark button mb-3'>Upload</button>
-
                                     <div className="row">
                                         <div className="col-md-6">
                                             <div className="mb-3">
@@ -93,17 +86,12 @@ const Notification = () => {
                                             </div>
                                         </div>
                                         <div className="col-md-6">
-                                            <div className="mb-3">
-                                                <label htmlFor="whoInitiate" className="form-label fw-bold">Timer</label>
-                                                <select className="form-select" id='whoInitiate' aria-label="Default select example">
-                                                    <option value="Select">Select...</option>
-                                                    <option value="15 minutes">15 minutes</option>
-                                                    <option value="20 minutes">20 minutes</option>
-                                                    <option value="30 minutes">30 minutes</option>
-                                                    <option value="45 minutes">45 minutes</option>
-                                                    <option value="60 minutes">60 minutes</option>
-                                                </select>
+                                            <div className="mb-2">
+                                                <label htmlFor="phoneNo" className="form-label  fw-bold">Phone Number List</label>
+                                                <input className="form-control" type="file" id="formFile" />
                                             </div>
+                                            <button className='btn btn-outline-dark button mb-3 me-2'>View List</button>
+                                            <button className='btn btn-dark button mb-3'>Upload</button>
                                         </div>
                                     </div>
 
@@ -215,14 +203,10 @@ const Notification = () => {
 
                         <div className="row">
                             <div className='col-md-5'>
-                                <div className='card border-dark'>
-                                    <h3 className={`${styles.headingNotify} card-header bg-dark text-white text-center`}>Interaction Notification</h3>
+                                <div className='card border-0 shadow'>
+                                    <h3 className={`${styles.heading} card-header bg-dark text-white text-center`}>Interaction Notification</h3>
                                     <div className="card-body">
                                         <form>
-                                            <div className="mb-3">
-                                                <label htmlFor="emailOne" className="form-label fw-bold">Report sent to Email-1</label>
-                                                <input type="email" className="form-control" id="emailOne" />
-                                            </div>
                                             <div className="mb-3">
                                                 <label htmlFor="emailTwo" className="form-label fw-bold">Report sent to Email-2</label>
                                                 <input type="email" className="form-control" id="emailTwo" />
@@ -241,8 +225,8 @@ const Notification = () => {
                             </div>
 
                             <div className='col-md-7'>
-                                <div className={`${styles.right} card border-dark`}>
-                                    <h3 className={`${styles.headingMsg} card-header bg-dark text-white text-center`}>Bot Message</h3>
+                                <div className={`${styles.right} card border-0 shadow`}>
+                                    <h3 className={`${styles.heading} card-header bg-dark text-white text-center`}>Bot Message</h3>
                                     <div className="card-body">
                                         <form>
                                             <div className="mb-3">

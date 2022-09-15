@@ -8,6 +8,10 @@ body {
   font-size: larger;
 } */
 
+.card {
+  border-radius: 0 !important;
+}
+
 input,
 textarea,
 select {

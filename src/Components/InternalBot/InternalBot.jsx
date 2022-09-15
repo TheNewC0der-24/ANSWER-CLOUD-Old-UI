@@ -58,8 +58,8 @@ const Create = () => {
                 <div className="col-md-4">
                     <img className='img-fluid m-auto' src={internalbot} alt="internalbot" />
                 </div>
-                <div className='col-md-8 m-auto'>
-                    <div className='card border-0'>
+                <div className='col-md-8  m-auto'>
+                    <div className='card shadow border-0'>
                         {/* <h3 className={`${styles.cardHeader} card-header text-center mb-3 bg-dark text-white`}>
                             Create Internal Bot
                         </h3> */}
@@ -128,6 +128,27 @@ const Create = () => {
                                 </div>
                                 <div className="row">
                                     <div className="col-md-6">
+                                        <div className="mb-3">
+                                            <label htmlFor="emailOne" className="form-label fw-bold">Report sent to Email-1</label>
+                                            <input type="email" className="form-control" id="emailOne" />
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="mb-3">
+                                            <label htmlFor="timer" className="form-label fw-bold">Timer</label>
+                                            <select className="form-select" id='timer' aria-label="Default select example">
+                                                <option value="Select">Select...</option>
+                                                <option value="15 minutes">15 minutes</option>
+                                                <option value="20 minutes">20 minutes</option>
+                                                <option value="30 minutes">30 minutes</option>
+                                                <option value="45 minutes">45 minutes</option>
+                                                <option value="60 minutes">60 minutes</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col-md-4">
                                         <div className='mb-3'>
                                             <label className="form-label fw-bold">Generate Certificate</label>
                                             <div className='d-flex gap-3'>
@@ -150,7 +171,7 @@ const Create = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-md-6">
+                                    <div className="col-md-4">
                                         <div className='mb-3'>
                                             <label className="form-label fw-bold">Mentor Name(in Report)</label>
                                             <div className='d-flex gap-3'>
@@ -173,8 +194,26 @@ const Create = () => {
                                             </div>
                                         </div>
                                     </div>
+                                    <div className="col-md-4">
+                                        <div className='mb-3'>
+                                            <label className="form-label fw-bold">Report Sent to Candidate</label>
+                                            <div className='d-flex gap-3'>
+                                                <div className="form-check">
+                                                    <input className="form-check-input" type="radio" name="reportSent" id="notSend" defaultChecked />
+                                                    <label className="form-check-label" htmlFor="notSend">
+                                                        No
+                                                    </label>
+                                                </div>
+                                                <div className="form-check">
+                                                    <input className="form-check-input" type="radio" name="reportSent" id="yesSend" />
+                                                    <label className="form-check-label" htmlFor="yesSend">
+                                                        Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-
                                 <div className="row">
                                     <div className="col-md-6">
                                         <div className="mb-3">

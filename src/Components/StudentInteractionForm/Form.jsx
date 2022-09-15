@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-// import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
-// import { BiError } from "react-icons/bi";
 
 const Form = () => {
   const [display, setDisplay] = useState(false);
@@ -82,7 +79,7 @@ const Form = () => {
           <div className="card h-100 border-dark">
             <div
               className="card-header bg-dark text-white"
-              style={{ borderBottom: "2px solid #000" }}
+              style={{ borderBottom: "2px solid #000", borderRadius: "0" }}
             >
               <h3>Interaction Title</h3>
             </div>

@@ -23,7 +23,7 @@ const Welcome = () => {
               <h3 className="mb-3">Welcome!</h3>
               <p align="justify">This interaction is designed to provide you a simulated experience.</p>
               <div className="d-grid">
-                <button onClick={handleNext} className="btn btn-dark rounded-5 my-3" style={{ backgroundColor: "#97a39b", border: "#97a39b" }}>Next</button>
+                <button onClick={handleNext} className="btn btn-dark rounded-5 my-3" style={{ backgroundColor: "#282a2d", border: "#282a2d" }}>Next</button>
               </div>
             </div>
           </div>

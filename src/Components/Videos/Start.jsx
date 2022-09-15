@@ -31,8 +31,8 @@ const Start = () => {
               <p align="justify" className="text-danger">Please note, you may need to grant permission on your device again to use your camera and microphone.</p>
               <h5>Best of Luck!</h5>
               <div className='d-flex justify-content-between my-3'>
-                <div onClick={handleDevice} style={{ cursor: "pointer", color: "#97a39b" }} className='fw-bold text-decoration-underline'>&#60; STEP 1: Let's check your device</div>
-                <button onClick={handleNext} type="button" className="btn btn-success" style={{ backgroundColor: "#97a39b", border: "#97a39b" }}>Start</button>
+                <div onClick={handleDevice} style={{ cursor: "pointer", color: "#282a2d" }} className='fw-bold text-decoration-underline'>&#60; STEP 1: Let's check your device</div>
+                <button onClick={handleNext} type="button" className="btn btn-success" style={{ backgroundColor: "#282a2d", border: "#282a2d" }}>Start</button>
               </div>
             </div>
           </div>

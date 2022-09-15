@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import styles from './Recording.module.css';
+import styles from './Check.module.css';
 import { useNavigate } from "react-router-dom";
 import { ReactMediaRecorder } from "react-media-recorder";
 
@@ -59,8 +59,8 @@ const Recording = () => {
               <p align="justify">On your device, please grant access to your camera and/or microphone. <span className='text-dark fw-bold'>Run a test recording</span> to ensure you can see and hear yourself clearly.</p>
               <p align="justify" className='text-danger'>Don't worry, this is just a test recording, and won't be shared with anyone else.</p>
               <div className='d-flex justify-content-between my-3'>
-                <div onClick={handleRecording} style={{ cursor: "pointer", color: "#97a39b" }} className='fw-bold text-decoration-underline'>&#60; How it Works?</div>
-                <button onClick={handleCompleted} className="btn btn-dark" style={{ backgroundColor: "#97a39b", border: "#97a39b" }}>Next</button>
+                <div onClick={handleRecording} style={{ cursor: "pointer", color: "#282a2d" }} className='fw-bold text-decoration-underline'>&#60; How it Works?</div>
+                <button onClick={handleCompleted} className="btn btn-dark" style={{ backgroundColor: "#282a2d", border: "#282a2d" }}>Next</button>
               </div>
             </div>
           </div>
