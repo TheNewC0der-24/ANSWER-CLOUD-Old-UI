@@ -99,16 +99,9 @@ const Create = () => {
                                         </div>
                                     </div>
                                     <div className="col-md-6">
-                                        <div className="mb-3">
-                                            <label htmlFor="mode" className="form-label fw-bold">Interaction Mode</label>
-                                            <select className="form-select" id='mode' aria-label="Default select example">
-                                                <option value="Select">Select...</option>
-                                                <option value="Audio">Audio</option>
-                                                <option value="Video">Video</option>
-                                                <option value="MCQ">MCQ</option>
-                                                {/* <option value="Image">Image</option>
-                                                <option value="Text">Text</option> */}
-                                            </select>
+                                        <div className="d-flex justify-content-between mb-3">
+                                            <label htmlFor="question" className="form-label fw-bold">Skills: <span className='badge badge bg-secondary'>skill name</span></label>
+                                            <button type="button" className="btn btn-outline-secondary button" data-bs-toggle="modal" data-bs-target="#skillModal">Add</button>
                                         </div>
                                     </div>
                                 </div>
@@ -230,9 +223,14 @@ const Create = () => {
                                 </div>
                                 <div className="row">
                                     <div className="col-md-6 m-auto">
-                                        <div className="d-flex justify-content-between mb-3">
-                                            <label htmlFor="question" className="form-label fw-bold">Skills: <span className='badge badge bg-secondary'>skill name</span></label>
-                                            <button type="button" className="btn btn-outline-secondary button" data-bs-toggle="modal" data-bs-target="#skillModal">Add</button>
+                                        <div className="mb-3">
+                                            <label htmlFor="mode" className="form-label fw-bold">Interaction Mode</label>
+                                            <select className="form-select" id='mode' aria-label="Default select example">
+                                                <option value="Select">Select...</option>
+                                                <option value="Audio">Audio</option>
+                                                <option value="Video">Video</option>
+                                                <option value="MCQ">MCQ</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div className="col-md-6 m-auto">

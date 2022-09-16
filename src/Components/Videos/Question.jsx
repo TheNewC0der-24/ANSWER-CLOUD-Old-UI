@@ -104,6 +104,7 @@ const Question = () => {
                 <button className={`${isActive ? "" : "d-none"} btn btn-outline-dark`} onClick={() => window.location.reload()}>Retake Answer</button>
               </div>
               <div className='d-flex flex-wrap gap-2'>
+                <button className="btn btn-outline-secondary">Back</button>
                 <button onClick={handleNext} className='btn btn-dark'>Next</button>
               </div>
             </div>
@@ -111,10 +112,10 @@ const Question = () => {
         </div>
       </div>
       <div className='container my-5'>
-        <div className="row">
+        <div className={`${styles.row} row`}>
           <div className="col-md-6">
-            <div className="card h-100 border-0 bg-light shadow">
-              <h5 className="card-header bg-white">Video Context</h5>
+            <div className={`${styles.card} card bg-dark h-100 border-0 shadow`}>
+              <h5 className="card-header bg-dark text-white" style={{ borderRadius: "0", borderBottom: "2px solid #fff" }}>Video Context</h5>
               <div className="card-body">
                 <div className="ratio ratio-16x9">
                   <video
@@ -128,8 +129,8 @@ const Question = () => {
             </div>
           </div>
           <div className="col-md-6">
-            <div className={`${styles.card} card h-100 border-0 shadow`}>
-              <div className='card-header bg-white d-flex flex-wrap justify-content-between'>
+            <div className="card bg-dark h-100 border-0 bg-light shadow">
+              <div className='card-header bg-dark text-white d-flex flex-wrap justify-content-between' style={{ borderRadius: "0", borderBottom: "2px solid #fff" }}>
                 <h5 id='instruction'>Answer Box</h5>
                 <div className='d-flex flex-wrap gap-2'>
                   <span>time remaining for this question</span><h5>{time.m >= 10 ? time.m : "0" + time.m}&nbsp;:&nbsp;{time.s >= 10 ? time.s : "0" + time.s}</h5>
@@ -154,28 +155,61 @@ const Question = () => {
         </div>
       </div>
 
-      {/* <div className="container">
+      <div className="container">
         <div className="row my-5">
           <div className="col-md-6">
             <div className="card h-100 shadow border-0">
               <div className="card-body">
                 <h3>1/4</h3>
                 <h5>Tell me about yourself ?</h5>
-                <h6>Hint : Speak about your educational background, skills, experience, etc.</h6>
+                <h6>Hint : Speak about your educational background, skills, experience, etc.
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit, dolore. Temporibus aliquid voluptas perferendis sed at obcaecati delectus iusto sapiente sequi aliquam tenetur ea nisi adipisci officiis animi voluptates nostrum dolorum laudantium, molestiae quos eum. Et officiis, repellendus error non alias ut harum, a molestias eligendi numquam itaque architecto provident!
+                </h6>
                 <hr />
-                <button onClick={handleNext} className='btn btn-dark'>Next</button>
+                <div className='d-flex justify-content-between'>
+                  <div className='d-flex flex-wrap gap-2'>
+                    <button onClick={handleStartRecording} className={`${isActive ? "btn-warning" : "btn-success"} btn `}>{isActive ? "Pause" : "Answer"}</button>
+                    {
+                      isActive && (
+                        <button onClick={handleStopRecording} className="btn btn-danger">Save Answer</button>
+
+                      )
+                    }
+                    <button className={`${isActive ? "" : "d-none"} btn btn-outline-dark`} onClick={() => window.location.reload()}>Retake Answer</button>
+                  </div>
+                  <div className='d-flex flex-wrap gap-2'>
+                    <button onClick={handleNext} className='btn btn-dark'>Next</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div className="col-md-6">
-            <div className={`${styles.card} card h-100 shadow border-0`}>
+            <div className={`${styles.card} card h-100 bg-dark shadow border-0`}>
+              <div className='card-header bg-dark text-white d-flex flex-wrap justify-content-between' style={{ borderRadius: "0", borderBottom: "2px solid #fff" }}>
+                <h5 id='instruction'>Answer Box</h5>
+                <div className='d-flex flex-wrap gap-2'>
+                  <span>time remaining for this question</span><h5>{time.m >= 10 ? time.m : "0" + time.m}&nbsp;:&nbsp;{time.s >= 10 ? time.s : "0" + time.s}</h5>
+                </div>
+              </div>
               <div className="card-body">
-                <VideoRecorder />
+                <h5 className={`${isActive && 'd-none'} text-center alert alert-primary`} id="note">Answer recording starts after you hit "Answer" button.</h5>
+                {
+                  isActive && (
+                    <div className="ratio ratio-16x9">
+                      {status !== "stopped" ? (
+                        <VideoPreview stream={previewStream} />
+                      ) : (
+                        <video src={mediaBlobUrl} controls />
+                      )}
+                    </div>
+                  )
+                }
               </div>
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
 
 
       {/* <div className={`${styles.container} container my-5`}>

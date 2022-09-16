@@ -3,9 +3,9 @@ import React, { useState } from "react";
 const Quesans = () => {
   const [noOfRows, setNoOfRows] = useState(1);
   const [text, setText] = useState("Select...");
-  const [texts, setTexts] = useState("Select...");
+  // const [texts, setTexts] = useState("Select...");
   const [display, setDisplay] = useState({ display: "none" });
-  const [rated, setRated] = useState({ display: "none" });
+  // const [rated, setRated] = useState({ display: "none" });
 
 
   const handleOnChange = (event) => {
@@ -17,14 +17,14 @@ const Quesans = () => {
     }
   };
 
-  const handleOnChanges = (event) => {
-    setTexts(event.target.value);
-    if (event.target.value === "Yes") {
-      setRated({ display: "table-cell" });
-    } else {
-      setRated({ display: "none" });
-    }
-  };
+  // const handleOnChanges = (event) => {
+  //   setTexts(event.target.value);
+  //   if (event.target.value === "Yes") {
+  //     setRated({ display: "table-cell" });
+  //   } else {
+  //     setRated({ display: "none" });
+  //   }
+  // };
 
   const style = {
     height: "200px",
@@ -71,7 +71,7 @@ const Quesans = () => {
                         Question:
                       </th>
                       <th className="text-center" scope="col">
-                        Video Context:
+                        Media Context:
                       </th>
                       <th className="text-center" scope="col">
                         Hints/Description:
@@ -97,12 +97,12 @@ const Quesans = () => {
                       <th className="text-center" scope="col">
                         Ideal Answer:
                       </th>
-                      <th className="text-center" scope="col">
+                      {/* <th className="text-center" scope="col">
                         Rated?
                       </th>
                       <th style={rated} className="text-center" scope="col">
                         ContentRated?
-                      </th>
+                      </th> */}
                     </tr>
                   </thead>
                   <tbody>
@@ -117,7 +117,7 @@ const Quesans = () => {
                             ></textarea>
                           </td>
                           <td>
-                            <input type="text" className="form-control" id="videolink" placeholder='Paste your link here' />
+                            <input type="text" className="form-control" id="medialink" placeholder='Paste your link here' />
                           </td>
                           <td>
                             <input type="text" className="form-control" id="hint" placeholder='Hints/Description' />
@@ -134,8 +134,6 @@ const Quesans = () => {
                               <option>Audio</option>
                               <option>Video</option>
                               <option>MCQ</option>
-                              {/* <option>Image</option>
-                              <option>Text</option> */}
                               <option>Resume Link</option>
                             </select>
                           </td>
@@ -186,7 +184,7 @@ const Quesans = () => {
                               rows="1"
                             ></textarea>
                           </td>
-                          <td>
+                          {/* <td>
                             <select
                               onChange={handleOnChanges}
                               value={texts}
@@ -197,8 +195,8 @@ const Quesans = () => {
                               <option>Yes</option>
                               <option>No</option>
                             </select>
-                          </td>
-                          <td>
+                          </td> */}
+                          {/* <td>
                             <select
                               style={rated}
                               className="form-select"
@@ -210,7 +208,7 @@ const Quesans = () => {
                               <option value="Yes">Yes</option>
                               <option value="No">No</option>
                             </select>
-                          </td>
+                          </td> */}
                         </tr>
                       );
                     })}
