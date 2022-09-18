@@ -33,7 +33,22 @@ function ThankYou() {
     const handleMouseLeave = () => {
         setHover(undefined);
     }
-
+    const sentences = [ "Congratulations you displayed an Architect personality type!" ,
+    "Congratulations you displayed a Logician personality type!" ,
+    "Congratulations you displayed a Commander personality type!" ,
+    "Congratulations you displayed a Debater personality type!" ,
+    "Congratulations you displayed an Advocate personality type!" ,
+    "Congratulations you displayed a Mediator personality type!" ,
+    "Congratulations you displayed a Protagonist personality type!" ,
+    "Congratulations you displayed a Campaigner personality type!" ,
+    "Congratulations you displayed a Logistician personality type!" ,
+   "Congratulations you displayed a Defender personality type!" ,
+   "Congratulations you displayed an Executive personality type!" ,
+  "Congratulations you displayed a Consul personality type!" ,
+    "Congratulations on displaying a Virtuoso personality type!" ,
+     "Congratulations, you displayed an Adventurer personality type!" ,
+   "Congratulations you displayed a Debater Entrepreneur personality type!" ,
+    "Congratulations you displayed an Entertainer personality type!"];
 
     return (
         <>
@@ -65,7 +80,7 @@ function ThankYou() {
                     <div className="col-md-8 m-auto">
                         <div className="container my-3">
                             <p align="justify">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi nam ipsam officia adipisci praesentium, quos doloremque porro, magni illo cupiditate similique deleniti earum? Vero provident laudantium voluptate sit unde quasi hic quas cupiditate, aliquam iure placeat, voluptatibus aut, quis dicta earum ducimus maxime distinctio. Maiores reiciendis recusandae eaque at ducimus!
+                            {sentences[Math.floor(Math.random() * (16)) ]}
                             </p>
                             <button type="button" className="btn btn-success float-end" style={{ backgroundColor: "#282a2d", border: "#282a2d" }}>Share</button>
                         </div>
