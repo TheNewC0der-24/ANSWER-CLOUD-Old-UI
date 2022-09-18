@@ -99,9 +99,9 @@ const Create = () => {
                                         </div>
                                     </div>
                                     <div className="col-md-6">
-                                        <div className="d-flex justify-content-between mb-3">
-                                            <label htmlFor="question" className="form-label fw-bold">Skills: <span className='badge badge bg-secondary'>skill name</span></label>
-                                            <button type="button" className="btn btn-outline-secondary button" data-bs-toggle="modal" data-bs-target="#skillModal">Add</button>
+                                        <div className="mb-3">
+                                            <label htmlFor="generalFeedback" className="form-label fw-bold">General Feedback</label>
+                                            <textarea class="form-control" id="generalFeedback" placeholder='Write your feedback here' rows="1"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -220,6 +220,10 @@ const Create = () => {
                                             <input type="text" className="form-control" placeholder='Your description' id="description" />
                                         </div>
                                     </div>
+                                </div>
+                                <div className="d-flex justify-content-between mb-3">
+                                    <label htmlFor="question" className="form-label fw-bold">Skills: <span className='badge badge bg-secondary'>skill name</span></label>
+                                    <button type="button" className="btn btn-outline-secondary button" data-bs-toggle="modal" data-bs-target="#skillModal">Add</button>
                                 </div>
                                 <div className="row">
                                     <div className="col-md-6 m-auto">
