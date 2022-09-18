@@ -15,6 +15,7 @@ const Create = () => {
     const [disabled, setDisabled] = useState(false);
     const [certificate, setCertificate] = useState(false);
     const [name, setName] = useState(false);
+    const [count, setCount] = useState(0);
 
     const handleCertificate = () => {
         setCertificate(!certificate);
@@ -95,13 +96,24 @@ const Create = () => {
                                                 <option value="Service">Service</option>
                                                 <option value="HR">HR</option>
                                                 <option value="New Grad.">New Grad.</option>
+                                                <option value="None / Others">None / Others</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div className="col-md-6">
                                         <div className="mb-3">
-                                            <label htmlFor="generalFeedback" className="form-label fw-bold">General Feedback</label>
-                                            <textarea class="form-control" id="generalFeedback" minLength="50" maxLength="250" placeholder='Write your feedback here' rows="1"></textarea>
+                                            <div className='d-flex justify-content-between'>
+                                                <label htmlFor="generalFeedback" className="form-label fw-bold">Add Insights</label>
+                                                <label htmlFor="generalFeedback" className="form-label fw-bold">{count}/250</label>
+                                            </div>
+                                            <textarea
+                                                onChange={e => setCount(e.target.value.length)}
+                                                className="form-control" id="generalFeedback"
+                                                minLength="50"
+                                                maxLength="250"
+                                                placeholder={`Every human interaction is an opportunity to learn. Its also an opportunity to demonstrate your skills and expertise in a specific context and capacity.We view every professional interaction as a high-stakes game - whether you are likely to save money, generate revenue, make a process more efficient or improve your performance.These virtual interactions act as practice sessions where you can test drive real-world interactions.Experts in the world may differ on what skills matter – but they all have a common point of view.Practice is the key to improvement – and specific feedback makes improvement faster.`}
+                                                rows="5"></textarea>
+                                            <div className="form-text text-danger">* Minimum 50 characters are required to post the insights</div>
                                         </div>
                                     </div>
                                 </div>
@@ -122,7 +134,7 @@ const Create = () => {
                                 <div className="row">
                                     <div className="col-md-6">
                                         <div className="mb-3">
-                                            <label htmlFor="emailOne" className="form-label fw-bold">Report sent to Email-1</label>
+                                            <label htmlFor="emailOne" className="form-label fw-bold">Report sent to Email</label>
                                             <input type="email" className="form-control" id="emailOne" />
                                         </div>
                                     </div>
@@ -136,6 +148,7 @@ const Create = () => {
                                                 <option value="30 minutes">30 minutes</option>
                                                 <option value="45 minutes">45 minutes</option>
                                                 <option value="60 minutes">60 minutes</option>
+                                                <option value="None">None</option>
                                             </select>
                                         </div>
                                     </div>
@@ -210,15 +223,16 @@ const Create = () => {
                                 <div className="row">
                                     <div className="col-md-6">
                                         <div className="mb-3">
-                                            <label htmlFor="description" className="form-label fw-bold">Instruction</label>
-                                            <input type="text" className="form-control" placeholder='Your instruction' id="instruction" />
-                                        </div>
-                                    </div>
-                                    <div className="col-md-6">
-                                        <div className="mb-3">
                                             <label htmlFor="description" className="form-label fw-bold">Description</label>
                                             <input type="text" className="form-control" placeholder='Your description' id="description" />
                                         </div>
+
+                                    </div>
+                                    <div className="col-md-6">
+                                        {/* <div className="mb-3">
+                                            <label htmlFor="description" className="form-label fw-bold">Instruction</label>
+                                            <input type="text" className="form-control" placeholder='Your instruction' id="instruction" />
+                                        </div> */}
                                     </div>
                                 </div>
                                 <div className="d-flex justify-content-between mb-3">
@@ -252,9 +266,9 @@ const Create = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
             {/* </div> */}
-            <Quesans />
+            < Quesans />
             <Skills />
         </>
     )
