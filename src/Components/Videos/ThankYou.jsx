@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import styles from './ThankYou.module.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -21,7 +21,7 @@ function ThankYou() {
 
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(undefined);
-
+const [sentence,setSentence] = useState("");
     const handleClick = (value) => {
         setRating(value);
     };
@@ -32,8 +32,8 @@ function ThankYou() {
 
     const handleMouseLeave = () => {
         setHover(undefined);
-    }
-    const sentences = [ "Congratulations you displayed an Architect personality type!" ,
+    };
+    const arr= [ "Congratulations you displayed an Architect personality type!" ,
     "Congratulations you displayed a Logician personality type!" ,
     "Congratulations you displayed a Commander personality type!" ,
     "Congratulations you displayed a Debater personality type!" ,
@@ -49,6 +49,12 @@ function ThankYou() {
      "Congratulations, you displayed an Adventurer personality type!" ,
    "Congratulations you displayed a Debater Entrepreneur personality type!" ,
     "Congratulations you displayed an Entertainer personality type!"];
+    useEffect(()=>{setSentence(arr[Math.floor(Math.random()*16)])},arr) ;
+    
+    
+    
+
+
 
     return (
         <>
@@ -80,7 +86,7 @@ function ThankYou() {
                     <div className="col-md-8 m-auto">
                         <div className="container my-3">
                             <p align="justify">
-                            {sentences[Math.floor(Math.random() * (16)) ]}
+                            {sentence}
                             </p>
                             <button type="button" className="btn btn-success float-end" style={{ backgroundColor: "#282a2d", border: "#282a2d" }}>Share</button>
                         </div>
