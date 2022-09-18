@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './ThankYou.module.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -21,7 +21,8 @@ function ThankYou() {
 
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(undefined);
-const [sentence,setSentence] = useState("");
+    const [sentence, setSentence] = useState("");
+
     const handleClick = (value) => {
         setRating(value);
     };
@@ -33,28 +34,24 @@ const [sentence,setSentence] = useState("");
     const handleMouseLeave = () => {
         setHover(undefined);
     };
-    const arr= [ "Congratulations you displayed an Architect personality type!" ,
-    "Congratulations you displayed a Logician personality type!" ,
-    "Congratulations you displayed a Commander personality type!" ,
-    "Congratulations you displayed a Debater personality type!" ,
-    "Congratulations you displayed an Advocate personality type!" ,
-    "Congratulations you displayed a Mediator personality type!" ,
-    "Congratulations you displayed a Protagonist personality type!" ,
-    "Congratulations you displayed a Campaigner personality type!" ,
-    "Congratulations you displayed a Logistician personality type!" ,
-   "Congratulations you displayed a Defender personality type!" ,
-   "Congratulations you displayed an Executive personality type!" ,
-  "Congratulations you displayed a Consul personality type!" ,
-    "Congratulations on displaying a Virtuoso personality type!" ,
-     "Congratulations, you displayed an Adventurer personality type!" ,
-   "Congratulations you displayed a Debater Entrepreneur personality type!" ,
-    "Congratulations you displayed an Entertainer personality type!"];
-    useEffect(()=>{setSentence(arr[Math.floor(Math.random()*16)])},arr) ;
-    
-    
-    
 
-
+    const arr = ["Congratulations you displayed an Architect personality type!",
+        "Congratulations you displayed a Logician personality type!",
+        "Congratulations you displayed a Commander personality type!",
+        "Congratulations you displayed a Debater personality type!",
+        "Congratulations you displayed an Advocate personality type!",
+        "Congratulations you displayed a Mediator personality type!",
+        "Congratulations you displayed a Protagonist personality type!",
+        "Congratulations you displayed a Campaigner personality type!",
+        "Congratulations you displayed a Logistician personality type!",
+        "Congratulations you displayed a Defender personality type!",
+        "Congratulations you displayed an Executive personality type!",
+        "Congratulations you displayed a Consul personality type!",
+        "Congratulations on displaying a Virtuoso personality type!",
+        "Congratulations, you displayed an Adventurer personality type!",
+        "Congratulations you displayed a Debater Entrepreneur personality type!",
+        "Congratulations you displayed an Entertainer personality type!"];
+    useEffect(() => { setSentence(arr[Math.floor(Math.random() * 16)]) }, arr);
 
     return (
         <>
@@ -86,7 +83,7 @@ const [sentence,setSentence] = useState("");
                     <div className="col-md-8 m-auto">
                         <div className="container my-3">
                             <p align="justify">
-                            {sentence}
+                                {sentence}
                             </p>
                             <button type="button" className="btn btn-success float-end" style={{ backgroundColor: "#282a2d", border: "#282a2d" }}>Share</button>
                         </div>
