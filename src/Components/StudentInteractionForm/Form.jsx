@@ -90,12 +90,12 @@ const Form = () => {
                 explicabo modi nemo ab inventore minus in quidem nobis illo.
                 Quos?
               </p>
-              <label className="form-label fw-bold">Instruction :</label>
+              {/* <label className="form-label fw-bold">Instruction :</label>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Asperiores suscipit consequatur dolores molestias voluptas
                 quaerat voluptatem sunt esse praesentium corporis.
-              </p>
+              </p> */}
               <hr />
               <form>
                 <div className="mb-3">
