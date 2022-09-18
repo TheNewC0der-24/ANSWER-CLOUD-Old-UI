@@ -101,7 +101,7 @@ const Create = () => {
                                     <div className="col-md-6">
                                         <div className="mb-3">
                                             <label htmlFor="generalFeedback" className="form-label fw-bold">General Feedback</label>
-                                            <textarea class="form-control" id="generalFeedback" placeholder='Write your feedback here' rows="1"></textarea>
+                                            <textarea class="form-control" id="generalFeedback" minLength="50" maxLength="250" placeholder='Write your feedback here' rows="1"></textarea>
                                         </div>
                                     </div>
                                 </div>

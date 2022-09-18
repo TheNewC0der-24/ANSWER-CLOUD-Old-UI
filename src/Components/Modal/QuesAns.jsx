@@ -76,9 +76,9 @@ const Quesans = () => {
                       <th className="text-center" scope="col">
                         Hints/Description:
                       </th>
-                      <th className="text-center" scope="col">
+                      {/* <th className="text-center" scope="col">
                         Answer Format:
-                      </th>
+                      </th> */}
                       <th style={display} className="text-center" scope="col">
                         Option 1
                       </th>
@@ -122,7 +122,7 @@ const Quesans = () => {
                           <td>
                             <input type="text" className="form-control" id="hint" placeholder='Hints/Description' />
                           </td>
-                          <td>
+                          {/* <td>
                             <select
                               onChange={handleOnChange}
                               value={text}
@@ -136,7 +136,7 @@ const Quesans = () => {
                               <option>MCQ</option>
                               <option>Resume Link</option>
                             </select>
-                          </td>
+                          </td> */}
                           <td style={display}>
                             <textarea
                               className="form-control"
