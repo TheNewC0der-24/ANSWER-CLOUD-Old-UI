@@ -6,7 +6,6 @@ import styles from './ThankYou.module.css';
 import ty from '../../assets/Images/thankyou.png';
 
 const ThankYou = () => {
-
     return (
         <>
             <div className="container">
@@ -29,6 +28,11 @@ const ThankYou = () => {
                                 <div className="col-md-6 m-auto">
                                     <img className='d-flex justify-content-center mx-auto img-fluid' src={ty} alt="Thank You" />
                                 </div>
+                                <div className="col-md-8 m-auto">
+                        <div className="container my-3">
+                            <button type="button" className="btn btn-success float-end" style={{ backgroundColor: "#282a2d", border: "#282a2d" }}>Share</button>
+                        </div>
+                    </div>
                             </div>
                         </div>
                     </div>

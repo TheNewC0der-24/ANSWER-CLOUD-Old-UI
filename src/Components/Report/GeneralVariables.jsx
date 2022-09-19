@@ -134,9 +134,9 @@ const GeneralVariables = () => {
 
     return (
         <>
-            <div className='container'>
+            <div className='container mt-5'>
                 <h1 className="mb-5">
-                    <span className="badge text-center" style={{ backgroundColor: "#0e1013", borderRadius: "0" }}>General Parameters</span>
+                    <span className="badge text-center" style={{ border: "2px solid black", color: 'black' }}>General Parameters</span>
                 </h1>
                 <div className={styles.para}>
                     <p className='my-5 text-center'>
@@ -148,17 +148,17 @@ const GeneralVariables = () => {
                             improvement) compared to the current performance (dot plot).</em>
                     </p>
                     <div className="row row-cols-1 row-cols-md-2 justify-content-center g-4">
-                        <div className="col">
+                        <div className="col mt-5">
                             <div className={`${styles.card} card h-100`}>
-                                <h3 className={`${styles.cardHeader} card-header text-white`}><AiFillDashboard className={`me-1 ${styles.icon}`} />Pace</h3>
-                                <div className="card-body" style={{ fontSize: "22px" }}>
+                                <h1 className={`${styles.cardHeader} card-header fw-bold`}><AiFillDashboard className={`me-1 ${styles.icon}`} />Pace</h1>
+                                <div className="card-body my-3" style={{ fontSize: "22px" }}>
                                     <p align="justify" className='card-text'>
                                         <strong>Words per minute : </strong>pace
                                     </p>
                                     <p align="justify" className='card-text'>
                                         <strong>Ideal words per minute : </strong> 140-160 words/minute
                                     </p>
-                                    <div className='mb-3'>
+                                    {/* <div className='mb-3'>
                                         <div className="progress">
                                             <div className="progress-bar bg-danger" role="progressbar" style={{ width: "20%" }} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                                             <div className="progress-bar bg-warning" role="progressbar" style={{ width: "20%" }} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
@@ -167,7 +167,7 @@ const GeneralVariables = () => {
                                             <div className="progress-bar bg-danger" role="progressbar" style={{ width: "20%" }} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                         <input type="range" className="form-range" value={109} min="50" max="250" id="customRange2" disabled />
-                                    </div>
+                                    </div> */}
                                     <p align="justify" className='card-text'>
                                         <strong>Why consider this :</strong> Speaking too slowly or too quickly denotes nervousness on part of the
                                         speaker. Please note that this is the average pace across the entire interaction (not average
@@ -179,14 +179,14 @@ const GeneralVariables = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col">
+                        <div className="col mt-5">
                             <div className={`${styles.card} card border-dark h-100`}>
-                                <h3 className={`${styles.cardHeader} card-header text-white`}><FaRibbon className={`${styles.icon} me-1`} />Gesture</h3>
-                                <div className="card-body">
+                                <h1 className={`${styles.cardHeader} card-header fw-bold`}><FaRibbon className={`${styles.icon} me-1`} />Gesture</h1>
+                                <div className="card-body my-3">
                                     <p align="justify" className='card-text'>
                                         <strong>Gesture Score : </strong>Estimated_Gesture_score
                                     </p>
-                                    <div className='mb-3'>
+                                    {/* <div className='mb-3'>
                                         <div className="progress">
                                             <div className="progress-bar bg-danger" role="progressbar" style={{ width: "20%" }} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                                             <div className="progress-bar bg-warning" role="progressbar" style={{ width: "20%" }} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
@@ -195,7 +195,7 @@ const GeneralVariables = () => {
                                             <div className="progress-bar bg-danger" role="progressbar" style={{ width: "20%" }} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                         <input type="range" className="form-range" value={6} min="0" max="10" id="customRange2" disabled />
-                                    </div>
+                                    </div> */}
                                     <p align="justify" className='card-text'>
                                         <strong>Why Consider this : </strong>Hand gestures play an important part in anyone’s
                                         personality. Due to limitations of the camera recording it may not be always possible to
@@ -207,10 +207,10 @@ const GeneralVariables = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col">
+                        <div className="col mt-3">
                             <div className={`${styles.card} card border-dark h-100`}>
-                                <h3 className={`${styles.cardHeader} card-header text-white`}><FaCloud className={`${styles.icon} me-1`} />Word Cloud</h3>
-                                <div className="card-body">
+                                <h1 className={`${styles.cardHeader} card-header fw-bold`}><FaCloud className={`${styles.icon} me-1`} />Word Cloud</h1>
+                                <div className="card-body my-3">
                                     <img src={wc} alt="wordCloud" />
                                     <p align="justify" className='card-text'>
                                         <strong>Why Consider this : </strong>Please take a moment to reflect on the words
@@ -219,14 +219,14 @@ const GeneralVariables = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col">
+                        <div className="col mt-3">
                             <div className={`${styles.card} card border-dark h-100`}>
-                                <h3 className={`${styles.cardHeader} card-header text-white`}><BsEmojiSmileFill className={`${styles.icon} me-1`} />Sentiment Analysis</h3>
-                                <div className="card-body">
+                                <h1 className={`${styles.cardHeader} card-header fw-bold`}><BsEmojiSmileFill className={`${styles.icon} me-1`} />Sentiment Analysis</h1>
+                                <div className="card-body my-3">
                                     <p align="justify" className='card-text'>
                                         <strong>Aggregate dominant Sentiment : </strong>Sentiment_score
                                     </p>
-                                    <div className='mb-3'>
+                                    {/* <div className='mb-3'>
                                         <div className="progress">
                                             <div className="progress-bar bg-danger" role="progressbar" style={{ width: "20%" }} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                                             <div className="progress-bar bg-warning" role="progressbar" style={{ width: "20%" }} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
@@ -235,7 +235,7 @@ const GeneralVariables = () => {
                                             <div className="progress-bar bg-danger" role="progressbar" style={{ width: "20%" }} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                         <input type="range" className="form-range" value={50} min="0" max="100" id="customRange2" disabled />
-                                    </div>
+                                    </div> */}
                                     <p align="justify" className='card-text'>
                                         <strong>Why consider this : </strong>This shows how your emotions are understood by others.
                                         While most aspirant’s speech shows positive emotions naturally, in few cases it might be
@@ -248,12 +248,12 @@ const GeneralVariables = () => {
                         </div>
                     </div>
                     <div className={`${styles.card} card border-dark h-100 mt-4`}>
-                        <h3 className={`${styles.cardHeader} card-header text-white`}><SiGrammarly className={`${styles.icon} me-1`} />Grammar and Accent Score</h3>
-                        <div className="card-body">
+                        <h1 className={`${styles.cardHeader} card-header fw-bold`}><SiGrammarly className={`${styles.icon} me-1`} />Grammar and Accent Score</h1>
+                        <div className="card-body my-3">
                             <p align="justify" className='card-text'>
                                 <strong>Grammar and Accent Score : </strong>grammar_score
                             </p>
-                            <div className="mb-3">
+                            {/* <div className="mb-3">
                                 <div className="progress">
                                     <div className="progress-bar bg-danger" role="progressbar" style={{ width: "20%" }} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                                     <div className="progress-bar bg-warning" role="progressbar" style={{ width: "20%" }} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
@@ -262,7 +262,7 @@ const GeneralVariables = () => {
                                     <div className="progress-bar bg-danger" role="progressbar" style={{ width: "20%" }} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                                 <input type="range" className="form-range" value={17} min="2" max="22" id="customRange2" disabled />
-                            </div>
+                            </div> */}
 
                             <p align="justify" className='card-text'>
                                 <strong>Why consider this :</strong> Grammar denotes the seriousness and knowledge of the speaker in
@@ -276,10 +276,10 @@ const GeneralVariables = () => {
                         </div>
                     </div>
                     <div className={`${styles.card} card border-dark h-100 mt-4`}>
-                        <h3 className={`${styles.cardHeader} card-header text-white`}><FaVolumeUp className={`me-1 ${styles.icon}`} />Volume & Pitch</h3>
-                        <div className="card-body">
-                            <div className="row">
-                                <div className="col-md-6">
+                        <h1 className={`${styles.cardHeader} card-header fw-bold`}><FaVolumeUp className={`me-1 ${styles.icon}`} />Volume & Pitch</h1>
+                        <div className="card-body my-3">
+                            <div className={styles.row}>
+                                <div className={styles.ul}>
                                     <p align="justify" className='card-text'>
                                         <strong>Volume Scale (0-100) : "volume"</strong>
                                     </p>
@@ -292,7 +292,7 @@ const GeneralVariables = () => {
                                     series={volume.series}
                                     type="radialBar"
                                 /> */}
-                                    <div className='mb-3'>
+                                    {/* <div className='mb-3'>
                                         <div className="progress">
                                             <div className="progress-bar bg-danger" role="progressbar" style={{ width: "20%" }} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                                             <div className="progress-bar bg-warning" role="progressbar" style={{ width: "20%" }} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
@@ -301,9 +301,9 @@ const GeneralVariables = () => {
                                             <div className="progress-bar bg-danger" role="progressbar" style={{ width: "20%" }} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                         <input type="range" className="form-range" value={50} min="0" max="100" id="customRange2" disabled />
-                                    </div>
+                                    </div> */}
                                 </div>
-                                <div className="col-md-6">
+                                <div className={styles.ul}>
                                     <p align="justify" className='card-text'>
                                         <strong>Pitch Range : "pitch"</strong>
                                     </p>
@@ -316,7 +316,7 @@ const GeneralVariables = () => {
                                     series={pitch.series}
                                     type="radialBar"
                                 /> */}
-                                    <div className='mb-3'>
+                                    {/* <div className='mb-3'>
                                         <div className="progress">
                                             <div className="progress-bar bg-danger" role="progressbar" style={{ width: "20%" }} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                                             <div className="progress-bar bg-warning" role="progressbar" style={{ width: "20%" }} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
@@ -325,7 +325,7 @@ const GeneralVariables = () => {
                                             <div className="progress-bar bg-danger" role="progressbar" style={{ width: "20%" }} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                         <input type="range" className="form-range" value={700} min="300" max="1250" id="customRange2" disabled />
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                             <p align="justify" className='card-text'>

@@ -4,21 +4,22 @@ import styles from "./PowerSkills.module.css"
 const RatingVariables = () => {
   return (
     <>
-      <div className="container">
-        <h1 className="mb-5">
-          <span className="badge text-center" style={{ backgroundColor: "#0e1013", borderRadius: "0" }}>Power Skills</span>
+      <div className="container mt-5">
+        <h1 className="mb-3">
+          <span className="badge text-center" style={{ border: "2px solid black", color: 'black' }}>Power Skills</span>
         </h1>
         <div className={styles.para}>
-          <p className="text-center my-5">
+          <p className="text-center my-2">
             <em>
               Aggregate emotions and speech as analyzed via AI models are broken down into smaller components.These components are
               classified and analyzed as power skills.
             </em>
           </p>
-          <div className="row">
-            <div className="col-md-6">
-              <ul>
-                <li>
+          <div className={styles.row}>
+            {/* <div className="col-md-6"> */}
+              {/* <ul className={styles.ul}> */}
+                <div className={styles.ul}>
+                <li className={styles.li}>
                   <h3>Likeability & Trust</h3>
                 </li>
                 <p align='justify'>
@@ -31,7 +32,9 @@ const RatingVariables = () => {
                   are talking to a friend. A top cohort rating of A demonstrates that the aspirant is liked and trusted by a wide
                   variety. <strong>A video feed is essential for this power skill - for audio responses, it will not be scored.</strong>
                 </p>
-                <li>
+                </div>
+                <div className={styles.ul}>
+                <li className={styles.li}>
                   <h3>Empathy & Charm</h3>
                 </li>
                 <p align='justify'>
@@ -44,9 +47,12 @@ const RatingVariables = () => {
                   with others. A top cohort rating of A demonstrates that the candidate cares for others - e.g has empathy and charm
                   to influence others positively. <strong>A video feed is essential for this power skill - for audio responses, it will not be
                     scored.</strong>
-
                 </p>
-                <li><h3>Confidence and Fluency</h3></li>
+                </div>
+                </div>
+                <div className={styles.row}>
+                <div className={styles.ul}>
+                <li className={styles.li}><h3>Confidence and Fluency</h3></li>
                 <p align='justify'>
                   Do you use a lot of words like “actually”, “really”, “like” and others? These are called filler words -
                   subconsciously a lot of us have a habit of doing so. This creates a negative impression in the minds of our
@@ -57,12 +63,15 @@ const RatingVariables = () => {
                   A top cohort rating of A demonstrates that the candidate is perceived as having high confidence and fluency in his
                   approach.
                 </p>
-              </ul>
-            </div>
-            <div className="col-md-6">
-              <ul>
-                <li><h3>Energy and Adaptability</h3></li>
-                <p align="justify">
+                </div>
+              {/* </ul> */}
+                   
+            {/* </div> */}
+            {/* <div className="col-md-6"> */}
+              {/* <ul> */}
+              <div className={styles.ul}>
+                <li className={styles.li}><h3>Energy and Adaptability</h3></li>
+                <p align='justify'>
                   Ever heard a comment “Wow he was super high energy!” The strength of our voice, voice modulation and pitch matters.
                   It makes difficult ideas easy to understand and signals to the observer that the candidates know his “stuff”. This
                   is especially true during difficult conversations where often the best of us tend to lose our balance. Our algorithms
@@ -72,10 +81,13 @@ const RatingVariables = () => {
                   with a normal voice. And maintain the same even during high stress and demanding conversations. A top cohort rating of
                   A demonstrates that the candidate is highly adaptable and energetic - someone who can handle any type of conversation
                   and come out ahead.
-
                 </p>
-                <li><h3>Communication skills</h3></li>
-                <p align="justify">
+              </div>
+                </div>
+                <div className={styles.row}>
+              <div className={styles.ul}>
+                <li className={styles.li}><h3>Communication skills</h3></li>
+                <p align='justify'>
                   We all want to sound eloquent in the conversations but whether due to the pressure or tension, we often tend to
                   fumble and take awkward pauses. This is exactly opposite to a leader who always appears to be fluent. Our algorithms
                   generate proprietary scores that divide this power skill of communications into four cohorts as a relative barometer
@@ -84,8 +96,10 @@ const RatingVariables = () => {
                   so that unnecessary pauses can be avoided. A top cohort rating of A demonstrates that the candidate is highly
                   adaptable and energetic - someone who can handle any type of conversation and come out ahead.
                 </p>
-                <li><h3>Content Ratings</h3></li>
-                <p align="justify">
+              </div>
+              <div className={styles.ul}>
+                <li className={styles.li}><h3>Content Ratings</h3></li>
+                <p align='justify'>
                   We evaluate the content of the responses not only by comparing it to the best possible answer to that question
                   depending upon the operating context. Accuracy of the content clearly means that the candidate is very knowledgeable
                   in the interaction and has command over the situation. Another critical power skill in leadership development. <em>How
@@ -95,8 +109,9 @@ const RatingVariables = () => {
                   rating. A top cohort rating of A demonstrates that the candidate is aware of the accurate answer content and the
                   operating context.
                 </p>
-              </ul>
-            </div>
+              </div>
+              {/* </ul> */}
+            {/* </div> */}
           </div>
         </div>
       </div>

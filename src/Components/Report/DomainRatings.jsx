@@ -4,8 +4,8 @@ const DomainRatings = () => {
     return (
         <>
             <div className="container">
-                <h1 className="mb-5">
-                    <span className="badge text-center" style={{ backgroundColor: "#0e1013", borderRadius: "0" }}>Domain Ratings</span>
+                <h1 className="mb-3">
+                    <span className="badge text-center" style={{ border: "2px solid black", color: 'black' }}>Domain Ratings</span>
                 </h1>
                 {/* <div className="card h-100" style={{ border: "2.5px solid #000" }}>
                     <div className="card-body" style={{ color: "#0b3c47" }}> */}

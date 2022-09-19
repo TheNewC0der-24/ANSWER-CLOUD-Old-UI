@@ -13,7 +13,7 @@ const Logo = () => {
 
   return (
     <>
-      <div className={`${styles.row} my-5 row`}>
+      <div className={`${styles.row} my-2 row`}>
         <h1 className="text-center my-3 text-decoration-underline">
           job_title Feedback
         </h1>
@@ -21,8 +21,9 @@ const Logo = () => {
           <div className="d-flex gap-2 text-center">
             <h4>Candidate : <span>candidate_id.name</span></h4>
             <Link to="/response">
-              <button className="btn btn-dark btn-sm">
-                <IoIosChatboxes className="fs-2 me-1" />RESPONSES
+              {/* <button className="btn btn-dark btn-sm" > */}
+              <button style={{ border: "2px solid black", color: 'black' }}>
+                <IoIosChatboxes className="fs-2 me-1 fw-bold" />RESPONSES
               </button>
             </Link>
           </div>

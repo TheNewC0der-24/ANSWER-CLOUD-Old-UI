@@ -4,11 +4,11 @@ import styles from "./Introduction.module.css";
 const Interaction = () => {
   return (
     <>
-      <div className="container">
+      <div className="container mt-2">
         {/* <div className="card" style={{ border: "2px solid #0e1013", borderRadius: "0" }}>
           <div className="card-body" style={{ color: "#0e1013" }}> */}
-        <h1 className="mb-5">
-          <span className="badge text-center" style={{ backgroundColor: "#0e1013", borderRadius: "0" }}>Introduction</span>
+        <h1 className="mb-3">
+          <span className="badge text-center" style={{ border: "2px solid black", color: 'black' }}>Introduction</span>
         </h1>
         <div className={styles.para}>
           <p align='justify'>

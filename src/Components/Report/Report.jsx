@@ -12,6 +12,7 @@ import InteractionTranscript from "./InteractionTranscript";
 import Footer from "./Footer";
 import Interpretation from "./Interpretation";
 import SkillsSelection from "./SkillsSelection";
+import PowerInsights from "./PowerInsights";
 
 import { FaDownload } from "react-icons/fa";
 
@@ -32,13 +33,18 @@ const Report = () => {
           );
         }}
         content={() => reportRef.current}
+        // documentTitle='talentSumo'
+        pageStyle='{margin:5px}'
+        // margin= {{top: 20, left: 100, right: 30, bottom: 40}}
       />
 
 
-      <div ref={reportRef} className="container my-5" style={{ backgroundColor: "#f3f4f8" }}>
+      <div ref={reportRef} className="container my-2" style={{ backgroundColor: "#f3f4f8" }}>
         <div className="container">
           <Logo />
           <FeedbackSnapshot />
+          <hr />
+          <PowerInsights />
           <hr />
           <Introduction />
           <hr />

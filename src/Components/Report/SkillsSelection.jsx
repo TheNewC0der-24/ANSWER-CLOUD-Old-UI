@@ -4,9 +4,9 @@ import styles from './SkillsSelection.module.css';
 const SkillsSelection = () => {
     return (
         <>
-            <div className='container'>
-                <h1 className="mb-5">
-                    <span className="badge text-center" style={{ backgroundColor: "#0e1013", borderRadius: "0" }}>Skills & Parameter Selection</span>
+            <div className='container mt-5'>
+                <h1 className="mb-2">
+                    <span className="badge text-center" style={{ border: "2px solid black", color: 'black' }}>Skills & Parameter Selection</span>
                 </h1>
                 <div className={styles.para}>
                     <p align="justify">

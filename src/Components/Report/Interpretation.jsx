@@ -4,13 +4,14 @@ import styles from './Interpretation.module.css';
 const Interpretation = () => {
     return (
         <>
-            <div className="container">
-                <h1 className="mb-5">
-                    <span className="badge text-center" style={{ backgroundColor: "#0e1013", borderRadius: "0" }}>Interpretation of your scores & rating</span>
+            <div className="container mt-2">
+                <h1 className="mb-1">
+                    <span className="badge text-center" style={{ border: "2px solid black", color: 'black' }}>Interpretation of your scores & rating</span>
                 </h1>
                 <div className={styles.para}>
-                    <div className="row">
-                        <div className="col-md-6">
+                    <div className={styles.row}>
+                    <div className={styles.ul}>
+                        {/* <div className="col-md-6"> */}
                             <ul type='square'>
                                 <li>
                                     <p align="justify">
@@ -27,7 +28,8 @@ const Interpretation = () => {
                                 </li>
                             </ul>
                         </div>
-                        <div className="col-md-6">
+                        <div className={styles.ul}>
+                        {/* <div className="col-md-6"> */}
                             <ul type='square'>
                                 <li>
                                     <p align="justify">
@@ -46,7 +48,7 @@ const Interpretation = () => {
                         </div>
                     </div>
                 </div>
-                <table className="table table-bordered text-center my-5" style={{ borderColor: "#2e3134", fontSize: "22px" }}>
+                <table className="table table-bordered text-center my-4" style={{ borderColor: "#2e3134", fontSize: "22px" }}>
                     <thead className='text-white' style={{ backgroundColor: "#2e3134" }}>
                         <tr>
                             <th scope="col">Cohort Rating</th>
