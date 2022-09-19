@@ -8,6 +8,10 @@ body {
   font-size: larger;
 } */
 
+.card {
+  border-radius: 0 !important;
+}
+
 input,
 textarea,
 select {
@@ -41,4 +45,33 @@ select:focus {
   background-color: #6c757d !important;
   border-radius: 0 !important;
   border-color: #6c757d !important;
+}
+
+/* Audio Recorder - Instruction */
+._1ceqH ._1YOWG ._eV_dK {
+  display: none;
+}
+
+/* Audio Recorder - Upload Button */
+._1ceqH ._1Yplu ._37kfa {
+  display: none;
+}
+
+/* Audio Recorder - Clear Button */
+._1ceqH ._1Yplu ._2gd2_ {
+  display: none;
+}
+
+._1ceqH ._2fG9h {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0px 0px !important;
+}
+
+._1ceqH ._dt3-T {
+  min-height: 300px !important;
+  background: #212121;
+  border-radius: 0 0 3px 3px;
+  display: flex;
+  flex-direction: column;
 }

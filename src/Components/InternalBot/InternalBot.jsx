@@ -15,6 +15,7 @@ const Create = () => {
     const [disabled, setDisabled] = useState(false);
     const [certificate, setCertificate] = useState(false);
     const [name, setName] = useState(false);
+    const [count, setCount] = useState(0);
 
     const handleCertificate = () => {
         setCertificate(!certificate);
@@ -58,8 +59,8 @@ const Create = () => {
                 <div className="col-md-4">
                     <img className='img-fluid m-auto' src={internalbot} alt="internalbot" />
                 </div>
-                <div className='col-md-8 m-auto'>
-                    <div className='card border-0'>
+                <div className='col-md-8  m-auto'>
+                    <div className='card shadow border-0'>
                         {/* <h3 className={`${styles.cardHeader} card-header text-center mb-3 bg-dark text-white`}>
                             Create Internal Bot
                         </h3> */}
@@ -95,20 +96,24 @@ const Create = () => {
                                                 <option value="Service">Service</option>
                                                 <option value="HR">HR</option>
                                                 <option value="New Grad.">New Grad.</option>
+                                                <option value="None / Others">None / Others</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div className="col-md-6">
                                         <div className="mb-3">
-                                            <label htmlFor="mode" className="form-label fw-bold">Interaction Mode</label>
-                                            <select className="form-select" id='mode' aria-label="Default select example">
-                                                <option value="Select">Select...</option>
-                                                <option value="Audio">Audio</option>
-                                                <option value="Video">Video</option>
-                                                <option value="MCQ">MCQ</option>
-                                                {/* <option value="Image">Image</option>
-                                                <option value="Text">Text</option> */}
-                                            </select>
+                                            <div className='d-flex justify-content-between'>
+                                                <label htmlFor="generalFeedback" className="form-label fw-bold">Add Insights</label>
+                                                <label htmlFor="generalFeedback" className="form-label fw-bold">{count}/250</label>
+                                            </div>
+                                            <textarea
+                                                onChange={e => setCount(e.target.value.length)}
+                                                className="form-control" id="generalFeedback"
+                                                minLength="50"
+                                                maxLength="250"
+                                                placeholder={`Every human interaction is an opportunity to learn. Its also an opportunity to demonstrate your skills and expertise in a specific context and capacity.We view every professional interaction as a high-stakes game - whether you are likely to save money, generate revenue, make a process more efficient or improve your performance.These virtual interactions act as practice sessions where you can test drive real-world interactions.Experts in the world may differ on what skills matter – but they all have a common point of view.Practice is the key to improvement – and specific feedback makes improvement faster.`}
+                                                rows="5"></textarea>
+                                            <div className="form-text text-danger">* Minimum 50 characters are required to post the insights</div>
                                         </div>
                                     </div>
                                 </div>
@@ -128,6 +133,28 @@ const Create = () => {
                                 </div>
                                 <div className="row">
                                     <div className="col-md-6">
+                                        <div className="mb-3">
+                                            <label htmlFor="emailOne" className="form-label fw-bold">Report sent to Email</label>
+                                            <input type="email" className="form-control" id="emailOne" />
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="mb-3">
+                                            <label htmlFor="timer" className="form-label fw-bold">Timer</label>
+                                            <select className="form-select" id='timer' aria-label="Default select example">
+                                                <option value="Select">Select...</option>
+                                                <option value="15 minutes">15 minutes</option>
+                                                <option value="20 minutes">20 minutes</option>
+                                                <option value="30 minutes">30 minutes</option>
+                                                <option value="45 minutes">45 minutes</option>
+                                                <option value="60 minutes">60 minutes</option>
+                                                <option value="None">None</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col-md-4">
                                         <div className='mb-3'>
                                             <label className="form-label fw-bold">Generate Certificate</label>
                                             <div className='d-flex gap-3'>
@@ -150,7 +177,7 @@ const Create = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-md-6">
+                                    <div className="col-md-4">
                                         <div className='mb-3'>
                                             <label className="form-label fw-bold">Mentor Name(in Report)</label>
                                             <div className='d-flex gap-3'>
@@ -173,27 +200,55 @@ const Create = () => {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-
-                                <div className="row">
-                                    <div className="col-md-6">
-                                        <div className="mb-3">
-                                            <label htmlFor="description" className="form-label fw-bold">Instruction</label>
-                                            <input type="text" className="form-control" placeholder='Your instruction' id="instruction" />
+                                    <div className="col-md-4">
+                                        <div className='mb-3'>
+                                            <label className="form-label fw-bold">Report Sent to Candidate</label>
+                                            <div className='d-flex gap-3'>
+                                                <div className="form-check">
+                                                    <input className="form-check-input" type="radio" name="reportSent" id="notSend" defaultChecked />
+                                                    <label className="form-check-label" htmlFor="notSend">
+                                                        No
+                                                    </label>
+                                                </div>
+                                                <div className="form-check">
+                                                    <input className="form-check-input" type="radio" name="reportSent" id="yesSend" />
+                                                    <label className="form-check-label" htmlFor="yesSend">
+                                                        Yes
+                                                    </label>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
+                                </div>
+                                <div className="row">
                                     <div className="col-md-6">
                                         <div className="mb-3">
                                             <label htmlFor="description" className="form-label fw-bold">Description</label>
                                             <input type="text" className="form-control" placeholder='Your description' id="description" />
                                         </div>
+
                                     </div>
+                                    <div className="col-md-6">
+                                        {/* <div className="mb-3">
+                                            <label htmlFor="description" className="form-label fw-bold">Instruction</label>
+                                            <input type="text" className="form-control" placeholder='Your instruction' id="instruction" />
+                                        </div> */}
+                                    </div>
+                                </div>
+                                <div className="d-flex justify-content-between mb-3">
+                                    <label htmlFor="question" className="form-label fw-bold">Skills: <span className='badge badge bg-secondary'>skill name</span></label>
+                                    <button type="button" className="btn btn-outline-secondary button" data-bs-toggle="modal" data-bs-target="#skillModal">Add</button>
                                 </div>
                                 <div className="row">
                                     <div className="col-md-6 m-auto">
-                                        <div className="d-flex justify-content-between mb-3">
-                                            <label htmlFor="question" className="form-label fw-bold">Skills: <span className='badge badge bg-secondary'>skill name</span></label>
-                                            <button type="button" className="btn btn-outline-secondary button" data-bs-toggle="modal" data-bs-target="#skillModal">Add</button>
+                                        <div className="mb-3">
+                                            <label htmlFor="mode" className="form-label fw-bold">Interaction Mode</label>
+                                            <select className="form-select" id='mode' aria-label="Default select example">
+                                                <option value="Select">Select...</option>
+                                                <option value="Audio">Audio</option>
+                                                <option value="Video">Video</option>
+                                                <option value="MCQ">MCQ</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div className="col-md-6 m-auto">
@@ -211,9 +266,9 @@ const Create = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
             {/* </div> */}
-            <Quesans />
+            < Quesans />
             <Skills />
         </>
     )

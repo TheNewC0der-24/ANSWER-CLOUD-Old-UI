@@ -1,9 +1,6 @@
-.headingNotify {
+.heading {
     border-bottom: 2px solid #000;
-}
-
-.headingMsg {
-    border-bottom: 2px solid #000;
+    border-radius: 0px !important;
 }
 
 .navigate:hover {

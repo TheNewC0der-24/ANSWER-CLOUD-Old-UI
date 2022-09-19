@@ -43,8 +43,8 @@ const Confirm = () => {
                                 <button onClick={handleReRecord} className='btn btn-dark'>Re-record</button>
                             </div>
                             <div className='d-flex justify-content-between my-3'>
-                                <div onClick={handleDevice} style={{ cursor: "pointer", color: "#97a39b" }} className='fw-bold text-decoration-underline'>&#60; STEP 1: Let's check your device</div>
-                                <button onClick={handleNext} type="button" className="btn btn-success" style={{ backgroundColor: "#97a39b", border: "#97a39b" }}>Next</button>
+                                <div onClick={handleDevice} style={{ cursor: "pointer", color: "#282a2d" }} className='fw-bold text-decoration-underline'>&#60; STEP 1: Let's check your device</div>
+                                <button onClick={handleNext} type="button" className="btn btn-success" style={{ backgroundColor: "#282a2d", border: "#282a2d" }}>Next</button>
                             </div>
                         </div>
                     </div>

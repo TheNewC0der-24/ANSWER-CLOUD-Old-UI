@@ -22,7 +22,7 @@ import Team from './Components/Team/Team';
 import Profile from './Components/Profile/Profile';
 import Welcome from './Components/Videos/Welcome';
 import Work from './Components/Videos/Work';
-import Recording from './Components/Videos/Recording';
+import Recording from './Components/Videos/Check';
 import Start from './Components/Videos/Start';
 import Question from './Components/Videos/Question';
 import AudioRecording from './Components/Audios/AudioRecording';

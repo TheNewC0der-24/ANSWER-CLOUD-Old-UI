@@ -39,7 +39,7 @@ const Trouble = () => {
                                     <li>Try to close all browser tabs (including the current one) and then click on the interaction link again</li>
                                 </p>
                             </ul>
-                            <div onClick={handleDevice} style={{ cursor: "pointer", color: "#97a39b" }} className='fw-bold text-decoration-underline my-5'>&#60; STEP 1: Let's check your device</div>
+                            <div onClick={handleDevice} style={{ cursor: "pointer", color: "#282a2d" }} className='fw-bold text-decoration-underline my-5'>&#60; STEP 1: Let's check your device</div>
                         </div>
                     </div>
                 </div>
