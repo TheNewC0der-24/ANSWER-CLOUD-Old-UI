@@ -16,6 +16,7 @@ const Create = () => {
     const [certificate, setCertificate] = useState(false);
     const [name, setName] = useState(false);
     const [count, setCount] = useState(0);
+    const [value, setValue] = useState("SELECT...")
 
     const handleCertificate = () => {
         setCertificate(!certificate);
@@ -31,6 +32,10 @@ const Create = () => {
         e.preventDefault();
         navigate('/externalbot');
     }
+
+    const handleOnChange = (e) => {
+        setValue(e.target.value);
+    } 
 
     return (
         <>
@@ -243,7 +248,7 @@ const Create = () => {
                                     <div className="col-md-6 m-auto">
                                         <div className="mb-3">
                                             <label htmlFor="mode" className="form-label fw-bold">Interaction Mode</label>
-                                            <select className="form-select" id='mode' aria-label="Default select example">
+                                            <select className="form-select" onChange={handleOnChange} id='mode' aria-label="Default select example">
                                                 <option value="Select">Select...</option>
                                                 <option value="Audio">Audio</option>
                                                 <option value="Video">Video</option>
@@ -268,7 +273,7 @@ const Create = () => {
                 </div>
             </div >
             {/* </div> */}
-            < Quesans />
+            < Quesans value={value} />
             <Skills />
         </>
     )
