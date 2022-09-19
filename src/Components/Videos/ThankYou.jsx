@@ -22,6 +22,7 @@ function ThankYou() {
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(undefined);
     const [sentence, setSentence] = useState("");
+    const [time, setTime] = useState({ s: 0, m: 0 });
 
     const handleClick = (value) => {
         setRating(value);
@@ -51,7 +52,26 @@ function ThankYou() {
         "Congratulations, you displayed an Adventurer personality type!",
         "Congratulations you displayed a Debater Entrepreneur personality type!",
         "Congratulations you displayed an Entertainer personality type!"];
-    useEffect(() => { setSentence(arr[Math.floor(Math.random() * 16)]) }, arr);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    useEffect(() => {
+        setSentence(arr[Math.floor(Math.random() * 16)])
+    }, arr);
+
+    var updatedS = time.s, updatedM = time.m;
+
+    const run = () => {
+        if (updatedM === 0 && updatedS === 0) {
+            return;
+        }
+        if (updatedS === 0) {
+            updatedM--;
+            updatedS = 60;
+        }
+        updatedS--;
+        return setTime({ m: updatedM, s: updatedS });
+    };
+
+    setInterval(run, 1000);
 
     return (
         <>
@@ -67,10 +87,19 @@ function ThankYou() {
                             models (and coaches/HR managers, if applicable). You or your administrator will receive a
                             detailed feedback on the same within next 72 hours.
                         </p>
+
+                        <hr />
+                        <p>
+                            Every human interaction is an opportunity to learn. It's also an opportunity to demonstrate your skills and
+                            expertise in a specific context and capacity. We view every professional interaction as a high-stakes game - whether you are
+                            likely to save money, generate revenue, make a process more efficient or improve your performance. These virtual interactions act
+                            as practice sessions where you can test drive real-world interactions. Experts in the world may differ on what skills matter - but
+                            they all have a common point of view. Practice is the key to improvement - and specific feedback makes improvement faster.
+                        </p>
                         <div className="d-flex justify-content-center mx-auto gap-3">
-                            <button className='btn btn-dark' onClick={() => navigate("/response")}>View Your Response & Answers</button>
+                            <button className={`${time.s === 0 ? "" : "d-none"} btn btn-dark`} onClick={() => navigate("/response")}>View Your Response & Answers</button>
                         </div>
-                        <div className='text-sm mt-3'>Available in 30 seconds</div>
+                        <div className='text-sm mt-3'>Available in {time.m >= 10 ? time.m : "0" + time.m}&nbsp;:&nbsp;{time.s >= 10 ? time.s : "0" + time.s} seconds</div>
                     </div>
                 </div>
             </div>
