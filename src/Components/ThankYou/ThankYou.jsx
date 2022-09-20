@@ -18,7 +18,7 @@ const ThankYou = () => {
                                     <h5 className='text-secondary'>
                                         The interaction response link is below.
                                     </h5>
-                                    <Link to="/form" target="_blank">
+                                    <Link to="/question" target="_blank">
                                         <button className='btn btn-dark mt-3'>Check Answer Bot</button>
                                     </Link>
                                 </div>

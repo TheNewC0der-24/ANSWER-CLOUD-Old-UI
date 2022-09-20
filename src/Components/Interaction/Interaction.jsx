@@ -54,7 +54,7 @@ const Interaction = () => {
                 <td>{item.job_title}</td>
                 <td>{item.track}</td>
                 <td>
-                  <Link to="/form" target="_blank">
+                  <Link to="/question" target="_blank">
                     Link
                   </Link></td>
               </tr>
