@@ -22,7 +22,7 @@ function ThankYou() {
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(undefined);
     const [sentence, setSentence] = useState("");
-    const [time, setTime] = useState({ s: 0, m: 0 });
+    const [time, setTime] = useState({ s: 59, m: 1 });
 
     const handleClick = (value) => {
         setRating(value);
@@ -97,24 +97,24 @@ function ThankYou() {
                             they all have a common point of view. Practice is the key to improvement - and specific feedback makes improvement faster.
                         </p>
                         <div className="d-flex justify-content-center mx-auto gap-3">
-                            <button className={`${time.s === 0 ? "" : "d-none"} btn btn-dark`} onClick={() => navigate("/response")}>View Your Response & Answers</button>
+                            <button disabled={time.s === 0 ? false : true} className='btn btn-dark' onClick={() => navigate("/response")}>View Your Response & Answers</button>
                         </div>
                         <div className='text-sm mt-3'>Available in {time.m >= 10 ? time.m : "0" + time.m}&nbsp;:&nbsp;{time.s >= 10 ? time.s : "0" + time.s} seconds</div>
                     </div>
                 </div>
             </div>
 
-            <div className={`${styles.container} d-grid col-md-7 mx-auto my-5`}>
-                <div className="row">
-                    <div className={`${styles.left} col-md-4`}>
-                        <img className='img-fluid m-auto' src={confuse} alt="confused" />
-                    </div>
-                    <div className="col-md-8 m-auto">
-                        <div className="container my-3">
-                            <p align="justify">
-                                {sentence}
-                            </p>
-                            <button type="button" className="btn btn-success float-end" style={{ backgroundColor: "#282a2d", border: "#282a2d" }}>Share</button>
+            <div className="d-grid col-md-7 mx-auto my-5">
+                <div className="card border-0 shadow mb-3">
+                    <div className="row g-0">
+                        <div className="col-md-4 m-auto bg-dark">
+                            <img src={confuse} className="img-fluid rounded-start" alt="personality" />
+                        </div>
+                        <div className="col-md-8 m-auto">
+                            <div className="card-body">
+                                <p className="card-text">{sentence}</p>
+                                <button type="button" className="btn btn-dark float-end" style={{ backgroundColor: "#282a2d", border: "#282a2d" }}>Share</button>
+                            </div>
                         </div>
                     </div>
                 </div>
