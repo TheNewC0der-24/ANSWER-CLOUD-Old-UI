@@ -89,7 +89,7 @@ const InteractionScorecard = () => {
         <>
             <div className="container mt-5">
                 <h1 className="mb-3">
-                    <span className="badge text-center" style={{ border: "2px solid black", color: 'black' }}>Interaction Scorecard</span>
+                    <span className="badge text-center" style={{ border: "2px solid black", color: 'black' }}><span style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer Scorecard</span>
                 </h1>
                 <div className="mt-5">
                     <div className="m-auto">

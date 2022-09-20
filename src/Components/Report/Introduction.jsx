@@ -8,7 +8,7 @@ const Interaction = () => {
         {/* <div className="card" style={{ border: "2px solid #0e1013", borderRadius: "0" }}>
           <div className="card-body" style={{ color: "#0e1013" }}> */}
         <h1 className="mb-3">
-          <span className="badge text-center" style={{ border: "2px solid black", color: 'black' }}>Introduction</span>
+          <span className="badge text-center" style={{ border: "2px solid black", color: 'black' }}><span style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer Rating Introduction</span>
         </h1>
         <div className={styles.para}>
           <p align='justify'>
