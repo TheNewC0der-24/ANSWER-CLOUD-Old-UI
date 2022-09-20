@@ -10,7 +10,7 @@ const RatingVariables = () => {
             className="badge text-center"
             style={{ border: "2px solid black", color: "black" }}
           >
-            <span style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer Cloud Power Skills
+            <span className="me-1 fw-bold" style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer cloud power skills
           </span>
         </h1>
         <div className={styles.para}>

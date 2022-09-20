@@ -14,9 +14,9 @@ const Logo = () => {
   return (
     <>
       <div className={`${styles.row} my-2 row`}>
-        <h1 className="text-center my-3 text-decoration-underline">
-          job_title Feedback
-        </h1>
+        <h2 className="text-center my-3 text-decoration-underline">
+          job_title <span className="me-1 fw-bold" style={{ fontFamily: 'Brush Script MT', fontSize: "36px" }}>A</span>nswer cloud report
+        </h2>
         <div className="col-md-6 mt-auto ">
           <div className="d-flex gap-2 text-center">
             <h4>Candidate : <span>candidate_id.name</span></h4>

@@ -33,6 +33,7 @@ const Report = () => {
           );
         }}
         content={() => reportRef.current}
+        documentTitle="aCLOUD"
         pageStyle='{margin:5px}'
       />
 

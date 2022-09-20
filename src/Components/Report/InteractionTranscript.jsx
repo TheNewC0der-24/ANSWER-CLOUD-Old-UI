@@ -6,7 +6,7 @@ const InteractionTranscript = () => {
     <>
       <div className="container mt-5">
         <h3 className="text-center mb-5" style={{ color: "#0b3c47" }}>
-        <span style={{ fontFamily: 'Brush Script MT' }}>A</span>NSWER TRANSCRIPT{" "}
+          <span className="fw-bold me-1" style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer cloud transcript{" "}
           <span className="badge bg-danger">Experimental</span>
         </h3>
         <h5>Question : 1</h5>

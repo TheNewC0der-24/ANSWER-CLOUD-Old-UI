@@ -223,13 +223,13 @@ const Create = () => {
                                         <div className="mb-3">
                                             <div className='d-flex justify-content-between'>
                                                 <label htmlFor="generalFeedback" className="form-label fw-bold">Add Insights</label>
-                                                <label htmlFor="generalFeedback" className="form-label fw-bold">{count}/250</label>
+                                                <label htmlFor="generalFeedback" className="form-label fw-bold">{count}/615</label>
                                             </div>
                                             <textarea
                                                 onChange={e => setCount(e.target.value.length)}
                                                 className="form-control" id="generalFeedback"
                                                 minLength="50"
-                                                maxLength="250"
+                                                maxLength="615"
                                                 placeholder={`Example: Every human interaction is an opportunity to learn. Its also an opportunity to demonstrate your skills and expertise in a specific context and capacity.We view every professional interaction as a high-stakes game - whether you are likely to save money, generate revenue, make a process more efficient or improve your performance.These virtual interactions act as practice sessions where you can test drive real-world interactions.Experts in the world may differ on what skills matter – but they all have a common point of view.Practice is the key to improvement – and specific feedback makes improvement faster.`}
                                                 rows="5"
                                             />

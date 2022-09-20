@@ -197,7 +197,7 @@ const ContentRatings = () => {
             className="badge text-center"
             style={{ border: "2px solid black", color: "black" }}
           >
-            <span style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer Content Ratings
+            <span className="me-1 fw-bold" style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer content ratings
           </span>
         </h1>
         <div className={`${styles.para} my-5`}>
@@ -221,9 +221,8 @@ const ContentRatings = () => {
             re-articulating the answers by stressing on different pointers. The
             context and mentor guidance can point towards the direction in which
             an ideal answer should be framed.
-          </p>
-          <p align="justify" className="mb-5">
-          "Content ratings denote accuracy of the responses provided by the content. Our AI models and the speech-to-text engine has a unique way to accomplish this objective."
+            Content ratings denote accuracy of the responses provided by the content. Our AI models and the speech-to-text engine
+            has a unique way to accomplish this objective.
           </p>
         </div>
         <table

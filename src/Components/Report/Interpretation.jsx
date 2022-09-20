@@ -10,7 +10,7 @@ const Interpretation = () => {
             className="badge text-center"
             style={{ border: "2px solid black", color: "black" }}
           >
-            <span style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer Score Interpretation
+            <span className="me-1 fw-bold" style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer score interpretation
           </span>
         </h1>
         <div className={styles.para}>
