@@ -64,66 +64,66 @@ const Quesans = (props) => {
             </div>
             <div className="modal-body">
               <div style={style}>
-              {props.value == "MCQ" && (
-                <table className="table">
-                  <thead>
-                    <tr className="table-secondary">
-                      <th className="text-center" scope="col">
-                        Question:
-                      </th>
-                      <th className="text-center" scope="col">
-                        Media Context:
-                      </th>
-                      <th className="text-center" scope="col">
-                        Hints/Description:
-                      </th>
-                      {/* <th className="text-center" scope="col">
+                {props.value === "MCQ" && (
+                  <table className="table">
+                    <thead>
+                      <tr className="table-secondary">
+                        <th className="text-center" scope="col">
+                          Question:
+                        </th>
+                        <th className="text-center" scope="col">
+                          Media Context:
+                        </th>
+                        <th className="text-center" scope="col">
+                          Hints/Description:
+                        </th>
+                        {/* <th className="text-center" scope="col">
                         Answer Format:
                       </th> */}
-                      <th className="text-center" scope="col">
-                        Option 1
-                      </th>
-                      <th className="text-center" scope="col">
-                        Option 2
-                      </th>
-                      <th className="text-center" scope="col">
-                        Option 3
-                      </th>
-                      <th className="text-center" scope="col">
-                        Option 4
-                      </th>
-                      <th className="text-center" scope="col">
-                        Right Option
-                      </th>
-                      <th className="text-center" scope="col">
-                        Ideal Answer:
-                      </th>
-                      {/* <th className="text-center" scope="col">
+                        <th className="text-center" scope="col">
+                          Option 1
+                        </th>
+                        <th className="text-center" scope="col">
+                          Option 2
+                        </th>
+                        <th className="text-center" scope="col">
+                          Option 3
+                        </th>
+                        <th className="text-center" scope="col">
+                          Option 4
+                        </th>
+                        <th className="text-center" scope="col">
+                          Right Option
+                        </th>
+                        <th className="text-center" scope="col">
+                          Ideal Answer:
+                        </th>
+                        {/* <th className="text-center" scope="col">
                         Rated?
                       </th>
                       <th style={rated} className="text-center" scope="col">
                         ContentRated?
                       </th> */}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {[...Array(noOfRows)].map((index) => {
-                      return (
-                        <tr key={index}>
-                          <td>
-                            <textarea
-                              className="form-control"
-                              id="question"
-                              rows="1"
-                            ></textarea>
-                          </td>
-                          <td>
-                            <input type="text" className="form-control" id="medialink" placeholder='Paste your link here' />
-                          </td>
-                          <td>
-                            <input type="text" className="form-control" id="hint" placeholder='Hints/Description' />
-                          </td>
-                          {/* <td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[...Array(noOfRows)].map((index) => {
+                        return (
+                          <tr key={index}>
+                            <td>
+                              <textarea
+                                className="form-control"
+                                id="question"
+                                rows="1"
+                              ></textarea>
+                            </td>
+                            <td>
+                              <input type="text" className="form-control" id="medialink" placeholder='Paste your link here' />
+                            </td>
+                            <td>
+                              <input type="text" className="form-control" id="hint" placeholder='Hints/Description' />
+                            </td>
+                            {/* <td>
                             <select
                               onChange={handleOnChange}
                               value={text}
@@ -138,7 +138,159 @@ const Quesans = (props) => {
                               <option>Resume Link</option>
                             </select>
                           </td> */}
-                          <td>
+                            <td>
+                              <textarea
+                                className="form-control"
+                                id="option1"
+                                rows="1"
+                              ></textarea>
+                            </td>
+                            <td>
+                              <textarea
+                                className="form-control"
+                                id="option2"
+                                rows="1"
+                              ></textarea>
+                            </td>
+                            <td>
+                              <textarea
+                                className="form-control"
+                                id="option3"
+                                rows="1"
+                              ></textarea>
+                            </td>
+                            <td>
+                              <textarea
+                                className="form-control"
+                                id="option4"
+                                rows="1"
+                              ></textarea>
+                            </td>
+                            <td>
+                              <select
+                                className="form-select"
+                                id="rightAnswer"
+                              >
+                                <option value="Select...">Select...</option>
+                                <option value="Option 1">Option 1</option>
+                                <option value="Option 2">Option 2</option>
+                                <option value="Option 3">Option 3</option>
+                                <option value="Option 4">Option 4</option>
+                              </select>
+                            </td>
+                            <td>
+                              <textarea
+                                className="form-control"
+                                id="idealAnswer"
+                                rows="1"
+                              ></textarea>
+                            </td>
+                            {/* <td>
+                            <select
+                              onChange={handleOnChanges}
+                              value={texts}
+                              className="form-select"
+                              id="rated"
+                            >
+                              <option selected value="Select...">Select...</option>
+                              <option>Yes</option>
+                              <option>No</option>
+                            </select>
+                          </td> */}
+                            {/* <td>
+                            <select
+                              style={rated}
+                              className="form-select"
+                              id="contentRated"
+                            >
+                              <option selected value="Select...">
+                                Select...
+                              </option>
+                              <option value="Yes">Yes</option>
+                              <option value="No">No</option>
+                            </select>
+                          </td> */}
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                )}
+                {props.value != "MCQ" && (
+                  <table className="table">
+                    <thead>
+                      <tr className="table-secondary">
+                        <th className="text-center" scope="col">
+                          Question:
+                        </th>
+                        <th className="text-center" scope="col">
+                          Media Context:
+                        </th>
+                        <th className="text-center" scope="col">
+                          Hints/Description:
+                        </th>
+                        {/* <th className="text-center" scope="col">
+                        Answer Format:
+                      </th> */}
+                        {/* <th className="text-center" scope="col">
+                        Option 1
+                      </th>
+                      <th className="text-center" scope="col">
+                        Option 2
+                      </th>
+                      <th className="text-center" scope="col">
+                        Option 3
+                      </th>
+                      <th className="text-center" scope="col">
+                        Option 4
+                      </th>
+                      <th className="text-center" scope="col">
+                        Right Option
+                      </th> */}
+                        <th className="text-center" scope="col">
+                          Ideal Answer:
+                        </th>
+                        {/* <th className="text-center" scope="col">
+                        Rated?
+                      </th>
+                      <th style={rated} className="text-center" scope="col">
+                        ContentRated?
+                      </th> */}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[...Array(noOfRows)].map((index) => {
+                        return (
+                          <tr key={index}>
+                            <td>
+                              <textarea
+                                className="form-control"
+                                id="question"
+                                rows="1"
+                              ></textarea>
+                            </td>
+                            <td>
+                              <input type="text" className="form-control" id="medialink" placeholder='Paste your link here' />
+                            </td>
+                            <td>
+                              <input type="text" className="form-control" id="hint" placeholder='Hints/Description' />
+                            </td>
+                            {/* <td>
+                            <select
+                              onChange={handleOnChange}
+                              value={text}
+                              className="form-select"
+                              id="answer"
+                              aria-label="Default select example"
+                            >
+                              <option>Select...</option>
+                              <option>Audio</option>
+                              <option>Video</option>
+                              <option>MCQ</option>
+                              <option>Resume Link</option>
+                            </select>
+                          </td> */}
+                            {/* <td>
                             <textarea
                               className="form-control"
                               id="option1"
@@ -177,15 +329,15 @@ const Quesans = (props) => {
                               <option value="Option 3">Option 3</option>
                               <option value="Option 4">Option 4</option>
                             </select>
-                          </td>
-                          <td>
-                            <textarea
-                              className="form-control"
-                              id="idealAnswer"
-                              rows="1"
-                            ></textarea>
-                          </td>
-                          {/* <td>
+                          </td> */}
+                            <td>
+                              <textarea
+                                className="form-control"
+                                id="idealAnswer"
+                                rows="1"
+                              ></textarea>
+                            </td>
+                            {/* <td>
                             <select
                               onChange={handleOnChanges}
                               value={texts}
@@ -197,7 +349,7 @@ const Quesans = (props) => {
                               <option>No</option>
                             </select>
                           </td> */}
-                          {/* <td>
+                            {/* <td>
                             <select
                               style={rated}
                               className="form-select"
@@ -210,164 +362,12 @@ const Quesans = (props) => {
                               <option value="No">No</option>
                             </select>
                           </td> */}
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
-              )}
-              {props.value != "MCQ" && (
-                <table className="table">
-                  <thead>
-                    <tr className="table-secondary">
-                      <th className="text-center" scope="col">
-                        Question:
-                      </th>
-                      <th className="text-center" scope="col">
-                        Media Context:
-                      </th>
-                      <th className="text-center" scope="col">
-                        Hints/Description:
-                      </th>
-                      {/* <th className="text-center" scope="col">
-                        Answer Format:
-                      </th> */}
-                      {/* <th className="text-center" scope="col">
-                        Option 1
-                      </th>
-                      <th className="text-center" scope="col">
-                        Option 2
-                      </th>
-                      <th className="text-center" scope="col">
-                        Option 3
-                      </th>
-                      <th className="text-center" scope="col">
-                        Option 4
-                      </th>
-                      <th className="text-center" scope="col">
-                        Right Option
-                      </th> */}
-                      <th className="text-center" scope="col">
-                        Ideal Answer:
-                      </th>
-                      {/* <th className="text-center" scope="col">
-                        Rated?
-                      </th>
-                      <th style={rated} className="text-center" scope="col">
-                        ContentRated?
-                      </th> */}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {[...Array(noOfRows)].map((index) => {
-                      return (
-                        <tr key={index}>
-                          <td>
-                            <textarea
-                              className="form-control"
-                              id="question"
-                              rows="1"
-                            ></textarea>
-                          </td>
-                          <td>
-                            <input type="text" className="form-control" id="medialink" placeholder='Paste your link here' />
-                          </td>
-                          <td>
-                            <input type="text" className="form-control" id="hint" placeholder='Hints/Description' />
-                          </td>
-                          {/* <td>
-                            <select
-                              onChange={handleOnChange}
-                              value={text}
-                              className="form-select"
-                              id="answer"
-                              aria-label="Default select example"
-                            >
-                              <option>Select...</option>
-                              <option>Audio</option>
-                              <option>Video</option>
-                              <option>MCQ</option>
-                              <option>Resume Link</option>
-                            </select>
-                          </td> */}
-                          {/* <td>
-                            <textarea
-                              className="form-control"
-                              id="option1"
-                              rows="1"
-                            ></textarea>
-                          </td>
-                          <td>
-                            <textarea
-                              className="form-control"
-                              id="option2"
-                              rows="1"
-                            ></textarea>
-                          </td>
-                          <td>
-                            <textarea
-                              className="form-control"
-                              id="option3"
-                              rows="1"
-                            ></textarea>
-                          </td>
-                          <td>
-                            <textarea
-                              className="form-control"
-                              id="option4"
-                              rows="1"
-                            ></textarea>
-                          </td>
-                          <td>
-                            <select
-                              className="form-select"
-                              id="rightAnswer"
-                            >
-                              <option value="Select...">Select...</option>
-                              <option value="Option 1">Option 1</option>
-                              <option value="Option 2">Option 2</option>
-                              <option value="Option 3">Option 3</option>
-                              <option value="Option 4">Option 4</option>
-                            </select>
-                          </td> */}
-                          <td>
-                            <textarea
-                              className="form-control"
-                              id="idealAnswer"
-                              rows="1"
-                            ></textarea>
-                          </td>
-                          {/* <td>
-                            <select
-                              onChange={handleOnChanges}
-                              value={texts}
-                              className="form-select"
-                              id="rated"
-                            >
-                              <option selected value="Select...">Select...</option>
-                              <option>Yes</option>
-                              <option>No</option>
-                            </select>
-                          </td> */}
-                          {/* <td>
-                            <select
-                              style={rated}
-                              className="form-select"
-                              id="contentRated"
-                            >
-                              <option selected value="Select...">
-                                Select...
-                              </option>
-                              <option value="Yes">Yes</option>
-                              <option value="No">No</option>
-                            </select>
-                          </td> */}
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
-              )}
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                )}
               </div>
               <hr />
               <div>

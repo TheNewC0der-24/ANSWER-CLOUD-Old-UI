@@ -35,7 +35,7 @@ const Create = () => {
 
     const handleOnChange = (e) => {
         setValue(e.target.value);
-    } 
+    }
 
     return (
         <>
@@ -62,13 +62,10 @@ const Create = () => {
 
             <div className="row my-4 mx-auto">
                 <div className="col-md-4">
-                    <img className='img-fluid m-auto' src={internalbot} alt="internalbot" />
+                    <img className='img-fluid m-auto shadow' src={internalbot} alt="internalbot" />
                 </div>
                 <div className='col-md-8  m-auto'>
                     <div className='card shadow border-0'>
-                        {/* <h3 className={`${styles.cardHeader} card-header text-center mb-3 bg-dark text-white`}>
-                            Create Internal Bot
-                        </h3> */}
                         <div className="card-body">
                             <form>
                                 <div className="row">
@@ -106,19 +103,9 @@ const Create = () => {
                                         </div>
                                     </div>
                                     <div className="col-md-6">
-                                        <div className="mb-3">
-                                            <div className='d-flex justify-content-between'>
-                                                <label htmlFor="generalFeedback" className="form-label fw-bold">Add Insights</label>
-                                                <label htmlFor="generalFeedback" className="form-label fw-bold">{count}/250</label>
-                                            </div>
-                                            <textarea
-                                                onChange={e => setCount(e.target.value.length)}
-                                                className="form-control" id="generalFeedback"
-                                                minLength="50"
-                                                maxLength="250"
-                                                placeholder={`Every human interaction is an opportunity to learn. Its also an opportunity to demonstrate your skills and expertise in a specific context and capacity.We view every professional interaction as a high-stakes game - whether you are likely to save money, generate revenue, make a process more efficient or improve your performance.These virtual interactions act as practice sessions where you can test drive real-world interactions.Experts in the world may differ on what skills matter – but they all have a common point of view.Practice is the key to improvement – and specific feedback makes improvement faster.`}
-                                                rows="5"></textarea>
-                                            <div className="form-text text-danger">* Minimum 50 characters are required to post the insights</div>
+                                        <div className="d-flex justify-content-between mb-3">
+                                            <label htmlFor="question" className="form-label fw-bold">Skills: <span className='badge badge bg-secondary'>skill name</span></label>
+                                            <button type="button" className="btn btn-outline-secondary button" data-bs-toggle="modal" data-bs-target="#skillModal">Add</button>
                                         </div>
                                     </div>
                                 </div>
@@ -229,21 +216,28 @@ const Create = () => {
                                     <div className="col-md-6">
                                         <div className="mb-3">
                                             <label htmlFor="description" className="form-label fw-bold">Description</label>
-                                            <input type="text" className="form-control" placeholder='Your description' id="description" />
+                                            <textarea className='form-control' rows="5" id="description" placeholder='Your description'></textarea>
                                         </div>
-
                                     </div>
                                     <div className="col-md-6">
-                                        {/* <div className="mb-3">
-                                            <label htmlFor="description" className="form-label fw-bold">Instruction</label>
-                                            <input type="text" className="form-control" placeholder='Your instruction' id="instruction" />
-                                        </div> */}
+                                        <div className="mb-3">
+                                            <div className='d-flex justify-content-between'>
+                                                <label htmlFor="generalFeedback" className="form-label fw-bold">Add Insights</label>
+                                                <label htmlFor="generalFeedback" className="form-label fw-bold">{count}/250</label>
+                                            </div>
+                                            <textarea
+                                                onChange={e => setCount(e.target.value.length)}
+                                                className="form-control" id="generalFeedback"
+                                                minLength="50"
+                                                maxLength="250"
+                                                placeholder={`Example: Every human interaction is an opportunity to learn. Its also an opportunity to demonstrate your skills and expertise in a specific context and capacity.We view every professional interaction as a high-stakes game - whether you are likely to save money, generate revenue, make a process more efficient or improve your performance.These virtual interactions act as practice sessions where you can test drive real-world interactions.Experts in the world may differ on what skills matter – but they all have a common point of view.Practice is the key to improvement – and specific feedback makes improvement faster.`}
+                                                rows="5"
+                                            />
+                                            <div className="form-text text-danger">* Minimum 50 characters are required to post the insights</div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div className="d-flex justify-content-between mb-3">
-                                    <label htmlFor="question" className="form-label fw-bold">Skills: <span className='badge badge bg-secondary'>skill name</span></label>
-                                    <button type="button" className="btn btn-outline-secondary button" data-bs-toggle="modal" data-bs-target="#skillModal">Add</button>
-                                </div>
+
                                 <div className="row">
                                     <div className="col-md-6 m-auto">
                                         <div className="mb-3">
