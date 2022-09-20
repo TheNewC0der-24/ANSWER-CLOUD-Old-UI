@@ -33,9 +33,7 @@ const Report = () => {
           );
         }}
         content={() => reportRef.current}
-        // documentTitle='talentSumo'
         pageStyle='{margin:5px}'
-        // margin= {{top: 20, left: 100, right: 30, bottom: 40}}
       />
 
 
