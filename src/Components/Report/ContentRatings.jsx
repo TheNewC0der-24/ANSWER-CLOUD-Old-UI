@@ -197,7 +197,7 @@ const ContentRatings = () => {
             className="badge text-center"
             style={{ border: "2px solid black", color: "black" }}
           >
-            Content Ratings
+            <span style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer Content Ratings
           </span>
         </h1>
         <div className={`${styles.para} my-5`}>

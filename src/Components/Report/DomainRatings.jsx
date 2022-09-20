@@ -5,7 +5,7 @@ const DomainRatings = () => {
         <>
             <div className="container">
                 <h1 className="mb-3">
-                    <span className="badge text-center" style={{ border: "2px solid black", color: 'black' }}>Domain Ratings</span>
+                    <span className="badge text-center" style={{ border: "2px solid black", color: 'black' }}><span style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer Domain Ratings</span>
                 </h1>
                 {/* <div className="card h-100" style={{ border: "2.5px solid #000" }}>
                     <div className="card-body" style={{ color: "#0b3c47" }}> */}
