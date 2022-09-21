@@ -67,7 +67,7 @@ const Quesans = () => {
   useEffect(() => {
     axios.get('response.json')
       .then(res => {
-        console.log(res.data.results);
+        // console.log(res.data.results);
         setData(res.data.results);
       })
   });
