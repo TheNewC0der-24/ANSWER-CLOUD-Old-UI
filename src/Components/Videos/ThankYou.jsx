@@ -151,7 +151,7 @@ function ThankYou() {
                         </div>
                     </div>
                 </div>
-                {/* <div className="card border-0 shadow mb-3">
+                <div className="card border-0 shadow mb-3">
                     <div className="row g-0">
                         <div className="col-md-4 m-auto bg-white">
                             <img src={image} className="img-fluid d-flex justify-content-center mx-auto" alt="personality" />
@@ -163,7 +163,7 @@ function ThankYou() {
                             </div>
                         </div>
                     </div>
-                </div> */}
+                </div>
             </div>
 
             <div className="d-grid col-md-7 mt-4 mx-auto">
