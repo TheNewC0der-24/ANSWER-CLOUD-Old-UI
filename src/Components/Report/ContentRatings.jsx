@@ -256,7 +256,7 @@ const ContentRatings = () => {
         </table>
         <h3 className="my-5">Question Specific Content Ratings :</h3>
         <div className={styles.para}>
-          <p align="justify">
+          <p align="justify" className="fs-2">
             The chart below illustrates the content ratings for each answer, in
             percentage terms. The dotted lines at the 80% score mark denote the
             “aspiration line” which should be target content ratings. In our
