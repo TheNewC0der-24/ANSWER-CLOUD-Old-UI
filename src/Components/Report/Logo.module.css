@@ -6,6 +6,6 @@
 
 @media (max-width: 770px) {
   .row {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 }

@@ -5,7 +5,7 @@ const Interpretation = () => {
   return (
     <>
       <div className="container mt-2">
-        <h1 className="mb-1">
+        <h1 className="mb-3">
           <span
             className="badge text-center"
             style={{ border: "2px solid black", color: "black" }}

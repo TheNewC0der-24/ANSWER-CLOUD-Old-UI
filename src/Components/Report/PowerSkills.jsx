@@ -4,7 +4,7 @@ import styles from "./PowerSkills.module.css";
 const RatingVariables = () => {
   return (
     <>
-      <div className="container mt-5">
+      <div className="container mt-2">
         <h1 className="mb-3">
           <span
             className="badge text-center"
@@ -95,11 +95,6 @@ const RatingVariables = () => {
                 perceived as having high confidence and fluency in his approach.
               </p>
             </div>
-            {/* </ul> */}
-
-            {/* </div> */}
-            {/* <div className="col-md-6"> */}
-            {/* <ul> */}
             <div className={styles.ul}>
               <li className={styles.li}>
                 <h3>Energy and Adaptability</h3>
@@ -166,8 +161,6 @@ const RatingVariables = () => {
                 context.
               </p>
             </div>
-            {/* </ul> */}
-            {/* </div> */}
           </div>
         </div>
       </div>
