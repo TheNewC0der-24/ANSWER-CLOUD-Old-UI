@@ -5,8 +5,22 @@ import { useNavigate } from 'react-router-dom';
 // import thankyou from "../../assets/Images/thankyou.svg"
 import thankyou from "../../assets/Images/thankForm.svg"
 // import confuse from "../../assets/Images/confuse.png"
-import architect from "../../assets/Images/architect.svg"
-
+import architect from "../../assets/Images/architect.jpg"
+import advocate from "../../assets/Images/advocate.jpg"
+import adventurer from "../../assets/Images/adventurer.jpg"
+import campaigner from "../../assets/Images/campaigner.jpg"
+import consul from "../../assets/Images/consul.jpg"
+import entertainer from "../../assets/Images/entertainer.jpg"
+import commander from "../../assets/Images/commander.jpg"
+import logician from "../../assets/Images/logician.jpg"
+import debater from "../../assets/Images/debater.jpg"
+import mediater from "../../assets/Images/mediater.jpg"
+import virtuoso from "../../assets/Images/virtuoso.jpg"
+import logistician from "../../assets/Images/logistician.jpg"
+import protagonist from "../../assets/Images/protagonist.jpg"
+import executive from "../../assets/Images/executive.jpg"
+import defender from   "../../assets/Images/defender.jpg"
+import debaterentrepreneur from "../../assets/Images/debaterentrepreneur.jpg"
 import { FaStar } from 'react-icons/fa';
 
 const colors = {
@@ -24,7 +38,7 @@ function ThankYou() {
     const [hover, setHover] = useState(undefined);
     const [sentence, setSentence] = useState("");
     const [time, setTime] = useState({ s: 0, m: 1 });
-
+     const[image,setImage] = useState("");
     const handleClick = (value) => {
         setRating(value);
     };
@@ -54,9 +68,24 @@ function ThankYou() {
         "Congratulations you displayed a Debater Entrepreneur personality type!",
         "Congratulations you displayed an Entertainer personality type!"];
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    useEffect(() => {
-        setSentence(arr[Math.floor(Math.random() * 16)])
-    }, arr);
+    
+
+
+    const picture=[architect,logician,commander,debater,advocate,mediater,protagonist,campaigner,logistician,defender,executive,consul,virtuoso,
+    adventurer,debaterentrepreneur,entertainer];
+const a=Math.floor(Math.random() * 16);
+useEffect(() => {
+    setSentence(arr[a]);
+    setImage(picture[a]);
+},arr,picture);
+
+
+
+
+
+
+
+
 
     var updatedS = time.s, updatedM = time.m;
 
@@ -109,7 +138,8 @@ function ThankYou() {
                 <div className="card border-0 shadow mb-3">
                     <div className="row g-0">
                         <div className="col-md-4 m-auto bg-dark">
-                            <img src={architect} className="img-fluid rounded-start" alt="personality" />
+                         {/* {changeimage()} */}
+                            <img src={image} style={{width:"300px"}} className="img-fluid rounded-start" alt="personality" />
                         </div>
                         <div className="col-md-8 m-auto">
                             <div className="card-body">
