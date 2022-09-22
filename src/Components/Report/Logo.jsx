@@ -30,9 +30,8 @@ const Logo = () => {
                 Candidate : <span>candidate_id.name</span>
               </h4>
               <Link to="/response">
-                {/* <button className="btn btn-dark btn-sm" > */}
-                <button style={{ border: "2px solid black", color: "black" }}>
-                  <IoIosChatboxes className="fs-2 me-1 fw-bold" />
+                <button className="btn btn-dark btn-sm" >
+                  <IoIosChatboxes className="fs-3 me-2 fw-bold" />
                   RESPONSES
                 </button>
               </Link>

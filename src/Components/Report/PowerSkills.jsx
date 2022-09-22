@@ -6,10 +6,7 @@ const RatingVariables = () => {
     <>
       <div className="container mt-2">
         <h1 className="mb-3">
-          <span
-            className="badge text-center"
-            style={{ border: "2px solid black", color: "black" }}
-          >
+          <span className="badge bg-dark text-center" style={{ borderRadius: "0" }}  >
             <span className="me-1 fw-bold" style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer cloud power skills
           </span>
         </h1>
@@ -21,13 +18,9 @@ const RatingVariables = () => {
               analyzed as power skills.
             </em>
           </p>
-          <div className={styles.row}>
-            {/* <div className="col-md-6"> */}
-            {/* <ul className={styles.ul}> */}
-            <div className={styles.ul}>
-              <li className={styles.li}>
-                <h3>Likeability & Trust</h3>
-              </li>
+          <div className={`${styles.main} mt-4`}>
+            <div className={styles.col1}>
+              <h3>Likeability & Trust</h3>
               <p align="justify">
                 All of us have heard and likely commented, “I like that
                 guy/gal!” The science of likeability says that the smile is the
@@ -49,10 +42,8 @@ const RatingVariables = () => {
                 </strong>
               </p>
             </div>
-            <div className={styles.ul}>
-              <li className={styles.li}>
-                <h3>Empathy & Charm</h3>
-              </li>
+            <div className={styles.col2}>
+              <h3>Empathy & Charm</h3>
               <p align="justify">
                 Who doesn’t want to be charming? Did you know that certain body
                 language markers like eye movement and gazes’ signals critical
@@ -74,31 +65,9 @@ const RatingVariables = () => {
               </p>
             </div>
           </div>
-          <div className={styles.row}>
-            <div className={styles.ul}>
-              <li className={styles.li}>
-                <h3>Confidence and Fluency</h3>
-              </li>
-              <p align="justify">
-                Do you use a lot of words like “actually”, “really”, “like” and
-                others? These are called filler words - subconsciously a lot of
-                us have a habit of doing so. This creates a negative impression
-                in the minds of our friends and colleagues.Researchers have
-                discovered that we often associate the label of “low-confidence”
-                with such people. Our algorithms generate proprietary scores
-                that divide this power - skill of Confidence in four cohorts, as
-                a relative barometer, of the candidate’s confidence. This should
-                not be confused with word play.{" "}
-                <em>So how can you improve your scores?</em> Simple, think and
-                answer in a calculated manner without any unnecessary words. A
-                top cohort rating of A demonstrates that the candidate is
-                perceived as having high confidence and fluency in his approach.
-              </p>
-            </div>
-            <div className={styles.ul}>
-              <li className={styles.li}>
-                <h3>Energy and Adaptability</h3>
-              </li>
+          <div className={`${styles.main} mt-4`}>
+            <div className={styles.col1}>
+              <h3>Energy and Adaptability</h3>
               <p align="justify">
                 Ever heard a comment “Wow he was super high energy!” The
                 strength of our voice, voice modulation and pitch matters. It
@@ -118,12 +87,28 @@ const RatingVariables = () => {
                 handle any type of conversation and come out ahead.
               </p>
             </div>
+            <div className={styles.col2}>
+              <h3>Confidence and Fluency</h3>
+              <p align="justify">
+                Do you use a lot of words like “actually”, “really”, “like” and
+                others? These are called filler words - subconsciously a lot of
+                us have a habit of doing so. This creates a negative impression
+                in the minds of our friends and colleagues.Researchers have
+                discovered that we often associate the label of “low-confidence”
+                with such people. Our algorithms generate proprietary scores
+                that divide this power - skill of Confidence in four cohorts, as
+                a relative barometer, of the candidate’s confidence. This should
+                not be confused with word play.{" "}
+                <em>So how can you improve your scores?</em> Simple, think and
+                answer in a calculated manner without any unnecessary words. A
+                top cohort rating of A demonstrates that the candidate is
+                perceived as having high confidence and fluency in his approach.
+              </p>
+            </div>
           </div>
-          <div className={styles.row}>
-            <div className={styles.ul}>
-              <li className={styles.li}>
-                <h3>Communication skills</h3>
-              </li>
+          <div className={`${styles.main} mt-4`}>
+            <div className={styles.col1}>
+              <h3>Communication skills</h3>
               <p align="justify">
                 We all want to sound eloquent in the conversations but whether
                 due to the pressure or tension, we often tend to fumble and take
@@ -140,10 +125,8 @@ const RatingVariables = () => {
                 and come out ahead.
               </p>
             </div>
-            <div className={styles.ul}>
-              <li className={styles.li}>
-                <h3>Content Ratings</h3>
-              </li>
+            <div className={styles.col2}>
+              <h3>Content Ratings</h3>
               <p align="justify">
                 We evaluate the content of the responses not only by comparing
                 it to the best possible answer to that question depending upon
