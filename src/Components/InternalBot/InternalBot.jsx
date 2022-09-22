@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useFormInputValidation } from "react-form-input-validation";
 import styles from './InternalBot.module.css';
 
@@ -43,14 +43,16 @@ const Create = () => {
         const isValid = await form.validate(event);
         if (isValid) {
             console.log("Form is valid");
-        } else {
-
         }
     }
 
-    const handleClick = (e) => {
+    const handleClick = async (e) => {
         e.preventDefault();
-        navigate('/externalbot');
+        const isValid = await form.validate(e);
+        if (isValid) {
+            console.log("Form is valid");
+            navigate('/externalbot');
+        }
     }
 
     return (
@@ -88,7 +90,7 @@ const Create = () => {
                                     <div className="col-md-4">
                                         <div className="mb-3">
                                             <label className="form-label fw-bold">Company/Institute Name*</label>
-                                            <input type="text" name='company_name' onBlur={form.handleBlurEvent} onChange={form.handleChangeEvent} value={fields.company_name} className="form-control" placeholder='Enter company/institute name' id="companyName" />
+                                            <input type="text" name='company_name' data-attribute-name="Company/Institute Name" onBlur={form.handleBlurEvent} onChange={form.handleChangeEvent} value={fields.company_name} className="form-control" placeholder='Enter company/institute name' id="companyName" />
                                             <div className=' form-text text-danger'>
                                                 {errors.company_name
                                                     ? errors.company_name
