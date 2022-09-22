@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom';
 
 // import thankyou from "../../assets/Images/thankyou.svg"
 import thankyou from "../../assets/Images/thankForm.svg"
-import confuse from "../../assets/Images/confuse.png"
+// import confuse from "../../assets/Images/confuse.png"
+import architect from "../../assets/Images/architect.svg"
 
 import { FaStar } from 'react-icons/fa';
 
@@ -22,7 +23,7 @@ function ThankYou() {
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(undefined);
     const [sentence, setSentence] = useState("");
-    const [time, setTime] = useState({ s: 59, m: 1 });
+    const [time, setTime] = useState({ s: 0, m: 1 });
 
     const handleClick = (value) => {
         setRating(value);
@@ -108,7 +109,7 @@ function ThankYou() {
                 <div className="card border-0 shadow mb-3">
                     <div className="row g-0">
                         <div className="col-md-4 m-auto bg-dark">
-                            <img src={confuse} className="img-fluid rounded-start" alt="personality" />
+                            <img src={architect} className="img-fluid rounded-start" alt="personality" />
                         </div>
                         <div className="col-md-8 m-auto">
                             <div className="card-body">
