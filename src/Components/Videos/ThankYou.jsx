@@ -52,7 +52,7 @@ function ThankYou() {
     };
 
     const arr = ["Congratulations you displayed a Planner personality type!  These detail-oriented strategists love perfection. Whether it's finding the perfect gift for a loved one or finishing a project at work, they allocate their time and energy to different aspects of their lives. However, their inner world is complex and often private."
-    ,
+        ,
         "Congratulations you displayed a Rationalist personality type!The adaptable and open-minded type achiever has an ambition like no other personality types. They combine a willingness to adapt with creative intelligence, allowing them to see unconventional solutions to common issues.",
         "Congratulations you displayed a Master personality type! People with the ESTJ personality type are generally confident and creative visionaries. They excel at decision-making and thrive on the challenges and accomplishments that come hand-in-hand with being an ESTJ.",
 
@@ -142,7 +142,7 @@ function ThankYou() {
             </div>
 
             <div className="d-grid col-md-7 mx-auto my-5">
-                <div className="card border-0 shadow">
+                {/* <div className="card border-0 shadow">
                     <img src={image} className="img-fluid d-flex justify-content-center mx-auto" width={300} alt="personality" />
                     <div className="card-body">
                         <p className="card-text text-center">{sentence}</p>
@@ -150,7 +150,7 @@ function ThankYou() {
                             <button className="btn btn-dark float-end" style={{ backgroundColor: "#282a2d", border: "#282a2d", borderRadius: "0" }}>Share On Social Media</button>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <div className="card border-0 shadow mb-3">
                     <div className="row g-0">
                         <div className="col-md-4 m-auto bg-white">
@@ -159,9 +159,10 @@ function ThankYou() {
                         <div className="col-md-8 m-auto">
                             <div className="card-body">
                                 <p className="card-text text-center">{sentence}</p>
-                                <button type="button" className="btn btn-dark float-end" style={{ backgroundColor: "#282a2d", border: "#282a2d" }}>Share</button>
+                                {/* <hr /> */}
                             </div>
                         </div>
+                        <button type="button" className="btn btn-dark float-end" style={{ backgroundColor: "#282a2d", border: "#282a2d", borderRadius: "0" }}>Share On Social Media</button>
                     </div>
                 </div>
             </div>
