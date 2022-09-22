@@ -4,7 +4,7 @@ import styles from "./SkillsSelection.module.css";
 const SkillsSelection = () => {
   return (
     <>
-      <div className="container mt-5">
+      <div className="container mt-2">
         <h1 className="mb-2">
           <span
             className="badge text-center"
