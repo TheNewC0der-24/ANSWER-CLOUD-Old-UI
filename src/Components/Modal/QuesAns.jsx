@@ -2,29 +2,6 @@ import React, { useState } from "react";
 
 const Quesans = (props) => {
   const [noOfRows, setNoOfRows] = useState(1);
-  const [text, setText] = useState("Select...");
-  // const [texts, setTexts] = useState("Select...");
-  const [display, setDisplay] = useState({ display: "none" });
-  // const [rated, setRated] = useState({ display: "none" });
-
-
-  const handleOnChange = (event) => {
-    setText(event.target.value);
-    if (event.target.value === "MCQ") {
-      setDisplay({ display: "table-cell" });
-    } else {
-      setDisplay({ display: "none" });
-    }
-  };
-
-  // const handleOnChanges = (event) => {
-  //   setTexts(event.target.value);
-  //   if (event.target.value === "Yes") {
-  //     setRated({ display: "table-cell" });
-  //   } else {
-  //     setRated({ display: "none" });
-  //   }
-  // };
 
   const style = {
     height: "200px",
@@ -77,9 +54,6 @@ const Quesans = (props) => {
                         <th className="text-center" scope="col">
                           Hints/Description:
                         </th>
-                        {/* <th className="text-center" scope="col">
-                        Answer Format:
-                      </th> */}
                         <th className="text-center" scope="col">
                           Option 1
                         </th>
@@ -95,15 +69,9 @@ const Quesans = (props) => {
                         <th className="text-center" scope="col">
                           Right Option
                         </th>
-                        <th className="text-center" scope="col">
-                          Ideal Answer:
-                        </th>
                         {/* <th className="text-center" scope="col">
-                        Rated?
-                      </th>
-                      <th style={rated} className="text-center" scope="col">
-                        ContentRated?
-                      </th> */}
+                          Ideal Answer:
+                        </th> */}
                       </tr>
                     </thead>
                     <tbody>
@@ -123,21 +91,6 @@ const Quesans = (props) => {
                             <td>
                               <input type="text" className="form-control" id="hint" placeholder='Hints/Description' />
                             </td>
-                            {/* <td>
-                            <select
-                              onChange={handleOnChange}
-                              value={text}
-                              className="form-select"
-                              id="answer"
-                              aria-label="Default select example"
-                            >
-                              <option>Select...</option>
-                              <option>Audio</option>
-                              <option>Video</option>
-                              <option>MCQ</option>
-                              <option>Resume Link</option>
-                            </select>
-                          </td> */}
                             <td>
                               <textarea
                                 className="form-control"
@@ -178,45 +131,20 @@ const Quesans = (props) => {
                                 <option value="Option 4">Option 4</option>
                               </select>
                             </td>
-                            <td>
+                            {/* <td>
                               <textarea
                                 className="form-control"
                                 id="idealAnswer"
                                 rows="1"
                               ></textarea>
-                            </td>
-                            {/* <td>
-                            <select
-                              onChange={handleOnChanges}
-                              value={texts}
-                              className="form-select"
-                              id="rated"
-                            >
-                              <option selected value="Select...">Select...</option>
-                              <option>Yes</option>
-                              <option>No</option>
-                            </select>
-                          </td> */}
-                            {/* <td>
-                            <select
-                              style={rated}
-                              className="form-select"
-                              id="contentRated"
-                            >
-                              <option selected value="Select...">
-                                Select...
-                              </option>
-                              <option value="Yes">Yes</option>
-                              <option value="No">No</option>
-                            </select>
-                          </td> */}
+                            </td> */}
                           </tr>
                         );
                       })}
                     </tbody>
                   </table>
                 )}
-                {props.value != "MCQ" && (
+                {props.value !== "MCQ" && (
                   <table className="table">
                     <thead>
                       <tr className="table-secondary">
@@ -229,33 +157,9 @@ const Quesans = (props) => {
                         <th className="text-center" scope="col">
                           Hints/Description:
                         </th>
-                        {/* <th className="text-center" scope="col">
-                        Answer Format:
-                      </th> */}
-                        {/* <th className="text-center" scope="col">
-                        Option 1
-                      </th>
-                      <th className="text-center" scope="col">
-                        Option 2
-                      </th>
-                      <th className="text-center" scope="col">
-                        Option 3
-                      </th>
-                      <th className="text-center" scope="col">
-                        Option 4
-                      </th>
-                      <th className="text-center" scope="col">
-                        Right Option
-                      </th> */}
                         <th className="text-center" scope="col">
                           Ideal Answer:
                         </th>
-                        {/* <th className="text-center" scope="col">
-                        Rated?
-                      </th>
-                      <th style={rated} className="text-center" scope="col">
-                        ContentRated?
-                      </th> */}
                       </tr>
                     </thead>
                     <tbody>
@@ -275,61 +179,6 @@ const Quesans = (props) => {
                             <td>
                               <input type="text" className="form-control" id="hint" placeholder='Hints/Description' />
                             </td>
-                            {/* <td>
-                            <select
-                              onChange={handleOnChange}
-                              value={text}
-                              className="form-select"
-                              id="answer"
-                              aria-label="Default select example"
-                            >
-                              <option>Select...</option>
-                              <option>Audio</option>
-                              <option>Video</option>
-                              <option>MCQ</option>
-                              <option>Resume Link</option>
-                            </select>
-                          </td> */}
-                            {/* <td>
-                            <textarea
-                              className="form-control"
-                              id="option1"
-                              rows="1"
-                            ></textarea>
-                          </td>
-                          <td>
-                            <textarea
-                              className="form-control"
-                              id="option2"
-                              rows="1"
-                            ></textarea>
-                          </td>
-                          <td>
-                            <textarea
-                              className="form-control"
-                              id="option3"
-                              rows="1"
-                            ></textarea>
-                          </td>
-                          <td>
-                            <textarea
-                              className="form-control"
-                              id="option4"
-                              rows="1"
-                            ></textarea>
-                          </td>
-                          <td>
-                            <select
-                              className="form-select"
-                              id="rightAnswer"
-                            >
-                              <option value="Select...">Select...</option>
-                              <option value="Option 1">Option 1</option>
-                              <option value="Option 2">Option 2</option>
-                              <option value="Option 3">Option 3</option>
-                              <option value="Option 4">Option 4</option>
-                            </select>
-                          </td> */}
                             <td>
                               <textarea
                                 className="form-control"
@@ -337,31 +186,6 @@ const Quesans = (props) => {
                                 rows="1"
                               ></textarea>
                             </td>
-                            {/* <td>
-                            <select
-                              onChange={handleOnChanges}
-                              value={texts}
-                              className="form-select"
-                              id="rated"
-                            >
-                              <option selected value="Select...">Select...</option>
-                              <option>Yes</option>
-                              <option>No</option>
-                            </select>
-                          </td> */}
-                            {/* <td>
-                            <select
-                              style={rated}
-                              className="form-select"
-                              id="contentRated"
-                            >
-                              <option selected value="Select...">
-                                Select...
-                              </option>
-                              <option value="Yes">Yes</option>
-                              <option value="No">No</option>
-                            </select>
-                          </td> */}
                           </tr>
                         );
                       })}
