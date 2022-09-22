@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useFormInputValidation } from "react-form-input-validation";
 import styles from './InternalBot.module.css';
 
 import internalbot from '../../assets/Images/internalbot.svg';
@@ -28,13 +29,28 @@ const Create = () => {
         setDisabled(!disabled);
     }
 
+    const handleOnChange = (e) => {
+        setValue(e.target.value);
+    }
+
+    const [fields, errors, form] = useFormInputValidation({
+        company_name: ""
+    }, {
+        company_name: "required"
+    });
+
+    const onSubmit = async (event) => {
+        const isValid = await form.validate(event);
+        if (isValid) {
+            console.log("Form is valid");
+        } else {
+
+        }
+    }
+
     const handleClick = (e) => {
         e.preventDefault();
         navigate('/externalbot');
-    }
-
-    const handleOnChange = (e) => {
-        setValue(e.target.value);
     }
 
     return (
@@ -67,12 +83,17 @@ const Create = () => {
                 <div className='col-md-8  m-auto'>
                     <div className='card shadow border-0'>
                         <div className="card-body">
-                            <form>
+                            <form noValidate autoComplete='off' onSubmit={onSubmit}>
                                 <div className="row">
                                     <div className="col-md-4">
                                         <div className="mb-3">
-                                            <label htmlFor="detail" className="form-label fw-bold">Company/Institute Name*</label>
-                                            <input type="text" className="form-control" placeholder='Enter company/institute name' id="companyName" />
+                                            <label className="form-label fw-bold">Company/Institute Name*</label>
+                                            <input type="text" name='company_name' onBlur={form.handleBlurEvent} onChange={form.handleChangeEvent} value={fields.company_name} className="form-control" placeholder='Enter company/institute name' id="companyName" />
+                                            <div className=' form-text text-danger'>
+                                                {errors.company_name
+                                                    ? errors.company_name
+                                                    : ""}
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="col-md-4">
@@ -257,11 +278,11 @@ const Create = () => {
                                         </div>
                                     </div>
                                 </div>
+                                <hr />
+                                <div className="d-grid col-3 ms-auto">
+                                    <button onClick={handleClick} type="submit" className="btn btn-dark button">Submit and Continue</button>
+                                </div>
                             </form>
-                            <hr />
-                            <div className="d-grid col-3 ms-auto">
-                                <button onClick={handleClick} type="submit" className="btn btn-dark button">Submit and Continue</button>
-                            </div>
                         </div>
                     </div>
                 </div>
