@@ -5,8 +5,22 @@ import { useNavigate } from 'react-router-dom';
 // import thankyou from "../../assets/Images/thankyou.svg"
 import thankyou from "../../assets/Images/thankForm.svg"
 // import confuse from "../../assets/Images/confuse.png"
-import architect from "../../assets/Images/architect.svg"
-
+import architect from "../../assets/Images/architect.jpg"
+import advocate from "../../assets/Images/advocate.jpg"
+import adventurer from "../../assets/Images/adventurer.jpg"
+import campaigner from "../../assets/Images/campaigner.jpg"
+import consul from "../../assets/Images/consul.jpg"
+import entertainer from "../../assets/Images/entertainer.jpg"
+import commander from "../../assets/Images/commander.jpg"
+import logician from "../../assets/Images/logician.jpg"
+import debater from "../../assets/Images/debater.jpg"
+import mediater from "../../assets/Images/mediater.jpg"
+import virtuoso from "../../assets/Images/virtuoso.jpg"
+import logistician from "../../assets/Images/logistician.jpg"
+import protagonist from "../../assets/Images/protagonist.jpg"
+import executive from "../../assets/Images/executive.jpg"
+import defender from "../../assets/Images/defender.jpg"
+import debaterentrepreneur from "../../assets/Images/debaterentrepreneur.jpg"
 import { FaStar } from 'react-icons/fa';
 
 const colors = {
@@ -24,7 +38,7 @@ function ThankYou() {
     const [hover, setHover] = useState(undefined);
     const [sentence, setSentence] = useState("");
     const [time, setTime] = useState({ s: 0, m: 1 });
-
+    const [image, setImage] = useState("");
     const handleClick = (value) => {
         setRating(value);
     };
@@ -37,26 +51,48 @@ function ThankYou() {
         setHover(undefined);
     };
 
-    const arr = ["Congratulations you displayed an Architect personality type!",
-        "Congratulations you displayed a Logician personality type!",
-        "Congratulations you displayed a Commander personality type!",
-        "Congratulations you displayed a Debater personality type!",
-        "Congratulations you displayed an Advocate personality type!",
-        "Congratulations you displayed a Mediator personality type!",
-        "Congratulations you displayed a Protagonist personality type!",
-        "Congratulations you displayed a Campaigner personality type!",
-        "Congratulations you displayed a Logistician personality type!",
-        "Congratulations you displayed a Defender personality type!",
-        "Congratulations you displayed an Executive personality type!",
-        "Congratulations you displayed a Consul personality type!",
-        "Congratulations on displaying a Virtuoso personality type!",
-        "Congratulations, you displayed an Adventurer personality type!",
-        "Congratulations you displayed a Debater Entrepreneur personality type!",
-        "Congratulations you displayed an Entertainer personality type!"];
+    const arr = ["Congratulations you displayed a Planner personality type!  These detail-oriented strategists love perfection. Whether it's finding the perfect gift for a loved one or finishing a project at work, they allocate their time and energy to different aspects of their lives. However, their inner world is complex and often private."
+        ,
+        "Congratulations you displayed a Rationalist personality type!The adaptable and open-minded type achiever has an ambition like no other personality types. They combine a willingness to adapt with creative intelligence, allowing them to see unconventional solutions to common issues.",
+        "Congratulations you displayed a Master personality type! People with the ESTJ personality type are generally confident and creative visionaries. They excel at decision-making and thrive on the challenges and accomplishments that come hand-in-hand with being an ESTJ.",
+
+        "Congratulations you displayed an Orator personality type!  They consider themselves highly creative and innovative, with a passion for rejecting convention and tradition. They enjoy the challenge of solving problems no one else can solve. They hold steadfast to their beliefs, accept new challenges eagerly, and are more likely than others to stick with a problem until they find a solution. ",
+
+        " Congratulations you displayed an Exponent personality type! That said, they can appear shy, reserved, and cautious. Sensible and always open to reason, they are fundamentally honest and ethical.Some exponents see themselves as a family of volunteers, and are always looking for ways to step in and speak up for those that are in need.",
+
+        "Congratulations you displayed an arbitrator personality type! They tend to have the character traits of childhood, such as being sensitive, creative, and open.These rare personality types tend to be quiet, creative, and imaginative, and they put a caring and compassionate approach to everything that they do.",
+
+        "Congratulations you displayed a Supporter personality type! These outgoing, charismatic people are highly ambitious. They enjoy being the center of attention, and love being part of a team. They will go to great lengths to achieve their ambitions.These Warm-hearted, generous types are social and happy to talk to anyone. ",
+
+        "Congratulations you displayed a Crusader personality type! Personality traits that tend to be associated with crusaders include having idealistic attitudes and beliefs that arise from idealism. Their vibrant energy can flow in many directions, including philanthropy, social reform, idealism, religion, and improving the quality of life for others.",
+
+        "Congratulations you displayed a  signaller  personality type! They carry themselves quite methodically, thoughtfully carrying out their actions with purposeful and well-thought-out steps. They're somewhat emotionally distant, mainly preferring to keep their feelings to themselves, although they tend to hide their emotions from others rather than express them.",
+
+        "Congratulations you displayed a Protector personality type! These people are kind and gentle souls with an even temperament. They tend to be reliable and responsible. They diligently pay attention to detail, whether in professional or personal endeavors.These people are likely to keep their interactions short and sweet, but they have great balance in all that they do. ",
+
+        "Congratulations you displayed an Administrator personality type. They possess high emotional stability, and are able to calmly and confidently make important decisions under pressure. They willingly accept greater challenges and are not afraid to lead by example. They enjoy taking up leadership roles and looking out for the good of others",
+
+        " Congratulations you displayed a Diplomat personality type! Their primary personality traits are decisiveness and influence. They enjoy supporting their community, and they strongly value achievement. They are impartial, and are professional and kind.hey put emphasis on the achievement of goals, but they also believe that they should contribute to the greater good.",
+
+        "Congratulations on displaying a Genius personality type! They are known for being very task-oriented, although they have a diverse professional background and diverse set of interests that can easily interweave due to the job landscape today. They generally avoid small talk and are more purposeful with language.",
+
+        "Congratulations, you displayed an Explorer personality type! They tend to have an open mindset. They are open-minded about new things, open to opportunities, but approach everything in life without judgement. Their positivity helps to uncover new opportunities and possibilities in the future.",
+
+        "Congratulations you displayed a Tycoon personality type!  This type is creative, energetic, and insightful, often excelling in fields like engineering, geology, and editing. Drawing on powers of observation, they often exhibit curiosity and open-mindedness, making them able to perceive themselves and the world around them accurately.",
+
+        " Congratulations you displayed an  Artist personality type! They long for new experiences.These people are never content with the status quo.They are very energetic, love to have a social life and can attract others into sharing activities."];
     // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    const picture = [
+        architect, logician, commander, debater, advocate, mediater, protagonist, campaigner, logistician, defender, executive, consul, virtuoso,
+        adventurer, debaterentrepreneur, entertainer
+    ];
+
+    const a = Math.floor(Math.random() * 16);
     useEffect(() => {
-        setSentence(arr[Math.floor(Math.random() * 16)])
-    }, arr);
+        setSentence(arr[a]);
+        setImage(picture[a]);
+    }, arr, picture);
 
     var updatedS = time.s, updatedM = time.m;
 
@@ -106,17 +142,27 @@ function ThankYou() {
             </div>
 
             <div className="d-grid col-md-7 mx-auto my-5">
+                {/* <div className="card border-0 shadow">
+                    <img src={image} className="img-fluid d-flex justify-content-center mx-auto" width={300} alt="personality" />
+                    <div className="card-body">
+                        <p className="card-text text-center">{sentence}</p>
+                        <div className='d-grid col-md-3 mx-auto'>
+                            <button className="btn btn-dark float-end" style={{ backgroundColor: "#282a2d", border: "#282a2d", borderRadius: "0" }}>Share On Social Media</button>
+                        </div>
+                    </div>
+                </div> */}
                 <div className="card border-0 shadow mb-3">
                     <div className="row g-0">
-                        <div className="col-md-4 m-auto bg-dark">
-                            <img src={architect} className="img-fluid rounded-start" alt="personality" />
+                        <div className="col-md-4 m-auto bg-white">
+                            <img src={image} className="img-fluid d-flex justify-content-center mx-auto" alt="personality" />
                         </div>
                         <div className="col-md-8 m-auto">
                             <div className="card-body">
-                                <p className="card-text">{sentence}</p>
-                                <button type="button" className="btn btn-dark float-end" style={{ backgroundColor: "#282a2d", border: "#282a2d" }}>Share</button>
+                                <p className="card-text text-center">{sentence}</p>
+                                {/* <hr /> */}
                             </div>
                         </div>
+                        <button type="button" className="btn btn-dark float-end" style={{ backgroundColor: "#282a2d", border: "#282a2d", borderRadius: "0" }}>Share On Social Media</button>
                     </div>
                 </div>
             </div>
@@ -145,7 +191,7 @@ function ThankYou() {
                         </div>
                         <h5 className='mt-4'>Anything else you want to tell us?</h5>
                         <div className="mb-3 w-75 mx-auto">
-                            <textarea class="form-control" id="feedback" placeholder='Please write your feedback here...' rows="4"></textarea>
+                            <textarea className="form-control" id="feedback" placeholder='Please write your feedback here...' rows="4"></textarea>
                         </div>
                         <button className='btn btn-primary'>Share your feedback</button>
                     </div>
