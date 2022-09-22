@@ -19,7 +19,7 @@ import virtuoso from "../../assets/Images/virtuoso.jpg"
 import logistician from "../../assets/Images/logistician.jpg"
 import protagonist from "../../assets/Images/protagonist.jpg"
 import executive from "../../assets/Images/executive.jpg"
-import defender from   "../../assets/Images/defender.jpg"
+import defender from "../../assets/Images/defender.jpg"
 import debaterentrepreneur from "../../assets/Images/debaterentrepreneur.jpg"
 import { FaStar } from 'react-icons/fa';
 
@@ -38,7 +38,7 @@ function ThankYou() {
     const [hover, setHover] = useState(undefined);
     const [sentence, setSentence] = useState("");
     const [time, setTime] = useState({ s: 0, m: 1 });
-     const[image,setImage] = useState("");
+    const [image, setImage] = useState("");
     const handleClick = (value) => {
         setRating(value);
     };
@@ -68,24 +68,17 @@ function ThankYou() {
         "Congratulations you displayed a Debater Entrepreneur personality type!",
         "Congratulations you displayed an Entertainer personality type!"];
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    
 
+    const picture = [
+        architect, logician, commander, debater, advocate, mediater, protagonist, campaigner, logistician, defender, executive, consul, virtuoso,
+        adventurer, debaterentrepreneur, entertainer
+    ];
 
-    const picture=[architect,logician,commander,debater,advocate,mediater,protagonist,campaigner,logistician,defender,executive,consul,virtuoso,
-    adventurer,debaterentrepreneur,entertainer];
-const a=Math.floor(Math.random() * 16);
-useEffect(() => {
-    setSentence(arr[a]);
-    setImage(picture[a]);
-},arr,picture);
-
-
-
-
-
-
-
-
+    const a = Math.floor(Math.random() * 16);
+    useEffect(() => {
+        setSentence(arr[a]);
+        setImage(picture[a]);
+    }, arr, picture);
 
     var updatedS = time.s, updatedM = time.m;
 
@@ -135,20 +128,28 @@ useEffect(() => {
             </div>
 
             <div className="d-grid col-md-7 mx-auto my-5">
-                <div className="card border-0 shadow mb-3">
+                <div className="card border-0 shadow">
+                    <img src={image} className="img-fluid d-flex justify-content-center mx-auto" width={300} alt="personality" />
+                    <div className="card-body">
+                        <p className="card-text text-center">{sentence}</p>
+                        <div className='d-grid col-md-3 mx-auto'>
+                            <button className="btn btn-dark float-end" style={{ backgroundColor: "#282a2d", border: "#282a2d", borderRadius: "0" }}>Share On Social Media</button>
+                        </div>
+                    </div>
+                </div>
+                {/* <div className="card border-0 shadow mb-3">
                     <div className="row g-0">
-                        <div className="col-md-4 m-auto bg-dark">
-                         {/* {changeimage()} */}
-                            <img src={image} style={{width:"300px"}} className="img-fluid rounded-start" alt="personality" />
+                        <div className="col-md-4 m-auto bg-white">
+                            <img src={image} className="img-fluid d-flex justify-content-center mx-auto" alt="personality" />
                         </div>
                         <div className="col-md-8 m-auto">
                             <div className="card-body">
-                                <p className="card-text">{sentence}</p>
+                                <p className="card-text text-center">{sentence}</p>
                                 <button type="button" className="btn btn-dark float-end" style={{ backgroundColor: "#282a2d", border: "#282a2d" }}>Share</button>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
 
             <div className="d-grid col-md-7 mt-4 mx-auto">
@@ -175,7 +176,7 @@ useEffect(() => {
                         </div>
                         <h5 className='mt-4'>Anything else you want to tell us?</h5>
                         <div className="mb-3 w-75 mx-auto">
-                            <textarea class="form-control" id="feedback" placeholder='Please write your feedback here...' rows="4"></textarea>
+                            <textarea className="form-control" id="feedback" placeholder='Please write your feedback here...' rows="4"></textarea>
                         </div>
                         <button className='btn btn-primary'>Share your feedback</button>
                     </div>
