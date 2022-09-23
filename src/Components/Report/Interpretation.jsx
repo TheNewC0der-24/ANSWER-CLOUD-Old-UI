@@ -6,17 +6,13 @@ const Interpretation = () => {
     <>
       <div className="container mt-2">
         <h1 className="mb-3">
-          <span
-            className="badge text-center"
-            style={{ border: "2px solid black", color: "black" }}
-          >
+          <span className="badge bg-dark text-center" style={{ borderRadius: "0" }}>
             <span className="me-1 fw-bold" style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer score interpretation
           </span>
         </h1>
         <div className={styles.para}>
           <div className={styles.row}>
             <div className={styles.ul}>
-              {/* <div className="col-md-6"> */}
               <ul type="square">
                 <li>
                   <p align="justify">
@@ -38,7 +34,6 @@ const Interpretation = () => {
               </ul>
             </div>
             <div className={styles.ul}>
-              {/* <div className="col-md-6"> */}
               <ul type="square">
                 <li>
                   <p align="justify">

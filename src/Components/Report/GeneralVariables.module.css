@@ -14,22 +14,22 @@
 }
 
 .cardHeader {
-    /* background-color: #2e3134 !important; */
+    background-color: #2e3134 !important;
+    color: #fff;
     border-radius: 0 !important;
 }
 
-.row{
+.row {
     width: 100%;
     display: flex;
 }
 
-.ul{
-    /* flex-grow: 1; */
+.ul {
     margin: 10px 24px;
 }
 
-@media screen and (max-width: 768px){
-    .row{
+@media screen and (max-width: 768px) {
+    .row {
         flex-direction: column;
     }
 

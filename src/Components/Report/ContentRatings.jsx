@@ -193,10 +193,7 @@ const ContentRatings = () => {
     <>
       <div className="container my-5">
         <h1 className="my-5">
-          <span
-            className="badge text-center"
-            style={{ border: "2px solid black", color: "black" }}
-          >
+          <span className="badge bg-dark text-center" style={{ borderRadius: "0" }}>
             <span className="me-1 fw-bold" style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer content ratings
           </span>
         </h1>
@@ -256,7 +253,7 @@ const ContentRatings = () => {
         </table>
         <h3 className="my-5">Question Specific Content Ratings :</h3>
         <div className={styles.para}>
-          <p align="justify">
+          <p align="justify" className="fs-2">
             The chart below illustrates the content ratings for each answer, in
             percentage terms. The dotted lines at the 80% score mark denote the
             “aspiration line” which should be target content ratings. In our

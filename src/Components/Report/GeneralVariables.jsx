@@ -135,10 +135,8 @@ const GeneralVariables = () => {
     <>
       <div className="container mt-5">
         <h1 className="mb-5">
-          <span
-            className="badge text-center"
-            style={{ border: "2px solid black", color: "black" }}
-          > <span className="me-1 fw-bold" style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer cloud parameters
+          <span className="badge bg-dark text-center" style={{ borderRadius: "0" }}>
+            <span className="me-1 fw-bold" style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer cloud parameters
           </span>
         </h1>
         <div className={styles.para}>
