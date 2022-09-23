@@ -38,6 +38,7 @@ function ThankYou() {
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(undefined);
     const [sentence, setSentence] = useState("");
+    const [type, setType] = useState("");
     const [time, setTime] = useState({ s: 59, m: 1 });
     const [image, setImage] = useState("");
     const handleClick = (value) => {
@@ -89,11 +90,17 @@ function ThankYou() {
         adventurer, debaterentrepreneur, entertainer
     ];
 
+    const personality = [
+        "Architect", "Logician", "Commander", "Debater", "Advocate", "Mediater", "Protagonist", "Campaigner", "Logistician", "Defender", "Executive", "Consul", "Virtuoso",
+        "Adventurer", "Debaterentrepreneur", "Entertainer"
+    ];
+
     const a = Math.floor(Math.random() * 16);
     useEffect(() => {
         setSentence(arr[a]);
         setImage(picture[a]);
-    }, arr, picture);
+        setType(personality[a]);
+    }, arr, picture, personality);
 
     var updatedS = time.s, updatedM = time.m;
 
@@ -144,6 +151,9 @@ function ThankYou() {
 
             <div className="d-grid col-md-7 mx-auto my-5">
                 <div className="card border-0 shadow mb-3">
+                    <div className="card-header bg-dark text-white text-center">
+                        <h5 className="card-title">{type}</h5>
+                    </div>
                     <div className="row g-0">
                         <div className="col-md-4 m-auto bg-white">
                             <img src={image} className="img-fluid d-flex justify-content-center mx-auto" alt="personality" />
