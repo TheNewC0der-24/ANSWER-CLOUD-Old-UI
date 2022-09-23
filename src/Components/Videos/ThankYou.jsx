@@ -22,6 +22,8 @@ import executive from "../../assets/Images/executive.jpg"
 import defender from "../../assets/Images/defender.jpg"
 import debaterentrepreneur from "../../assets/Images/debaterentrepreneur.jpg"
 import { FaStar } from 'react-icons/fa';
+import { FacebookShareButton,WhatsappShareButton,FacebookIcon,WhatsappIcon,LinkedinShareButton, LinkedinIcon,  MailruShareButton,MailruIcon ,  EmailShareButton,EmailIcon} from 'react-share';
+
 
 const colors = {
     orange: '#FFBA5A',
@@ -163,6 +165,19 @@ function ThankYou() {
                             </div>
                         </div>
                         <button type="button" className="btn btn-dark float-end" style={{ backgroundColor: "#282a2d", border: "#282a2d", borderRadius: "0" }}>Share On Social Media</button>
+                        <FacebookShareButton url="https://www.facebook.com/"  quote="share on facebook" >
+                            <FacebookIcon logoFillcolor='white'  round="true"></FacebookIcon>
+                        </FacebookShareButton>
+                         <WhatsappShareButton url="https://web.whatsapp.com/ " title="share on whatsapp" >
+                            <WhatsappIcon logoFillcolor='white'  round="true"></WhatsappIcon>
+                        </WhatsappShareButton>
+                        <LinkedinShareButton url="https://www.linkedin.com/" title="share on linkedin" >
+                            <LinkedinIcon logoFillcolor='white'  round="true"></LinkedinIcon>
+                        </LinkedinShareButton>
+                       
+                        <EmailShareButton url="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" title="share on email" >
+                            <EmailIcon logoFillcolor='white'  round="true"></EmailIcon>
+                        </EmailShareButton>
                     </div>
                 </div>
             </div>
