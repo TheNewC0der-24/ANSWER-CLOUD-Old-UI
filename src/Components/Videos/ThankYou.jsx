@@ -22,8 +22,7 @@ import executive from "../../assets/Images/executive.jpg"
 import defender from "../../assets/Images/defender.jpg"
 import debaterentrepreneur from "../../assets/Images/debaterentrepreneur.jpg"
 import { FaStar } from 'react-icons/fa';
-import { FacebookShareButton,WhatsappShareButton,FacebookIcon,WhatsappIcon,LinkedinShareButton, LinkedinIcon,  MailruShareButton,MailruIcon ,  EmailShareButton,EmailIcon} from 'react-share';
-
+import SocialShare from '../Modal/SocialShare';
 
 const colors = {
     orange: '#FFBA5A',
@@ -39,7 +38,7 @@ function ThankYou() {
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(undefined);
     const [sentence, setSentence] = useState("");
-    const [time, setTime] = useState({ s: 0, m: 1 });
+    const [time, setTime] = useState({ s: 59, m: 1 });
     const [image, setImage] = useState("");
     const handleClick = (value) => {
         setRating(value);
@@ -144,15 +143,6 @@ function ThankYou() {
             </div>
 
             <div className="d-grid col-md-7 mx-auto my-5">
-                {/* <div className="card border-0 shadow">
-                    <img src={image} className="img-fluid d-flex justify-content-center mx-auto" width={300} alt="personality" />
-                    <div className="card-body">
-                        <p className="card-text text-center">{sentence}</p>
-                        <div className='d-grid col-md-3 mx-auto'>
-                            <button className="btn btn-dark float-end" style={{ backgroundColor: "#282a2d", border: "#282a2d", borderRadius: "0" }}>Share On Social Media</button>
-                        </div>
-                    </div>
-                </div> */}
                 <div className="card border-0 shadow mb-3">
                     <div className="row g-0">
                         <div className="col-md-4 m-auto bg-white">
@@ -164,20 +154,7 @@ function ThankYou() {
                                 {/* <hr /> */}
                             </div>
                         </div>
-                        <button type="button" className="btn btn-dark float-end" style={{ backgroundColor: "#282a2d", border: "#282a2d", borderRadius: "0" }}>Share On Social Media</button>
-                        <FacebookShareButton url="https://www.facebook.com/"  quote="share on facebook" >
-                            <FacebookIcon logoFillcolor='white'  round="true"></FacebookIcon>
-                        </FacebookShareButton>
-                         <WhatsappShareButton url="https://web.whatsapp.com/ " title="share on whatsapp" >
-                            <WhatsappIcon logoFillcolor='white'  round="true"></WhatsappIcon>
-                        </WhatsappShareButton>
-                        <LinkedinShareButton url="https://www.linkedin.com/" title="share on linkedin" >
-                            <LinkedinIcon logoFillcolor='white'  round="true"></LinkedinIcon>
-                        </LinkedinShareButton>
-                       
-                        <EmailShareButton url="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" title="share on email" >
-                            <EmailIcon logoFillcolor='white'  round="true"></EmailIcon>
-                        </EmailShareButton>
+                        <button type="button" className="btn btn-dark float-end" data-bs-toggle="modal" data-bs-target="#socialShareModal" style={{ backgroundColor: "#282a2d", border: "#282a2d", borderRadius: "0" }}>Share On Social Media</button>
                     </div>
                 </div>
             </div>
@@ -213,21 +190,7 @@ function ThankYou() {
                 </div>
                 <p className='text-center my-2'>You may close this window</p>
             </div>
-
-            {/* <div className={`${styles.container} container mt-5 mb-5`}>
-                <div className="row">
-                    <div className={`${styles.left} col-md-4`}>
-                        <img className='img-fluid m-auto' src={thankyou} alt="ThankYou" />
-                    </div>
-                    <div className="col-md-8 m-auto">
-                        <div className="container my-3">
-                            <h3 className='mb-3'>Thank you!</h3>
-
-                            <p className='mt-4 text-dark'>Now you can close this window!!</p>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
+            <SocialShare />
         </>
     )
 }
