@@ -91,8 +91,8 @@ function ThankYou() {
     ];
 
     const personality = [
-        "Architect", "Logician", "Commander", "Debater", "Advocate", "Mediater", "Protagonist", "Campaigner", "Logistician", "Defender", "Executive", "Consul", "Virtuoso",
-        "Adventurer", "Debaterentrepreneur", "Entertainer"
+        "Planner", "Rationalist", "Master", "Orator", "Exponent", "Arbitrator", "Supporter", "Crusader", "Signaller", "Protector", "Administrator", "Diplomat", "Genious",
+        "Explorer", "Tycoon", "Artist"
     ];
 
     const a = Math.floor(Math.random() * 16);
