@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useFormInputValidation } from "react-form-input-validation";
 import styles from './InternalBot.module.css';
 
