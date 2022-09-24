@@ -27,7 +27,8 @@ const SocialShare = (props) => {
                         <div className="modal-body">
                             <h3>Share it with your friends!</h3>
                             <div className='d-flex justify-content-center gap-2'>
-                                <FacebookShareButton>
+                                <FacebookShareButton 
+                                url='https://www.facebook.com/'>
                                     <FacebookIcon logoFillcolor='white'></FacebookIcon>
                                 </FacebookShareButton>
                                 <TwitterShareButton
