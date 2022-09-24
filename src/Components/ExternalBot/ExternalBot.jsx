@@ -570,7 +570,7 @@ const Notification = () => {
 
         <hr />
         <div className="d-flex justify-content-end me-auto gap-3">
-          <butto
+          <button
             onClick={handleBack}
             className="btn btn-outline-secondary button"
           >
