@@ -151,7 +151,7 @@ function ThankYou() {
 
             <div className="d-grid col-md-7 mx-auto my-5">
                 <div className="card border-0 shadow mb-3">
-                    <div className="card-header bg-dark text-white text-center">
+                    <div className={`${styles.cardHeader} card-header bg-dark text-white text-center`}>
                         <h5 className="card-title">{type}</h5>
                     </div>
                     <div className="row g-0">
