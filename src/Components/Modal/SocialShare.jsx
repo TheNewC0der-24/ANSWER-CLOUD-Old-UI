@@ -1,5 +1,5 @@
 import React from 'react';
-import { LinkedinShareButton, LinkedinIcon, TwitterShareButton, TwitterIcon } from 'react-share';
+import { LinkedinShareButton, LinkedinIcon, TwitterShareButton, TwitterIcon, FacebookShareButton, FacebookIcon } from 'react-share';
 
 const SocialShare = (props) => {
     return (
@@ -27,6 +27,9 @@ const SocialShare = (props) => {
                         <div className="modal-body">
                             <h3>Share it with your friends!</h3>
                             <div className='d-flex justify-content-center gap-2'>
+                                <FacebookShareButton>
+                                    <FacebookIcon logoFillcolor='white'></FacebookIcon>
+                                </FacebookShareButton>
                                 <TwitterShareButton
                                     url="https://www.facebook.com/"
                                     quote="share on facebook"
