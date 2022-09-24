@@ -15,9 +15,9 @@ const Login = () => {
   const validateEmail = (value) => {
     let error;
     if (!value) {
-      error = "Required";
+      error = "*This field is Required";
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
-      error = "Invalid email address";
+      error = "*Invalid email address";
     }
     return error;
   };
@@ -25,12 +25,12 @@ const Login = () => {
   const validatePassword = (value) => {
     let error;
     if (!value) {
-      error = "Required";
+      error = "*This field is Required";
     } else if (!/^[0-9a-zA-Z]{0,10}$/i.test(value)) {
-      error = "Invalid password";
+      error = "*Invalid Password";
     }
     return error;
-};
+  };
 
   return (
     <>
@@ -45,7 +45,7 @@ const Login = () => {
                     color: "#000",
                     borderTop: "2px solid",
                     opacity: "1",
-                }}
+                  }}
                 />
                 <h5 className="card-title text-center mt-5">
                   Welcome to
@@ -54,57 +54,43 @@ const Login = () => {
                     width={150}
                     alt="brand"
                     className="img-fluid"
-                    />
+                  />
                 </h5>
                 <p className="text-center text-muted mt-3 mb-5">
                   Enter your credentials and start journey with us.
                 </p>
                 <Formik
                   initialValues={{
-                      email: "",
-                      password: "",
-                    }}
-                    onSubmit={(values) => {
-                        // same shape as initial values
-                    console.log(values);
-                    //     let error;
-                    //     if (!value) {
-                    //       error = "Required";
-                    //     } else if (!/^[0-9a-zA-Z]{0,10}$/i.test(value)) {
-                    //       error = "Invalid password";
-                    //     }
-                    //     return error;
+                    email: "",
+                    password: "",
                   }}
+                // onSubmit={(values) => {
+                //   console.log(values);
+                // }}
                 >
-                  {({ errors, touched, isValidating }) => (
+                  {({ errors, touched }) => (
                     <Form>
                       <div className="mb-4">
                         <Field
                           type="email"
-                          className="form-control"
+                          className={`form-control ${errors.email && touched.email ? 'border-danger' : ""}`}
                           id="email"
                           name="email"
                           placeholder="Email"
                           validate={validateEmail}
                         />
-                        {errors.email && touched.email && <div>{errors.email}</div>}
-                        {/* <div
-                          id="emailHelp"
-                          className="form-text text-dark fw-bold"
-                        >
-                          We'll never share your email with anyone else.
-                        </div> */}
+                        {errors.email && touched.email && <div className="form-text text-danger">{errors.email}</div>}
                       </div>
                       <div className="mb-3">
-                        <Field                 
+                        <Field
                           type="password"
-                          className="form-control"
+                          className={`form-control ${errors.password && touched.password ? 'border-danger' : ""}`}
                           id="password"
                           name="password"
                           placeholder="Password"
                           validate={validatePassword}
                         />
-                      {errors.password && touched.password && <div>{errors.password}</div>}
+                        {errors.password && touched.password && <div className="form-text text-danger">{errors.password}</div>}
                       </div>
                       <p
                         onClick={() => navigate("/resetPassword")}
