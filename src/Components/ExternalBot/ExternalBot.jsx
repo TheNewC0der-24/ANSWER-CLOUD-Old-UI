@@ -208,7 +208,7 @@ const Notification = () => {
                                     <div className="card-body">
                                         <form>
                                             <div className="mb-3">
-                                                <label htmlFor="emailTwo" className="form-label fw-bold">Report sent to Email-2</label>
+                                                <label htmlFor="emailTwo" className="form-label fw-bold">Report sent to Extra Email</label>
                                                 <input type="email" className="form-control" id="emailTwo" />
                                             </div>
                                             <div className="mb-3">

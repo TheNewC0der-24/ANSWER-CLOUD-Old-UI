@@ -81,7 +81,7 @@ const Form = () => {
               className="card-header bg-dark text-white"
               style={{ borderBottom: "2px solid #000", borderRadius: "0" }}
             >
-              <h3>Interaction Title</h3>
+              <h3 className="text-center">Interaction Title</h3>
             </div>
             <div className="card-body">
               <label className="form-label fw-bold">Description :</label>
@@ -90,12 +90,12 @@ const Form = () => {
                 explicabo modi nemo ab inventore minus in quidem nobis illo.
                 Quos?
               </p>
-              <label className="form-label fw-bold">Instruction :</label>
+              {/* <label className="form-label fw-bold">Instruction :</label>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Asperiores suscipit consequatur dolores molestias voluptas
                 quaerat voluptatem sunt esse praesentium corporis.
-              </p>
+              </p> */}
               <hr />
               <form>
                 <div className="mb-3">
@@ -134,7 +134,7 @@ const Form = () => {
                   onClick={handleDisplay}
                   className="btn btn-dark button mb-2"
                 >
-                  Validate
+                  Validate To Start
                 </button>
                 <hr style={{ color: "#000", borderTop: "2px solid", opacity: "1" }} />
                 <div className={`${display ? "" : "d-none"}`}>

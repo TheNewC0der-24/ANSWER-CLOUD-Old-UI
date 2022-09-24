@@ -23,14 +23,14 @@ const InteractionScorecard = () => {
             stroke: {
                 show: true,
                 dashArray: 0,
-                colors: ['#505F79'],
+                colors: ['#000'],
             },
             markers: {
-                colors: ['#505F79'],
+                colors: ['#000'],
             },
             fill: {
                 opacity: 0.5,
-                colors: ['#505F79'],
+                colors: ['#000'],
             },
             // dataLabels: {
             //     enabled: true,
@@ -47,7 +47,7 @@ const InteractionScorecard = () => {
                     polygons: {
                         strokeColor: '#000000',
                         fill: {
-                            colors: ['#f8f8f8', '#fff']
+                            colors: ['#d5d5d5', '#fff']
                         }
                     }
                 }
@@ -69,7 +69,7 @@ const InteractionScorecard = () => {
                 breakpoint: 500,
                 options: {
                     chart: {
-                        width: '400px',
+                        width: '100%',
                         height: '100%',
                     }
                 },
@@ -87,12 +87,12 @@ const InteractionScorecard = () => {
 
     return (
         <>
-            <div className="container">
+            <div className="container mt-5">
                 <h1 className="mb-3">
-                    <span className="badge text-center" style={{ backgroundColor: "#0e1013", borderRadius: "0" }}>Interaction Scorecard</span>
+                    <span className="badge bg-dark text-center" style={{ borderRadius: "0" }}> <span className="me-1 fw-bold" style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer scorecard</span>
                 </h1>
-                <div className="row mt-5">
-                    <div className="col-md-7 m-auto">
+                <div className="mt-5">
+                    <div className="m-auto">
                         <div className="card" style={{ border: "2px solid #0e1013", borderRadius: "0" }}>
                             <div className='mt-5 d-flex justify-content-center'>
                                 <ReactApexChart
@@ -108,7 +108,7 @@ const InteractionScorecard = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-5 m-auto">
+                    <div className="my-4 m-auto">
                         {/* <div className="card h-100" style={{ border: "2.5px solid #000" }}>
                             <div className="card-body"> */}
                         <div className={styles.para}>

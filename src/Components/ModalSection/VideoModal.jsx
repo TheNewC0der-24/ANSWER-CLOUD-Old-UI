@@ -25,13 +25,13 @@ const VideoModal = () => {
             <div className="modal-body">
               <div className="ratio ratio-16x9">
                 {/* <iframe width="703" height="395" src="https://www.youtube.com/embed/GedLli_YXEI" title="If The Weeknd made lofi hip hop radio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
-                <iframe
+                <video
                   // src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
                   src={video}
                   title="YouTube video"
-                  width="703" height="395"
                   allowFullScreen
-                ></iframe>
+                  controls
+                ></video>
               </div>
             </div>
             <div className="modal-footer">

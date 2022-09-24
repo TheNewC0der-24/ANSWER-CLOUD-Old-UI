@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useFormInputValidation } from "react-form-input-validation";
 import styles from './InternalBot.module.css';
 
 import internalbot from '../../assets/Images/internalbot.svg';
@@ -15,6 +16,8 @@ const Create = () => {
     const [disabled, setDisabled] = useState(false);
     const [certificate, setCertificate] = useState(false);
     const [name, setName] = useState(false);
+    const [count, setCount] = useState(0);
+    const [value, setValue] = useState("SELECT...")
 
     const handleCertificate = () => {
         setCertificate(!certificate);
@@ -26,9 +29,47 @@ const Create = () => {
         setDisabled(!disabled);
     }
 
-    const handleClick = (e) => {
+    const handleOnChange = (e) => {
+        setValue(e.target.value);
+    }
+
+    const [fields, errors, form] = useFormInputValidation({
+        company_name: "",
+        interaction_title: "",
+        test_id: "",
+        track: "",
+        access_code: "",
+        expiry_date: "",
+        report_email: "",
+        timer: "",
+        description: "",
+
+    }, {
+        company_name: "required",
+        interaction_title: "required",
+        test_id: "required",
+        track: "required",
+        access_code: "required",
+        expiry_date: "required",
+        report_email: "required|email",
+        timer: "required",
+        description: "required",
+    });
+
+    const onSubmit = async (event) => {
+        const isValid = await form.validate(event);
+        if (isValid) {
+            console.log("Form is valid");
+        }
+    }
+
+    const handleClick = async (e) => {
         e.preventDefault();
-        navigate('/externalbot');
+        const isValid = await form.validate(e);
+        if (isValid) {
+            console.log("Form is valid");
+            navigate('/externalbot');
+        }
     }
 
     return (
@@ -250,11 +291,81 @@ const Create = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            {/* </div> */}
-            <Quesans />
-            <Skills />
+<<<<<<< HEAD
+                            </div >
+=======
+                                <div className="row">
+                                    <div className="col-md-6">
+                                        <div className="mb-3">
+                                            <label className="form-label fw-bold">Description*</label>
+                                            <textarea
+                                                name='description'
+                                                data-attribute-name="Description"
+                                                onBlur={form.handleBlurEvent}
+                                                onChange={form.handleChangeEvent}
+                                                className={`form-control ${errors.description ? 'border-danger' : ''}`}
+                                                rows="5"
+                                                id="description"
+                                                placeholder='Your description'>
+                                            </textarea>
+                                            <div className=' form-text text-danger'>
+                                                {errors.description
+                                                    ? errors.description
+                                                    : ""}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="mb-3">
+                                            <div className='d-flex justify-content-between'>
+                                                <label htmlFor="generalFeedback" className="form-label fw-bold">Add Insights</label>
+                                                <label htmlFor="generalFeedback" className="form-label fw-bold">{count}/615</label>
+                                            </div>
+                                            <textarea
+                                                onChange={e => setCount(e.target.value.length)}
+                                                className="form-control" id="generalFeedback"
+                                                minLength="400"
+                                                maxLength="615"
+                                                placeholder={`Example: Every human interaction is an opportunity to learn. Its also an opportunity to demonstrate your skills and expertise in a specific context and capacity.We view every professional interaction as a high-stakes game - whether you are likely to save money, generate revenue, make a process more efficient or improve your performance.These virtual interactions act as practice sessions where you can test drive real-world interactions.Experts in the world may differ on what skills matter – but they all have a common point of view.Practice is the key to improvement – and specific feedback makes improvement faster.`}
+                                                rows="5"
+                                            />
+                                            <div className="form-text text-danger">* Minimum 400 characters are required to post the insights</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="row">
+                                    <div className="col-md-6 m-auto">
+                                        <div className="mb-3">
+                                            <label htmlFor="mode" className="form-label fw-bold">Interaction Mode</label>
+                                            <select className="form-select" onChange={handleOnChange} id='mode' aria-label="Default select example">
+                                                <option value="Select">Select...</option>
+                                                <option value="Audio">Audio</option>
+                                                <option value="Video">Video</option>
+                                                <option value="MCQ">MCQ</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6 m-auto">
+                                        <div className="d-flex justify-content-between mb-3">
+                                            <label htmlFor="question" className="form-label fw-bold">Total Question: <span className='badge badge bg-secondary'>No.</span></label>
+                                            <button type="button" className="btn btn-outline-secondary button" data-bs-toggle="modal" data-bs-target="#exampleModal">Add</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div className="d-grid col-3 ms-auto">
+                                    <button onClick={handleClick} type="submit" className="btn btn-dark button">Submit and Continue</button>
+                                </div>
+                            </form>
+>>>>>>> e2746a7280c6766270b178c07a5a838284e299b5
+                        </div >
+                    </div >
+                </div >
+            </div >
+    {/* </div> */ }
+    < Quesans value = { value } />
+        <Skills />
         </>
     )
 }

@@ -2,3 +2,20 @@
     font-family: 'Mukta', sans-serif;
     font-size: 22px;
 }
+
+.row{
+    width: 100%;
+    display: flex;
+}
+
+.ul{
+    /* flex-grow: 1; */
+    margin: 10px 24px;
+}
+
+@media screen and (max-width: 768px){
+    .row{
+        flex-direction: column;
+    }
+
+}
