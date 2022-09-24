@@ -3,18 +3,29 @@
     font-size: 22px;
 }
 
-.row{
+.table {
+    font-size: 22px !important;
+    width: 100%;
+    border-color: #2e3134;
+    border-collapse: collapse;
+}
+
+.thead {
+    background-color: #2e3134;
+}
+
+.row {
     width: 100%;
     display: flex;
 }
 
-.ul{
+.ul {
     /* flex-grow: 1; */
     margin: 10px 24px;
 }
 
-@media screen and (max-width: 768px){
-    .row{
+@media screen and (max-width: 768px) {
+    .row {
         flex-direction: column;
     }
 

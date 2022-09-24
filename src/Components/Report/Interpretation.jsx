@@ -54,11 +54,8 @@ const Interpretation = () => {
             </div>
           </div>
         </div>
-        <table
-          className="table table-bordered text-center my-4"
-          style={{ borderColor: "#2e3134", fontSize: "22px" }}
-        >
-          <thead className="text-white" style={{ backgroundColor: "#2e3134" }}>
+        <table className={`${styles.table} table table-bordered text-center my-4`}>
+          <thead className={`${styles.thead} text-white`}>
             <tr>
               <th scope="col">Cohort Rating</th>
               <th scope="col">Interpretation</th>
