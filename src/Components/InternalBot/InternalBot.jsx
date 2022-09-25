@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./InternalBot.module.css";
 
 import internalbot from "../../assets/Images/internalbot.svg";
@@ -73,13 +73,14 @@ const Create = () => {
     setCount(e.target.value.length)
     setCreate({ ...create, [e.target.name]: e.target.value });
   };
-
-  // useEffect(() => {
-  //   axios.get("response.json").then((res) => {
-  //     console.log(res.data.results);
-  //     setData(res.data.results);
-  //   });
-  // });
+  
+      // useEffect(() => {
+      //   axios.get('response.json')
+      //   .then(res => {
+      //       console.log(res.data.results);
+      //       setData(res.data.results);
+      //     })
+      // });
 
   return (
     <>
@@ -121,6 +122,8 @@ const Create = () => {
           <div className="card shadow border-0">
             <div className="card-body">
               <form>
+              {/* {data.slice(0,1).map(create=>(
+                <> */}
                 <div className="row">
                   <div className="col-md-4">
                     <div className="mb-3">
@@ -526,12 +529,14 @@ const Create = () => {
                         className="btn btn-outline-secondary button"
                         data-bs-toggle="modal"
                         data-bs-target="#exampleModal"
-                      >
+                        >
                         Add
                       </button>
                     </div>
                   </div>
                 </div>
+                {/* </>
+              ))} */}
               </form>
               <hr />
               <div className="d-grid col-3 ms-auto">

@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import axios from "axios";
 
 const Quesans = (props) => {
   const [noOfRows, setNoOfRows] = useState(1);
   const [create, setCreate] = useState([]);
-  // const [data, setData] = useState([]);
+  const [data, setData] = useState([]);
 
   const handleSubmit = () => {
     axios
@@ -32,11 +32,20 @@ const Quesans = (props) => {
             "Content-Type": "application/json",
           },
         }
-      )
-      .then((res) => {
-        console.log(res.data);
-      });
-  };
+        )
+        .then((res) => {
+          console.log(res.data);
+        });
+      };
+      
+      
+        useEffect(() => {
+          axios.get('response.json')
+            .then(res => {
+              // console.log(res.data.results);
+              setData(res.data.results);
+            })
+        });
 
   const handChange = (e) => {
     setCreate({ ...create, [e.target.name]: e.target.value });
@@ -63,7 +72,7 @@ const Quesans = (props) => {
         tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
-      >
+        >
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
@@ -113,6 +122,9 @@ const Quesans = (props) => {
                     <tbody>
                       {[...Array(noOfRows)].map((index) => {
                         return (
+                          <>
+                          {/* {data.slice(0,1).map(create=>(
+                          <> */}
                           <tr key={index}>
                             <td>
                               <textarea
@@ -122,7 +134,7 @@ const Quesans = (props) => {
                                 onChange={handChange}
                                 name="question"
                                 value={create.question}
-                              ></textarea>
+                                ></textarea>
                             </td>
                             <td>
                               <input
@@ -164,7 +176,7 @@ const Quesans = (props) => {
                                 onChange={handChange}
                                 name="mcq_option_two"
                                 value={create.mcq_option_two}
-                              ></textarea>
+                                ></textarea>
                             </td>
                             <td>
                               <textarea
@@ -174,7 +186,7 @@ const Quesans = (props) => {
                                 onChange={handChange}
                                 name="mcq_option_three"
                                 value={create.mcq_option_three}
-                              ></textarea>
+                                ></textarea>
                             </td>
                             <td>
                               <textarea
@@ -184,7 +196,7 @@ const Quesans = (props) => {
                                 onChange={handChange}
                                 name="mcq_option_four"
                                 value={create.mcq_option_four}
-                              ></textarea>
+                                ></textarea>
                             </td>
                             <td>
                               <select className="form-select" onChange={handChange} name="mcq_option" value={create.mcq_option} id="rightAnswer">
@@ -196,6 +208,9 @@ const Quesans = (props) => {
                               </select>
                             </td>
                           </tr>
+                          {/* </>
+                       ))} */}
+                        </>
                         );
                       })}
                     </tbody>
@@ -222,6 +237,9 @@ const Quesans = (props) => {
                     <tbody>
                       {[...Array(noOfRows)].map((index) => {
                         return (
+                              <>
+                              {/* {data.slice(0,1).map(create=>(
+                              <> */}
                           <tr key={index}>
                             <td>
                               <textarea
@@ -241,7 +259,7 @@ const Quesans = (props) => {
                                 placeholder="Paste your link here"
                                 onChange={handChange}
                                 name="media_contexts"
-                                value={create.media_contexts}
+                                value={create.media_contes}
                               />
                             </td>
                             <td>
@@ -266,6 +284,9 @@ const Quesans = (props) => {
                               ></textarea>
                             </td>
                           </tr>
+                          {/* </>
+                          ))} */}
+                          </>
                         );
                       })}
                     </tbody>

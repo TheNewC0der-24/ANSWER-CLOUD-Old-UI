@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./ExternalBot.module.css";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -11,6 +11,7 @@ const Notification = () => {
   const [isNeeded, setIsNeeded] = useState(false);
   const [disabled, setDisabled] = useState(false);
   const [create, setCreate] = useState([]);
+  const [data, setData] = useState([]);
 
   const handleBack = (e) => {
     e.preventDefault();
@@ -44,8 +45,8 @@ const Notification = () => {
             "Content-Type": "application/json",
           },
         }
-      )
-      .then((res) => {
+        )
+        .then((res) => {
         console.log(res.data);
       });
   };
@@ -78,6 +79,14 @@ const Notification = () => {
     setDisabled(!disabled);
   };
 
+      // useEffect(() => {
+      //   axios.get('response.json')
+      //     .then(res => {
+      //       // console.log(res.data.results);
+      //       setData(res.data.results);
+      //     })
+      // });
+
   return (
     <>
       <style jsx="true">
@@ -85,8 +94,10 @@ const Notification = () => {
           .button {
             border-radius: 0;
           }
-        `}
+          `}
       </style>
+          {/* {data.slice(0,1).map(create=>(
+          <> */}
       <div className="container d-flex justify-content-between my-3">
         <h3>External Bot</h3>
         <nav aria-label="breadcrumb">
@@ -585,6 +596,8 @@ const Notification = () => {
           </button>
         </div>
       </div>
+     {/* </>
+  ))} */}
     </>
   );
 };
@@ -631,10 +644,10 @@ export default Notification;
 //           report_send_to_email_two: create.report_send_to_email_two,
 //         },
 //         {
-//           method: "POST",
+  //           method: "POST",
 //           headers: {
-//             "Content-Type": "application/json",
-//           },
+  //             "Content-Type": "application/json",
+  //           },
 //         }
 //       )
 //       .then((res) => {
