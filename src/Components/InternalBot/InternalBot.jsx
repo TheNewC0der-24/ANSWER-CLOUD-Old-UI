@@ -41,7 +41,12 @@ const Create = () => {
     const initialValues = {
         companyName: "",
         interaction: "",
-        emailOne: ""
+        testId: "",
+        track: "",
+        accessCode: "",
+        expiryDate: "",
+        emailOne: "",
+        generalFeedback: "",
     }
 
     const validateCName = (value) => {
@@ -55,7 +60,35 @@ const Create = () => {
     const validateInteraction = (value) => {
         let error;
         if (!value) {
-            error = "*This field is Required";
+            error = "*This field is required";
+        }
+        return error;
+    }
+
+    const validateTestId = (value) => {
+        let error;
+        if (!value) {
+            error = "*This field is required";
+        } else if (!/^[0-9]{6,6}$/i.test(value)) {
+            error = "*Enter 6-digit code"
+        }
+        return error;
+    }
+
+    const validateAccessCode = (value) => {
+        let error;
+        if (!value) {
+            error = "*This field is required";
+        } else if (!/^[0-9]{6,6}$/i.test(value)) {
+            error = "*Code must be 6-digit"
+        }
+        return error;
+    }
+
+    const validateExpiryDate = (value) => {
+        let error;
+        if (!value) {
+            error = "*This field is required";
         }
         return error;
     }
@@ -63,12 +96,21 @@ const Create = () => {
     const validateEmail = (value) => {
         let error;
         if (!value) {
-            error = "*This field is Required";
+            error = "*This field is required";
         } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
             error = "*Invalid email address";
         }
         return error;
     };
+
+    const validateFeedback = (value) => {
+        let error;
+        if (!value) {
+            error = "*This field is required"
+        }
+        return error;
+    }
+
 
     return (
         <>
@@ -109,7 +151,7 @@ const Create = () => {
                                         <div className="row">
                                             <div className="col-md-4">
                                                 <div className="mb-3">
-                                                    <label className="form-label fw-bold">Company/Institute Name*</label>
+                                                    <label className="form-label fw-bold">Company/Institute Name</label>
                                                     <Field
                                                         type="text"
                                                         className={`form-control ${errors.companyName && touched.companyName ? "border-danger" : ""}`}
@@ -127,7 +169,7 @@ const Create = () => {
                                             </div>
                                             <div className="col-md-4">
                                                 <div className="mb-3">
-                                                    <label className="form-label fw-bold">Interaction Title*</label>
+                                                    <label className="form-label fw-bold">Interaction Title</label>
                                                     <Field
                                                         type="text"
                                                         className={`form-control ${errors.interaction && touched.interaction ? "border-danger" : ""}`}
@@ -145,26 +187,30 @@ const Create = () => {
                                             </div>
                                             <div className="col-md-4">
                                                 <div className="mb-3">
-                                                    <label className="form-label fw-bold">Test ID*</label>
+                                                    <label className="form-label fw-bold">Test ID</label>
                                                     <Field
                                                         type="number"
-                                                        name='test_id'
-                                                        className={`form-control`}
+                                                        className={`form-control ${errors.testId && touched.testId ? "border-danger" : ""}`}
                                                         placeholder='Enter 6-digit code'
-                                                        id="testId" />
-                                                    <div className='form-text text-danger'>
-
-                                                    </div>
+                                                        name='testId'
+                                                        id="testId"
+                                                        validate={validateTestId}
+                                                    />
+                                                    {errors.testId && touched.testId &&
+                                                        <div className='form-text text-danger'>
+                                                            {errors.testId}
+                                                        </div>
+                                                    }
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="row">
                                             <div className="col-md-6">
                                                 <div className="mb-3">
-                                                    <label className="form-label fw-bold">Track/Domain*</label>
+                                                    <label className="form-label fw-bold">Track/Domain</label>
                                                     <select
-                                                        name='track'
                                                         className={`form-select`}
+                                                        name='track'
                                                         id='track'
                                                     >
                                                         <option value="Select...">Select...</option>
@@ -181,7 +227,7 @@ const Create = () => {
                                             </div>
                                             <div className="col-md-6">
                                                 <div className="d-flex justify-content-between mb-3">
-                                                    <label htmlFor="question" className="form-label fw-bold">Skills* <span className='badge badge bg-secondary'>skill name</span></label>
+                                                    <label htmlFor="question" className="form-label fw-bold">Skills <span className='badge badge bg-secondary'>skill name</span></label>
                                                     <button type="button" className="btn btn-outline-secondary button" data-bs-toggle="modal" data-bs-target="#skillModal">Add</button>
                                                 </div>
                                             </div>
@@ -189,36 +235,46 @@ const Create = () => {
                                         <div className="row">
                                             <div className="col-md-6">
                                                 <div className="mb-3">
-                                                    <label className="form-label fw-bold">Access Code*</label>
+                                                    <label className="form-label fw-bold">Access Code</label>
                                                     <Field
                                                         type="number"
-                                                        className={`form-control`}
+                                                        className={`form-control ${errors.accessCode && touched.accessCode ? "border-danger" : ""}`}
                                                         placeholder='Enter 6-digit access code'
+                                                        name="accessCode"
                                                         id="accessCode"
+                                                        validate={validateAccessCode}
                                                     />
-                                                    <div className=' form-text text-danger'>
-
-                                                    </div>
+                                                    {
+                                                        errors.accessCode && touched.accessCode &&
+                                                        <div className=' form-text text-danger'>
+                                                            {errors.accessCode}
+                                                        </div>
+                                                    }
                                                 </div>
                                             </div>
                                             <div className="col-md-6">
                                                 <div className="mb-3">
-                                                    <label className="form-label fw-bold">Expiry Date*</label>
+                                                    <label className="form-label fw-bold">Expiry Date</label>
                                                     <Field
                                                         type="date"
-                                                        className={`form-control`}
+                                                        className={`form-control ${errors.expiryDate && touched.expiryDate ? "border-danger" : ""}`}
+                                                        name="expiryDate"
                                                         id="expiryDate"
+                                                        validate={validateExpiryDate}
                                                     />
-                                                    <div className=' form-text text-danger'>
-
-                                                    </div>
+                                                    {
+                                                        errors.expiryDate && touched.expiryDate &&
+                                                        <div className=' form-text text-danger'>
+                                                            {errors.expiryDate}
+                                                        </div>
+                                                    }
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="row">
                                             <div className="col-md-6">
                                                 <div className="mb-3">
-                                                    <label className={`form-label fw-bold ${errors.emailOne && touched.emailOne ? "text-danger" : ""}`}>Report sent to Email*</label>
+                                                    <label className='form-label fw-bold'>Report sent to Email</label>
                                                     <Field
                                                         type="email"
                                                         placeholder="Enter email"
@@ -343,15 +399,26 @@ const Create = () => {
                                                         <label htmlFor="generalFeedback" className="form-label fw-bold">Add Insights</label>
                                                         <label htmlFor="generalFeedback" className="form-label fw-bold">{count}/615</label>
                                                     </div>
-                                                    <textarea
-                                                        onChange={e => setCount(e.target.value.length)}
-                                                        className="form-control" id="generalFeedback"
+                                                    <Field as="textarea"
+                                                        onChange={
+                                                            e => setCount(e.target.value.length) &&
+                                                                setValue(e.target.value)
+                                                        }
+                                                        className="form-control"
                                                         minLength="400"
                                                         maxLength="615"
                                                         placeholder={`Example: Every human interaction is an opportunity to learn. Its also an opportunity to demonstrate your skills and expertise in a specific context and capacity.We view every professional interaction as a high-stakes game - whether you are likely to save money, generate revenue, make a process more efficient or improve your performance.These virtual interactions act as practice sessions where you can test drive real-world interactions.Experts in the world may differ on what skills matter – but they all have a common point of view.Practice is the key to improvement – and specific feedback makes improvement faster.`}
                                                         rows="5"
+                                                        name="generalFeedback"
+                                                        id="generalFeedback"
+                                                        validate={validateFeedback}
                                                     />
-                                                    <div className="form-text text-danger">* Minimum 400 characters are required to post the insights</div>
+                                                    {
+                                                        errors.generalFeedback && touched.generalFeedback &&
+                                                        <div className="form-text text-danger">
+                                                            {errors.generalFeedback}
+                                                        </div>
+                                                    }
                                                 </div>
                                             </div>
                                         </div>
