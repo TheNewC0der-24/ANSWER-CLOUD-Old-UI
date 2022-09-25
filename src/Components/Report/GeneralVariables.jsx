@@ -158,7 +158,7 @@ const GeneralVariables = () => {
             <div className="col mt-5">
               <div className={`${styles.card} card h-100`}>
                 <h1 className={`${styles.cardHeader} card-header fw-bold`}>
-                  <AiFillDashboard className={`me-1 ${styles.icon}`} />
+                  <AiFillDashboard className={`me-2 ${styles.icon}`} />
                   Pace
                 </h1>
                 <div className="card-body my-3" style={{ fontSize: "22px" }}>

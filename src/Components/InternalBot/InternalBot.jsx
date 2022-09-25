@@ -47,7 +47,7 @@ const Create = () => {
     const validateCName = (value) => {
         let error;
         if (!value) {
-            error = "*This field is Required";
+            error = "*This field is required";
         }
         return error;
     }
