@@ -25,6 +25,11 @@ const Create = () => {
         setDisabled(!disabled);
     }
 
+    // const handleCertificate = () => {
+    //     setCertificate(!certificate);
+    //     setDisabled(!disabled);
+    // }
+
     const handleName = () => {
         setName(!name);
         setDisabled(!disabled);
@@ -47,6 +52,7 @@ const Create = () => {
         expiryDate: "",
         emailOne: "",
         generalFeedback: "",
+        description: ""
     }
 
     const validateCName = (value) => {
@@ -104,6 +110,15 @@ const Create = () => {
     };
 
     const validateFeedback = (value) => {
+        setCount(value.length);
+        let error;
+        if (!value) {
+            error = "*This field is required"
+        }
+        return error;
+    }
+
+    const validateDescription = (value) => {
         let error;
         if (!value) {
             error = "*This field is required"
@@ -382,15 +397,20 @@ const Create = () => {
                                             <div className="col-md-6">
                                                 <div className="mb-3">
                                                     <label className="form-label fw-bold">Description*</label>
-                                                    <textarea
-                                                        className={`form-control`}
+                                                    <Field as= "textarea"
+                                                        className={`form-control ${errors.companyName && touched.companyName ? "border-danger" : ""}`}
                                                         rows="5"
+                                                        placeholder='Your description'
                                                         id="description"
-                                                        placeholder='Your description'>
-                                                    </textarea>
-                                                    <div className=' form-text text-danger'>
-
-                                                    </div>
+                                                        name="description"
+                                                        validate={validateDescription}
+                                                        />
+                                                    {
+                                                        errors.description && touched.description &&
+                                                        <div className="form-text text-danger">
+                                                            {errors.description}
+                                                        </div>
+                                                    }
                                                 </div>
                                             </div>
                                             <div className="col-md-6">
@@ -400,11 +420,7 @@ const Create = () => {
                                                         <label htmlFor="generalFeedback" className="form-label fw-bold">{count}/615</label>
                                                     </div>
                                                     <Field as="textarea"
-                                                        onChange={
-                                                            e => setCount(e.target.value.length) &&
-                                                                setValue(e.target.value)
-                                                        }
-                                                        className="form-control"
+                                                        className={`form-control ${errors.companyName && touched.companyName ? "border-danger" : ""}`}
                                                         minLength="400"
                                                         maxLength="615"
                                                         placeholder={`Example: Every human interaction is an opportunity to learn. Its also an opportunity to demonstrate your skills and expertise in a specific context and capacity.We view every professional interaction as a high-stakes game - whether you are likely to save money, generate revenue, make a process more efficient or improve your performance.These virtual interactions act as practice sessions where you can test drive real-world interactions.Experts in the world may differ on what skills matter – but they all have a common point of view.Practice is the key to improvement – and specific feedback makes improvement faster.`}
@@ -412,6 +428,9 @@ const Create = () => {
                                                         name="generalFeedback"
                                                         id="generalFeedback"
                                                         validate={validateFeedback}
+                                                        // onChange={o}
+                                                            // e => setCount(e.target.value.length) &&
+                                                            //     setValue(e.target.value)
                                                     />
                                                     {
                                                         errors.generalFeedback && touched.generalFeedback &&
