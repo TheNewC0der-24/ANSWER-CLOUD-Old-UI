@@ -489,7 +489,7 @@ const Create = () => {
                                                 <div className="mb-3">
                                                     <label className="form-label fw-bold">Interaction Mode</label>
                                                     <Field as="select"
-                                                        className={`form-control ${errors.companyName && touched.companyName ? "border-danger" : ""}`}
+                                                        className={`form-control ${errors.mode && touched.mode ? "border-danger" : ""}`}
                                                         id='mode'
                                                         name='mode'
                                                         validate={validateMode}
