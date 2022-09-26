@@ -92,9 +92,30 @@ const InteractionScorecard = () => {
                     <span className="badge bg-dark text-center" style={{ borderRadius: "0" }}> <span className="me-1 fw-bold" style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer scorecard</span>
                 </h1>
                 <div className="mt-5">
-                    <div className="m-auto">
+                    <div className="my-4 m-auto">
+                        <div className={styles.para}>
+                            <p align="center">
+                                Every human interaction demonstrates what human resources experts define as power skills.
+                                The attached spider chart demonstrates these traits that the AI models observe in the conversation.
+                                Depending upon the particular context of the interaction we may or may not display certain traits.
+                                Personality is not permanent and the models are a mere reflection of how you may be perceived by the others in the
+                                particular interaction. This chart and report will help you to reflect deeply on your own performance. In overall
+                                cohort scores in the power-skill areas are summarized as below. <span>Please review the
+                                    variable section below for more information</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div className={`${styles.main} d-grid col-md-7 mx-auto`}>
                         <div className="card" style={{ border: "2px solid #0e1013", borderRadius: "0" }}>
-                            <div className='mt-5 d-flex justify-content-center'>
+                            <h5 className="card-header">Answer Score Outline Chart</h5>
+                            <ul>
+                                <li>Likeability & Trust : likeability_agregate</li>
+                                <li>Empathy & Charm : charm_agreegate</li>
+                                <li>Energy and Adaptability : energy_agreegate</li>
+                                <li>Communication skills: fluency_agreegate</li>
+                                <li>Confidence and Fluency: Confidence_agreegate</li>
+                            </ul>
+                            <div className='d-flex justify-content-center'>
                                 <ReactApexChart
                                     // eslint-disable-next-line
                                     setState={setState}
@@ -108,32 +129,7 @@ const InteractionScorecard = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="my-4 m-auto">
-                        {/* <div className="card h-100" style={{ border: "2.5px solid #000" }}>
-                            <div className="card-body"> */}
-                        <div className={styles.para}>
-                            <p align="justify">
-                                Every human interaction demonstrates what human resources experts define as power skills.
-                                The attached spider chart demonstrates these traits that the AI models observe in the conversation.
-                                Depending upon the particular context of the interaction we may or may not display certain traits.
-                                Personality is not permanent and the models are a mere reflection of how you may be perceived by the others in the
-                                particular interaction. This chart and report will help you to reflect deeply on your own performance. In overall
-                                cohort scores in the power-skill areas are summarized as below. <span>Please review the
-                                    variable section below for more information</span>
-                            </p>
-                            <p>
-                                Likeability & Trust : likeability_agregate
-                                <br />
-                                Empathy & Charm : charm_agreegate
-                                <br />
-                                Energy and Adaptability : energy_agreegate
-                                <br />
-                                Communication skills: fluency_agreegate
-                                <br />
-                                Confidence and Fluency: Confidence_agreegate
-                            </p>
-                        </div>
-                    </div>
+
                 </div>
             </div>
             {/* </div>

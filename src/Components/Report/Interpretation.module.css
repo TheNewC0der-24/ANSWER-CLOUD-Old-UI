@@ -14,14 +14,23 @@
     background-color: #2e3134;
 }
 
-.row {
-    width: 100%;
+.main {
     display: flex;
+    gap: 30px;
 }
 
-.ul {
-    /* flex-grow: 1; */
-    margin: 10px 24px;
+.col1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* gap: 20px; */
+}
+
+.col2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* gap: 20px; */
 }
 
 @media screen and (max-width: 768px) {

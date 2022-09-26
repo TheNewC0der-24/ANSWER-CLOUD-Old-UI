@@ -11,8 +11,8 @@ const Interpretation = () => {
           </span>
         </h1>
         <div className={styles.para}>
-          <div className={styles.row}>
-            <div className={styles.ul}>
+          <div className={styles.main}>
+            <div className={styles.col1}>
               <ul type="square">
                 <li>
                   <p align="justify">
@@ -33,7 +33,7 @@ const Interpretation = () => {
                 </li>
               </ul>
             </div>
-            <div className={styles.ul}>
+            <div className={styles.col2}>
               <ul type="square">
                 <li>
                   <p align="justify">
