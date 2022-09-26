@@ -35,10 +35,7 @@ const Create = () => {
         setDisabled(!disabled);
     }
 
-    const handleOnChange = (e) => {
-        setValue(e.target.value);
-    }
-
+    
     const onSubmit = () => {
         navigate("/externalbot");
     }
@@ -52,9 +49,12 @@ const Create = () => {
         expiryDate: "",
         emailOne: "",
         generalFeedback: "",
-        description: ""
+        description: "",
+        track:"",
+        timer:"",
+        mode:""
     }
-
+    
     const validateCName = (value) => {
         let error;
         if (!value) {
@@ -108,12 +108,14 @@ const Create = () => {
         }
         return error;
     };
-
+    
     const validateFeedback = (value) => {
         setCount(value.length);
         let error;
         if (!value) {
             error = "*This field is required"
+        } else if (value.length < 400) {
+            error = "*It must be greater than 400";
         }
         return error;
     }
@@ -122,6 +124,37 @@ const Create = () => {
         let error;
         if (!value) {
             error = "*This field is required"
+        }
+        return error;
+    }
+
+    const validateTrack = (value) => {
+        let error;
+        if (!value) {
+            error = "*This field is required"
+        }else if (value == "Select...") {
+            error = "*Choose correct option"
+        }
+        return error;
+    }
+
+    const validateTimer = (value) => {
+        let error;
+        if (!value) {
+            error = "*This field is required"
+        }else if (value == "Select...") {
+            error = "*Choose correct option"
+        }
+        return error;
+    }
+
+    const validateMode = (value) => {
+        setValue(value);
+        let error;
+        if (!value) {
+            error = "*This field is required"
+        }else if (value == "Select...") {
+            error = "*Choose correct option"
         }
         return error;
     }
@@ -223,10 +256,11 @@ const Create = () => {
                                             <div className="col-md-6">
                                                 <div className="mb-3">
                                                     <label className="form-label fw-bold">Track/Domain</label>
-                                                    <select
-                                                        className={`form-select`}
-                                                        name='track'
+                                                    <Field as= "select"
+                                                        className={`form-select ${errors.companyName && touched.companyName ? "border-danger" : ""}`}
                                                         id='track'
+                                                        name='track'
+                                                        validate={validateTrack}
                                                     >
                                                         <option value="Select...">Select...</option>
                                                         <option value="Sales">Sales</option>
@@ -234,10 +268,13 @@ const Create = () => {
                                                         <option value="HR">HR</option>
                                                         <option value="New Grad.">New Grad.</option>
                                                         <option value="None / Others">None / Others</option>
-                                                    </select>
-                                                    <div className=' form-text text-danger'>
-
-                                                    </div>
+                                                    </Field>
+                                                    {
+                                                        errors.track && touched.track &&
+                                                        <div className="form-text text-danger">
+                                                            {errors.track}
+                                                        </div>
+                                                    }
                                                 </div>
                                             </div>
                                             <div className="col-md-6">
@@ -309,9 +346,11 @@ const Create = () => {
                                             <div className="col-md-6">
                                                 <div className="mb-3">
                                                     <label className="form-label fw-bold">Timer*</label>
-                                                    <select
-                                                        className={`form-select`}
-                                                        id='timer'>
+                                                    <Field as= "select"
+                                                        className={`form-select ${errors.companyName && touched.companyName ? "border-danger" : ""}`}
+                                                        id='timer'
+                                                        name='timer'
+                                                        validate={validateTimer}>
                                                         <option value="Select">Select...</option>
                                                         <option value="15 minutes">15 minutes</option>
                                                         <option value="20 minutes">20 minutes</option>
@@ -319,10 +358,13 @@ const Create = () => {
                                                         <option value="45 minutes">45 minutes</option>
                                                         <option value="60 minutes">60 minutes</option>
                                                         <option value="None">None</option>
-                                                    </select>
-                                                    <div className=' form-text text-danger'>
-
-                                                    </div>
+                                                    </Field>
+                                                    {
+                                                        errors.timer && touched.timer &&
+                                                        <div className="form-text text-danger">
+                                                            {errors.timer}
+                                                        </div>
+                                                    }
                                                 </div>
                                             </div>
                                         </div>
@@ -446,12 +488,23 @@ const Create = () => {
                                             <div className="col-md-6 m-auto">
                                                 <div className="mb-3">
                                                     <label htmlFor="mode" className="form-label fw-bold">Interaction Mode</label>
-                                                    <select className="form-select" onChange={handleOnChange} id='mode' aria-label="Default select example">
+                                                    <Field as= "select" 
+                                                    className={`form-control ${errors.companyName && touched.companyName ? "border-danger" : ""}`}  
+                                                    id='mode'
+                                                    name='mode'
+                                                    validate={validateMode}
+                                                    aria-label="Default select example">
                                                         <option value="Select">Select...</option>
                                                         <option value="Audio">Audio</option>
                                                         <option value="Video">Video</option>
                                                         <option value="MCQ">MCQ</option>
-                                                    </select>
+                                                    </Field>
+                                                    {
+                                                        errors.mode && touched.mode &&
+                                                        <div className="form-text text-danger">
+                                                            {errors.mode}
+                                                        </div>
+                                                    }
                                                 </div>
                                             </div>
                                             <div className="col-md-6 m-auto">
