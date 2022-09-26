@@ -35,7 +35,7 @@ const Create = () => {
         setDisabled(!disabled);
     }
 
-    
+
     const onSubmit = () => {
         navigate("/externalbot");
     }
@@ -50,11 +50,11 @@ const Create = () => {
         emailOne: "",
         generalFeedback: "",
         description: "",
-        track:"",
-        timer:"",
-        mode:""
+        track: "",
+        timer: "",
+        mode: ""
     }
-    
+
     const validateCName = (value) => {
         let error;
         if (!value) {
@@ -108,7 +108,7 @@ const Create = () => {
         }
         return error;
     };
-    
+
     const validateFeedback = (value) => {
         setCount(value.length);
         let error;
@@ -132,7 +132,7 @@ const Create = () => {
         let error;
         if (!value) {
             error = "*This field is required"
-        }else if (value == "Select...") {
+        } else if (value === "Select...") {
             error = "*Choose correct option"
         }
         return error;
@@ -142,7 +142,7 @@ const Create = () => {
         let error;
         if (!value) {
             error = "*This field is required"
-        }else if (value == "Select...") {
+        } else if (value === "Select...") {
             error = "*Choose correct option"
         }
         return error;
@@ -153,7 +153,7 @@ const Create = () => {
         let error;
         if (!value) {
             error = "*This field is required"
-        }else if (value == "Select...") {
+        } else if (value === "Select...") {
             error = "*Choose correct option"
         }
         return error;
@@ -256,7 +256,7 @@ const Create = () => {
                                             <div className="col-md-6">
                                                 <div className="mb-3">
                                                     <label className="form-label fw-bold">Track/Domain</label>
-                                                    <Field as= "select"
+                                                    <Field as="select"
                                                         className={`form-select ${errors.companyName && touched.companyName ? "border-danger" : ""}`}
                                                         id='track'
                                                         name='track'
@@ -345,9 +345,9 @@ const Create = () => {
                                             </div>
                                             <div className="col-md-6">
                                                 <div className="mb-3">
-                                                    <label className="form-label fw-bold">Timer*</label>
-                                                    <Field as= "select"
-                                                        className={`form-select ${errors.companyName && touched.companyName ? "border-danger" : ""}`}
+                                                    <label className="form-label fw-bold">Timer</label>
+                                                    <Field as="select"
+                                                        className={`form-select ${errors.timer && touched.timer ? "border-danger" : ""}`}
                                                         id='timer'
                                                         name='timer'
                                                         validate={validateTimer}>
@@ -438,15 +438,15 @@ const Create = () => {
                                         <div className="row">
                                             <div className="col-md-6">
                                                 <div className="mb-3">
-                                                    <label className="form-label fw-bold">Description*</label>
-                                                    <Field as= "textarea"
+                                                    <label className="form-label fw-bold">Description</label>
+                                                    <Field as="textarea"
                                                         className={`form-control ${errors.companyName && touched.companyName ? "border-danger" : ""}`}
                                                         rows="5"
                                                         placeholder='Your description'
                                                         id="description"
                                                         name="description"
                                                         validate={validateDescription}
-                                                        />
+                                                    />
                                                     {
                                                         errors.description && touched.description &&
                                                         <div className="form-text text-danger">
@@ -470,9 +470,9 @@ const Create = () => {
                                                         name="generalFeedback"
                                                         id="generalFeedback"
                                                         validate={validateFeedback}
-                                                        // onChange={o}
-                                                            // e => setCount(e.target.value.length) &&
-                                                            //     setValue(e.target.value)
+                                                    // onChange={o}
+                                                    // e => setCount(e.target.value.length) &&
+                                                    //     setValue(e.target.value)
                                                     />
                                                     {
                                                         errors.generalFeedback && touched.generalFeedback &&
@@ -487,13 +487,13 @@ const Create = () => {
                                         <div className="row">
                                             <div className="col-md-6 m-auto">
                                                 <div className="mb-3">
-                                                    <label htmlFor="mode" className="form-label fw-bold">Interaction Mode</label>
-                                                    <Field as= "select" 
-                                                    className={`form-control ${errors.companyName && touched.companyName ? "border-danger" : ""}`}  
-                                                    id='mode'
-                                                    name='mode'
-                                                    validate={validateMode}
-                                                    aria-label="Default select example">
+                                                    <label className="form-label fw-bold">Interaction Mode</label>
+                                                    <Field as="select"
+                                                        className={`form-control ${errors.companyName && touched.companyName ? "border-danger" : ""}`}
+                                                        id='mode'
+                                                        name='mode'
+                                                        validate={validateMode}
+                                                    >
                                                         <option value="Select">Select...</option>
                                                         <option value="Audio">Audio</option>
                                                         <option value="Video">Video</option>

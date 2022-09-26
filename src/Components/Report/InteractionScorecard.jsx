@@ -105,15 +105,19 @@ const InteractionScorecard = () => {
                             </p>
                         </div>
                     </div>
-                    <div className={`${styles.main} d-grid col-md-7 mx-auto`}>
-                        <div className="card" style={{ border: "2px solid #0e1013", borderRadius: "0" }}>
-                            <h5 className="card-header">Answer Score Outline Chart</h5>
-                            <ul>
-                                <li>Likeability & Trust : likeability_agregate</li>
-                                <li>Empathy & Charm : charm_agreegate</li>
-                                <li>Energy and Adaptability : energy_agreegate</li>
-                                <li>Communication skills: fluency_agreegate</li>
-                                <li>Confidence and Fluency: Confidence_agreegate</li>
+                    <div className={`${styles.main} d-grid col-md-12 mx-auto`}>
+                        <div className="card border-0">
+                            <h3 className="card-header text-white" style={{ backgroundColor: "#414141", borderRadius: "0" }}>Answer Score Outline Chart</h3>
+                            <ul className={`${styles.main} mt-4`}>
+                                <div className={`${styles.col1} fs-5`}>
+                                    <li>Likeability & Trust : likeability_agregate</li>
+                                    <li>Empathy & Charm : charm_agreegate</li>
+                                    <li>Energy and Adaptability : energy_agreegate</li>
+                                </div>
+                                <div className={`${styles.col2} fs-5`}>
+                                    <li>Communication skills: fluency_agreegate</li>
+                                    <li>Confidence and Fluency: Confidence_agreegate</li>
+                                </div>
                             </ul>
                             <div className='d-flex justify-content-center'>
                                 <ReactApexChart

@@ -1,17 +1,17 @@
 .para {
-    font-family: 'Mukta', sans-serif;
+    font-family: 'Maven Pro', sans-serif;
     font-size: 22px;
 }
 
 .table {
     font-size: 22px !important;
     width: 100%;
-    border-color: #2e3134;
+    border-color: #414141;
     border-collapse: collapse;
 }
 
 .thead {
-    background-color: #2e3134;
+    background-color: #414141;
 }
 
 .main {

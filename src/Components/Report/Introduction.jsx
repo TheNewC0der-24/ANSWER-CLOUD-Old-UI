@@ -5,8 +5,6 @@ const Interaction = () => {
   return (
     <>
       <div className="container mt-5">
-        {/* <div className="card" style={{ border: "2px solid #0e1013", borderRadius: "0" }}>
-          <div className="card-body" style={{ color: "#0e1013" }}> */}
         <h1 className="mb-3">
           <span className="badge bg-dark text-center" style={{ borderRadius: "0" }}> <span className="me-1 fw-bold" style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer rating introduction</span>
         </h1>

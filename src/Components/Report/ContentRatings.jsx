@@ -194,7 +194,7 @@ const ContentRatings = () => {
       <div className="container my-5">
         <h1 className="my-5">
           <span className="badge bg-dark text-center" style={{ borderRadius: "0" }}>
-            <span className="me-1 fw-bold" style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer content ratings
+            <span className="me-1 fw-bold" style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer content ratings per question
           </span>
         </h1>
         <div className={`${styles.para} my-5`}>
@@ -224,9 +224,9 @@ const ContentRatings = () => {
         </div>
         <table
           className="table table-bordered text-center my-5"
-          style={{ borderColor: "#2e3134", fontSize: "22px" }}
+          style={{ borderColor: "#414141", fontSize: "22px" }}
         >
-          <thead className="text-white" style={{ backgroundColor: "#2e3134" }}>
+          <thead className="text-white" style={{ backgroundColor: "#414141" }}>
             <tr>
               <th scope="col">Match Score</th>
               <th scope="col">Meaning</th>
@@ -261,10 +261,8 @@ const ContentRatings = () => {
             benchmarks command great authority on the content.
           </p>
         </div>
-        <div
-          className="card my-5"
-          style={{ border: "2px solid #2e3134", borderRadius: "0" }}
-        >
+        <div className="card border-0 my-5" >
+          <h3 className="card-header text-white" style={{ backgroundColor: "#414141", borderRadius: "0" }}>Content rating chart</h3>
           <div className="card-body d-flex justify-content-center mx-auto">
             <ReactApexChart
               setState={setState}

@@ -1,20 +1,20 @@
 .para {
-    font-family: 'Mukta', sans-serif;
+    font-family: 'Maven Pro', sans-serif;
     font-size: 22px;
 }
 
-.container{
+.container {
     height: 340px;
 }
 
 @media screen and (max-width: 768px) {
-    .container{
+    .container {
         height: 500px;
     }
 }
 
 @media screen and (max-width: 512px) {
-    .container{
+    .container {
         height: 650px;
     }
 }

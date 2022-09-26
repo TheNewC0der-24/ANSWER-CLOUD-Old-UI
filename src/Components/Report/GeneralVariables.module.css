@@ -3,7 +3,7 @@
 }
 
 .para {
-    font-family: 'Mukta', sans-serif;
+    font-family: 'Maven Pro', sans-serif;
     /* font-family: 'Wardana', sans-serif; */
     font-size: 22px;
 }
@@ -14,7 +14,7 @@
 }
 
 .cardHeader {
-    background-color: #2e3134 !important;
+    background-color: #414141 !important;
     color: #fff;
     border-radius: 0 !important;
 }

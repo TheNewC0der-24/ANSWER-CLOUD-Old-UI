@@ -154,14 +154,14 @@ const GeneralVariables = () => {
               compared to the current performance (dot plot).
             </em>
           </p>
-          <div className="row row-cols-1 row-cols-md-2 justify-content-center g-4">
+          <div className="row row-cols-1 row-cols-md-2 justify-content-center g-5">
             <div className="col mt-5">
-              <div className={`${styles.card} card h-100`}>
-                <h1 className={`${styles.cardHeader} card-header fw-bold`}>
+              <div className={`${styles.card} card my-5 h-100`}>
+                <h3 className={`${styles.cardHeader} card-header fw-bold`}>
                   <AiFillDashboard className={`me-2 ${styles.icon}`} />
                   Pace
-                </h1>
-                <div className="card-body my-3" style={{ fontSize: "22px" }}>
+                </h3>
+                <div className="card-body" style={{ fontSize: "22px" }}>
                   <p align="justify" className="card-text">
                     <strong>Words per minute : </strong>pace
                   </p>
@@ -194,12 +194,12 @@ const GeneralVariables = () => {
               </div>
             </div>
             <div className="col mt-5">
-              <div className={`${styles.card} card border-dark h-100`}>
-                <h1 className={`${styles.cardHeader} card-header fw-bold`}>
-                  <FaRibbon className={`${styles.icon} me-1`} />
+              <div className={`${styles.card} card border-dark my-5 h-100`}>
+                <h3 className={`${styles.cardHeader} card-header fw-bold`}>
+                  <FaRibbon className={`${styles.icon} me-2`} />
                   Gesture
-                </h1>
-                <div className="card-body my-3">
+                </h3>
+                <div className="card-body">
                   <p align="justify" className="card-text">
                     <strong>Gesture Score : </strong>Estimated_Gesture_score
                   </p>
@@ -229,11 +229,11 @@ const GeneralVariables = () => {
             </div>
             <div className="col mt-3">
               <div className={`${styles.card} card border-dark h-100`}>
-                <h1 className={`${styles.cardHeader} card-header fw-bold`}>
-                  <FaCloud className={`${styles.icon} me-1`} />
+                <h3 className={`${styles.cardHeader} card-header fw-bold`}>
+                  <FaCloud className={`${styles.icon} me-2`} />
                   Word Cloud
-                </h1>
-                <div className="card-body my-3">
+                </h3>
+                <div className="card-body">
                   <img src={wc} alt="wordCloud" />
                   <p align="justify" className="card-text">
                     <strong>Why Consider this : </strong>Please take a moment to
@@ -249,10 +249,10 @@ const GeneralVariables = () => {
             </div>
             <div className="col mt-3">
               <div className={`${styles.card} card border-dark h-100`}>
-                <h1 className={`${styles.cardHeader} card-header fw-bold`}>
-                  <BsEmojiSmileFill className={`${styles.icon} me-1`} />
+                <h3 className={`${styles.cardHeader} card-header fw-bold`}>
+                  <BsEmojiSmileFill className={`${styles.icon} me-2`} />
                   Sentiment Analysis
-                </h1>
+                </h3>
                 <div className="card-body my-3">
                   <p align="justify" className="card-text">
                     <strong>Aggregate dominant Sentiment : </strong>
@@ -283,10 +283,10 @@ const GeneralVariables = () => {
             </div>
           </div>
           <div className={`${styles.card} card border-dark h-100 mt-4`}>
-            <h1 className={`${styles.cardHeader} card-header fw-bold`}>
-              <SiGrammarly className={`${styles.icon} me-1`} />
+            <h3 className={`${styles.cardHeader} card-header fw-bold`}>
+              <SiGrammarly className={`${styles.icon} me-2`} />
               Grammar and Accent Score
-            </h1>
+            </h3>
             <div className="card-body my-3">
               <p align="justify" className="card-text">
                 <strong>Grammar and Accent Score : </strong>grammar_score
@@ -318,10 +318,10 @@ const GeneralVariables = () => {
             </div>
           </div>
           <div className={`${styles.card} card border-dark h-100 mt-4`}>
-            <h1 className={`${styles.cardHeader} card-header fw-bold`}>
-              <FaVolumeUp className={`me-1 ${styles.icon}`} />
+            <h3 className={`${styles.cardHeader} card-header fw-bold`}>
+              <FaVolumeUp className={`me-2 ${styles.icon}`} />
               Volume & Pitch
-            </h1>
+            </h3>
             <div className="card-body my-3">
               <div className={styles.row}>
                 <div className={styles.ul}>
