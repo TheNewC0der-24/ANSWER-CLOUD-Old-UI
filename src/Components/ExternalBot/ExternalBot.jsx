@@ -11,7 +11,7 @@ const Notification = () => {
   const [isNeeded, setIsNeeded] = useState(false);
   const [disabled, setDisabled] = useState(false);
   const [create, setCreate] = useState([]);
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
 
   const handleBack = (e) => {
     e.preventDefault();
@@ -141,7 +141,7 @@ const Notification = () => {
                 <input
                   disabled={isNeeded ? true : false}
                   onClick={handleNeeded}
-                  className="form-check-input"
+                   className="form-check-input"
                   type="radio"
                   name="botNeed"
                   id="yes"

@@ -1,6 +1,8 @@
 import './App.css';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './Components/Navbar/Navbar';
+
+import axios from 'axios';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import InternalBot from './Components/InternalBot/InternalBot';
@@ -36,8 +38,17 @@ import Text from './Components/Text/Text';
 // import Experience from './Components/Experience/Experience';
 
 function App() {
+  const [data, setData] = useState([]);
 
-  return (
+        useEffect(() => {
+        axios.get('response.json')
+          .then(res => {
+            // console.log(res.data.results);
+            setData(res.data.results);
+          })
+      });
+
+      return (
     <>
       <Router>
         <Navbar />
@@ -45,12 +56,24 @@ function App() {
           <Route exact path='/' element={<Dashboard />} />
           <Route exact path='/internalbot' element={<InternalBot />} />
           {/* <Route exact path='/access' element={<Access />} /> */}
-          <Route exact path='/externalbot' element={<ExternalBot />} />
+          {data.slice(0,1).map(item=>(
+              <>
+                {!(`${item.access_code}` == "aaccess_code") && (
+                  <Route exact path='/externalbot' element={<ExternalBot/>} />
+                  )}
+              </>
+          ))}
           {/* <Route exact path='/experience' element={<Experience />} /> */}
           <Route exact path='/thankyou' element={<ThankYou />} />
           <Route exact path='/interaction' element={<Interaction />} />
           <Route exact path='/profile' element={<Profile />} />
-          <Route exact path='/teams' element={<Team />} />
+          {data.slice(0,1).map(item=>(
+              <>
+                {!(`${item.access_code}` == "aaccess_code") && (
+                  <Route exact path='/teams' element={<Team />} />
+                  )}
+              </>
+          ))}
           {/* <Route exact path="/report" element={<Report />} /> */}
           <Route exact path="/report" element={<Report />} />
           {/* <Route exact path="/leaderboardReport" element={<LeaderboardReport />} /> */}

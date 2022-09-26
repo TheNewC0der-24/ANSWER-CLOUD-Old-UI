@@ -20,6 +20,7 @@ const Create = () => {
   const [value, setValue] = useState("SELECT...");
   const [create, setCreate] = useState([]);
   const [data, setData] = useState([]);
+  const [add, setAdd] = useState([]);
 
   const handleCertificate = () => {
     setCertificate(!certificate);
@@ -74,13 +75,14 @@ const Create = () => {
     setCreate({ ...create, [e.target.name]: e.target.value });
   };
   
-      // useEffect(() => {
-      //   axios.get('response.json')
-      //   .then(res => {
-      //       console.log(res.data.results);
-      //       setData(res.data.results);
-      //     })
-      // });
+      useEffect(() => {
+        axios.get('response.json')
+        .then(res => {
+            console.log(res.data.results);
+            setData(res.data.results);
+            setAdd(res.data.results);
+          })
+      });
 
   return (
     <>
@@ -513,7 +515,13 @@ const Create = () => {
                       >
                         <option value="Select">Select...</option>
                         <option value="Audio">Audio</option>
-                        <option value="Video">Video</option>
+                        {data.slice(0,1).map(item=>(
+                         <>
+                          {!(`${item.access_code}` == "aaccess_code") && (
+                            <option value="Video">Video</option>
+                         )}
+                        </>
+                        ))}
                         <option value="MCQ">MCQ</option>
                       </select>
                     </div>
