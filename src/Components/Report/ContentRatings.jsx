@@ -193,7 +193,7 @@ const ContentRatings = () => {
     <>
       <div className="container my-5">
         <h1 className="my-5">
-          <span className="badge bg-dark text-center" style={{ borderRadius: "0" }}>
+          <span className="badge" style={{ borderRadius: "0", backgroundColor: "#414141" }}>
             <span className="me-1 fw-bold" style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer content ratings per question
           </span>
         </h1>
@@ -251,7 +251,9 @@ const ContentRatings = () => {
             </tr>
           </tbody>
         </table>
-        <h3 className="my-5">Question Specific Content Ratings :</h3>
+        <h1 className="my-5">
+          <span className="badge" style={{ backgroundColor: "#414141", borderRadius: "0" }}>Question Specific Content Ratings</span>
+        </h1>
         <div className={styles.para}>
           <p align="justify" className="fs-2">
             The chart below illustrates the content ratings for each answer, in

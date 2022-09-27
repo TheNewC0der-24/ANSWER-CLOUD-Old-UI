@@ -4,9 +4,9 @@ import styles from "./Introduction.module.css";
 const Interaction = () => {
   return (
     <>
-      <div className="container mt-5">
-        <h1 className="mb-3">
-          <span className="badge bg-dark text-center" style={{ borderRadius: "0" }}> <span className="me-1 fw-bold" style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer rating introduction</span>
+      <div className="container my-5">
+        <h1 className="my-5">
+          <span className="badge" style={{ borderRadius: "0", backgroundColor: "#414141" }}> <span className="me-1 fw-bold" style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer rating introduction</span>
         </h1>
         <div className={styles.para}>
           <p align='justify'>

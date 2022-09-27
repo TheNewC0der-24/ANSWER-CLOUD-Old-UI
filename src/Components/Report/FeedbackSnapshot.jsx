@@ -4,11 +4,13 @@ import styles from "./FeedbackSnapshot.module.css";
 const FeedbackSnapshot = () => {
     return (
         <>
-            <div className='container text-center mt-1'>
-                {/* <div className="card h-100" style={{ border: "2.5px solid #000" }}>
-                    <div className="card-body" style={{ color: "#0b3c47" }}> */}
-                <h1 className='mb-3'><span className='me-1 fw-bold' style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer ratings snapshot</h1>
-                <p className={styles.para}>Our models suggest an overall rating of
+            <div className='container my-5'>
+                <h1 className="my-5">
+                    <span className="badge" style={{ borderRadius: "0", backgroundColor: "#414141" }}>
+                        <span className="me-1 fw-bold" style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer ratings snapshot
+                    </span>
+                </h1>
+                <p align="justify" className={styles.para}>Our models suggest an overall rating of
                     “((Interaction_score))”,"((Interaction_ID))" for the
                     candidate. Based on the responses, we also report
                     a comprehensive rating of the candidate across
@@ -18,8 +20,6 @@ const FeedbackSnapshot = () => {
                     are also suggested in the pages that follow.
                 </p>
             </div>
-            {/* </div>
-            </div> */}
         </>
     )
 }

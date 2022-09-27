@@ -4,9 +4,9 @@ import styles from "./SkillsSelection.module.css";
 const SkillsSelection = () => {
   return (
     <>
-      <div className="container mt-2">
-        <h1 className="mb-2">
-          <span className="badge bg-dark text-center" style={{ borderRadius: "0" }}>
+      <div className="container my-5">
+        <h1 className="my-5">
+          <span className="badge" style={{ backgroundColor: "#414141", borderRadius: "0" }}>
             <span className="me-1 fw-bold" style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer cloud skills selection
           </span>
         </h1>

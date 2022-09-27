@@ -4,9 +4,9 @@ import styles from "./Interpretation.module.css";
 const Interpretation = () => {
   return (
     <>
-      <div className="container mt-2">
-        <h1 className="mb-3">
-          <span className="badge bg-dark text-center" style={{ borderRadius: "0" }}>
+      <div className="container my-5">
+        <h1 className="my-5">
+          <span className="badge" style={{ backgroundColor: "#414141", borderRadius: "0" }}>
             <span className="me-1 fw-bold" style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer score interpretation
           </span>
         </h1>
@@ -54,7 +54,7 @@ const Interpretation = () => {
             </div>
           </div>
         </div>
-        <table className={`${styles.table} table table-bordered text-center my-4`}>
+        <table className={`${styles.table} table table-bordered text-center my-5`}>
           <thead className={`${styles.thead} text-white`}>
             <tr>
               <th scope="col">Cohort Rating</th>

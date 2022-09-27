@@ -133,9 +133,9 @@ const GeneralVariables = () => {
 
   return (
     <>
-      <div className="container mt-5">
-        <h1 className="mb-5">
-          <span className="badge bg-dark text-center" style={{ borderRadius: "0" }}>
+      <div className="container my-5">
+        <h1 className="my-5">
+          <span className="badge" style={{ backgroundColor: "#414141", borderRadius: "0" }}>
             <span className="me-1 fw-bold" style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer cloud parameters
           </span>
         </h1>
@@ -193,7 +193,7 @@ const GeneralVariables = () => {
                 </div>
               </div>
             </div>
-            <div className="col mt-5">
+            <div className="col">
               <div className={`${styles.card} card border-dark my-5 h-100`}>
                 <h3 className={`${styles.cardHeader} card-header fw-bold`}>
                   <FaRibbon className={`${styles.icon} me-2`} />
@@ -227,8 +227,8 @@ const GeneralVariables = () => {
                 </div>
               </div>
             </div>
-            <div className="col mt-3">
-              <div className={`${styles.card} card border-dark h-100`}>
+            <div className="col">
+              <div className={`${styles.card} card my-5 border-dark h-100`}>
                 <h3 className={`${styles.cardHeader} card-header fw-bold`}>
                   <FaCloud className={`${styles.icon} me-2`} />
                   Word Cloud
@@ -247,8 +247,8 @@ const GeneralVariables = () => {
                 </div>
               </div>
             </div>
-            <div className="col mt-3">
-              <div className={`${styles.card} card border-dark h-100`}>
+            <div className="col">
+              <div className={`${styles.card} card my-5 border-dark h-100`}>
                 <h3 className={`${styles.cardHeader} card-header fw-bold`}>
                   <BsEmojiSmileFill className={`${styles.icon} me-2`} />
                   Sentiment Analysis
@@ -282,12 +282,12 @@ const GeneralVariables = () => {
               </div>
             </div>
           </div>
-          <div className={`${styles.card} card border-dark h-100 mt-4`}>
+          <div className={`${styles.card} card border-dark h-100 my-5`}>
             <h3 className={`${styles.cardHeader} card-header fw-bold`}>
               <SiGrammarly className={`${styles.icon} me-2`} />
               Grammar and Accent Score
             </h3>
-            <div className="card-body my-3">
+            <div className="card-body">
               <p align="justify" className="card-text">
                 <strong>Grammar and Accent Score : </strong>grammar_score
               </p>
@@ -317,18 +317,18 @@ const GeneralVariables = () => {
               </p>
             </div>
           </div>
-          <div className={`${styles.card} card border-dark h-100 mt-4`}>
+          <div className={`${styles.card} card border-dark h-100 my-5`}>
             <h3 className={`${styles.cardHeader} card-header fw-bold`}>
               <FaVolumeUp className={`me-2 ${styles.icon}`} />
               Volume & Pitch
             </h3>
-            <div className="card-body my-3">
+            <div className="card-body">
               <div className={styles.row}>
                 <div className={styles.ul}>
                   <p align="justify" className="card-text">
                     <strong>Volume Scale (0-100) : "volume"</strong>
                   </p>
-                  <p align="justify" className="card-text mb-5">
+                  <p align="justify" className="card-text my-5">
                     <strong>Ideal Volume Scale : </strong>70-80 Db
                   </p>
                   {/* <ReactApexChart
@@ -352,7 +352,7 @@ const GeneralVariables = () => {
                   <p align="justify" className="card-text">
                     <strong>Pitch Range : "pitch"</strong>
                   </p>
-                  <p align="justify" className="card-text mb-5">
+                  <p align="justify" className="card-text my-5">
                     <strong>Ideal Pitch Range : </strong>650-850 Hertz
                   </p>
                   {/* <ReactApexChart

@@ -3,9 +3,10 @@
     font-size: 22px;
 }
 
+/* 
 .container {
     height: 340px;
-}
+} */
 
 @media screen and (max-width: 768px) {
     .container {
