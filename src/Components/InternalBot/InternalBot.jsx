@@ -101,6 +101,19 @@ const Create = () => {
           }
         `}
       </style>
+      <div>
+      {add.slice(0,1).map(item=>(
+                         <>
+                          {(`${item.createdby}` < 3 ) ?
+                                ""
+                                 :
+                                <div className="alert alert-danger" role="alert">
+                                    Page is restricted
+                                </div>
+                         }
+                        </>
+                      ))}
+      </div>
       <div className="container d-flex justify-content-between my-3">
         <h3>Internal Bot</h3>
         <nav aria-label="breadcrumb">
@@ -140,7 +153,32 @@ const Create = () => {
                       <label htmlFor="detail" className="form-label fw-bold">
                         Company/Institute Name*
                       </label>
-                      <input
+                      {add.slice(0,1).map(item=>(
+                         <>
+                          {(`${item.createdby}` < 3 ) ?
+                                <input
+                                type="text"
+                                className="form-control"
+                                placeholder="Enter company/institute name"
+                                onChange={handleOnChange}
+                                name="institute_name"
+                                value={create.institute_name}
+                                id="companyName"
+                                /> :
+                                <input
+                                type="text"
+                                className="form-control"
+                                placeholder="Enter company/institute name"
+                                onChange={handleOnChange}
+                                name="institute_name"
+                                value={create.institute_name}
+                                id="companyName"
+                                disabled
+                                />
+                         }
+                        </>
+                      ))}
+                      {/* <input
                         type="text"
                         className="form-control"
                         placeholder="Enter company/institute name"
@@ -148,7 +186,7 @@ const Create = () => {
                         name="institute_name"
                         value={create.institute_name}
                         id="companyName"
-                      />
+                        /> */}
                     </div>
                   </div>
                   <div className="col-md-4">
