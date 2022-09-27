@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect  } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import styles from './Navbar.module.css';
 
@@ -6,11 +6,22 @@ import { FaBars, FaSearch, FaTimes } from 'react-icons/fa';
 
 import brand from "../../assets/Images/brand.png";
 
+import axios from 'axios';
+
 const Navbar = () => {
 
     const navigate = useNavigate();
 
     const [toggle, setToggle] = useState(false);
+    const [add, setAdd] = useState([]);
+
+        useEffect(() => {
+        axios.get('response.json')
+          .then(res => {
+            // console.log(res.data.results);
+            setAdd(res.data.results);
+          })
+      });
 
     const handleClick = () => {
         setToggle(!toggle);
@@ -51,9 +62,15 @@ const Navbar = () => {
                             <li className={`${styles.navItem} nav-item`}>
                                 <NavLink onClick={handleClick} className={`${styles.navLink} nav-link`} aria-current="page" to="/internalbot">Internal Bots</NavLink>
                             </li>
-                            <li className="nav-item">
-                                <NavLink onClick={handleClick} className={`${styles.navLink} nav-link disabled`} to="/externalbot">External Bots</NavLink>
-                            </li>
+                            {add.slice(0, 1).map((item) => (
+                            <>
+                              {!(`${item.access_code}` == "aaccess_code") && (
+                                <li className="nav-item">
+                                    <NavLink onClick={handleClick} className={`${styles.navLink} nav-link disabled`} to="/externalbot">External Bots</NavLink>
+                                </li>     
+                              )}
+                            </>
+                          ))}
                             {/* <li className="nav-item">
                                 <NavLink onClick={handleClick} className={`${styles.navLink} nav-link`} to="/experience">Create Experience</NavLink>
                             </li> */}

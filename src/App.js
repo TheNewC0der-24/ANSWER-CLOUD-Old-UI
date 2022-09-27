@@ -38,13 +38,13 @@ import Text from './Components/Text/Text';
 // import Experience from './Components/Experience/Experience';
 
 function App() {
-  const [data, setData] = useState([]);
+  const [add, setAdd] = useState([]);
 
         useEffect(() => {
         axios.get('response.json')
           .then(res => {
             // console.log(res.data.results);
-            setData(res.data.results);
+            setAdd(res.data.results);
           })
       });
 
@@ -56,7 +56,7 @@ function App() {
           <Route exact path='/' element={<Dashboard />} />
           <Route exact path='/internalbot' element={<InternalBot />} />
           {/* <Route exact path='/access' element={<Access />} /> */}
-          {data.slice(0,1).map(item=>(
+          {add.slice(0,1).map(item=>(
               <>
                 {!(`${item.access_code}` == "aaccess_code") && (
                   <Route exact path='/externalbot' element={<ExternalBot/>} />
@@ -67,13 +67,7 @@ function App() {
           <Route exact path='/thankyou' element={<ThankYou />} />
           <Route exact path='/interaction' element={<Interaction />} />
           <Route exact path='/profile' element={<Profile />} />
-          {data.slice(0,1).map(item=>(
-              <>
-                {!(`${item.access_code}` == "aaccess_code") && (
-                  <Route exact path='/teams' element={<Team />} />
-                  )}
-              </>
-          ))}
+          <Route exact path='/teams' element={<Team />} />
           {/* <Route exact path="/report" element={<Report />} /> */}
           <Route exact path="/report" element={<Report />} />
           {/* <Route exact path="/leaderboardReport" element={<LeaderboardReport />} /> */}
