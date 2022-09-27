@@ -34,22 +34,15 @@ const Create = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    // {add.slice(0,1).map(item=>(
-    //     <>
-    //      {(`${item.access_code}` == "access_code") && (
-    //          navigate("/thankyou")
-    //          )}
-    //    </>
-    //    ))}
-       {add.slice(0,1).map(item=>(
+    {add.slice(0,1).map(item=>(
         <>
-         {!(`${item.access_code}` != "access_code") && (
-            navigate("/externalbot")
-             )}
+         {(`${item.access_code}` == "access_code") ?
+             navigate("/thankyou") : navigate("/externalbot")
+        }
        </>
-       ))} 
+       ))}
 
-    axios
+       axios
       .post(
         "response.json",
         {
