@@ -106,7 +106,7 @@ const Create = () => {
       <div>
         {add.slice(0, 1).map((item) => (
           <>
-            {`${item.createdby}` < 2 ? (
+            {`${item.createdby}` < 3 ? (
               ""
             ) : (
               <div className="alert alert-danger" role="alert">
@@ -157,7 +157,7 @@ const Create = () => {
                       </label>
                       {add.slice(0, 1).map((item) => (
                         <>
-                          {`${item.createdby}` < 2 ? (
+                          {`${item.createdby}` < 3 ? (
                             <input
                               type="text"
                               className="form-control"
@@ -202,26 +202,26 @@ const Create = () => {
                       </label>
                       {add.slice(0, 1).map((item) => (
                         <>
-                          {`${item.createdby}` < 2 ? (
+                          {`${item.createdby}` < 3 ? (
                             <input
-                            type="text"
-                            className="form-control"
-                            placeholder="Enter Interaction title"
-                            onChange={handleOnChange}
-                            name="job_title"
-                            value={create.job_title}
-                            id="interaction"
-                                />
+                              type="text"
+                              className="form-control"
+                              placeholder="Enter Interaction title"
+                              onChange={handleOnChange}
+                              name="job_title"
+                              value={create.job_title}
+                              id="interaction"
+                            />
                           ) : (
                             <input
-                            type="text"
-                            className="form-control"
-                            placeholder="Enter Interaction title"
-                            onChange={handleOnChange}
-                            name="job_title"
-                            value={create.job_title}
-                            id="interaction"
-                                  disabled
+                              type="text"
+                              className="form-control"
+                              placeholder="Enter Interaction title"
+                              onChange={handleOnChange}
+                              name="job_title"
+                              value={create.job_title}
+                              id="interaction"
+                              disabled
                             />
                           )}
                         </>
@@ -247,26 +247,26 @@ const Create = () => {
                       </label>
                       {add.slice(0, 1).map((item) => (
                         <>
-                          {`${item.createdby}` < 2 ? (
+                          {`${item.createdby}` < 3 ? (
                             <input
-                            type="number"
-                        className="form-control"
-                        placeholder="Enter 6-digit code"
-                        onChange={handleOnChange}
-                        name="test_code"
-                        value={create.test_code}
-                        id="positionCode"
-                                />
+                              type="number"
+                              className="form-control"
+                              placeholder="Enter 6-digit code"
+                              onChange={handleOnChange}
+                              name="test_code"
+                              value={create.test_code}
+                              id="positionCode"
+                            />
                           ) : (
                             <input
-                            type="number"
-                        className="form-control"
-                        placeholder="Enter 6-digit code"
-                        onChange={handleOnChange}
-                        name="test_code"
-                        value={create.test_code}
-                        id="positionCode"
-                                  disabled
+                              type="number"
+                              className="form-control"
+                              placeholder="Enter 6-digit code"
+                              onChange={handleOnChange}
+                              name="test_code"
+                              value={create.test_code}
+                              id="positionCode"
+                              disabled
                             />
                           )}
                         </>
@@ -291,39 +291,43 @@ const Create = () => {
                       </label>
                       {add.slice(0, 1).map((item) => (
                         <>
-                          {`${item.createdby}` < 2 ? (
+                          {`${item.createdby}` < 3 ? (
                             <select
-                            className="form-select"
-                            onChange={handleOnChange}
-                            name="track"
-                            value={create.track}
-                            id="track"
-                            aria-label="Default select example"
-                          >
-                            <option value="Select...">Select...</option>
-                            <option value="Sales">Sales</option>
-                            <option value="Service">Service</option>
-                            <option value="HR">HR</option>
-                            <option value="New Grad.">New Grad.</option>
-                            <option value="None / Others">None / Others</option>
-                          </select>
+                              className="form-select"
+                              onChange={handleOnChange}
+                              name="track"
+                              value={create.track}
+                              id="track"
+                              aria-label="Default select example"
+                            >
+                              <option value="Select...">Select...</option>
+                              <option value="Sales">Sales</option>
+                              <option value="Service">Service</option>
+                              <option value="HR">HR</option>
+                              <option value="New Grad.">New Grad.</option>
+                              <option value="None / Others">
+                                None / Others
+                              </option>
+                            </select>
                           ) : (
                             <select
-                        className="form-select"
-                        onChange={handleOnChange}
-                        name="track"
-                        value={create.track}
-                        id="track"
-                        aria-label="Default select example"
-                        disabled
-                      >
-                        <option value="Select...">Select...</option>
-                        <option value="Sales">Sales</option>
-                        <option value="Service">Service</option>
-                        <option value="HR">HR</option>
-                        <option value="New Grad.">New Grad.</option>
-                        <option value="None / Others">None / Others</option>
-                      </select>
+                              className="form-select"
+                              onChange={handleOnChange}
+                              name="track"
+                              value={create.track}
+                              id="track"
+                              aria-label="Default select example"
+                              disabled
+                            >
+                              <option value="Select...">Select...</option>
+                              <option value="Sales">Sales</option>
+                              <option value="Service">Service</option>
+                              <option value="HR">HR</option>
+                              <option value="New Grad.">New Grad.</option>
+                              <option value="None / Others">
+                                None / Others
+                              </option>
+                            </select>
                           )}
                         </>
                       ))}
@@ -352,14 +356,38 @@ const Create = () => {
                           skill name
                         </span>
                       </label>
-                      <button
+                      {add.slice(0, 1).map((item) => (
+                        <>
+                          {`${item.createdby}` < 3 ? (
+                            <button
+                              type="button"
+                              className="btn btn-outline-secondary button"
+                              data-bs-toggle="modal"
+                              data-bs-target="#skillModal"
+                            >
+                              Add
+                            </button>
+                          ) : (
+                            <button
+                              type="button"
+                              className="btn btn-outline-secondary button"
+                              data-bs-toggle="modal"
+                              data-bs-target="#skillModal"
+                              disabled
+                            >
+                              Add
+                            </button>
+                          )}
+                        </>
+                      ))}
+                      {/* <button
                         type="button"
                         className="btn btn-outline-secondary button"
                         data-bs-toggle="modal"
                         data-bs-target="#skillModal"
                       >
                         Add
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                 </div>
@@ -372,7 +400,34 @@ const Create = () => {
                       >
                         Access Code
                       </label>
-                      <input
+                      {add.slice(0, 1).map((item) => (
+                        <>
+                          {`${item.createdby}` < 3 ? (
+                            <input
+                            type="number"
+                            className="form-control"
+                            placeholder="Enter 6-digit access code"
+                            onChange={handleOnChange}
+                            name="access_code"
+                            value={create.access_code}
+                            id="accessCode"
+                            aria-describedby="accessHelp"
+                            />
+                            ) : (
+                              <input
+                              type="number"
+                              className="form-control"
+                              placeholder="Enter 6-digit access code"
+                              onChange={handleOnChange}
+                              name="access_code"
+                              value={create.access_code}
+                              id="accessCode"
+                              aria-describedby="accessHelp"
+                              disabled
+                      />                          )}
+                        </>
+                      ))}
+                      {/* <input
                         type="number"
                         className="form-control"
                         placeholder="Enter 6-digit access code"
@@ -381,7 +436,7 @@ const Create = () => {
                         value={create.access_code}
                         id="accessCode"
                         aria-describedby="accessHelp"
-                      />
+                      /> */}
                     </div>
                   </div>
                   <div className="col-md-6">
@@ -392,14 +447,37 @@ const Create = () => {
                       >
                         Expiry Date
                       </label>
-                      <input
+                      {add.slice(0, 1).map((item) => (
+                        <>
+                          {`${item.createdby}` < 3 ? (
+                            <input
+                            type="date"
+                        className="form-control"
+                        onChange={handleOnChange}
+                        name="expiry_date"
+                        value={create.expiry_date}
+                        id="expiryDate"
+                            />
+                            ) : (
+                              <input
+                              type="date"
+                        className="form-control"
+                        onChange={handleOnChange}
+                        name="expiry_date"
+                        value={create.expiry_date}
+                        id="expiryDate"
+                              disabled
+                      />                          )}
+                        </>
+                      ))}
+                      {/* <input
                         type="date"
                         className="form-control"
                         onChange={handleOnChange}
                         name="expiry_date"
                         value={create.expiry_date}
                         id="expiryDate"
-                      />
+                      /> */}
                     </div>
                   </div>
                 </div>
@@ -409,14 +487,37 @@ const Create = () => {
                       <label htmlFor="emailOne" className="form-label fw-bold">
                         Report sent to Email
                       </label>
-                      <input
+                      {add.slice(0, 1).map((item) => (
+                        <>
+                          {`${item.createdby}` < 3 ? (
+                            <input
+                            type="email"
+                        className="form-control"
+                        onChange={handleOnChange}
+                        name="email_One"
+                        value={create.emailOne}
+                        id="email_One"
+                            />
+                            ) : (
+                              <input
+                              type="email"
+                        className="form-control"
+                        onChange={handleOnChange}
+                        name="email_One"
+                        value={create.emailOne}
+                        id="email_One"
+                              disabled
+                      />                          )}
+                        </>
+                      ))}
+                      {/* <input
                         type="email"
                         className="form-control"
                         onChange={handleOnChange}
                         name="email_One"
                         value={create.emailOne}
                         id="email_One"
-                      />
+                      /> */}
                     </div>
                   </div>
                   <div className="col-md-6">
@@ -424,7 +525,46 @@ const Create = () => {
                       <label htmlFor="timer" className="form-label fw-bold">
                         Timer
                       </label>
-                      <select
+                      {add.slice(0, 1).map((item) => (
+                        <>
+                          {`${item.createdby}` < 3 ? (
+                            <select
+                            className="form-select"
+                            onChange={handleOnChange}
+                            name="timer"
+                            value={create.timer}
+                            id="timer"
+                            aria-label="Default select example"
+                          >
+                            <option value="Select">Select...</option>
+                            <option value="15 minutes">15 minutes</option>
+                            <option value="20 minutes">20 minutes</option>
+                            <option value="30 minutes">30 minutes</option>
+                            <option value="45 minutes">45 minutes</option>
+                            <option value="60 minutes">60 minutes</option>
+                            <option value="None">None</option>
+                          </select>
+                            ) : (
+                              <select
+                              className="form-select"
+                              onChange={handleOnChange}
+                              name="timer"
+                              value={create.timer}
+                              id="timer"
+                        aria-label="Default select example"
+                              disabled
+                      >
+                        <option value="Select">Select...</option>
+                        <option value="15 minutes">15 minutes</option>
+                        <option value="20 minutes">20 minutes</option>
+                        <option value="30 minutes">30 minutes</option>
+                        <option value="45 minutes">45 minutes</option>
+                        <option value="60 minutes">60 minutes</option>
+                        <option value="None">None</option>
+                      </select>                          )}
+                        </>
+                      ))}
+                      {/* <select
                         className="form-select"
                         onChange={handleOnChange}
                         name="timer"
@@ -439,7 +579,7 @@ const Create = () => {
                         <option value="45 minutes">45 minutes</option>
                         <option value="60 minutes">60 minutes</option>
                         <option value="None">None</option>
-                      </select>
+                      </select> */}
                     </div>
                   </div>
                 </div>
@@ -451,7 +591,10 @@ const Create = () => {
                       </label>
                       <div className="d-flex gap-3">
                         <div className="form-check">
-                          <input
+                        {add.slice(0, 1).map((item) => (
+                        <>
+                          {`${item.createdby}` < 3 ? (
+                            <input
                             disabled={certificate ? false : true}
                             onClick={handleCertificate}
                             className="form-check-input"
@@ -462,12 +605,40 @@ const Create = () => {
                             id="no"
                             defaultChecked
                           />
+                            ) : (
+                              <input
+                            disabled
+                            onClick={handleCertificate}
+                            className="form-check-input"
+                            type="radio"
+                            onChange={handleOnChange}
+                            name="generate_certificate"
+                            value="No"
+                            id="no"
+                            defaultChecked
+                          />                          )}
+                        </>
+                      ))}
+                          {/* <input
+                            disabled={certificate ? false : true}
+                            onClick={handleCertificate}
+                            className="form-check-input"
+                            type="radio"
+                            onChange={handleOnChange}
+                            name="generate_certificate"
+                            value="No"
+                            id="no"
+                            defaultChecked
+                          /> */}
                           <label className="form-check-label" htmlFor="no">
                             No
                           </label>
                         </div>
                         <div className="form-check">
-                          <input
+                        {add.slice(0, 1).map((item) => (
+                        <>
+                          {`${item.createdby}` < 3 ? (
+                            <input
                             disabled={certificate ? true : false}
                             onClick={handleCertificate}
                             className="form-check-input"
@@ -477,6 +648,29 @@ const Create = () => {
                             value="Yes"
                             id="yes"
                           />
+                            ) : (
+                              <input
+                            disabled
+                            onClick={handleCertificate}
+                            className="form-check-input"
+                            type="radio"
+                            onChange={handleOnChange}
+                            name="generate_certificate"
+                            value="Yes"
+                            id="yes"
+                          />                          )}
+                        </>
+                      ))}
+                          {/* <input
+                            disabled={certificate ? true : false}
+                            onClick={handleCertificate}
+                            className="form-check-input"
+                            type="radio"
+                            onChange={handleOnChange}
+                            name="generate_certificate"
+                            value="Yes"
+                            id="yes"
+                          /> */}
                           <label className="form-check-label" htmlFor="yes">
                             Yes
                           </label>
@@ -502,7 +696,10 @@ const Create = () => {
                       </label>
                       <div className="d-flex gap-3">
                         <div className="form-check">
-                          <input
+                        {add.slice(0, 1).map((item) => (
+                        <>
+                          {`${item.createdby}` < 3 ? (
+                            <input
                             disabled={name ? false : true}
                             onClick={handleName}
                             className="form-check-input"
@@ -513,12 +710,40 @@ const Create = () => {
                             id="noName"
                             defaultChecked
                           />
+                            ) : (
+                              <input
+                              disabled
+                              onClick={handleName}
+                              className="form-check-input"
+                              type="radio"
+                              onChange={handleOnChange}
+                              name="mentor_name"
+                              value="No"
+                              id="noName"
+                              defaultChecked
+                          />                          )}
+                        </>
+                      ))}
+                          {/* <input
+                            disabled={name ? false : true}
+                            onClick={handleName}
+                            className="form-check-input"
+                            type="radio"
+                            onChange={handleOnChange}
+                            name="mentor_name"
+                            value="No"
+                            id="noName"
+                            defaultChecked
+                          /> */}
                           <label className="form-check-label" htmlFor="noName">
                             No
                           </label>
                         </div>
                         <div className="form-check">
-                          <input
+                        {add.slice(0, 1).map((item) => (
+                        <>
+                          {`${item.createdby}` < 3 ? (
+                            <input
                             disabled={name ? true : false}
                             onClick={handleName}
                             className="form-check-input"
@@ -528,6 +753,29 @@ const Create = () => {
                             value="Yes"
                             id="yesName"
                           />
+                            ) : (
+                              <input
+                              disabled
+                              onClick={handleName}
+                              className="form-check-input"
+                              type="radio"
+                              onChange={handleOnChange}
+                              name="mentor_name"
+                              value="Yes"
+                              id="yesName"
+                          />                          )}
+                        </>
+                      ))}
+                          {/* <input
+                            disabled={name ? true : false}
+                            onClick={handleName}
+                            className="form-check-input"
+                            type="radio"
+                            onChange={handleOnChange}
+                            name="mentor_name"
+                            value="Yes"
+                            id="yesName"
+                          /> */}
                           <label className="form-check-label" htmlFor="yesName">
                             Yes
                           </label>
@@ -553,7 +801,10 @@ const Create = () => {
                       </label>
                       <div className="d-flex gap-3">
                         <div className="form-check">
-                          <input
+                        {add.slice(0, 1).map((item) => (
+                        <>
+                          {`${item.createdby}` < 3 ? (
+                            <input
                             className="form-check-input"
                             type="radio"
                             onChange={handleOnChange}
@@ -562,12 +813,37 @@ const Create = () => {
                             id="notSend"
                             defaultChecked
                           />
+                            ) : (
+                              <input
+                              disabled
+                              className="form-check-input"
+                            type="radio"
+                            onChange={handleOnChange}
+                            name="report_sent"
+                            value="No"
+                            id="notSend"
+                            defaultChecked
+                          />                          )}
+                        </>
+                      ))}
+                          {/* <input
+                            className="form-check-input"
+                            type="radio"
+                            onChange={handleOnChange}
+                            name="report_sent"
+                            value="No"
+                            id="notSend"
+                            defaultChecked
+                          /> */}
                           <label className="form-check-label" htmlFor="notSend">
                             No
                           </label>
                         </div>
                         <div className="form-check">
-                          <input
+                        {add.slice(0, 1).map((item) => (
+                        <>
+                          {`${item.createdby}` < 3 ? (
+                            <input
                             className="form-check-input"
                             type="radio"
                             onChange={handleOnChange}
@@ -575,6 +851,26 @@ const Create = () => {
                             value="Yes"
                             id="yesSend"
                           />
+                            ) : (
+                              <input
+                              disabled
+                              className="form-check-input"
+                            type="radio"
+                            onChange={handleOnChange}
+                            name="report_sent"
+                            value="Yes"
+                            id="yesSend"
+                          />                          )}
+                        </>
+                      ))}
+                          {/* <input
+                            className="form-check-input"
+                            type="radio"
+                            onChange={handleOnChange}
+                            name="report_sent"
+                            value="Yes"
+                            id="yesSend"
+                          /> */}
                           <label className="form-check-label" htmlFor="yesSend">
                             Yes
                           </label>
@@ -592,7 +888,32 @@ const Create = () => {
                       >
                         Description
                       </label>
-                      <textarea
+                      {add.slice(0, 1).map((item) => (
+                        <>
+                          {`${item.createdby}` < 3 ? (
+                            <textarea
+                            className="form-control"
+                            rows="5"
+                            onChange={handleOnChange}
+                            name="job_description"
+                            value={create.job_description}
+                            id="description"
+                            placeholder="Your description"
+                          ></textarea>
+                            ) : (
+                              <textarea
+                              className="form-control"
+                              rows="5"
+                              onChange={handleOnChange}
+                              name="job_description"
+                              value={create.job_description}
+                              id="description"
+                              placeholder="Your description"
+                              disabled
+                      ></textarea>                          )}
+                        </>
+                      ))}
+                      {/* <textarea
                         className="form-control"
                         rows="5"
                         onChange={handleOnChange}
@@ -600,7 +921,7 @@ const Create = () => {
                         value={create.job_description}
                         id="description"
                         placeholder="Your description"
-                      ></textarea>
+                      ></textarea> */}
                     </div>
                   </div>
                   <div className="col-md-6">
@@ -619,7 +940,36 @@ const Create = () => {
                           {count}/615
                         </label>
                       </div>
-                      <textarea
+                      {add.slice(0, 1).map((item) => (
+                        <>
+                          {`${item.createdby}` < 3 ? (
+                            <textarea
+                            className="form-control"
+                        onChange={handleOnChange}
+                        name="general_feedback"
+                        value={create.general_feedback}
+                        id="generalFeedback"
+                        minLength="50"
+                        maxLength="615"
+                        placeholder={`Example: Every human interaction is an opportunity to learn. Its also an opportunity to demonstrate your skills and expertise in a specific context and capacity.We view every professional interaction as a high-stakes game - whether you are likely to save money, generate revenue, make a process more efficient or improve your performance.These virtual interactions act as practice sessions where you can test drive real-world interactions.Experts in the world may differ on what skills matter – but they all have a common point of view.Practice is the key to improvement – and specific feedback makes improvement faster.`}
+                        rows="5"
+                          ></textarea>
+                            ) : (
+                              <textarea
+                              className="form-control"
+                        onChange={handleOnChange}
+                        name="general_feedback"
+                        value={create.general_feedback}
+                        id="generalFeedback"
+                        minLength="50"
+                        maxLength="615"
+                        placeholder={`Example: Every human interaction is an opportunity to learn. Its also an opportunity to demonstrate your skills and expertise in a specific context and capacity.We view every professional interaction as a high-stakes game - whether you are likely to save money, generate revenue, make a process more efficient or improve your performance.These virtual interactions act as practice sessions where you can test drive real-world interactions.Experts in the world may differ on what skills matter – but they all have a common point of view.Practice is the key to improvement – and specific feedback makes improvement faster.`}
+                        rows="5"
+                              disabled
+                      ></textarea>                          )}
+                        </>
+                      ))}
+                      {/* <textarea
                         className="form-control"
                         onChange={handleOnChange}
                         name="general_feedback"
@@ -629,7 +979,7 @@ const Create = () => {
                         maxLength="615"
                         placeholder={`Example: Every human interaction is an opportunity to learn. Its also an opportunity to demonstrate your skills and expertise in a specific context and capacity.We view every professional interaction as a high-stakes game - whether you are likely to save money, generate revenue, make a process more efficient or improve your performance.These virtual interactions act as practice sessions where you can test drive real-world interactions.Experts in the world may differ on what skills matter – but they all have a common point of view.Practice is the key to improvement – and specific feedback makes improvement faster.`}
                         rows="5"
-                      />
+                      /> */}
                       <div className="form-text text-danger">
                         * Minimum 50 characters are required to post the
                         insights
@@ -644,7 +994,45 @@ const Create = () => {
                       <label htmlFor="mode" className="form-label fw-bold">
                         Interaction Mode
                       </label>
-                      <select
+                      {add.slice(0, 1).map((item) => (
+                        <>
+                          {`${item.createdby}` < 3 ? (
+                            <select
+                            className="form-select"
+                            onChange={handleOnChange}
+                            name="interaction_mode"
+                            value={create.interaction_mode}
+                            id="mode"
+                            aria-label="Default select example"
+                          >
+                            <option value="Select">Select...</option>
+                            <option value="Audio">Audio</option>
+                            {add.slice(0, 1).map((item) => (
+                              <>
+                                {!(`${item.access_code}` == "aaccess_code") && (
+                                  <option value="Video">Video</option>
+                                )}
+                              </>
+                            ))}
+                            <option value="MCQ">MCQ</option>
+                          </select>
+                            ) : (
+                              <select
+                              className="form-select"
+                              onChange={handleOnChange}
+                              name="interaction_mode"
+                              value={create.interaction_mode}
+                              id="mode"
+                              aria-label="Default select example"
+                              disabled
+                            >
+                              <option value="Select">Select...</option>
+                              <option value="Audio">Audio</option>
+                              <option value="MCQ">MCQ</option>
+                            </select>                         )}
+                        </>
+                      ))}
+                      {/* <select
                         className="form-select"
                         onChange={handleOnChange}
                         name="interaction_mode"
@@ -662,7 +1050,7 @@ const Create = () => {
                           </>
                         ))}
                         <option value="MCQ">MCQ</option>
-                      </select>
+                      </select> */}
                     </div>
                   </div>
                   <div className="col-md-6 m-auto">
@@ -671,14 +1059,37 @@ const Create = () => {
                         Total Question:{" "}
                         <span className="badge badge bg-secondary">No.</span>
                       </label>
-                      <button
+                      {add.slice(0, 1).map((item) => (
+                        <>
+                          {`${item.createdby}` < 3 ? (
+                            <button
+                            type="button"
+                            className="btn btn-outline-secondary button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#exampleModal"
+                          >
+                            Add
+                          </button>
+                            ) : (
+                              <button
+                        type="button"
+                        className="btn btn-outline-secondary button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                              disabled
+                      >
+                        Add
+                      </button>                         )}
+                        </>
+                      ))}
+                      {/* <button
                         type="button"
                         className="btn btn-outline-secondary button"
                         data-bs-toggle="modal"
                         data-bs-target="#exampleModal"
                       >
                         Add
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                 </div>
