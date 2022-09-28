@@ -374,13 +374,13 @@ const Create = () => {
                                                     <label className="form-label fw-bold">Generate Certificate</label>
                                                     <div className='d-flex gap-2'>
                                                         <div className="form-check">
-                                                            <input disabled={certificate ? false : true} onClick={handleCertificate} className="form-check-Field" type="radio" name="generateCertificate" id="no" defaultChecked />
+                                                            <input disabled={certificate ? false : true} onClick={handleCertificate} className="form-check-input" type="radio" name="generateCertificate" id="no" defaultChecked />
                                                             <label className="form-check-label" htmlFor="no">
                                                                 No
                                                             </label>
                                                         </div>
                                                         <div className="form-check">
-                                                            <input disabled={certificate ? true : false} onClick={handleCertificate} className="form-check-Field" type="radio" name="generateCertificate" id="yes" />
+                                                            <input disabled={certificate ? true : false} onClick={handleCertificate} className="form-check-input" type="radio" name="generateCertificate" id="yes" />
                                                             <label className="form-check-label" htmlFor="yes">
                                                                 Yes
                                                             </label>
@@ -397,13 +397,13 @@ const Create = () => {
                                                     <label className="form-label fw-bold">Mentor Name(in Report)</label>
                                                     <div className='d-flex gap-2'>
                                                         <div className="form-check">
-                                                            <input disabled={name ? false : true} onClick={handleName} className="form-check-Field" type="radio" name="mentorName" id="noName" defaultChecked />
+                                                            <input disabled={name ? false : true} onClick={handleName} className="form-check-input" type="radio" name="mentorName" id="noName" defaultChecked />
                                                             <label className="form-check-label" htmlFor="noName">
                                                                 No
                                                             </label>
                                                         </div>
                                                         <div className="form-check">
-                                                            <input disabled={name ? true : false} onClick={handleName} className="form-check-Field" type="radio" name="mentorName" id="yesName" />
+                                                            <input disabled={name ? true : false} onClick={handleName} className="form-check-input" type="radio" name="mentorName" id="yesName" />
                                                             <label className="form-check-label" htmlFor="yesName">
                                                                 Yes
                                                             </label>
@@ -420,13 +420,13 @@ const Create = () => {
                                                     <label className="form-label fw-bold">Report Sent to Candidate</label>
                                                     <div className='d-flex gap-2'>
                                                         <div className="form-check">
-                                                            <input className="form-check-Field" type="radio" name="reportSent" id="notSend" defaultChecked />
+                                                            <input className="form-check-input" type="radio" name="reportSent" id="notSend" defaultChecked />
                                                             <label className="form-check-label" htmlFor="notSend">
                                                                 No
                                                             </label>
                                                         </div>
                                                         <div className="form-check">
-                                                            <input className="form-check-Field" type="radio" name="reportSent" id="yesSend" />
+                                                            <input className="form-check-input" type="radio" name="reportSent" id="yesSend" />
                                                             <label className="form-check-label" htmlFor="yesSend">
                                                                 Yes
                                                             </label>
@@ -489,7 +489,7 @@ const Create = () => {
                                                 <div className="mb-3">
                                                     <label className="form-label fw-bold">Interaction Mode</label>
                                                     <Field as="select"
-                                                        className={`form-control ${errors.mode && touched.mode ? "border-danger" : ""}`}
+                                                        className={`form-select ${errors.mode && touched.mode ? "border-danger" : ""}`}
                                                         id='mode'
                                                         name='mode'
                                                         validate={validateMode}

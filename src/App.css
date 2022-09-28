@@ -37,11 +37,6 @@ select:focus {
   box-shadow: none !important;
 }
 
-.form-check {
-  padding-right: 1.5em !important;
-  padding-left: 0 !important;
-}
-
 .interaction:focus {
   border-color: #acacac !important;
 }
