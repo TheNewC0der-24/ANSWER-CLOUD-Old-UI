@@ -19,7 +19,7 @@ const Create = () => {
   const [count, setCount] = useState(0);
   const [value, setValue] = useState("SELECT...");
   const [create, setCreate] = useState([]);
-//   const [data, setData] = useState([]);
+  //   const [data, setData] = useState([]);
   const [add, setAdd] = useState([]);
 
   const handleCertificate = () => {
@@ -34,15 +34,19 @@ const Create = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    {add.slice(0,1).map(item=>(
-        <>
-         {(`${item.access_code}` == "access_code") ?
-             navigate("/thankyou") : navigate("/externalbot")
-        }
-       </>
-       ))}
+    {
+      add
+        .slice(0, 1)
+        .map((item) => (
+          <>
+            {`${item.access_code}` == "access_code"
+              ? navigate("/thankyou")
+              : navigate("/externalbot")}
+          </>
+        ));
+    }
 
-       axios
+    axios
       .post(
         "response.json",
         {
@@ -78,19 +82,17 @@ const Create = () => {
 
   const handleOnChange = (e) => {
     setValue(e.target.value);
-    setCount(e.target.value.length)
+    setCount(e.target.value.length);
     setCreate({ ...create, [e.target.name]: e.target.value });
   };
-  
-      useEffect(() => {
-        axios.get('response.json')
-        .then(res => {
-            console.log(res.data.results);
-            // setData(res.data.results);
-            setAdd(res.data.results);
-          })
-      });
 
+  useEffect(() => {
+    axios.get("response.json").then((res) => {
+      console.log(res.data.results);
+      // setData(res.data.results);
+      setAdd(res.data.results);
+    });
+  });
 
   return (
     <>
@@ -102,17 +104,17 @@ const Create = () => {
         `}
       </style>
       <div>
-      {add.slice(0,1).map(item=>(
-                         <>
-                          {(`${item.createdby}` < 3 ) ?
-                                ""
-                                 :
-                                <div className="alert alert-danger" role="alert">
-                                    Page is restricted
-                                </div>
-                         }
-                        </>
-                      ))}
+        {add.slice(0, 1).map((item) => (
+          <>
+            {`${item.createdby}` < 2 ? (
+              ""
+            ) : (
+              <div className="alert alert-danger" role="alert">
+                Page is restricted
+              </div>
+            )}
+          </>
+        ))}
       </div>
       <div className="container d-flex justify-content-between my-3">
         <h3>Internal Bot</h3>
@@ -145,7 +147,7 @@ const Create = () => {
           <div className="card shadow border-0">
             <div className="card-body">
               <form>
-              {/* {data.slice(0,1).map(create=>(
+                {/* {data.slice(0,1).map(create=>(
                 <> */}
                 <div className="row">
                   <div className="col-md-4">
@@ -153,29 +155,30 @@ const Create = () => {
                       <label htmlFor="detail" className="form-label fw-bold">
                         Company/Institute Name*
                       </label>
-                      {add.slice(0,1).map(item=>(
-                         <>
-                          {(`${item.createdby}` < 3 ) ?
-                                <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Enter company/institute name"
-                                onChange={handleOnChange}
-                                name="institute_name"
-                                value={create.institute_name}
-                                id="companyName"
-                                /> :
-                                <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Enter company/institute name"
-                                onChange={handleOnChange}
-                                name="institute_name"
-                                value={create.institute_name}
-                                id="companyName"
-                                disabled
-                                />
-                         }
+                      {add.slice(0, 1).map((item) => (
+                        <>
+                          {`${item.createdby}` < 2 ? (
+                            <input
+                              type="text"
+                              className="form-control"
+                              placeholder="Enter company/institute name"
+                              onChange={handleOnChange}
+                              name="institute_name"
+                              value={create.institute_name}
+                              id="companyName"
+                            />
+                          ) : (
+                            <input
+                              type="text"
+                              className="form-control"
+                              placeholder="Enter company/institute name"
+                              onChange={handleOnChange}
+                              name="institute_name"
+                              value={create.institute_name}
+                              id="companyName"
+                              disabled
+                            />
+                          )}
                         </>
                       ))}
                       {/* <input
@@ -197,7 +200,33 @@ const Create = () => {
                       >
                         Interaction Title*
                       </label>
-                      <input
+                      {add.slice(0, 1).map((item) => (
+                        <>
+                          {`${item.createdby}` < 2 ? (
+                            <input
+                            type="text"
+                            className="form-control"
+                            placeholder="Enter Interaction title"
+                            onChange={handleOnChange}
+                            name="job_title"
+                            value={create.job_title}
+                            id="interaction"
+                                />
+                          ) : (
+                            <input
+                            type="text"
+                            className="form-control"
+                            placeholder="Enter Interaction title"
+                            onChange={handleOnChange}
+                            name="job_title"
+                            value={create.job_title}
+                            id="interaction"
+                                  disabled
+                            />
+                          )}
+                        </>
+                      ))}
+                      {/* <input
                         type="text"
                         className="form-control"
                         placeholder="Enter Interaction title"
@@ -205,7 +234,7 @@ const Create = () => {
                         name="job_title"
                         value={create.job_title}
                         id="interaction"
-                      />
+                      /> */}
                     </div>
                   </div>
                   <div className="col-md-4">
@@ -216,7 +245,33 @@ const Create = () => {
                       >
                         Test ID
                       </label>
-                      <input
+                      {add.slice(0, 1).map((item) => (
+                        <>
+                          {`${item.createdby}` < 2 ? (
+                            <input
+                            type="number"
+                        className="form-control"
+                        placeholder="Enter 6-digit code"
+                        onChange={handleOnChange}
+                        name="test_code"
+                        value={create.test_code}
+                        id="positionCode"
+                                />
+                          ) : (
+                            <input
+                            type="number"
+                        className="form-control"
+                        placeholder="Enter 6-digit code"
+                        onChange={handleOnChange}
+                        name="test_code"
+                        value={create.test_code}
+                        id="positionCode"
+                                  disabled
+                            />
+                          )}
+                        </>
+                      ))}
+                      {/* <input
                         type="number"
                         className="form-control"
                         placeholder="Enter 6-digit code"
@@ -224,7 +279,7 @@ const Create = () => {
                         name="test_code"
                         value={create.test_code}
                         id="positionCode"
-                      />
+                      /> */}
                     </div>
                   </div>
                 </div>
@@ -234,7 +289,45 @@ const Create = () => {
                       <label htmlFor="track" className="form-label fw-bold">
                         Track/Domain :
                       </label>
-                      <select
+                      {add.slice(0, 1).map((item) => (
+                        <>
+                          {`${item.createdby}` < 2 ? (
+                            <select
+                            className="form-select"
+                            onChange={handleOnChange}
+                            name="track"
+                            value={create.track}
+                            id="track"
+                            aria-label="Default select example"
+                          >
+                            <option value="Select...">Select...</option>
+                            <option value="Sales">Sales</option>
+                            <option value="Service">Service</option>
+                            <option value="HR">HR</option>
+                            <option value="New Grad.">New Grad.</option>
+                            <option value="None / Others">None / Others</option>
+                          </select>
+                          ) : (
+                            <select
+                        className="form-select"
+                        onChange={handleOnChange}
+                        name="track"
+                        value={create.track}
+                        id="track"
+                        aria-label="Default select example"
+                        disabled
+                      >
+                        <option value="Select...">Select...</option>
+                        <option value="Sales">Sales</option>
+                        <option value="Service">Service</option>
+                        <option value="HR">HR</option>
+                        <option value="New Grad.">New Grad.</option>
+                        <option value="None / Others">None / Others</option>
+                      </select>
+                          )}
+                        </>
+                      ))}
+                      {/* <select
                         className="form-select"
                         onChange={handleOnChange}
                         name="track"
@@ -248,7 +341,7 @@ const Create = () => {
                         <option value="HR">HR</option>
                         <option value="New Grad.">New Grad.</option>
                         <option value="None / Others">None / Others</option>
-                      </select>
+                      </select> */}
                     </div>
                   </div>
                   <div className="col-md-6">
@@ -561,12 +654,12 @@ const Create = () => {
                       >
                         <option value="Select">Select...</option>
                         <option value="Audio">Audio</option>
-                        {add.slice(0,1).map(item=>(
-                         <>
-                          {!(`${item.access_code}` == "aaccess_code") && (
-                            <option value="Video">Video</option>
-                         )}
-                        </>
+                        {add.slice(0, 1).map((item) => (
+                          <>
+                            {!(`${item.access_code}` == "aaccess_code") && (
+                              <option value="Video">Video</option>
+                            )}
+                          </>
                         ))}
                         <option value="MCQ">MCQ</option>
                       </select>
@@ -583,7 +676,7 @@ const Create = () => {
                         className="btn btn-outline-secondary button"
                         data-bs-toggle="modal"
                         data-bs-target="#exampleModal"
-                        >
+                      >
                         Add
                       </button>
                     </div>
