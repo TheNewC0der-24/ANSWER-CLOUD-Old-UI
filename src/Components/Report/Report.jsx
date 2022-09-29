@@ -48,7 +48,7 @@ const Report = () => {
           <hr />
           <Introduction />
           <hr />
-          <Interpretation style={{ fontSize: "22px" }} />
+          <Interpretation style={{ fontSize: "30px" }} />
           <hr />
           <SkillsSelection />
           <hr />

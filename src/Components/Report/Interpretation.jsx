@@ -56,29 +56,29 @@ const Interpretation = () => {
         </div>
         <div className="container">
           <div className="row" style={{backgroundColor: 'black'}}>
-            <div className="col-3 d-flex justify-content-center align-items-center border border-2 text-center text-white fs-2 p-2">Cohort Rating</div>
-            <div className="col-6 d-flex justify-content-center align-items-center border border-2 text-center text-white fs-2 p-2">Interpretation</div>
-            <div className="col-3 d-flex justify-content-center align-items-center border border-2 text-center text-white fs-2 p-2">Percentage</div>
+            <div className="col-3 d-flex justify-content-center align-items-center text-center text-white fs-2 p-2" style={{border: '2px solid black'}}>Cohort Rating</div>
+            <div className="col-6 d-flex justify-content-center align-items-center text-center text-white fs-2 p-2" style={{border: '2px solid black'}}>Interpretation</div>
+            <div className="col-3 d-flex justify-content-center align-items-center text-center text-white fs-2 p-2" style={{border: '2px solid black'}}>Percentage</div>
           </div>
           <div className="row">
-            <div className="col-3 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">A</div>
-            <div className="col-6 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">High Quality</div>
-            <div className="col-3 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">about 75%</div>
+            <div className="col-3 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>A</div>
+            <div className="col-6 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>High Quality</div>
+            <div className="col-3 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>about 75%</div>
           </div>
           <div className="row">
-            <div className="col-3 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">B</div>
-            <div className="col-6 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">Some Gaps</div>
-            <div className="col-3 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">between 50% to 75%</div>
+            <div className="col-3 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>B</div>
+            <div className="col-6 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>Some Gaps</div>
+            <div className="col-3 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>between 50% to 75%</div>
           </div>
           <div className="row">
-            <div className="col-3 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">C</div>
-            <div className="col-6 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">Only few expectations are met</div>
-            <div className="col-3 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">between 25% to 50%</div>
+            <div className="col-3 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>C</div>
+            <div className="col-6 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>Only few expectations are met</div>
+            <div className="col-3 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>between 25% to 50%</div>
           </div>
           <div className="row">
-            <div className="col-3 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">D</div>
-            <div className="col-6 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">None of the expectations are met</div>
-            <div className="col-3 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">lesser than 25%</div>
+            <div className="col-3 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>D</div>
+            <div className="col-6 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>None of the expectations are met</div>
+            <div className="col-3 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>lesser than 25%</div>
           </div>
         </div>
         {/* <table className={`${styles.table} table table-bordered text-center my-5`}>

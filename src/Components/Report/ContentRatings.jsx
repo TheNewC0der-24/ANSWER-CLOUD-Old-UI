@@ -224,24 +224,24 @@ const ContentRatings = () => {
         </div>
         <div className="container">
           <div className="row" style={{backgroundColor: 'black'}}>
-            <div className="col-4 d-flex justify-content-center align-items-center border border-2 text-center text-white fs-2 p-2">Match Score</div>
-            <div className="col-8 d-flex justify-content-center align-items-center border border-2 text-center text-white fs-2 p-2">Meaning</div>
+            <div className="col-4 d-flex justify-content-center align-items-center text-center text-white fs-2 p-2" style={{border: '2px solid black'}}>Match Score</div>
+            <div className="col-8 d-flex justify-content-center align-items-center text-center text-white fs-2 p-2" style={{border: '2px solid black'}}>Meaning</div>
           </div>
           <div className="row">
-            <div className="col-4 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">Greater than 90</div>
-            <div className="col-8 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">Extremely precise & relevant answer</div>
+            <div className="col-4 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>Greater than 90</div>
+            <div className="col-8 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>Extremely precise & relevant answer</div>
           </div>
           <div className="row">
-            <div className="col-4 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">70 to 90%</div>
-            <div className="col-8 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">Satisfactory answer with key points covered</div>
+            <div className="col-4 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>70 to 90%</div>
+            <div className="col-8 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>Satisfactory answer with key points covered</div>
           </div>
           <div className="row">
-            <div className="col-4 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">50 to 70%</div>
-            <div className="col-8 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">Highlights key aspects but is not complete</div>
+            <div className="col-4 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>50 to 70%</div>
+            <div className="col-8 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>Highlights key aspects but is not complete</div>
           </div>
           <div className="row">
-            <div className="col-4 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">Less than 50%</div>
-            <div className="col-8 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">Missing key aspects</div>
+            <div className="col-4 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>Less than 50%</div>
+            <div className="col-8 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>Missing key aspects</div>
           </div>
         </div>
         {/* <table
