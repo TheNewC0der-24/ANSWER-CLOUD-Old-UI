@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './InteractionScorecard.module.css';
 
 import ReactApexChart from 'react-apexcharts';
+import { AiOutlineBarChart } from "react-icons/ai"
 
 
 const InteractionScorecard = () => {
@@ -53,7 +54,7 @@ const InteractionScorecard = () => {
                 }
             },
             xaxis: {
-                categories: ['Likeability & Trust', 'Confidence and Fluency', 'Energy and Adaptability', 'Communication skills', 'Empathy & Charm'],
+                categories: ['Likeability & Trust', 'Confidence & Fluency', 'Energy & Adaptability', 'Communication skills', 'Clarity & Coherence'],
                 labels: {
                     show: true,
                     style: {
@@ -104,11 +105,13 @@ const InteractionScorecard = () => {
                 </div>
                 <div className='my-5 d-grid col-md-12 mx-auto'>
                     <div className="card border-0">
-                        <h3 className="card-header text-white" style={{ backgroundColor: "#414141", borderRadius: "0" }}>Answer Score Outline Chart</h3>
+                        <h3 className="card-header text-white" style={{ backgroundColor: "#414141", borderRadius: "0" }}>
+                            <AiOutlineBarChart className="me-2" />Answer Score Outline Chart
+                        </h3>
                         <ul className={`${styles.main} mt-4`}>
                             <div className={`${styles.col1} fs-5`}>
-                                <li>Likeability & Trust : likeability_agregate</li>
-                                <li>Empathy & Charm : charm_agreegate</li>
+                                <li>Likeability and Trust : likeability_agregate</li>
+                                <li>Clarity and Coherence : Clarity_aggregate</li>
                                 <li>Energy and Adaptability : energy_agreegate</li>
                             </div>
                             <div className={`${styles.col2} fs-5`}>
@@ -116,6 +119,7 @@ const InteractionScorecard = () => {
                                 <li>Confidence and Fluency: Confidence_agreegate</li>
                             </div>
                         </ul>
+                        <hr />
                         <div className='d-flex justify-content-center'>
                             <ReactApexChart
                                 // eslint-disable-next-line
