@@ -54,7 +54,34 @@ const Interpretation = () => {
             </div>
           </div>
         </div>
-        <table className={`${styles.table} table table-bordered text-center my-5`}>
+        <div className="container">
+          <div className="row" style={{backgroundColor: 'black'}}>
+            <div className="col-3 d-flex justify-content-center align-items-center border border-2 text-center text-white fs-2 p-2">Cohort Rating</div>
+            <div className="col-6 d-flex justify-content-center align-items-center border border-2 text-center text-white fs-2 p-2">Interpretation</div>
+            <div className="col-3 d-flex justify-content-center align-items-center border border-2 text-center text-white fs-2 p-2">Percentage</div>
+          </div>
+          <div className="row">
+            <div className="col-3 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">A</div>
+            <div className="col-6 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">High Quality</div>
+            <div className="col-3 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">about 75%</div>
+          </div>
+          <div className="row">
+            <div className="col-3 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">B</div>
+            <div className="col-6 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">Some Gaps</div>
+            <div className="col-3 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">between 50% to 75%</div>
+          </div>
+          <div className="row">
+            <div className="col-3 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">C</div>
+            <div className="col-6 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">Only few expectations are met</div>
+            <div className="col-3 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">between 25% to 50%</div>
+          </div>
+          <div className="row">
+            <div className="col-3 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">D</div>
+            <div className="col-6 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">None of the expectations are met</div>
+            <div className="col-3 d-flex justify-content-center align-items-center border border-2 text-center fs-4 p-2">lesser than 25%</div>
+          </div>
+        </div>
+        {/* <table className={`${styles.table} table table-bordered text-center my-5`}>
           <thead className={`${styles.thead} text-white`}>
             <tr>
               <th scope="col">Cohort Rating</th>
@@ -84,7 +111,7 @@ const Interpretation = () => {
               <td>lesser than 25%</td>
             </tr>
           </tbody>
-        </table>
+        </table> */}
       </div>
     </>
   );
