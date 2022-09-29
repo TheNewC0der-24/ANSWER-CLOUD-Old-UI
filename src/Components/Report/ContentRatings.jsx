@@ -223,7 +223,29 @@ const ContentRatings = () => {
             has a unique way to accomplish this objective.
           </p>
         </div>
-        <table
+        <div className="container">
+          <div className="row" style={{backgroundColor: 'black'}}>
+            <div className="col-4 d-flex justify-content-center align-items-center text-center text-white fs-2 p-2" style={{border: '2px solid black'}}>Match Score</div>
+            <div className="col-8 d-flex justify-content-center align-items-center text-center text-white fs-2 p-2" style={{border: '2px solid black'}}>Meaning</div>
+          </div>
+          <div className="row">
+            <div className="col-4 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>Greater than 90</div>
+            <div className="col-8 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>Extremely precise & relevant answer</div>
+          </div>
+          <div className="row">
+            <div className="col-4 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>70 to 90%</div>
+            <div className="col-8 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>Satisfactory answer with key points covered</div>
+          </div>
+          <div className="row">
+            <div className="col-4 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>50 to 70%</div>
+            <div className="col-8 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>Highlights key aspects but is not complete</div>
+          </div>
+          <div className="row">
+            <div className="col-4 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>Less than 50%</div>
+            <div className="col-8 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>Missing key aspects</div>
+          </div>
+        </div>
+        {/* <table
           className="table table-bordered text-center my-5"
           style={{ borderColor: "#414141", fontSize: "22px" }}
         >
@@ -251,7 +273,7 @@ const ContentRatings = () => {
               <td>Missing key aspects</td>
             </tr>
           </tbody>
-        </table>
+        </table> */}
         <h1 className="my-5">
           <span className="badge" style={{ backgroundColor: "#414141", borderRadius: "0" }}>Question Specific Content Ratings</span>
         </h1>

@@ -4,7 +4,7 @@ import styles from "./FeedbackSnapshot.module.css";
 const FeedbackSnapshot = () => {
     return (
         <>
-            <div className='container my-5'>
+            <div className='container my-3'>
                 <h1 className="my-5">
                     <span className="badge" style={{ borderRadius: "0", backgroundColor: "#414141" }}>
                         <span className="me-1 fw-bold" style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer ratings snapshot
