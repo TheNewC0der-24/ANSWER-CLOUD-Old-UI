@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./ExternalBot.module.css";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -21,6 +21,7 @@ const Notification = () => {
   const initialValues = {
     whoinitiate: "",
     phone: "",
+    collectresume: "",
     email: "",
     user: "",
     welcome: "",
@@ -40,6 +41,14 @@ const Notification = () => {
   };
 
   const validatePhone = (value) => {
+    let error;
+    if (!value) {
+      error = "*This field is required";
+    }
+    return error;
+  };
+
+  const validateCollectResume = (value) => {
     let error;
     if (!value) {
       error = "*This field is required";
@@ -152,20 +161,20 @@ const Notification = () => {
                             >
                               Who can Initiate ?
                             </label>
-                            <Field as="select" 
-                                className={`form-select ${errors.whoinitiate && touched.whoinitiate ? "border-danger" : ""}`}
-                                id="whoInitiate"
-                                name="whoinitiate"
-                                validate={validateWhoInitiate}>
+                            <Field as="select"
+                              className={`form-select ${errors.whoinitiate && touched.whoinitiate ? "border-danger" : ""}`}
+                              id="whoInitiate"
+                              name="whoinitiate"
+                              validate={validateWhoInitiate}>
                               <option value="Select">Select...</option>
                               <option value="Bot">Bot</option>
                               <option value="User">User</option>
                             </Field>
                             {
-                                errors.whoinitiate && touched.whoinitiate &&
-                                <div className="form-text text-danger">
-                                    {errors.whoinitiate}
-                                </div>
+                              errors.whoinitiate && touched.whoinitiate &&
+                              <div className="form-text text-danger">
+                                {errors.whoinitiate}
+                              </div>
                             }
                           </div>
                         </div>
@@ -174,7 +183,7 @@ const Notification = () => {
                             <label
                               htmlFor="phoneNo"
                               className="form-label  fw-bold"
-                              >
+                            >
                               Phone Number List
                             </label>
                             <Field
@@ -183,12 +192,12 @@ const Notification = () => {
                               id="formFile"
                               name="phone"
                               validate={validatePhone}
-                              />
+                            />
                             {
                               errors.phone && touched.phone &&
-                                <div className="form-text text-danger">
-                                    {errors.phone}
-                                </div>
+                              <div className="form-text text-danger">
+                                {errors.phone}
+                              </div>
                             }
                           </div>
                           <button className="btn btn-outline-dark button mb-3 me-2">
@@ -246,10 +255,11 @@ const Notification = () => {
                               <Field
                                 className="form-check-Field"
                                 type="radio"
-                                name="CollectResume"
+                                name="collectresume"
                                 value="Yes"
                                 id="yesResume"
-                                />
+                                validate={validateCollectResume}
+                              />
                               <label
                                 className="form-check-label"
                                 htmlFor="yesResume"
@@ -261,9 +271,11 @@ const Notification = () => {
                               <Field
                                 className="form-check-Field"
                                 type="radio"
-                                name="CollectResume"
+                                name="collectresume"
+                                value="No"
                                 id="noResume"
                                 defaultChecked
+                                validate={validateCollectResume}
                               />
                               <label
                                 className="form-check-label"
@@ -272,6 +284,12 @@ const Notification = () => {
                                 No
                               </label>
                             </div>
+                            {
+                              errors.collectresume && touched.collectresume &&
+                              <div className="form-text text-danger">
+                                {errors.collectresume}
+                              </div>
+                            }
                           </div>
                         </div>
                         <div className="col-md-4">
@@ -464,17 +482,17 @@ const Notification = () => {
                               validate={validateEmail}
                             />
                             {
-                                errors.email && touched.email &&
-                                <div className="form-text text-danger">
-                                    {errors.email}
-                                </div>
+                              errors.email && touched.email &&
+                              <div className="form-text text-danger">
+                                {errors.email}
+                              </div>
                             }
                           </div>
                           <div className="mb-3">
                             <label
                               className="form-label fw-bold"
                               htmlFor="report"
-                              >
+                            >
                               Report sent to User
                             </label>
                             <Field as="select"
@@ -489,10 +507,10 @@ const Notification = () => {
                               <option value="No">No</option>
                             </Field>
                             {
-                                errors.user && touched.user &&
-                                <div className="form-text text-danger">
-                                    {errors.user}
-                                </div>
+                              errors.user && touched.user &&
+                              <div className="form-text text-danger">
+                                {errors.user}
+                              </div>
                             }
                           </div>
                         </form>
@@ -525,9 +543,9 @@ const Notification = () => {
                             />
                             {
                               errors.welcome && touched.welcome &&
-                                <div className="form-text text-danger">
-                                    {errors.welcome}
-                                </div>
+                              <div className="form-text text-danger">
+                                {errors.welcome}
+                              </div>
                             }
                           </div>
                           <div className="mb-3">
@@ -545,10 +563,10 @@ const Notification = () => {
                               validate={validateInstruction}
                             />
                             {
-                                errors.instruction && touched.instruction &&
-                                <div className="form-text text-danger">
-                                    {errors.instruction}
-                                </div>
+                              errors.instruction && touched.instruction &&
+                              <div className="form-text text-danger">
+                                {errors.instruction}
+                              </div>
                             }
                           </div>
                           <div className="mb-3">
@@ -566,10 +584,10 @@ const Notification = () => {
                               validate={validateCompletion}
                             />
                             {
-                                errors.completion && touched.completion &&
-                                <div className="form-text text-danger">
-                                    {errors.completion}
-                                </div>
+                              errors.completion && touched.completion &&
+                              <div className="form-text text-danger">
+                                {errors.completion}
+                              </div>
                             }
                           </div>
                           <div className="mb-3">
@@ -587,10 +605,10 @@ const Notification = () => {
                               validate={validateBot}
                             />
                             {
-                                errors.bot && touched.bot &&
-                                <div className="form-text text-danger">
-                                    {errors.bot}
-                                </div>
+                              errors.bot && touched.bot &&
+                              <div className="form-text text-danger">
+                                {errors.bot}
+                              </div>
                             }
                           </div>
                         </form>
