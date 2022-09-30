@@ -1,9 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
+import axios from 'axios';
 
 const Form = () => {
   const [display, setDisplay] = useState(false);
   const navigate = useNavigate();
+  // const [data, setData] = useState([]);
+  const [add, setAdd] = useState([]);
+
+  useEffect(() => {
+    axios.get("response.json").then((res) => {
+      console.log(res.data.results);
+      // setData(res.data.results);
+      setAdd(res.data.results);
+    });
+  });
   // const [seconds, setSeconds] = useState(0);
   // const [minutes, setMinutes] = useState(1);
   // const [displays, setDisplays] = useState({ display: "none" });
@@ -73,7 +85,17 @@ const Form = () => {
           }
         `}
       </style>
-
+      {add.slice(0, 1).map((item) => (
+                  <>
+                    {`{item.created}` > 3} ? (
+                      ""
+                    ) : (
+                      <div className="alert alert-danger" role="alert">
+                        Interaction Form is restricted
+                      </div>
+                    )
+                  </>
+                ))}
       <div className="container">
         <div className="d-grid col-md-8 mx-auto my-5">
           <div className="card h-100 border-dark">
@@ -99,43 +121,138 @@ const Form = () => {
               <hr />
               <form>
                 <div className="mb-3">
-                  <input
+                  {add.slice(0, 1).map((item) => (
+                    <>
+                      {`{item.created}` > 3} ? (
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="name"
+                        placeholder="What is your name ?"
+                      /> ) : (
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="name"
+                        placeholder="What is your name ?"
+                        disabled
+                      />
+                      )
+                    </>
+                  ))}
+                  {/* <input
                     type="text"
                     className="form-control"
                     id="name"
                     placeholder="What is your name ?"
-                  />
+                  /> */}
                 </div>
                 <div className="mb-3">
-                  <input
+                  {add.slice(0, 1).map((item) => (
+                    <>
+                      {`{item.created}` > 3} ? (
+                      <input
+                        type="email"
+                        className="form-control"
+                        id="email"
+                        placeholder="What is your email ?"
+                      /> ) : (
+                      <input
+                        type="email"
+                        className="form-control"
+                        id="email"
+                        placeholder="What is your email ?"
+                        disabled
+                      />
+                      )
+                    </>
+                  ))}
+                  {/* <input
                     type="email"
                     className="form-control"
                     id="email"
                     placeholder="What is your email ?"
-                  />
+                  /> */}
                 </div>
                 <div className="mb-3">
-                  <input
+                  {add.slice(0, 1).map((item) => (
+                    <>
+                      {`{item.created}` > 3} ? (
+                      <input
+                        type="number"
+                        className="form-control"
+                        id="contactNumber"
+                        placeholder="Enter Phone Number"
+                      /> ) : (
+                      <input
+                        type="number"
+                        className="form-control"
+                        id="contactNumber"
+                        placeholder="Enter Phone Number"
+                        disabled
+                      />
+                      )
+                    </>
+                  ))}
+                  {/* <input
                     type="number"
                     className="form-control"
                     id="contactNumber"
                     placeholder="Enter Phone Number"
-                  />
+                  /> */}
                 </div>
                 <div className="mb-3">
-                  <input
+                  {add.slice(0, 1).map((item) => (
+                    <>
+                      {`{item.created}` > 3} ? (
+                      <input
+                        type="number"
+                        className="form-control"
+                        id="accessCode"
+                        placeholder="Please enter your access code"
+                      /> ) : (
+                      <input
+                        type="number"
+                        className="form-control"
+                        id="accessCode"
+                        placeholder="Please enter your access code"
+                        disabled
+                      />
+                      )
+                    </>
+                  ))}
+                  {/* <input
                     type="number"
                     className="form-control"
                     id="accessCode"
                     placeholder="Please enter your access code"
-                  />
+                  /> */}
                 </div>
-                <button
+                {add.slice(0, 1).map((item) => (
+                  <>
+                    {`{item.created}` > 3} ? (
+                    <button
+                      onClick={handleDisplay}
+                      className="btn btn-dark button mb-2"
+                    >
+                      Validate To Start
+                    </button> ) : (
+                    <button
+                      onClick={handleDisplay}
+                      className="btn btn-dark button mb-2"
+                      disabled
+                    >
+                      Validate To Start
+                    </button>
+                    )
+                  </>
+                ))}
+                {/* <button
                   onClick={handleDisplay}
                   className="btn btn-dark button mb-2"
                 >
                   Validate To Start
-                </button>
+                </button> */}
                 <hr style={{ color: "#000", borderTop: "2px solid", opacity: "1" }} />
                 <div className={`${display ? "" : "d-none"}`}>
                   <ul className="list-group">

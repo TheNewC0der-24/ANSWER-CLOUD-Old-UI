@@ -110,6 +110,7 @@ function ThankYou() {
     ];
 
     const a = Math.floor(Math.random() * 16);
+    
     useEffect(() => {
         setSentence(arr[a]);
         setImage(picture[a]);
@@ -172,7 +173,7 @@ function ThankYou() {
             <div className="d-grid col-md-7 mx-auto my-5">
                 <div className="card border-0 shadow mb-3">
                     <div className={`${styles.cardHeader} card-header bg-dark text-white text-center`}>
-                        <h5 className="card-title">{item.who_can_initiate}</h5>
+                        <h5 className="card-title">Congratulations {item.who_can_initiate}, you are a {item.track}</h5>
                     </div>
                     <div className="row g-0">
                         <div className="col-md-4 m-auto bg-white">
