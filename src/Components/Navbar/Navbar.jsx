@@ -15,11 +15,11 @@ const Navbar = () => {
     const handleClick = () => {
         setToggle(!toggle);
     }
-const withoutnavigationbar=["/form","/welcome","/work","/recording","/confirm","/start","/question","/audiorecording","/mcq","/thanks"];
-const {pathname} =useLocation();
-if(withoutnavigationbar.some((item)=>pathname.includes(item))){
-    return null;
-}
+    const withoutnavigationbar = ["/form", "/welcome", "/work", "/recording", "/confirm", "/start", "/question", "/audiorecording", "/mcq", "/thanks"];
+    const { pathname } = useLocation();
+    if (withoutnavigationbar.some((item) => pathname.includes(item))) {
+        return null;
+    }
     return (
         <>
             <style jsx='true'>
