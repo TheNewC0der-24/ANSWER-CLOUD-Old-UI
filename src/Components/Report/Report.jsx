@@ -35,7 +35,6 @@ const Report = () => {
         content={() => reportRef.current}
         documentTitle="aCLOUD"
         pageStyle='{margin:5px}'
-
       />
 
 
@@ -48,7 +47,7 @@ const Report = () => {
           <hr />
           <Introduction />
           <hr />
-          <Interpretation style={{ fontSize: "30px" }} />
+          <Interpretation />
           <hr />
           <SkillsSelection />
           <hr />

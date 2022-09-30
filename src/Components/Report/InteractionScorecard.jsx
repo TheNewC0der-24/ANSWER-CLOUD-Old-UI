@@ -10,7 +10,7 @@ const InteractionScorecard = () => {
     const [state, setState] = useState({
         series: [{
             name: 'Series 1',
-            data: [4, 2, 3, 2, 1],
+            data: [4, 1, 3, 4, 2],
         }],
         options: {
             chart: {
@@ -59,7 +59,7 @@ const InteractionScorecard = () => {
                     show: true,
                     style: {
                         colors: ['#6c757d', '#6c757d', '#6c757d', '#6c757d', '#6c757d', '#6c757d'],
-                        fontSize: '18px',
+                        fontSize: '22px',
                     }
                 },
             },
@@ -109,14 +109,19 @@ const InteractionScorecard = () => {
                             <AiOutlineBarChart className="me-2" />Answer Score Outline Chart
                         </h3>
                         <ul className={`${styles.main} mt-4`}>
-                            <div className={`${styles.col1} fs-5`}>
-                                <li>Likeability and Trust : likeability_agregate</li>
-                                <li>Clarity and Coherence : Clarity_aggregate</li>
-                                <li>Energy and Adaptability : energy_agreegate</li>
+                            <div className={`${styles.col1} fs-4`}>
+                                {/* <li>Likeability and Trust : likeability_agregate</li> */}
+                                <li>Likeability and Trust : A</li>
+                                {/* <li>Clarity and Coherence : Clarity_aggregate</li> */}
+                                <li>Clarity and Coherence : C</li>
+                                {/* <li>Energy and Adaptability : energy_agreegate</li> */}
+                                <li>Energy and Adaptability : B</li>
                             </div>
-                            <div className={`${styles.col2} fs-5`}>
-                                <li>Communication skills: fluency_agreegate</li>
-                                <li>Confidence and Fluency: Confidence_agreegate</li>
+                            <div className={`${styles.col2} fs-4`}>
+                                {/* <li>Communication skills: fluency_agreegate</li> */}
+                                <li>Communication skills: A</li>
+                                {/* <li>Confidence and Fluency: Confidence_agreegate</li> */}
+                                <li>Confidence and Fluency: D</li>
                             </div>
                         </ul>
                         <hr />

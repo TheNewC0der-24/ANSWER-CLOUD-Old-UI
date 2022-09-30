@@ -11,16 +11,16 @@ const RatingVariables = () => {
           </span>
         </h1>
         <div className={styles.para}>
-          <p className="text-center my-2">
+          <p className="text-center">
             <em>
               Aggregate emotions and speech as analyzed via AI models are broken
               down into smaller components.These components are classified and
               analyzed as power skills.
             </em>
           </p>
-          <div className={`${styles.main} mt-4`}>
+          <div className={`${styles.main}`}>
             <div className={styles.col1}>
-              <h3>Likeability and Trust</h3>
+              <h2><strong>Likeability and Trust</strong></h2>
               <p align="justify">
                 All of us have heard and likely commented, “I like that
                 guy/gal!” The science of likeability says that the smile is the
@@ -43,14 +43,8 @@ const RatingVariables = () => {
               </p>
             </div>
             <div className={styles.col2}>
-              <h3>Clarity and Coherence</h3>
+              <h2><strong>Clarity and Coherence</strong></h2>
               <p align="justify">
-                {/* Grammar denotes the seriousness and knowledge of the speaker in any interaction. Poor grammar and wrong choice of
-                words creates a negative impression in the minds of others. While it's true that it's hard to change accents and one
-                should not be penalized for it - but a heavy accent sometimes makes it hard to understand speech and gives an
-                impression of improper word or grammar usage. How to improve the scores? Practice speaking with friends and take their
-                feedback about your grammar usage style. Attempt various other virtual interactions and check your grammar & accent
-                performance in the same. */}
                 Clarity of thoughts and speech together represent a major strength of the candidate in various job situations. Grammar,
                 accent, industry knowledge - all contribute to the Clarity of the speaker in any interaction. Poor grammar and wrong
                 choice of words creates a negative impression in the minds of others. While it's true that it's hard to change accents
@@ -58,30 +52,12 @@ const RatingVariables = () => {
                 impression of improper word or grammar usage.  Our algorithms generate proprietary scores that divide this power-skill
                 of Clarity into four different cohorts. The top cohort rating of A represents consistently high clarity in conversations. How
                 to improve the scores? Practice speaking with friends and take their feedback about your grammar usage style.
-
-                {/* Who doesn’t want to be charming? Did you know that certain body
-                language markers like eye movement and gazes’ signals critical
-                characters like empathy and charm? Human resource experts and
-                researchers have discovered that empathy is one of the power
-                skills as a leader. Something that one must consistently try to
-                improve upon. Our algorithms generate proprietary scores that
-                divide this power skill of Empathy & charm in four cohorts, as a
-                relative barometer of the candidate’s charm. This should not be
-                confused with excessive expressions. So how can you improve your
-                scores? Simple, practice delivering the answers looking directly
-                in the eyes/face when communicating with others. A top cohort
-                rating of A demonstrates that the candidate cares for others -
-                e.g has empathy and charm to influence others positively.{" "}
-                <strong>
-                  A video feed is essential for this power skill - for audio
-                  responses, it will not be scored.
-                </strong> */}
               </p>
             </div>
           </div>
-          <div className={`${styles.main} mt-4`}>
+          <div className={`${styles.main} mt-5`} style={{ height: "1500px" }}>
             <div className={styles.col1}>
-              <h3>Energy and Adaptability</h3>
+              <h2><strong>Energy and Adaptability</strong></h2>
               <p align="justify">
                 Ever heard a comment “Wow he was super high energy!” The
                 strength of our voice, voice modulation and pitch matters. It
@@ -102,7 +78,7 @@ const RatingVariables = () => {
               </p>
             </div>
             <div className={styles.col2}>
-              <h3>Confidence and Fluency</h3>
+              <h2><strong>Confidence and Fluency</strong></h2>
               <p align="justify">
                 Do you use a lot of words like “actually”, “really”, “like” and
                 others? These are called filler words - subconsciously a lot of
@@ -120,9 +96,9 @@ const RatingVariables = () => {
               </p>
             </div>
           </div>
-          <div className={`${styles.main} mt-4`}>
+          <div className={`${styles.main} mt-5`} style={{ height: "1500px" }}>
             <div className={styles.col1}>
-              <h3>Communication skills</h3>
+              <h2><strong>Communication Skills</strong></h2>
               <p align="justify">
                 We all want to sound eloquent in the conversations but whether
                 due to the pressure or tension, we often tend to fumble and take
@@ -140,7 +116,7 @@ const RatingVariables = () => {
               </p>
             </div>
             <div className={styles.col2}>
-              <h3>Content Ratings</h3>
+              <h2><strong>Content Ratings</strong></h2>
               <p align="justify">
                 We evaluate the content of the responses not only by comparing
                 it to the best possible answer to that question depending upon
