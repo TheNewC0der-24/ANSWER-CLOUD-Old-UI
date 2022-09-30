@@ -46,7 +46,7 @@ function ThankYou() {
     const [image, setImage] = useState("");
     const [create, setCreate] = useState([]);
     const [data, setData] = useState([]);
-const componentref = useRef();
+    const componentref = useRef();
     const handleClick = (value) => {
         setRating(value);
     };
@@ -106,7 +106,7 @@ const componentref = useRef();
     ];
 
     const personality = [
-        "Planner", "Rationalist", "Master", "Orator", "Exponent", "Arbitrator", "Supporter", "Crusader", "Signaller", "Protector", "Administrator", "Diplomat", "Genious",
+        "Planner", "Rationalist", "Master", "Orator", "Exponent", "Arbitrator", "Supporter", "Crusader", "Signaller", "Protector", "Administrator", "Diplomat", "Genius",
         "Explorer", "Tycoon", "Artist"
     ];
 
@@ -152,7 +152,6 @@ const componentref = useRef();
                             models (and coaches/HR managers, if applicable). You or your administrator will receive a
                             detailed feedback on the same within next 72 hours.
                         </p>
-
                         <hr />
                         <p>
                             Every human interaction is an opportunity to learn. It's also an opportunity to demonstrate your skills and
@@ -172,28 +171,30 @@ const componentref = useRef();
                 <>
                     <div className="d-grid col-md-7 mx-auto my-5">
                         <div className="card border-0 shadow mb-3">
-                            <div  ref={componentref}>
-                            <div className={`${styles.cardHeader} card-header bg-dark text-white text-center`}>
-                                <h5 className="card-title">Congratulations {item.who_can_initiate}, you are a {item.track}</h5>
+                            <div ref={componentref}>
+                                <div className={`${styles.cardHeader} card-header bg-dark text-white text-center`}>
+                                    <h5 className="card-title">Congratulations {item.who_can_initiate}, you are a {type}</h5>
+                                </div>
+                                <div className="row g-0">
+                                    <div className="col-md-4 m-auto bg-white">
+                                        <img src={image} className="img-fluid d-flex justify-content-center mx-auto" alt="personality" />
+                                    </div>
+                                    <div className="col-md-8 m-auto">
+                                        <div className="card-body">
+                                            <p className="card-text text-center">{sentence}</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="row g-0">
-                                <div className="col-md-4 m-auto bg-white">
-                                    <img src={image} className="img-fluid d-flex justify-content-center mx-auto" alt="personality" />
-                                </div>
-                                <div className="col-md-8 m-auto">
-                                    <div className="card-body">
-                                        <p className="card-text text-center">{sentence}</p>
+                            <div className='card-footer'>
+                                <div className='d-flex justify-content-center mx-auto gap-2'>
+                                    <div className='d-grid col-md-6'>
+                                        <button type="button" className="btn btn-dark" style={{ backgroundColor: "#282a2d", border: "#282a2d", borderRadius: "0" }} onClick={() => exportComponentAsPNG(componentref)}>Download Card!</button>
                                     </div>
-                                </div>
-                                <div className='d-flex gap-2'>
-                                    <div className='d-grid col-md-6 mx-auto'>
-                                        <button type="button" className="btn btn-dark" style={{ backgroundColor: "#282a2d", border: "#282a2d", borderRadius: "0" }} onClick={()=>exportComponentAsPNG(componentref)}>Download Card!</button>
-                                    </div>
-                                    <div className='d-grid col-md-6 mx-auto'>
+                                    <div className='d-grid col-md-6'>
                                         <button type="button" className="btn btn-dark" data-bs-toggle="modal" data-bs-target="#socialShareModal" style={{ backgroundColor: "#282a2d", border: "#282a2d", borderRadius: "0" }}>Share On Social Media</button>
                                     </div>
                                 </div>
-                            </div>
                             </div>
                         </div>
                     </div>

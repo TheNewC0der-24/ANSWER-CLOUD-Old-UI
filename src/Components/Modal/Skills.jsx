@@ -1,4 +1,5 @@
 import React from "react";
+import { skills } from "../../assets/Skills/skills";
 
 const Track = () => {
   const style = {
@@ -30,36 +31,11 @@ const Track = () => {
             <div className="modal-body" style={style}>
               <div className="container">
                 <div className="d-flex justify-content-center gap-2 flex-wrap" style={{ cursor: "pointer" }}>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
-                  <span className="badge bg-dark">Reliance JIO - sales</span>
+                  {skills.map((item) => (
+                    <h5>
+                      <span key={item.id} className="badge" style={{ backgroundColor: "#414141", borderRadius: "0" }}>{item.name}</span>
+                    </h5>
+                  ))}
                 </div>
               </div>
             </div>

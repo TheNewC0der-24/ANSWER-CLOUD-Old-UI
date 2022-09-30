@@ -2,7 +2,7 @@ module.exports = {
     skills: [
         { name: 'Full Stack Development', id: 1 },
         { name: 'Frontend Development', id: 2 },
-        { name: 'Backened Development', id: 3 },
+        { name: 'Backend Development', id: 3 },
         { name: 'Machine Learning', id: 4 },
         { name: 'Artificial Intelligence', id: 5 },
         { name: 'Deep Learning', id: 6 },
@@ -10,7 +10,7 @@ module.exports = {
         { name: 'C++', id: 8 },
         { name: 'Python', id: 9 },
         { name: 'Java', id: 10 },
-        { name: 'JavaScript', id: 12 },
+        { name: 'JavaScript', id: 11 },
         { name: 'React.js', id: 12 },
         { name: 'Vue.js', id: 13 },
         { name: 'Angular', id: 14 },
@@ -33,6 +33,9 @@ module.exports = {
         { name: 'Microsoft Powerpoint', id: 31 },
         { name: 'Microsoft Word', id: 32 },
         { name: 'Advanced Excel', id: 33 },
-        { name: 'Search Engine Optimization', id: 34 }
+        { name: 'Search Engine Optimization', id: 34 },
+        { name: 'Express.JS', id: 35 },
+        { name: 'Business Analyst', id: 36 },
+        { name: 'Marketing', id: 37 }
     ],
 }

@@ -142,15 +142,6 @@ const Profile = () => {
                 <h5>Upload Profile Picture :</h5>
               </div>
               <div className="card-body d-flex justify-content-center">
-                {/* <div className="mb-3">
-                                    <label htmlFor="formFile" className="form-label">Upload Profile Picture</label>
-                                    <input className={`form-control ${
-                                errors.firstname && touched.firstname
-                                  ? "border-danger"
-                                  : ""
-                              }`} type="file" id="formFile" />
-                                  </div> */}
-                {/* <button  className='btn btn-dark button'>Upload</button> */}
                 <FaUser
                   onMouseEnter={mouseEnter}
                   onMouseLeave={mouseLeave}
@@ -177,7 +168,7 @@ const Profile = () => {
                 </div>
                 <Formik
                   initialValues={initialValues}
-                  // onSubmit={onSubmit}
+                // onSubmit={onSubmit}
                 >
                   {({ errors, touched }) => (
                     <Form>
@@ -186,11 +177,10 @@ const Profile = () => {
                           <div className="mb-3">
                             <Field
                               type="text"
-                              className={`form-control ${
-                                errors.firstname && touched.firstname
+                              className={`form-control ${errors.firstname && touched.firstname
                                   ? "border-danger"
                                   : ""
-                              }`}
+                                }`}
                               id="fName"
                               name="firstname"
                               placeholder="First Name"
@@ -207,11 +197,10 @@ const Profile = () => {
                           <div className="mb-3">
                             <Field
                               type="text"
-                              className={`form-control ${
-                                errors.lastname && touched.lastname
-                                ? "border-danger"
-                                : ""
-                              }`}
+                              className={`form-control ${errors.lastname && touched.lastname
+                                  ? "border-danger"
+                                  : ""
+                                }`}
                               id="lName"
                               name="lastname"
                               placeholder="Last Name"
@@ -230,11 +219,10 @@ const Profile = () => {
                           <div className="mb-3">
                             <Field
                               type="email"
-                              className={`form-control ${
-                                errors.email && touched.email
+                              className={`form-control ${errors.email && touched.email
                                   ? "border-danger"
                                   : ""
-                              }`}
+                                }`}
                               id="emailAddress"
                               name="email"
                               placeholder="Email address"
@@ -251,11 +239,10 @@ const Profile = () => {
                           <div className="mb-3">
                             <Field
                               type="number"
-                              className={`form-control ${
-                                errors.phone && touched.phone
-                                ? "border-danger"
-                                : ""
-                              }`}
+                              className={`form-control ${errors.phone && touched.phone
+                                  ? "border-danger"
+                                  : ""
+                                }`}
                               id="contactNumber"
                               name="phone"
                               placeholder="Phone Number"
@@ -274,11 +261,10 @@ const Profile = () => {
                           <div className="mb-3">
                             <Field
                               type="text"
-                              className={`form-control ${
-                                errors.cname && touched.cname
-                                ? "border-danger"
-                                : ""
-                              }`}
+                              className={`form-control ${errors.cname && touched.cname
+                                  ? "border-danger"
+                                  : ""
+                                }`}
                               id="companyName"
                               name="cname"
                               placeholder="Company Name"
@@ -294,15 +280,14 @@ const Profile = () => {
                         <div className="col-md-6">
                           <div className="mb-3">
                             <Field as="select"
-                              className={`form-select ${
-                                errors.country && touched.country
-                                ? "border-danger"
-                                : ""
-                              }`}
+                              className={`form-select ${errors.country && touched.country
+                                  ? "border-danger"
+                                  : ""
+                                }`}
                               aria-label="Default select example"
                               name="country"
                               validate={validateCountry}
-                              >
+                            >
                               <option value="Select Country">
                                 Select Country
                               </option>
@@ -325,11 +310,10 @@ const Profile = () => {
                             <div className="mb-3">
                               <Field
                                 type="text"
-                                className={`form-control ${
-                                  errors.linkedin && touched.linkedin
-                                  ? "border-danger"
-                                  : ""
-                                }`}
+                                className={`form-control ${errors.linkedin && touched.linkedin
+                                    ? "border-danger"
+                                    : ""
+                                  }`}
                                 id="linkedin"
                                 name="linkedin"
                                 placeholder="LinkedIn"
@@ -346,16 +330,15 @@ const Profile = () => {
                             <div className="mb-3">
                               <Field
                                 type="text"
-                                className={`form-control ${
-                                errors.facebook && touched.facebook
-                                  ? "border-danger"
-                                  : ""
-                              }`}
+                                className={`form-control ${errors.facebook && touched.facebook
+                                    ? "border-danger"
+                                    : ""
+                                  }`}
                                 id="facebook"
                                 placeholder="Facebook"
                                 name="facebook"
                                 validate={validateFacebook}
-                                />
+                              />
                               {errors.facebook && touched.facebook && (
                                 <div className="form-text text-danger">
                                   {errors.facebook}
@@ -369,11 +352,10 @@ const Profile = () => {
                             <div className="mb-3">
                               <Field
                                 type="text"
-                                className={`form-control ${
-                                errors.twitter && touched.twitter
-                                  ? "border-danger"
-                                  : ""
-                                }`}
+                                className={`form-control ${errors.twitter && touched.twitter
+                                    ? "border-danger"
+                                    : ""
+                                  }`}
                                 id="twitter"
                                 name="twitter"
                                 placeholder="Twitter"
@@ -390,11 +372,10 @@ const Profile = () => {
                             <div className="mb-3">
                               <Field
                                 type="text"
-                                className={`form-control ${
-                                  errors.instagram && touched.instagram
-                                  ? "border-danger"
-                                  : ""
-                                }`}
+                                className={`form-control ${errors.instagram && touched.instagram
+                                    ? "border-danger"
+                                    : ""
+                                  }`}
                                 id="instagram"
                                 name="instagram"
                                 placeholder="Instagram"

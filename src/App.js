@@ -4,14 +4,11 @@ import Navbar from './Components/Navbar/Navbar';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import InternalBot from './Components/InternalBot/InternalBot';
-// import Access from './Components/AccessInterview/Access';
 import ExternalBot from './Components/ExternalBot/ExternalBot';
 import Dashboard from './Components/Dashboard/Dashboard';
 import Interaction from './Components/Interaction/Interaction';
 import ForgetPassword from './Components/ForgetPassword/ForgetPassword';
 import Report from './Components/Report/Report';
-// import Report from './Components/HR-DEMO/Report';
-// import LeaderboardReport from './Components/LeaderboardReport/LeaderboardReport';
 import Form from './Components/StudentInteractionForm/Form';
 import Login from './Components/Login/Login';
 import SignUp from './Components/SignUp/SignUp';
@@ -31,9 +28,6 @@ import Trouble from './Components/Videos/Trouble';
 import Mcq from './Components/MCQ/Mcq';
 import Thanks from './Components/Videos/ThankYou';
 import Responses from './Components/Responses/Responses';
-// import Image from './Components/ImageUpload/Image';
-// import Text from './Components/Text/Text';
-// import Experience from './Components/Experience/Experience';
 
 function App() {
 
@@ -44,16 +38,12 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Dashboard />} />
           <Route exact path='/internalbot' element={<InternalBot />} />
-          {/* <Route exact path='/access' element={<Access />} /> */}
           <Route exact path='/externalbot' element={<ExternalBot />} />
-          {/* <Route exact path='/experience' element={<Experience />} /> */}
           <Route exact path='/thankyou' element={<ThankYou />} />
           <Route exact path='/interaction' element={<Interaction />} />
           <Route exact path='/profile' element={<Profile />} />
           <Route exact path='/teams' element={<Team />} />
-          {/* <Route exact path="/report" element={<Report />} /> */}
           <Route exact path="/report" element={<Report />} />
-          {/* <Route exact path="/leaderboardReport" element={<LeaderboardReport />} /> */}
           <Route exact path='/login' element={<Login />} />
           <Route exact path='/resetPassword' element={<ForgetPassword />} />
           <Route exact path='/form' element={<Form />} />
@@ -69,8 +59,6 @@ function App() {
           <Route exact path='/question' element={<Question />} />
           <Route exact path='/audiorecording' element={<AudioRecording />} />
           <Route exact path='/mcq' element={<Mcq />} />
-          {/* <Route exact path='/imageUpload' element={<Image />} /> */}
-          {/* <Route exact path='/text' element={<Text />} /> */}
           <Route exact path='/thanks' element={<Thanks />} />
           <Route exact path='/response' element={<Responses />} />
         </Routes>
