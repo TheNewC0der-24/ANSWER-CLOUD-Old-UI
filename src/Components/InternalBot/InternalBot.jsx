@@ -35,7 +35,6 @@ const Create = () => {
         setDisabled(!disabled);
     }
 
-
     const onSubmit = () => {
         navigate("/externalbot");
     }
