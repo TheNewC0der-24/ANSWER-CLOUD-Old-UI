@@ -1,7 +1,7 @@
 .row {
-  /* background-color: #282a2d; */
   background-color: #fff;
-  border: 5px solid #000;
+  border: 5px solid #414141;
+  height: 400px;
 }
 
 @media (max-width: 770px) {

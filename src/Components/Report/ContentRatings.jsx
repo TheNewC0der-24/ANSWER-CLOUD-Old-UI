@@ -224,67 +224,43 @@ const ContentRatings = () => {
           </p>
         </div>
         <div className="container">
-          <div className="row" style={{backgroundColor: 'black'}}>
-            <div className="col-4 d-flex justify-content-center align-items-center text-center text-white fs-2 p-2" style={{border: '2px solid black'}}>Match Score</div>
-            <div className="col-8 d-flex justify-content-center align-items-center text-center text-white fs-2 p-2" style={{border: '2px solid black'}}>Meaning</div>
+          <div className="row" style={{ backgroundColor: '#414141' }}>
+            <div className="col-4 d-flex justify-content-center align-items-center text-center text-white fs-2 p-2" style={{ border: '2px solid #414141' }}>Match Score</div>
+            <div className="col-8 d-flex justify-content-center align-items-center text-center text-white fs-2 p-2" style={{ border: '2px solid #414141' }}>Meaning</div>
           </div>
           <div className="row">
-            <div className="col-4 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>Greater than 90</div>
-            <div className="col-8 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>Extremely precise & relevant answer</div>
+            <div className="col-4 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{ border: '2px solid #414141' }}>Greater than 90</div>
+            <div className="col-8 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{ border: '2px solid #414141' }}>Extremely precise & relevant answer</div>
           </div>
           <div className="row">
-            <div className="col-4 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>70 to 90%</div>
-            <div className="col-8 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>Satisfactory answer with key points covered</div>
+            <div className="col-4 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{ border: '2px solid #414141' }}>70 to 90%</div>
+            <div className="col-8 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{ border: '2px solid #414141' }}>Satisfactory answer with key points covered</div>
           </div>
           <div className="row">
-            <div className="col-4 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>50 to 70%</div>
-            <div className="col-8 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>Highlights key aspects but is not complete</div>
+            <div className="col-4 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{ border: '2px solid #414141' }}>50 to 70%</div>
+            <div className="col-8 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{ border: '2px solid #414141' }}>Highlights key aspects but is not complete</div>
           </div>
           <div className="row">
-            <div className="col-4 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>Less than 50%</div>
-            <div className="col-8 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{border: '2px solid black'}}>Missing key aspects</div>
+            <div className="col-4 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{ border: '2px solid #414141' }}>Less than 50%</div>
+            <div className="col-8 d-flex justify-content-center align-items-center text-center fs-4 p-2" style={{ border: '2px solid #414141' }}>Missing key aspects</div>
           </div>
         </div>
-        {/* <table
-          className="table table-bordered text-center my-5"
-          style={{ borderColor: "#414141", fontSize: "22px" }}
-        >
-          <thead className="text-white" style={{ backgroundColor: "#414141" }}>
-            <tr>
-              <th scope="col">Match Score</th>
-              <th scope="col">Meaning</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Greater than 90</td>
-              <td>Extremely precise & relevant answer</td>
-            </tr>
-            <tr>
-              <td>70 to 90%</td>
-              <td>Satisfactory answer with key points covered</td>
-            </tr>
-            <tr>
-              <td>50 to 70%</td>
-              <td>Highlights key aspects but is not complete</td>
-            </tr>
-            <tr>
-              <td>Less than 50%</td>
-              <td>Missing key aspects</td>
-            </tr>
-          </tbody>
-        </table> */}
-        <h1 className="my-5">
-          <span className="badge" style={{ backgroundColor: "#414141", borderRadius: "0" }}>Question Specific Content Ratings</span>
-        </h1>
-        <div className={styles.para}>
-          <p align="justify" className="fs-2">
-            The chart below illustrates the content ratings for each answer, in
-            percentage terms. The dotted lines at the 80% score mark denote the
-            “aspiration line” which should be target content ratings. In our
-            experimentation we have found aspirants consistently hitting these
-            benchmarks command great authority on the content.
-          </p>
+        <div style={{ height: "400px" }}>
+          <div className='d-flex justify-content-between my-5'>
+            <h1 className="my-5">
+              <span className="badge" style={{ backgroundColor: "#414141", borderRadius: "0" }}>Question Specific Content Ratings</span>
+            </h1>
+            <h3 className="my-5"><span className="badge bg-danger" style={{ borderRadius: "0" }}>Experimental</span></h3>
+          </div>
+          <div className={styles.para}>
+            <p align="justify" className="fs-2">
+              The chart below illustrates the content ratings for each answer, in
+              percentage terms. The dotted lines at the 80% score mark denote the
+              “aspiration line” which should be target content ratings. In our
+              experimentation we have found aspirants consistently hitting these
+              benchmarks command great authority on the content.
+            </p>
+          </div>
         </div>
         <div className="card border-0 my-5" >
           <h3 className="card-header text-white" style={{ backgroundColor: "#414141", borderRadius: "0" }}>
