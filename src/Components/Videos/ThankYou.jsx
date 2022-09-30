@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 
 import axios from 'axios';
 
+import { exportComponentAsPNG } from 'react-component-export-image';
+import { useRef } from 'react';
 // import thankyou from "../../assets/Images/thankyou.svg"
 import thankyou from "../../assets/Images/thankForm.svg"
 // import confuse from "../../assets/Images/confuse.png"
@@ -45,7 +47,7 @@ function ThankYou() {
     const [image, setImage] = useState("");
     const [create, setCreate] = useState([]);
     const [data, setData] = useState([]);
-
+const componentref = useRef();
     const handleClick = (value) => {
         setRating(value);
     };
@@ -60,26 +62,26 @@ function ThankYou() {
 
     const handleClicks = () => {
         axios
-        .post(
-          "response.json",
-          {
-            feedback: create.feedback,
-          },
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        )
-        .then((res) => {
-          console.log(res.data);
-        });
+            .post(
+                "response.json",
+                {
+                    feedback: create.feedback,
+                },
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                }
+            )
+            .then((res) => {
+                console.log(res.data);
+            });
     };
 
     const handleOnChange = (e) => {
         setCreate({ ...create, [e.target.name]: e.target.value });
-      };
+    };
 
     const arr = ["Congratulations you displayed a Planner personality type!  These detail-oriented strategists love perfection. Whether it's finding the perfect gift for a loved one or finishing a project at work, they allocate their time and energy to different aspects of their lives. However, their inner world is complex and often private.",
         "Congratulations you displayed a Rationalist personality type!The adaptable and open-minded type achiever has an ambition like no other personality types. They combine a willingness to adapt with creative intelligence, allowing them to see unconventional solutions to common issues.",
@@ -110,7 +112,6 @@ function ThankYou() {
     ];
 
     const a = Math.floor(Math.random() * 16);
-    
     useEffect(() => {
         setSentence(arr[a]);
         setImage(picture[a]);
@@ -119,7 +120,7 @@ function ThankYou() {
             console.log(res.data.results);
             setData(res.data.results);
             // setAdd(res.data.results);
-          });
+        });
     }, arr, picture, personality);
 
     var updatedS = time.s, updatedM = time.m;
@@ -170,25 +171,33 @@ function ThankYou() {
             </div>
             {data.slice(0, 1).map((item) => (
                 <>
-            <div className="d-grid col-md-7 mx-auto my-5">
-                <div className="card border-0 shadow mb-3">
-                    <div className={`${styles.cardHeader} card-header bg-dark text-white text-center`}>
-                        <h5 className="card-title">Congratulations {item.who_can_initiate}, you are a {item.track}</h5>
-                    </div>
-                    <div className="row g-0">
-                        <div className="col-md-4 m-auto bg-white">
-                            <img src={image} className="img-fluid d-flex justify-content-center mx-auto" alt="personality" />
-                        </div>
-                        <div className="col-md-8 m-auto">
-                            <div className="card-body">
-                                <p className="card-text text-center">{sentence}</p>
-                                {/* <hr /> */}
+                    <div className="d-grid col-md-7 mx-auto my-5">
+                        <div className="card border-0 shadow mb-3">
+                            <div  ref={componentref}>
+                            <div className={`${styles.cardHeader} card-header bg-dark text-white text-center`}>
+                                <h5 className="card-title">Congratulations {item.who_can_initiate}, you are a {item.track}</h5>
+                            </div>
+                            <div className="row g-0">
+                                <div className="col-md-4 m-auto bg-white">
+                                    <img src={image} className="img-fluid d-flex justify-content-center mx-auto" alt="personality" />
+                                </div>
+                                <div className="col-md-8 m-auto">
+                                    <div className="card-body">
+                                        <p className="card-text text-center">{sentence}</p>
+                                    </div>
+                                </div>
+                                <div className='d-flex gap-2'>
+                                    <div className='d-grid col-md-6 mx-auto'>
+                                        <button type="button" className="btn btn-dark" style={{ backgroundColor: "#282a2d", border: "#282a2d", borderRadius: "0" }} onClick={()=>exportComponentAsPNG(componentref)}>Download Card!</button>
+                                    </div>
+                                    <div className='d-grid col-md-6 mx-auto'>
+                                        <button type="button" className="btn btn-dark" data-bs-toggle="modal" data-bs-target="#socialShareModal" style={{ backgroundColor: "#282a2d", border: "#282a2d", borderRadius: "0" }}>Share On Social Media</button>
+                                    </div>
+                                </div>
+                            </div>
                             </div>
                         </div>
-                        <button type="button" className="btn btn-dark float-end" data-bs-toggle="modal" data-bs-target="#socialShareModal" style={{ backgroundColor: "#282a2d", border: "#282a2d", borderRadius: "0" }}>Share On Social Media</button>
                     </div>
-                </div>
-            </div>
                 </>
             ))}
 
