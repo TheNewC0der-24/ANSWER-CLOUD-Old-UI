@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./ContentRatings.module.css";
 
 import ReactApexChart from "react-apexcharts";
+import { BsBarChartLineFill } from "react-icons/bs"
 
 const ContentRatings = () => {
   const [state, setState] = useState({
@@ -286,7 +287,9 @@ const ContentRatings = () => {
           </p>
         </div>
         <div className="card border-0 my-5" >
-          <h3 className="card-header text-white" style={{ backgroundColor: "#414141", borderRadius: "0" }}>Content rating chart</h3>
+          <h3 className="card-header text-white" style={{ backgroundColor: "#414141", borderRadius: "0" }}>
+            <BsBarChartLineFill className="me-2" />Content rating chart
+          </h3>
           <div className="card-body d-flex justify-content-center mx-auto">
             <ReactApexChart
               setState={setState}

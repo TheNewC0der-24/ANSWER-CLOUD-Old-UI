@@ -148,10 +148,7 @@ const GeneralVariables = () => {
               because as a standalone input they do not give us a representative
               level of performance. We are including this in the report for the
               sake of completeness so that the aspirant has an advanced
-              understanding of their performance. The colored range bar and the
-              dot plot on the line indicates the possible performance ranges
-              (Red = Avoid, Green = Acceptable, Yellow = Needs improvement)
-              compared to the current performance (dot plot).
+              understanding of their performance.
             </em>
           </p>
           <div className="row row-cols-1 row-cols-md-2 justify-content-center g-5">
@@ -282,7 +279,7 @@ const GeneralVariables = () => {
               </div>
             </div>
           </div>
-          <div className={`${styles.card} card border-dark h-100 my-5`}>
+          {/* <div className={`${styles.card} card border-dark h-100 my-5`}>
             <h3 className={`${styles.cardHeader} card-header fw-bold`}>
               <SiGrammarly className={`${styles.icon} me-2`} />
               Grammar and Accent Score
@@ -291,17 +288,6 @@ const GeneralVariables = () => {
               <p align="justify" className="card-text">
                 <strong>Grammar and Accent Score : </strong>grammar_score
               </p>
-              {/* <div className="mb-3">
-                                <div className="progress">
-                                    <div className="progress-bar bg-danger" role="progressbar" style={{ width: "20%" }} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                    <div className="progress-bar bg-warning" role="progressbar" style={{ width: "20%" }} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                    <div className="progress-bar bg-success" role="progressbar" style={{ width: "20%" }} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                    <div className="progress-bar bg-warning" role="progressbar" style={{ width: "20%" }} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                    <div className="progress-bar bg-danger" role="progressbar" style={{ width: "20%" }} aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <input type="range" className="form-range" value={17} min="2" max="22" id="customRange2" disabled />
-                            </div> */}
-
               <p align="justify" className="card-text">
                 <strong>Why consider this :</strong> Grammar denotes the
                 seriousness and knowledge of the speaker in any interaction.
@@ -316,7 +302,7 @@ const GeneralVariables = () => {
                 performance in the same.
               </p>
             </div>
-          </div>
+          </div> */}
           <div className={`${styles.card} card border-dark h-100 my-5`}>
             <h3 className={`${styles.cardHeader} card-header fw-bold`}>
               <FaVolumeUp className={`me-2 ${styles.icon}`} />

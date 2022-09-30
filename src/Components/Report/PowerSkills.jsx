@@ -20,7 +20,7 @@ const RatingVariables = () => {
           </p>
           <div className={`${styles.main} mt-4`}>
             <div className={styles.col1}>
-              <h3>Likeability & Trust</h3>
+              <h3>Likeability and Trust</h3>
               <p align="justify">
                 All of us have heard and likely commented, “I like that
                 guy/gal!” The science of likeability says that the smile is the
@@ -43,9 +43,23 @@ const RatingVariables = () => {
               </p>
             </div>
             <div className={styles.col2}>
-              <h3>Empathy & Charm</h3>
+              <h3>Clarity and Coherence</h3>
               <p align="justify">
-                Who doesn’t want to be charming? Did you know that certain body
+                {/* Grammar denotes the seriousness and knowledge of the speaker in any interaction. Poor grammar and wrong choice of
+                words creates a negative impression in the minds of others. While it's true that it's hard to change accents and one
+                should not be penalized for it - but a heavy accent sometimes makes it hard to understand speech and gives an
+                impression of improper word or grammar usage. How to improve the scores? Practice speaking with friends and take their
+                feedback about your grammar usage style. Attempt various other virtual interactions and check your grammar & accent
+                performance in the same. */}
+                Clarity of thoughts and speech together represent a major strength of the candidate in various job situations. Grammar,
+                accent, industry knowledge - all contribute to the Clarity of the speaker in any interaction. Poor grammar and wrong
+                choice of words creates a negative impression in the minds of others. While it's true that it's hard to change accents
+                and one should not be penalized for it - but a heavy accent sometimes makes it hard to understand speech and gives an
+                impression of improper word or grammar usage.  Our algorithms generate proprietary scores that divide this power-skill
+                of Clarity into four different cohorts. The top cohort rating of A represents consistently high clarity in conversations. How
+                to improve the scores? Practice speaking with friends and take their feedback about your grammar usage style.
+
+                {/* Who doesn’t want to be charming? Did you know that certain body
                 language markers like eye movement and gazes’ signals critical
                 characters like empathy and charm? Human resource experts and
                 researchers have discovered that empathy is one of the power
@@ -61,7 +75,7 @@ const RatingVariables = () => {
                 <strong>
                   A video feed is essential for this power skill - for audio
                   responses, it will not be scored.
-                </strong>
+                </strong> */}
               </p>
             </div>
           </div>
