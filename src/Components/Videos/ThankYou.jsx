@@ -3,7 +3,6 @@ import styles from './ThankYou.module.css';
 import { useNavigate } from 'react-router-dom';
 
 import axios from 'axios';
-
 import { exportComponentAsPNG } from 'react-component-export-image';
 import { useRef } from 'react';
 // import thankyou from "../../assets/Images/thankyou.svg"
@@ -175,7 +174,7 @@ const componentref = useRef();
                         <div className="card border-0 shadow mb-3">
                             <div  ref={componentref}>
                             <div className={`${styles.cardHeader} card-header bg-dark text-white text-center`}>
-                                <h5 className="card-title">Congratulations {item.who_can_initiate}, you are a {item.track}</h5>
+                                <h5 className="card-title">{item.who_can_initiate}</h5>
                             </div>
                             <div className="row g-0">
                                 <div className="col-md-4 m-auto bg-white">
