@@ -21,7 +21,6 @@ const Notification = () => {
   const initialValues = {
     whoinitiate: "",
     phone: "",
-    collectresume: "",
     email: "",
     user: "",
     welcome: "",
@@ -41,14 +40,6 @@ const Notification = () => {
   };
 
   const validatePhone = (value) => {
-    let error;
-    if (!value) {
-      error = "*This field is required";
-    }
-    return error;
-  };
-
-  const validateCollectResume = (value) => {
     let error;
     if (!value) {
       error = "*This field is required";
@@ -255,10 +246,8 @@ const Notification = () => {
                               <Field
                                 className="form-check-Field"
                                 type="radio"
-                                name="collectresume"
-                                value="Yes"
+                                name="CollectResume"
                                 id="yesResume"
-                                validate={validateCollectResume}
                               />
                               <label
                                 className="form-check-label"
@@ -271,11 +260,9 @@ const Notification = () => {
                               <Field
                                 className="form-check-Field"
                                 type="radio"
-                                name="collectresume"
-                                value="No"
+                                name="CollectResume"
                                 id="noResume"
                                 defaultChecked
-                                validate={validateCollectResume}
                               />
                               <label
                                 className="form-check-label"
@@ -284,12 +271,6 @@ const Notification = () => {
                                 No
                               </label>
                             </div>
-                            {
-                              errors.collectresume && touched.collectresume &&
-                              <div className="form-text text-danger">
-                                {errors.collectresume}
-                              </div>
-                            }
                           </div>
                         </div>
                         <div className="col-md-4">
