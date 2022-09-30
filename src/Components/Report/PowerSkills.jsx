@@ -55,7 +55,7 @@ const RatingVariables = () => {
               </p>
             </div>
           </div>
-          <div className={`${styles.main} mt-5`} style={{ height: "1500px" }}>
+          <div className={`${styles.main} mt-5`} style={{ height: "1450px" }}>
             <div className={styles.col1}>
               <h2><strong>Energy and Adaptability</strong></h2>
               <p align="justify">
@@ -93,6 +93,8 @@ const RatingVariables = () => {
                 answer in a calculated manner without any unnecessary words. A
                 top cohort rating of A demonstrates that the candidate is
                 perceived as having high confidence and fluency in his approach.
+                Filler or fluff words mentioned above also decreases the fluency of the candidate in the context. Every
+                effort must be made to reduce such words in the vocabulary.
               </p>
             </div>
           </div>
@@ -110,9 +112,10 @@ const RatingVariables = () => {
                 practice delivering the answers with which are well thought out.
                 Request for a minute to formulate your answers before you start
                 speaking so that unnecessary pauses can be avoided. A top cohort
-                rating of A demonstrates that the candidate is highly adaptable
-                and energetic - someone who can handle any type of conversation
-                and come out ahead.
+                rating of A demonstrates that the candidate is has excellent communication skills.
+                and come out ahead. Communication is still believed to be the #1 skill that is the key focus of
+                HR and hiring managers around the world. It makes it that much more important to have an effective
+                command on this skill. We recommend you to repeat the interaction if the scores are in C and D cohorts.
               </p>
             </div>
             <div className={styles.col2}>
@@ -131,7 +134,10 @@ const RatingVariables = () => {
                 can also keep in mind to use certain keywords to improve their
                 rating. A top cohort rating of A demonstrates that the candidate
                 is aware of the accurate answer content and the operating
-                context.
+                context. Content is still the king. The degree of accuracy of
+                the answers matter to a large extent in how your answers are perceived by others. It
+                is important to understand the questions and apply critical thinking in articulating
+                the answers.
               </p>
             </div>
           </div>

@@ -157,7 +157,8 @@ const GeneralVariables = () => {
             </h3>
             <div className="card-body" style={{ fontSize: "30px" }}>
               <p align="justify" className="card-text">
-                <strong>Words per minute : </strong>pace
+                {/* <strong>Words per minute : </strong>pace */}
+                <strong>Words per minute : </strong>120 words/minute
               </p>
               <p align="justify" className="card-text">
                 <strong>Ideal words per minute : </strong> 140-160
@@ -184,7 +185,8 @@ const GeneralVariables = () => {
             </h3>
             <div className="card-body">
               <p align="justify" className="card-text">
-                <strong>Gesture Score : </strong>Estimated_Gesture_score
+                {/* <strong>Gesture Score : </strong>Estimated_Gesture_score */}
+                <strong>Gesture Score : </strong>B
               </p>
               <p align="justify" className="card-text">
                 <strong>Why Consider this : </strong>Hand gestures play an
@@ -215,6 +217,10 @@ const GeneralVariables = () => {
                   once the interaction is over. Please take a moment to
                   reflect and craft alternate answers if these are not the
                   words and context you wish to convey to your audience.
+                  Volume and Pitch are of high importance because it indirectly influences all other skill parameters. If
+                  correct volume and pitch ( not to low , not too high) is maintained then the conversation flow is smooth
+                  and all other power skills and parameters are automatically impacted.
+
                 </p>
               </div>
             </div>
@@ -227,7 +233,8 @@ const GeneralVariables = () => {
                 <div className={styles.main}>
                   <div className={styles.col1}>
                     <p align="justify" className="card-text">
-                      <strong>Volume Scale (0-100) : "volume"</strong>
+                      {/* <strong>Volume Scale (0-100) : </strong>"volume" */}
+                      <strong>Volume Scale (0-100) : </strong>60 Db
                     </p>
                     <p align="justify" className="card-text my-5">
                       <strong>Ideal Volume Scale : </strong>70-80 Db
@@ -235,7 +242,8 @@ const GeneralVariables = () => {
                   </div>
                   <div className={styles.col2}>
                     <p align="justify" className="card-text">
-                      <strong>Pitch Range : "pitch"</strong>
+                      {/* <strong>Pitch Range : </strong>"pitch" */}
+                      <strong>Pitch Range : </strong>750 Hertz
                     </p>
                     <p align="justify" className="card-text my-5">
                       <strong>Ideal Pitch Range : </strong>650-850 Hertz
@@ -269,8 +277,8 @@ const GeneralVariables = () => {
             </h3>
             <div className="card-body">
               <p align="justify" className="card-text">
-                <strong>Aggregate dominant Sentiment : </strong>
-                Sentiment_score
+                {/* <strong>Aggregate dominant Sentiment : </strong>Sentiment_score */}
+                <strong>Aggregate dominant Sentiment : </strong>Happy
               </p>
               <p align="justify" className="card-text">
                 <strong>Why consider this : </strong>This shows how your

@@ -262,7 +262,7 @@ const ContentRatings = () => {
             </p>
           </div>
         </div>
-        <div className="card border-0 my-5" >
+        <div className="card border-0 my-5">
           <h3 className="card-header text-white" style={{ backgroundColor: "#414141", borderRadius: "0" }}>
             <BsBarChartLineFill className="me-2" />Content rating chart
           </h3>
@@ -280,8 +280,7 @@ const ContentRatings = () => {
         </div>
 
         <div className="card-footer border-dark text-end">
-          <strong>Overall Content Rating :</strong> <code>Content_score</code>{" "}
-          of a <code>Interaction_ID</code>
+          <strong>Overall Content Rating is not calculated due to variability.</strong>
         </div>
       </div>
     </>

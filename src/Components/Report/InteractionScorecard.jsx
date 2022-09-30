@@ -124,7 +124,7 @@ const InteractionScorecard = () => {
                                 <li>Confidence and Fluency: D</li>
                             </div>
                         </ul>
-                        <hr />
+                        <hr style={{ border: "3px solid #000" }} />
                         <div className='d-flex justify-content-center'>
                             <ReactApexChart
                                 // eslint-disable-next-line
