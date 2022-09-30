@@ -3,7 +3,8 @@ import styles from './ThankYou.module.css';
 import { useNavigate } from 'react-router-dom';
 
 import axios from 'axios';
-
+import { exportComponentAsPNG } from 'react-component-export-image';
+import { useRef } from 'react';
 // import thankyou from "../../assets/Images/thankyou.svg"
 import thankyou from "../../assets/Images/thankForm.svg"
 // import confuse from "../../assets/Images/confuse.png"
@@ -45,7 +46,7 @@ function ThankYou() {
     const [image, setImage] = useState("");
     const [create, setCreate] = useState([]);
     const [data, setData] = useState([]);
-
+const componentref = useRef();
     const handleClick = (value) => {
         setRating(value);
     };
@@ -171,6 +172,7 @@ function ThankYou() {
                 <>
                     <div className="d-grid col-md-7 mx-auto my-5">
                         <div className="card border-0 shadow mb-3">
+                            <div  ref={componentref}>
                             <div className={`${styles.cardHeader} card-header bg-dark text-white text-center`}>
                                 <h5 className="card-title">{item.who_can_initiate}</h5>
                             </div>
@@ -185,12 +187,13 @@ function ThankYou() {
                                 </div>
                                 <div className='d-flex gap-2'>
                                     <div className='d-grid col-md-6 mx-auto'>
-                                        <button type="button" className="btn btn-dark" style={{ backgroundColor: "#282a2d", border: "#282a2d", borderRadius: "0" }}>Download Card!</button>
+                                        <button type="button" className="btn btn-dark" style={{ backgroundColor: "#282a2d", border: "#282a2d", borderRadius: "0" }} onClick={()=>exportComponentAsPNG(componentref)}>Download Card!</button>
                                     </div>
                                     <div className='d-grid col-md-6 mx-auto'>
                                         <button type="button" className="btn btn-dark" data-bs-toggle="modal" data-bs-target="#socialShareModal" style={{ backgroundColor: "#282a2d", border: "#282a2d", borderRadius: "0" }}>Share On Social Media</button>
                                     </div>
                                 </div>
+                            </div>
                             </div>
                         </div>
                     </div>
