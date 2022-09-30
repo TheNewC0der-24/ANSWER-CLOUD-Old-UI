@@ -210,8 +210,8 @@ const Notification = () => {
                               Collect Email
                             </label>
                             <div className="form-check">
-                              <Field
-                                className="form-check-Field"
+                              <input
+                                className="form-check-input"
                                 type="radio"
                                 name="collectEmail"
                                 id="yes"
@@ -221,8 +221,8 @@ const Notification = () => {
                               </label>
                             </div>
                             <div className="form-check">
-                              <Field
-                                className="form-check-Field"
+                              <input
+                                className="form-check-input"
                                 type="radio"
                                 name="collectEmail"
                                 id="no"
@@ -243,8 +243,8 @@ const Notification = () => {
                               Collect Resume
                             </label>
                             <div className="form-check">
-                              <Field
-                                className="form-check-Field"
+                              <input
+                                className="form-check-input"
                                 type="radio"
                                 name="CollectResume"
                                 id="yesResume"
@@ -257,8 +257,8 @@ const Notification = () => {
                               </label>
                             </div>
                             <div className="form-check">
-                              <Field
-                                className="form-check-Field"
+                              <input
+                                className="form-check-input"
                                 type="radio"
                                 name="CollectResume"
                                 id="noResume"
@@ -282,8 +282,8 @@ const Notification = () => {
                               Candidate Feedback Message
                             </label>
                             <div className="form-check">
-                              <Field
-                                className="form-check-Field"
+                              <input
+                                className="form-check-input"
                                 type="radio"
                                 name="CandidateFeedback"
                                 id="yesFeedbackMessage"
@@ -296,8 +296,8 @@ const Notification = () => {
                               </label>
                             </div>
                             <div className="form-check">
-                              <Field
-                                className="form-check-Field"
+                              <input
+                                className="form-check-input"
                                 type="radio"
                                 name="CandidateFeedback"
                                 id="noFeedbackMessage"
@@ -324,9 +324,9 @@ const Notification = () => {
                               Channel
                             </label>
                             <div className="form-check">
-                              <Field
+                              <input
                                 disabled
-                                className="form-check-Field"
+                                className="form-check-input"
                                 type="checkbox"
                                 id="telegram"
                               />
@@ -342,9 +342,9 @@ const Notification = () => {
                               </label>
                             </div>
                             <div className="form-check">
-                              <Field
+                              <input
                                 disabled
-                                className="form-check-Field"
+                                className="form-check-input"
                                 type="checkbox"
                                 id="whatsapp"
                               />
@@ -360,9 +360,9 @@ const Notification = () => {
                               </label>
                             </div>
                             <div className="form-check">
-                              <Field
+                              <input
                                 disabled
-                                className="form-check-Field"
+                                className="form-check-input"
                                 type="checkbox"
                                 id="slack"
                               />
@@ -378,8 +378,8 @@ const Notification = () => {
                               </label>
                             </div>
                             <div className="form-check mb-3">
-                              <Field
-                                className="form-check-Field"
+                              <input
+                                className="form-check-input"
                                 type="checkbox"
                                 defaultChecked
                                 id="form"
@@ -403,8 +403,8 @@ const Notification = () => {
                               Collect Candidate ID
                             </label>
                             <div className="form-check">
-                              <Field
-                                className="form-check-Field"
+                              <input
+                                className="form-check-input"
                                 type="radio"
                                 name="CollectID"
                                 id="yesId"
@@ -417,8 +417,8 @@ const Notification = () => {
                               </label>
                             </div>
                             <div className="form-check">
-                              <Field
-                                className="form-check-Field"
+                              <input
+                                className="form-check-input"
                                 type="radio"
                                 name="CollectID"
                                 id="noId"
