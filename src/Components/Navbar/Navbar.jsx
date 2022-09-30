@@ -52,11 +52,8 @@ const Navbar = () => {
                                 <NavLink onClick={handleClick} className={`${styles.navLink} nav-link`} aria-current="page" to="/internalbot">Internal Bots</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink onClick={handleClick} className={`${styles.navLink} nav-link disabled`} to="/externalbot">External Bots</NavLink>
+                                <NavLink onClick={handleClick} className={`${styles.navLink} nav-link`} to="/externalbot">External Bots</NavLink>
                             </li>
-                            {/* <li className="nav-item">
-                                <NavLink onClick={handleClick} className={`${styles.navLink} nav-link`} to="/experience">Create Experience</NavLink>
-                            </li> */}
                         </ul>
                         <div className={`${styles.buttons} d-flex gap-2`}>
                             <button onClick={() => navigate('/interaction')} className={`${styles.search}`}>
