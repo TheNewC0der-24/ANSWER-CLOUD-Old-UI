@@ -87,13 +87,13 @@ const Form = () => {
       </style>
       {add.slice(0, 1).map((item) => (
                   <>
-                    {`{item.created}` > 3} ? (
+                    {`${item.createdby}` < 3 ? (
                       ""
                     ) : (
                       <div className="alert alert-danger" role="alert">
                         Interaction Form is restricted
                       </div>
-                    )
+                    )}
                   </>
                 ))}
       <div className="container">
@@ -123,7 +123,7 @@ const Form = () => {
                 <div className="mb-3">
                   {add.slice(0, 1).map((item) => (
                     <>
-                      {`{item.created}` > 3} ? (
+                      {`${item.createdby}` <3 ? (
                       <input
                         type="text"
                         className="form-control"
@@ -137,7 +137,7 @@ const Form = () => {
                         placeholder="What is your name ?"
                         disabled
                       />
-                      )
+                      )}
                     </>
                   ))}
                   {/* <input
@@ -150,7 +150,7 @@ const Form = () => {
                 <div className="mb-3">
                   {add.slice(0, 1).map((item) => (
                     <>
-                      {`{item.created}` > 3} ? (
+                      {`${item.createdby}` < 3 ? (
                       <input
                         type="email"
                         className="form-control"
@@ -164,7 +164,7 @@ const Form = () => {
                         placeholder="What is your email ?"
                         disabled
                       />
-                      )
+                      )}
                     </>
                   ))}
                   {/* <input
@@ -177,7 +177,7 @@ const Form = () => {
                 <div className="mb-3">
                   {add.slice(0, 1).map((item) => (
                     <>
-                      {`{item.created}` > 3} ? (
+                      {`${item.createdby}` < 3 ? (
                       <input
                         type="number"
                         className="form-control"
@@ -191,7 +191,7 @@ const Form = () => {
                         placeholder="Enter Phone Number"
                         disabled
                       />
-                      )
+                      )}
                     </>
                   ))}
                   {/* <input
@@ -204,7 +204,7 @@ const Form = () => {
                 <div className="mb-3">
                   {add.slice(0, 1).map((item) => (
                     <>
-                      {`{item.created}` > 3} ? (
+                      {`${item.createdby}` < 3 ? (
                       <input
                         type="number"
                         className="form-control"
@@ -218,7 +218,7 @@ const Form = () => {
                         placeholder="Please enter your access code"
                         disabled
                       />
-                      )
+                      )}
                     </>
                   ))}
                   {/* <input
@@ -230,7 +230,7 @@ const Form = () => {
                 </div>
                 {add.slice(0, 1).map((item) => (
                   <>
-                    {`{item.created}` > 3} ? (
+                    {`${item.createdby}` < 3 ? (
                     <button
                       onClick={handleDisplay}
                       className="btn btn-dark button mb-2"
@@ -244,7 +244,7 @@ const Form = () => {
                     >
                       Validate To Start
                     </button>
-                    )
+                    )}
                   </>
                 ))}
                 {/* <button
