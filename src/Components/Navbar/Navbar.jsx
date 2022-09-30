@@ -5,7 +5,7 @@ import styles from './Navbar.module.css';
 import { FaBars, FaSearch, FaTimes } from 'react-icons/fa';
 
 import brand from "../../assets/Images/brand.png";
-
+import { useLocation } from 'react-router-dom';
 const Navbar = () => {
 
     const navigate = useNavigate();
@@ -15,7 +15,11 @@ const Navbar = () => {
     const handleClick = () => {
         setToggle(!toggle);
     }
-
+const withoutnavigationbar=["/interaction","/form","/welcome","/work","/recording","/confirm","/start","/question","/audiorecording","/mcq","/thanks"];
+const {pathname} =useLocation();
+if(withoutnavigationbar.some((item)=>pathname.includes(item))){
+    return null;
+}
     return (
         <>
             <style jsx='true'>
