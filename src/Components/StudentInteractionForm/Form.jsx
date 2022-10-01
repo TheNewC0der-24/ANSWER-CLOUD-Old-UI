@@ -55,13 +55,12 @@ const Forms = () => {
   const validateAccessCode = (value) => {
     setAccessCode(value)
     let error;
-    // if (!value) {
-    //   error = "*This field is Required";
-    // }
-    {
+    if (!value) {
+      error = "*This field is Required";
+    } else {
       add.slice(0, 1).map((item) => (
         <>
-          {!(`${item.createdby}` == value) && (
+          {!(`${item.createdby}` === value) && (
             error = "*Access Code doesn't match."
           )}
         </>
@@ -77,43 +76,6 @@ const Forms = () => {
       setAdd(res.data.results);
     });
   });
-  // const [seconds, setSeconds] = useState(0);
-  // const [minutes, setMinutes] = useState(1);
-  // const [displays, setDisplays] = useState({ display: "none" });
-  // const [opacity, setOpacity] = useState({ opacity: '1' })
-
-  // var timer;
-
-  // useEffect(() => {
-  //   timer = setInterval(() => {
-  //     setSeconds(seconds - 1);
-
-  //     if (seconds === 0) {
-  //       setMinutes(minutes - 1);
-  //       setSeconds(59);
-  //     }
-
-  //     if (seconds === 0 && minutes === 0) {
-  //       setMinutes(0);
-  //       setSeconds(0);
-  //       setDisplays({
-  //         display: "block",
-  //         position: "absolute",
-  //         top: "40%",
-  //         left: "30%",
-  //         right: '30%',
-  //         zIndex: '1',
-  //       });
-  //       setOpacity({
-  //         opacity: '0.3'
-  //       })
-  //       setInterval(() => {
-  //         navigate('/');
-  //       }, 2000);
-  //     }
-  //   }, 1000);
-  //   return () => clearInterval(timer);
-  // });
 
   const handleSubmit = () => {
     // e.preventDefault();
