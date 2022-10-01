@@ -27,8 +27,6 @@ const Profile = () => {
   };
 
   const initialValues = {
-    firstname: "",
-    lastname: "",
     email: "",
     phone: "",
     cname: "",
@@ -37,22 +35,6 @@ const Profile = () => {
     facebook: "",
     twitter: "",
     instagram: "",
-  };
-
-  const validateFirstName = (value) => {
-    let error;
-    if (!value) {
-      error = "*This field is required";
-    }
-    return error;
-  };
-
-  const validateLastName = (value) => {
-    let error;
-    if (!value) {
-      error = "*This field is required";
-    }
-    return error;
   };
 
   const validateEmail = (value) => {
@@ -175,42 +157,24 @@ const Profile = () => {
                       <div className="row">
                         <div className="col-md-6">
                           <div className="mb-3">
-                            <Field
+                            <input
                               type="text"
-                              className={`form-control ${errors.firstname && touched.firstname
-                                  ? "border-danger"
-                                  : ""
-                                }`}
+                              className='form-control'
                               id="fName"
                               name="firstname"
                               placeholder="First Name"
-                              validate={validateFirstName}
                             />
-                            {errors.firstname && touched.firstname && (
-                              <div className="form-text text-danger">
-                                {errors.firstname}
-                              </div>
-                            )}
                           </div>
                         </div>
                         <div className="col-md-6">
                           <div className="mb-3">
-                            <Field
+                            <input
                               type="text"
-                              className={`form-control ${errors.lastname && touched.lastname
-                                  ? "border-danger"
-                                  : ""
-                                }`}
+                              className="form-control"
                               id="lName"
                               name="lastname"
                               placeholder="Last Name"
-                              validate={validateLastName}
                             />
-                            {errors.lastname && touched.lastname && (
-                              <div className="form-text text-danger">
-                                {errors.lastname}
-                              </div>
-                            )}
                           </div>
                         </div>
                       </div>
@@ -220,8 +184,8 @@ const Profile = () => {
                             <Field
                               type="email"
                               className={`form-control ${errors.email && touched.email
-                                  ? "border-danger"
-                                  : ""
+                                ? "border-danger"
+                                : ""
                                 }`}
                               id="emailAddress"
                               name="email"
@@ -240,8 +204,8 @@ const Profile = () => {
                             <Field
                               type="number"
                               className={`form-control ${errors.phone && touched.phone
-                                  ? "border-danger"
-                                  : ""
+                                ? "border-danger"
+                                : ""
                                 }`}
                               id="contactNumber"
                               name="phone"
@@ -262,8 +226,8 @@ const Profile = () => {
                             <Field
                               type="text"
                               className={`form-control ${errors.cname && touched.cname
-                                  ? "border-danger"
-                                  : ""
+                                ? "border-danger"
+                                : ""
                                 }`}
                               id="companyName"
                               name="cname"
@@ -281,8 +245,8 @@ const Profile = () => {
                           <div className="mb-3">
                             <Field as="select"
                               className={`form-select ${errors.country && touched.country
-                                  ? "border-danger"
-                                  : ""
+                                ? "border-danger"
+                                : ""
                                 }`}
                               aria-label="Default select example"
                               name="country"
@@ -311,8 +275,8 @@ const Profile = () => {
                               <Field
                                 type="text"
                                 className={`form-control ${errors.linkedin && touched.linkedin
-                                    ? "border-danger"
-                                    : ""
+                                  ? "border-danger"
+                                  : ""
                                   }`}
                                 id="linkedin"
                                 name="linkedin"
@@ -331,8 +295,8 @@ const Profile = () => {
                               <Field
                                 type="text"
                                 className={`form-control ${errors.facebook && touched.facebook
-                                    ? "border-danger"
-                                    : ""
+                                  ? "border-danger"
+                                  : ""
                                   }`}
                                 id="facebook"
                                 placeholder="Facebook"
@@ -353,8 +317,8 @@ const Profile = () => {
                               <Field
                                 type="text"
                                 className={`form-control ${errors.twitter && touched.twitter
-                                    ? "border-danger"
-                                    : ""
+                                  ? "border-danger"
+                                  : ""
                                   }`}
                                 id="twitter"
                                 name="twitter"
@@ -373,8 +337,8 @@ const Profile = () => {
                               <Field
                                 type="text"
                                 className={`form-control ${errors.instagram && touched.instagram
-                                    ? "border-danger"
-                                    : ""
+                                  ? "border-danger"
+                                  : ""
                                   }`}
                                 id="instagram"
                                 name="instagram"
