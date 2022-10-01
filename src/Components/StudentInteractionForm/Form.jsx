@@ -8,6 +8,9 @@ const Form = () => {
   const navigate = useNavigate();
   // const [data, setData] = useState([]);
   const [add, setAdd] = useState([]);
+  const [name, setName] = useState([]);
+  const [email, setEmail] = useState([]);
+  const [accessCode, setAccessCode] = useState([]);
 
   useEffect(() => {
     axios.get("response.json").then((res) => {
@@ -57,6 +60,9 @@ const Form = () => {
   const handleDisplay = (e) => {
     e.preventDefault();
     setDisplay(!display);
+    localStorage.setItem('Name', name);
+    localStorage.setItem('Email', email);
+    localStorage.setItem('AccessCode', accessCode);
   };
 
   const handleStartTest = (e) => {
@@ -128,6 +134,8 @@ const Form = () => {
                         type="text"
                         className="form-control"
                         id="name"
+                        value={name}
+                        onChange={(e)=> setName(e.target.value)}
                         placeholder="What is your name ?"
                       /> ) : (
                       <input
@@ -155,6 +163,8 @@ const Form = () => {
                         type="email"
                         className="form-control"
                         id="email"
+                        value={email}
+                        onChange={(e)=> setEmail(e.target.value)}
                         placeholder="What is your email ?"
                       /> ) : (
                       <input
@@ -209,6 +219,8 @@ const Form = () => {
                         type="number"
                         className="form-control"
                         id="accessCode"
+                        value={accessCode}
+                        onChange={(e)=> setAccessCode(e.target.value)}
                         placeholder="Please enter your access code"
                       /> ) : (
                       <input

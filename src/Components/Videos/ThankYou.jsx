@@ -173,7 +173,7 @@ function ThankYou() {
                         <div className="card border-0 shadow mb-3">
                             <div ref={componentref}>
                                 <div className={`${styles.cardHeader} card-header bg-dark text-white text-center`}>
-                                    <h5 className="card-title">Congratulations {item.who_can_initiate}, you are a {type}</h5>
+                                    <h5 className="card-title">Congratulations {localStorage.getItem('Name')}, you are a {type}</h5>
                                 </div>
                                 <div className="row g-0">
                                     <div className="col-md-4 m-auto bg-white">
