@@ -5,7 +5,7 @@ import styles from './Navbar.module.css';
 import { FaBars, FaSearch, FaTimes } from 'react-icons/fa';
 
 import brand from "../../assets/Images/brand.png";
-
+import { useLocation } from 'react-router-dom';
 const Navbar = () => {
 
     const navigate = useNavigate();
@@ -15,7 +15,11 @@ const Navbar = () => {
     const handleClick = () => {
         setToggle(!toggle);
     }
-
+    const withoutnavigationbar = ["/form", "/welcome", "/work", "/recording", "/confirm", "/start", "/question", "/audiorecording", "/mcq", "/thanks"];
+    const { pathname } = useLocation();
+    if (withoutnavigationbar.some((item) => pathname.includes(item))) {
+        return null;
+    }
     return (
         <>
             <style jsx='true'>
@@ -52,11 +56,8 @@ const Navbar = () => {
                                 <NavLink onClick={handleClick} className={`${styles.navLink} nav-link`} aria-current="page" to="/internalbot">Internal Bots</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink onClick={handleClick} className={`${styles.navLink} nav-link disabled`} to="/externalbot">External Bots</NavLink>
+                                <NavLink onClick={handleClick} className={`${styles.navLink} nav-link`} to="/externalbot">External Bots</NavLink>
                             </li>
-                            {/* <li className="nav-item">
-                                <NavLink onClick={handleClick} className={`${styles.navLink} nav-link`} to="/experience">Create Experience</NavLink>
-                            </li> */}
                         </ul>
                         <div className={`${styles.buttons} d-flex gap-2`}>
                             <button onClick={() => navigate('/interaction')} className={`${styles.search}`}>
