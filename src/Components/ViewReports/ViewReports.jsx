@@ -1,17 +1,8 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import styles from './ViewReports.module.css';
-
 import { Link } from 'react-router-dom';
 
-import { FaDownload } from "react-icons/fa";
-
-import ReactToPrint from "react-to-print";
-
-import Report from '../Report/Report';
-
 const ViewReports = () => {
-    const reportRef = useRef();
-
     return (
         <>
             <style jsx="true">
@@ -64,16 +55,11 @@ const ViewReports = () => {
                                     </Link>
                                 </td>
                                 <td>
-                                    <ReactToPrint
-                                        trigger={() => {
-                                            return (
-                                                <button className="btn btn-dark button">Download Report<FaDownload className="ms-2" /></button>
-                                            );
-                                        }}
-                                        content={() => reportRef.current}
-                                        documentTitle="aCLOUD"
-                                        pageStyle='{margin:5px}'
-                                    />
+                                <Link to="/report" target="_blank">
+                                        <button className='btn btn-dark button'>
+                                            View Report
+                                        </button>
+                                    </Link>
                                 </td>
                                 <td>
                                     <Link to="/certificate" target="_blank">
@@ -128,9 +114,6 @@ const ViewReports = () => {
                         </tbody>
                     </table>
                 </div>
-            </div>
-            <div ref={reportRef}>
-                <Report />
             </div>
         </>
     )
