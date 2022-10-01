@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styles from './ViewReports.module.css';
 
 import { Link } from 'react-router-dom';
 
+import { FaDownload } from "react-icons/fa";
+
+import ReactToPrint from "react-to-print";
+
+import Report from '../Report/Report';
+
 const ViewReports = () => {
+    const reportRef = useRef();
+
     return (
         <>
             <style jsx="true">
@@ -56,11 +64,21 @@ const ViewReports = () => {
                                     </Link>
                                 </td>
                                 <td>
-                                    <Link to="/report" target="_blank">
+                                    <ReactToPrint
+                                        trigger={() => {
+                                            return (
+                                                <button className="btn btn-dark">Download Report<FaDownload className="ms-2" /></button>
+                                            );
+                                        }}
+                                        content={() => reportRef.current}
+                                        documentTitle="aCLOUD"
+                                        pageStyle='{margin:5px}'
+                                    />
+                                    {/* <Link to="/report" target="_blank">
                                         <button className='btn btn-dark button'>
                                             View Report
                                         </button>
-                                    </Link>
+                                    </Link> */}
                                 </td>
                                 <td>
                                     <Link to="/certificate" target="_blank">
@@ -153,6 +171,9 @@ const ViewReports = () => {
                         </table>
                     </div> */}
                 </div>
+            </div>
+            <div ref={reportRef}>
+                <Report />
             </div>
         </>
     )
