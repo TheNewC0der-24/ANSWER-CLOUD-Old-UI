@@ -7,7 +7,7 @@ import 'react-voice-recorder/dist/index.css'
 
 const AudioRecording = () => {
   const navigate = useNavigate();
-
+const [audionotrecorded,setAudioNotRecorded] = useState(true);
   const [active, setActive] = useState(false);
 
   const [state, setState] = useState({
@@ -136,7 +136,7 @@ const AudioRecording = () => {
               </div>
               <div className='d-flex flex-wrap gap-2'>
                 <button className="btn btn-outline-secondary">Back</button>
-                <button onClick={handleNext} className='btn btn-dark'>Next</button>
+                <button onClick={handleNext} className='btn btn-dark' disabled={audionotrecorded}>Next</button>
               </div>
             </div>
           </div>
@@ -172,7 +172,8 @@ const AudioRecording = () => {
                         clearButtonDisabled={true}
                         audioURL={state.audioDetails.url}
                         showUIAudio
-                        handleAudioStop={data => handleAudioStop(data)}
+                        handleAudioStop={(data) =>{ handleAudioStop(data);
+                        setAudioNotRecorded(false)}}
                         handleCountDown={data => handleCountDown(data)}
                         handleReset={() => handleReset()}
                         mimeTypeToUseWhenRecording={`audio/webm`}
