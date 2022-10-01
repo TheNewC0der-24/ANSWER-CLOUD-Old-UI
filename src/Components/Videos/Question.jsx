@@ -20,6 +20,7 @@ const VideoPreview = ({ stream }) => {
 
 const Question = () => {
   const [isActive, setIsActive] = useState(false);
+  const [videonotcaptured,setVideoNotCaptured] = useState(true);
 
   const [time, setTime] = useState({ s: 0, m: 2 });
   const [interv, setInterv] = useState();
@@ -59,6 +60,7 @@ const Question = () => {
   const handleStopRecording = () => {
     stopRecording();
     setIsActive(isActive);
+    setVideoNotCaptured(false);
     pauseRecording();
     clearInterval(interv);
     document.getElementById("instruction").innerHTML = "Saved";
@@ -97,7 +99,7 @@ const Question = () => {
                 <button onClick={handleStartRecording} className={`${isActive ? "btn-warning" : "btn-success"} btn `}>{isActive ? "Pause" : "Answer"}</button>
                 {
                   isActive && (
-                    <button onClick={handleStopRecording} className="btn btn-danger">Save Answer</button>
+                    <button onClick={handleStopRecording} className="btn btn-danger" >Save Answer</button>
 
                   )
                 }
@@ -105,7 +107,7 @@ const Question = () => {
               </div>
               <div className='d-flex flex-wrap gap-2'>
                 <button className="btn btn-outline-secondary">Back</button>
-                <button onClick={handleNext} className='btn btn-dark'>Next</button>
+                <button onClick={handleNext} className='btn btn-dark' disabled={videonotcaptured}>Next</button>
               </div>
             </div>
           </div>

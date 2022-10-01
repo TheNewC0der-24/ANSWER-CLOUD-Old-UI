@@ -24,7 +24,7 @@ const ContentRatings = () => {
           },
           {
             x: "Q2",
-            y: 70,
+            y: 94,
             goals: [
               {
                 name: "Target Score",
@@ -48,7 +48,7 @@ const ContentRatings = () => {
           },
           {
             x: "Q4",
-            y: 60,
+            y: 80,
             goals: [
               {
                 name: "Target Score",
@@ -60,7 +60,7 @@ const ContentRatings = () => {
           },
           {
             x: "Q5",
-            y: 90,
+            y: 0,
             goals: [
               {
                 name: "Target Score",
@@ -72,7 +72,7 @@ const ContentRatings = () => {
           },
           {
             x: "Q6",
-            y: 30,
+            y: 0,
             goals: [
               {
                 name: "Target Score",
@@ -84,7 +84,7 @@ const ContentRatings = () => {
           },
           {
             x: "Q7",
-            y: 47,
+            y: 0,
             goals: [
               {
                 name: "Target Score",
@@ -96,7 +96,7 @@ const ContentRatings = () => {
           },
           {
             x: "Q8",
-            y: 85,
+            y: 0,
             goals: [
               {
                 name: "Target Score",
@@ -108,7 +108,7 @@ const ContentRatings = () => {
           },
           {
             x: "Q9",
-            y: 91,
+            y: 0,
             goals: [
               {
                 name: "Target Score",
@@ -120,7 +120,7 @@ const ContentRatings = () => {
           },
           {
             x: "Q10",
-            y: 15,
+            y: 0,
             goals: [
               {
                 name: "Target Score",
