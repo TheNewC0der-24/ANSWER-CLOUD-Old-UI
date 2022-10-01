@@ -408,7 +408,7 @@ const Create = () => {
                                                             </label>
                                                             {
                                                                 name &&
-                                                                <Field type="text" className="form-control mt-2 mb-3" id="mentorname" placeholder='Mentor Name' />
+                                                                <input type="text" className="form-control mt-2 mb-3" id="mentorname" placeholder='Mentor Name' />
                                                             }
                                                         </div>
                                                     </div>
