@@ -132,44 +132,6 @@ const ViewReports = () => {
                             </tr>
                         </tbody>
                     </table>
-
-                    {/* <div className="col-lg-6">
-                        <table className="table table-bordered text-center">
-                            <thead>
-                                <tr className='table-secondary'>
-                                    <th className='text-center' colspan="4">Monthly Leaderboard	</th>
-                                </tr>
-                            </thead>
-                            <thead>
-                                <tr>
-                                    <th scope="col">Month</th>
-                                    <th scope="col">Report</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Date</td>
-                                    <td>
-                                        <Link to="/leaderboardReport" target="_blank">
-                                            <button className='btn btn-dark button'>
-                                                View Report
-                                            </button>
-                                        </Link>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Date</td>
-                                    <td>
-                                        <Link to="/leaderboardReport" target="_blank">
-                                            <button className='btn btn-dark button'>
-                                                View Report
-                                            </button>
-                                        </Link>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div> */}
                 </div>
             </div>
             <div ref={reportRef}>
