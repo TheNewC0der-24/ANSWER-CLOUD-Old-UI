@@ -24,7 +24,7 @@ const ContentRatings = () => {
           },
           {
             x: "Q2",
-            y: 70,
+            y: 94,
             goals: [
               {
                 name: "Target Score",
@@ -48,7 +48,7 @@ const ContentRatings = () => {
           },
           {
             x: "Q4",
-            y: 60,
+            y: 80,
             goals: [
               {
                 name: "Target Score",

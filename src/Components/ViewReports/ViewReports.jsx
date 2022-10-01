@@ -67,18 +67,13 @@ const ViewReports = () => {
                                     <ReactToPrint
                                         trigger={() => {
                                             return (
-                                                <button className="btn btn-dark">Download Report<FaDownload className="ms-2" /></button>
+                                                <button className="btn btn-dark button">Download Report<FaDownload className="ms-2" /></button>
                                             );
                                         }}
                                         content={() => reportRef.current}
                                         documentTitle="aCLOUD"
                                         pageStyle='{margin:5px}'
                                     />
-                                    {/* <Link to="/report" target="_blank">
-                                        <button className='btn btn-dark button'>
-                                            View Report
-                                        </button>
-                                    </Link> */}
                                 </td>
                                 <td>
                                     <Link to="/certificate" target="_blank">
