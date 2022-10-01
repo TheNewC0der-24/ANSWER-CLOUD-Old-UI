@@ -55,15 +55,14 @@ const Forms = () => {
   const validateAccessCode = (value) => {
     setAccessCode(value)
     let error;
-    // if (!value) {
-    //   error = "*This field is Required";
-    // }
-    {
+    if (!value) {
+      error = "*This field is Required";
+    } else {
       add.slice(0, 1).map((item) => (
         <>
-          {!(`${item.createdby}` == value) && (
-                error = "*Access Code doesn't match."
-            )}
+          {!(`${item.createdby}` === value) && (
+            error = "*Access Code doesn't match."
+          )}
         </>
       ))
     }
@@ -77,43 +76,6 @@ const Forms = () => {
       setAdd(res.data.results);
     });
   });
-  // const [seconds, setSeconds] = useState(0);
-  // const [minutes, setMinutes] = useState(1);
-  // const [displays, setDisplays] = useState({ display: "none" });
-  // const [opacity, setOpacity] = useState({ opacity: '1' })
-
-  // var timer;
-
-  // useEffect(() => {
-  //   timer = setInterval(() => {
-  //     setSeconds(seconds - 1);
-
-  //     if (seconds === 0) {
-  //       setMinutes(minutes - 1);
-  //       setSeconds(59);
-  //     }
-
-  //     if (seconds === 0 && minutes === 0) {
-  //       setMinutes(0);
-  //       setSeconds(0);
-  //       setDisplays({
-  //         display: "block",
-  //         position: "absolute",
-  //         top: "40%",
-  //         left: "30%",
-  //         right: '30%',
-  //         zIndex: '1',
-  //       });
-  //       setOpacity({
-  //         opacity: '0.3'
-  //       })
-  //       setInterval(() => {
-  //         navigate('/');
-  //       }, 2000);
-  //     }
-  //   }, 1000);
-  //   return () => clearInterval(timer);
-  // });
 
   const handleSubmit = () => {
     // e.preventDefault();
@@ -131,18 +93,6 @@ const Forms = () => {
 
   return (
     <>
-      {/* <div style={displays}>
-        <div className="d-grid col-md-5 mx-auto">
-          <div className="card border-dark bg-dark">
-            <div className="card-body">
-              <BiError className="bg-white d-flex justify-content-center mx-auto rounded-circle p-2 fs-1 fw-bold" />
-              <p className="card-text text-center mt-3">Your time has been expired !!</p>
-              <p className="card-text text-center mt-3">You may re-attempt the test.</p>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
       <style jsx="true">
         {`
           .button {
@@ -177,12 +127,6 @@ const Forms = () => {
                 explicabo modi nemo ab inventore minus in quidem nobis illo.
                 Quos?
               </p>
-              {/* <label className="form-label fw-bold">Instruction :</label>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Asperiores suscipit consequatur dolores molestias voluptas
-                quaerat voluptatem sunt esse praesentium corporis.
-              </p> */}
               <hr />
               <Formik
                 initialValues={initialValues}
@@ -223,12 +167,6 @@ const Forms = () => {
                           {errors.name}
                         </div>
                       )}
-                      {/* <Field
-                    type="text"
-                    className="form-control"
-                    id="name"
-                    placeholder="What is your name ?"
-                  /> */}
                     </div>
                     <div className="mb-3">
                       {add.slice(0, 1).map((item) => (
@@ -262,12 +200,6 @@ const Forms = () => {
                           {errors.email}
                         </div>
                       )}
-                      {/* <Field
-                    type="email"
-                    className="form-control"
-                    id="email"
-                    placeholder="What is your email ?"
-                  /> */}
                     </div>
                     <div className="mb-3">
                       {add.slice(0, 1).map((item) => (
@@ -299,12 +231,6 @@ const Forms = () => {
                           {errors.phone}
                         </div>
                       )}
-                      {/* <Field
-                    type="number"
-                    className="form-control"
-                    id="contactNumber"
-                    placeholder="Enter Phone Number"
-                  /> */}
                     </div>
                     <div className="mb-3">
                       {add.slice(0, 1).map((item) => (
@@ -338,23 +264,6 @@ const Forms = () => {
                           {errors.accesscode}
                         </div>
                       )}
-                      {/* {
-                        add.slice(0, 1).map((item) => (
-                          <>
-                            {!(`${item.createdby}` == `${access}`) && (
-                                <div className="form-text text-danger">
-                                  *Access Code doesn't match.
-                                </div>
-                              )}
-                          </>
-                        ))
-                      } */}
-                      {/* <Field
-                    type="number"
-                    className="form-control"
-                    id="accessCode"
-                    placeholder="Please enter your access code"
-                  /> */}
                     </div>
                     {add.slice(0, 1).map((item) => (
                       <>
@@ -376,12 +285,6 @@ const Forms = () => {
                         )}
                       </>
                     ))}
-                    {/* <button
-                  onClick={handleDisplay}
-                  className="btn btn-dark button mb-2"
-                >
-                  Validate To Start
-                </button> */}
                     <hr style={{ color: "#000", borderTop: "2px solid", opacity: "1" }} />
                     <div className={`${display ? "" : "d-none"}`}>
                       <ul className="list-group">
