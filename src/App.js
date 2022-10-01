@@ -9,7 +9,7 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import Interaction from './Components/Interaction/Interaction';
 import ForgetPassword from './Components/ForgetPassword/ForgetPassword';
 import Report from './Components/Report/Report';
-import Form from './Components/StudentInteractionForm/Form';
+import Forms from './Components/StudentInteractionForm/Form';
 import Login from './Components/Login/Login';
 import SignUp from './Components/SignUp/SignUp';
 import ViewReports from './Components/ViewReports/ViewReports';
@@ -46,7 +46,7 @@ function App() {
           <Route exact path="/report" element={<Report />} />
           <Route exact path='/login' element={<Login />} />
           <Route exact path='/resetPassword' element={<ForgetPassword />} />
-          <Route exact path='/form' element={<Form />} />
+          <Route exact path='/form' element={<Forms />} />
           <Route exact path='/register' element={<SignUp />} />
           <Route exact path='/viewReport' element={<ViewReports />} />
           <Route exact path='/certificate' element={<Certificate />} />
