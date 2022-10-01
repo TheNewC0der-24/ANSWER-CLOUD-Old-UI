@@ -120,6 +120,7 @@ function ThankYou() {
             setData(res.data.results);
             // setAdd(res.data.results);
         });
+        // eslint-disable-next-line
     }, arr, picture, personality);
 
     var updatedS = time.s, updatedM = time.m;
