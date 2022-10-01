@@ -11,50 +11,50 @@ const Interpretation = () => {
           </span>
         </h1>
         <div className={styles.para}>
-          <div className={styles.main}>
-            <div className={styles.col1}>
-              <ul type="square">
-                <li>
-                  <p align="justify">
-                    While there are several factors that go into calculations of
-                    these overall ratings - they are described in the{" "}
-                    <strong>Power Skills</strong> section.
-                  </p>
-                </li>
-                <li>
-                  <p align="justify">
-                    The factors that we have NOT considered for ratings are
-                    described in the <strong>General Parameters</strong> section
-                    below. While we have used it as a factor in calculating
-                    other power skills, they do not have sufficient rigor to be
-                    used on a standalone basis. These are also not considered in
-                    the overall cohort calculations.
-                  </p>
-                </li>
-              </ul>
-            </div>
-            <div className={styles.col2}>
-              <ul type="square">
-                <li>
-                  <p align="justify">
-                    The <strong>Interaction snapshot</strong> section shows a
-                    summary of the power skills, their individual ratings and
-                    consolidated cohort ratings of the candidate.
-                  </p>
-                </li>
-                <li>
-                  <p align="justify">
-                    The <strong>Content Ratings</strong> section in the report
-                    analyzes the level of the accuracy of the content in the
-                    responses of the aspirants.This is determined by comparing
-                    the answer with the industry standard answers and context.
-                  </p>
-                </li>
-              </ul>
-            </div>
-          </div>
+          {/* <div className={styles.main}>
+            <div className={styles.col1}> */}
+          <ul type="square">
+            <li>
+              <p align="justify" className="my-5">
+                While there are several factors that go into calculations of
+                these overall ratings - they are described in the{" "}
+                <strong>Power Skills</strong> section.
+              </p>
+            </li>
+            <li>
+              <p align="justify" className="my-5">
+                The factors that we have NOT considered for ratings are
+                described in the <strong>General Parameters</strong> section
+                below. While we have used it as a factor in calculating
+                other power skills, they do not have sufficient rigor to be
+                used on a standalone basis. These are also not considered in
+                the overall cohort calculations.
+              </p>
+            </li>
+          </ul>
+          {/* </div> */}
+          {/* <div className={styles.col2}> */}
+          <ul type="square">
+            <li>
+              <p align="justify" className="my-5">
+                The <strong>Interaction snapshot</strong> section shows a
+                summary of the power skills, their individual ratings and
+                consolidated cohort ratings of the candidate.
+              </p>
+            </li>
+            <li>
+              <p align="justify" className="my-5">
+                The <strong>Content Ratings</strong> section in the report
+                analyzes the level of the accuracy of the content in the
+                responses of the aspirants.This is determined by comparing
+                the answer with the industry standard answers and context.
+              </p>
+            </li>
+          </ul>
+          {/* </div>
+          </div> */}
         </div>
-        <div className="container">
+        <div className="container my-5">
           <div className="row" style={{ backgroundColor: '#414141' }}>
             <div className="col-3 d-flex justify-content-center align-items-center text-center text-white fs-2 p-2" style={{ border: '2px solid #414141' }}>Cohort Rating</div>
             <div className="col-6 d-flex justify-content-center align-items-center text-center text-white fs-2 p-2" style={{ border: '2px solid #414141' }}>Interpretation</div>

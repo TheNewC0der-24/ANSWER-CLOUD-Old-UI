@@ -13,7 +13,7 @@ const Logo = () => {
       <div className={`${styles.row} my-2 row`}>
         <h2 className="text-center my-3 text-decoration-underline">
           {/* job_title{" "} */}
-          Bank Sales Executive{" "}
+          New Graduate HR discussion{" "}
           <span
             className="me-1 fw-bold"
             style={{ fontFamily: "Brush Script MT", fontSize: "40px" }}
@@ -27,7 +27,7 @@ const Logo = () => {
             <div className="d-flex gap-2 text-center">
               <h2>
                 {/* Candidate : <span>candidate_id.name</span> */}
-                Candidate : <span>John Dayal</span>
+                Candidate : <span>Bhavya Khurana</span>
               </h2>
               <Link to="/response">
                 <button className="btn btn-dark btn-sm" >
