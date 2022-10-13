@@ -55,7 +55,7 @@ const ViewReports = () => {
                                     </Link>
                                 </td>
                                 <td>
-                                <Link to="/report" target="_blank">
+                                <Link to="/Summaryreport" target="_blank">
                                         <button className='btn btn-dark button'>
                                             View Report
                                         </button>
