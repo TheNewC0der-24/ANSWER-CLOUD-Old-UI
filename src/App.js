@@ -28,7 +28,7 @@ import Trouble from './Components/Videos/Trouble';
 import Mcq from './Components/MCQ/Mcq';
 import Thanks from './Components/Videos/ThankYou';
 import Responses from './Components/Responses/Responses';
-import Summaryreport from './Components/report_summary/Report/Report';
+import Summaryreport from './Components/report_summary/Report/Report'
 
 function App() {
 
