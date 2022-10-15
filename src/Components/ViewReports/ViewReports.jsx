@@ -33,7 +33,7 @@ const ViewReports = () => {
                     <table className="table table-bordered text-center">
                         <thead>
                             <tr className='table-secondary'>
-                                <th className='text-center' colspan="5">Individual Reports</th>
+                                <th className='text-center' colspan="6">Individual Reports</th>
                             </tr>
                         </thead>
                         <thead>
@@ -41,7 +41,8 @@ const ViewReports = () => {
                                 <th scope='col'>Candidate ID</th>
                                 <th scope='col'>Name</th>
                                 <th scope='col'>Interaction ID / Response</th>
-                                <th scope='col'>Individual Report</th>
+                                <th scope='col'>Detailed Report</th>
+                                <th scope='col'>Summary Report</th>
                                 <th scope='col'>Certificate</th>
                             </tr>
                         </thead>
@@ -56,6 +57,13 @@ const ViewReports = () => {
                                 </td>
                                 <td>
                                 <Link to="/report" target="_blank">
+                                        <button className='btn btn-dark button'>
+                                            View Report
+                                        </button>
+                                    </Link>
+                                </td>
+                                <td>
+                                <Link to="/Summaryreport" target="_blank">
                                         <button className='btn btn-dark button'>
                                             View Report
                                         </button>
@@ -85,6 +93,13 @@ const ViewReports = () => {
                                     </Link>
                                 </td>
                                 <td>
+                                    <Link to="/Summaryreport" target="_blank">
+                                        <button className='btn btn-dark button'>
+                                            View Report
+                                        </button>
+                                    </Link>
+                                </td>
+                                <td>
                                     <Link to="/certificate" target="_blank">
                                         <button className='btn btn-dark button'>
                                             View Certificate
@@ -95,9 +110,20 @@ const ViewReports = () => {
                             <tr>
                                 <td>64748</td>
                                 <td>Abc</td>
-                                <td>Abc</td>
+                                <td>
+                                    <Link to="/response" target="_blank">
+                                        <button className='btn btn-dark button'>654535</button>
+                                    </Link>
+                                </td>
                                 <td>
                                     <Link to="/report" target="_blank">
+                                        <button className='btn btn-dark button'>
+                                            View Report
+                                        </button>
+                                    </Link>
+                                </td>
+                                <td>
+                                    <Link to="/Summaryreport" target="_blank">
                                         <button className='btn btn-dark button'>
                                             View Report
                                         </button>

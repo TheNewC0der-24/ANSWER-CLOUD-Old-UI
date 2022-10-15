@@ -1,0 +1,153 @@
+import React, { useState } from 'react';
+import styles from './InteractionScorecard.module.css';
+
+import ReactApexChart from 'react-apexcharts';
+import { AiOutlineBarChart } from "react-icons/ai"
+
+import image from "../../../assets/Images/image.jpeg";
+import image1 from "../../../assets/Images/image1.jpeg";
+
+const InteractionScorecard = () => {
+
+    const [state, setState] = useState({
+        series: [{
+            name: 'Series 1',
+            data: [4, 1, 3, 4, 2],
+        }],
+        options: {
+            chart: {
+                type: 'radar',
+                width: '100%',
+                height: '100%',
+                toolbar: {
+                    show: false,
+                },
+            },
+            stroke: {
+                show: true,
+                dashArray: 0,
+                colors: ['#000'],
+            },
+            markers: {
+                colors: ['#000'],
+            },
+            fill: {
+                opacity: 0.5,
+                colors: ['#000'],
+            },
+            // dataLabels: {
+            //     enabled: true,
+            //     background: {
+            //         enabled: true,
+            //         borderRadius: 2,
+            //     },
+            //     style: {
+            //         colors: ['#ff6384']
+            //     }
+            // },
+            plotOptions: {
+                radar: {
+                    polygons: {
+                        strokeColor: '#000000',
+                        fill: {
+                            colors: ['#d5d5d5', '#fff']
+                        }
+                    }
+                }
+            },
+            xaxis: {
+                categories: ['Likeability & Trust', 'Confidence & Fluency', 'Energy & Adaptability', 'Communication skills', 'Clarity & Coherence'],
+                labels: {
+                    show: true,
+                    style: {
+                        colors: ['#6c757d', '#6c757d', '#6c757d', '#6c757d', '#6c757d', '#6c757d'],
+                        fontSize: '22px',
+                    }
+                },
+            },
+            yaxis: {
+                show: false,
+            },
+            responsive: [{
+                breakpoint: 500,
+                options: {
+                    chart: {
+                        width: '100%',
+                        height: '100%',
+                    }
+                },
+                xaxis: {
+                    labels: {
+                        style: {
+                            fontSize: '10px',
+                        }
+                    },
+                },
+            }]
+        },
+
+    });
+
+    return (
+        <>
+            <div className="container my-5">
+                <h1 className="my-3">
+                    <span className="badge" style={{ backgroundColor: "#414141", borderRadius: "0" }}> <span className="me-1 fw-bold" style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer scorecard</span>
+                </h1>
+                <div className={styles.para}>
+                    <p align="justify">
+                    Every human interaction demonstrates what human resources experts define as power skills. The attached spider chart demonstrates the traits that the Al models observe and calculate based on the conversation.
+
+                        {/* Every human interaction demonstrates what human resources experts define as power skills.
+                        The attached spider chart demonstrates these traits that the AI models observe in the conversation.
+                        Depending upon the particular context of the interaction we may or may not display certain traits.
+                        Personality is not permanent and the models are a mere reflection of how you may be perceived by the others in the
+                        particular interaction. This chart and report will help you to reflect deeply on your own performance. In overall
+                        cohort scores in the power-skill areas are summarized as below. <span>Please review the
+                            variable section below for more information</span> */}
+                    </p>
+                </div>
+                <img className="img-fluid my-5" src={image} alt="report" width="100%" />
+                <div className='my-5 d-grid col-md-12 mx-auto'>
+                    <div className="card border-0" style={{backgroundColor: "ecefc3"}}>
+                        <h3 className="card-header text-white" style={{ backgroundColor: "#414141", borderRadius: "0" }}>
+                            <AiOutlineBarChart className="me-2" />Answer Score Outline Chart
+                        </h3>
+                        <ul className={`${styles.main} mt-4`}>
+                            <div className={`${styles.col1} fs-4`}>
+                                {/* <li>Likeability and Trust : likeability_agregate</li> */}
+                                <li>Likeability and Trust : A</li>
+                                {/* <li>Clarity and Coherence : Clarity_aggregate</li> */}
+                                <li>Clarity and Coherence : C</li>
+                                {/* <li>Energy and Adaptability : energy_agreegate</li> */}
+                                <li>Energy and Adaptability : B</li>
+                            </div>
+                            <div className={`${styles.col2} fs-4`}>
+                                {/* <li>Communication skills: fluency_agreegate</li> */}
+                                <li>Communication skills: A</li>
+                                {/* <li>Confidence and Fluency: Confidence_agreegate</li> */}
+                                <li>Confidence and Fluency: D</li>
+                            </div>
+                        </ul>
+                        <hr style={{ border: "3px solid #000" }} />
+                        <div className='d-flex justify-content-center'>
+                            <ReactApexChart
+                                // eslint-disable-next-line
+                                setState={setState}
+                                options={state.options}
+                                series={state.series}
+                                type="radar"
+                                width={700}
+                                height={550}
+                                style={{ borderColor: "#000" }}
+                            />
+                        </div>
+                        <img className="img-fluid" src={image1} alt="report"style={{height:'250px'}} />
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+}
+
+export default InteractionScorecard;

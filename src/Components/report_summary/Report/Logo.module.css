@@ -1,0 +1,11 @@
+.row {
+  background-color: #fff;
+  border: 5px solid #414141;
+  height: 400px;
+}
+
+@media (max-width: 770px) {
+  .row {
+    flex-direction: column;
+  }
+}
