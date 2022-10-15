@@ -10,7 +10,7 @@ const FeedbackSnapshot = () => {
                         <span className="me-1 fw-bold" style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer ratings snapshot
                     </span>
                 </h1>
-                <h3 className="my-4"><span className="badge bg-success text-white" style={{ borderRadius: "0",textDecoration:'none' , }}><a href='https://www.google.com/' className='text-white' style={{textDecoration:'none'}} target={'_blank'}>Report Background</a></span></h3></div>
+                <h3 className="my-4"><span className="badge bg-success text-white" style={{ borderRadius: "0",textDecoration:'none' , }}><a href='https://www.google.com/' className='text-white' style={{textDecoration:'none'}} target='_blank'>Report Background</a></span></h3></div>
                 <p align="justify" className={styles.para}>Our models suggest an overall rating of{" "}
                     {/* “((Interaction_score))”,"((Interaction_ID))" for the */}
                     Our models suggest an overall rating of "B" for the candidate. Based on the responses, we also report rankings of the candidate across multiple power skill dimensions that are elaborated in the sections that follow.

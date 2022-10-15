@@ -4,6 +4,8 @@ import styles from './InteractionScorecard.module.css';
 import ReactApexChart from 'react-apexcharts';
 import { AiOutlineBarChart } from "react-icons/ai"
 
+import image from "../../../assets/Images/image.jpeg";
+import image1 from "../../../assets/Images/image1.jpeg";
 
 const InteractionScorecard = () => {
 
@@ -105,9 +107,9 @@ const InteractionScorecard = () => {
                             variable section below for more information</span> */}
                     </p>
                 </div>
-                     <img src='https://www.canva.com/design/DAFO7bs7dhU/1g_9nHIW90317ZmJnc-ccQ/edit?utm_content=DAFO7bs7dhU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton' style={{height:'450px',width:'1000px'}} className='my-5'></img>
+                <img className="img-fluid my-5" src={image} alt="report" width="100%" />
                 <div className='my-5 d-grid col-md-12 mx-auto'>
-                    <div className="card border-0">
+                    <div className="card border-0" style={{backgroundColor: "ecefc3"}}>
                         <h3 className="card-header text-white" style={{ backgroundColor: "#414141", borderRadius: "0" }}>
                             <AiOutlineBarChart className="me-2" />Answer Score Outline Chart
                         </h3>
@@ -140,7 +142,7 @@ const InteractionScorecard = () => {
                                 style={{ borderColor: "#000" }}
                             />
                         </div>
-                           <img src='https://www.canva.com/design/DAFO7Rd1gRo/U8GQtgyvgv73d0C5kB1MjQ/edit?utm_content=DAFO7Rd1gRo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton' style={{height:'250px'}}></img>
+                        <img className="img-fluid" src={image1} alt="report"style={{height:'250px'}} />
                     </div>
                 </div>
             </div>
