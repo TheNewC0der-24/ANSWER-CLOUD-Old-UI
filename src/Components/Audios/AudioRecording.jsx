@@ -5,10 +5,14 @@ import { Recorder } from 'react-voice-recorder'
 import 'react-voice-recorder/dist/index.css'
 // import { useReactMediaRecorder } from "react-media-recorder";
 
-const AudioRecording = () => {
+const AudioRecording = (props) => {
   const navigate = useNavigate();
-const [audionotrecorded,setAudioNotRecorded] = useState(true);
+  const [audionotrecorded, setAudioNotRecorded] = useState(true);
   const [active, setActive] = useState(false);
+
+  const [auto, setAuto] = useState(true);
+
+  //  ? setAuto(true) : setAuto(false);
 
   const [state, setState] = useState({
     audioDetails: {
@@ -121,14 +125,39 @@ const [audionotrecorded,setAudioNotRecorded] = useState(true);
     navigate('/mcq')
   }
 
+  const style = {
+    height: "300px",
+    width: "100%",
+    overflow: "auto",
+  };
+
   return (
     <>
       <div className="container my-4">
-        <div className="card border-0 shadow">
+        <div className={`${styles.card} card border-0 shadow`}>
           <div className="card-body">
-            <h3 className='mb-4'>1/4</h3>
-            <h5>What is Axios ?</h5>
-            <h6>Hint : react library</h6>
+            <h1 className='mb-4'>1/4</h1>
+            <hr />
+            {auto ? (
+              <div style={style}>
+                <h3 className='fw-normal'>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa saepe fugiat labore nostrum. Iste nisi, at hic veritatis sit omnis
+                  molestias deserunt fuga blanditiis iusto aperiam cum atque ad! Natus, inventore iusto! Maxime nihil architecto iste vitae, expedita
+                  error id laboriosam corrupti, placeat distinctio labore eum aspernatur rerum facere? Fuga in exercitationem, possimus odio tempore
+                  incidunt porro autem culpa cupiditate soluta dolores molestiae officia inventore aperiam quae ipsa quibusdam doloribus accusamus. Facere
+                  pariatur ducimus commodi similique repellat beatae maiores, velit numquam sunt accusantium voluptatem id eius assumenda quisquam magni
+                  modi. Laborum, sit cupiditate? Quia, a laborum culpa unde ab nostrum?
+                </h3>
+                <hr />
+                <h4 className='fw-normal'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit magnam ea minus quas id, distinctio nemo est voluptatem officia odit.</h4>
+                <h4 className='fw-normal'><em>Hint : react library</em></h4>
+              </div>
+            ) : (
+              <div>
+                <h4 className='fw-normal'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit magnam ea minus quas id, distinctio nemo est voluptatem officia odit.</h4>
+                <h4 className='fw-normal'><em>Hint : react library</em></h4>
+              </div>
+            )}
             <hr />
             <div className='d-flex justify-content-between'>
               <div className='d-flex flex-wrap gap-2'>
@@ -172,8 +201,10 @@ const [audionotrecorded,setAudioNotRecorded] = useState(true);
                         clearButtonDisabled={true}
                         audioURL={state.audioDetails.url}
                         showUIAudio
-                        handleAudioStop={(data) =>{ handleAudioStop(data);
-                        setAudioNotRecorded(false)}}
+                        handleAudioStop={(data) => {
+                          handleAudioStop(data);
+                          setAudioNotRecorded(false)
+                        }}
                         handleCountDown={data => handleCountDown(data)}
                         handleReset={() => handleReset()}
                         mimeTypeToUseWhenRecording={`audio/webm`}
