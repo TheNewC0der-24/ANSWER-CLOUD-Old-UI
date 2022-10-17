@@ -49,7 +49,6 @@ const Create = () => {
         emailOne: "",
         generalFeedback: "",
         description: "",
-        // track: "",
         timer: "",
         mode: ""
     }
@@ -256,7 +255,7 @@ const Create = () => {
                                                 <div className="mb-3">
                                                     <label className="form-label fw-bold">Track/Domain</label>
                                                     <Field as="select"
-                                                        className={`form-select ${errors.companyName && touched.companyName ? "border-danger" : ""}`}
+                                                        className={`form-select ${errors.track && touched.track ? "border-danger" : ""}`}
                                                         id='track'
                                                         name='track'
                                                         validate={validateTrack}
@@ -439,7 +438,7 @@ const Create = () => {
                                                 <div className="mb-3">
                                                     <label className="form-label fw-bold">Description</label>
                                                     <Field as="textarea"
-                                                        className={`form-control ${errors.companyName && touched.companyName ? "border-danger" : ""}`}
+                                                        className={`form-control ${errors.description && touched.description ? "border-danger" : ""}`}
                                                         rows="5"
                                                         placeholder='Your description'
                                                         id="description"
@@ -461,7 +460,7 @@ const Create = () => {
                                                         <label htmlFor="generalFeedback" className="form-label fw-bold">{count}/615</label>
                                                     </div>
                                                     <Field as="textarea"
-                                                        className={`form-control ${errors.companyName && touched.companyName ? "border-danger" : ""}`}
+                                                        className={`form-control ${errors.generalFeedback && touched.generalFeedback ? "border-danger" : ""}`}
                                                         minLength="400"
                                                         maxLength="615"
                                                         placeholder={`Example: Every human interaction is an opportunity to learn. Its also an opportunity to demonstrate your skills and expertise in a specific context and capacity.We view every professional interaction as a high-stakes game - whether you are likely to save money, generate revenue, make a process more efficient or improve your performance.These virtual interactions act as practice sessions where you can test drive real-world interactions.Experts in the world may differ on what skills matter – but they all have a common point of view.Practice is the key to improvement – and specific feedback makes improvement faster.`}
