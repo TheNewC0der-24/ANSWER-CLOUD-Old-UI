@@ -1,12 +1,12 @@
 import React, { useState } from "react";
+import styles from "./QuesAns.module.css";
 
 const Quesans = (props) => {
   const [noOfRows, setNoOfRows] = useState(1);
+  const [checked, setChecked] = useState(false);
 
-  const style = {
-    height: "200px",
-    width: "100%",
-    overflow: "auto",
+  const handleCheck = () => {
+    setChecked(!checked);
   };
 
   return (
@@ -25,7 +25,7 @@ const Quesans = (props) => {
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div className="modal-dialog">
+        <div className="modal-dialog modal-dialog-scrollable">
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalLabel">
@@ -40,7 +40,7 @@ const Quesans = (props) => {
               ></button>
             </div>
             <div className="modal-body">
-              <div style={style}>
+              <div className={styles.scroll}>
                 {props.value === "MCQ" && (
                   <table className="table">
                     <thead>
@@ -69,9 +69,6 @@ const Quesans = (props) => {
                         <th className="text-center" scope="col">
                           Right Option
                         </th>
-                        {/* <th className="text-center" scope="col">
-                          Ideal Answer:
-                        </th> */}
                       </tr>
                     </thead>
                     <tbody>
@@ -131,13 +128,6 @@ const Quesans = (props) => {
                                 <option value="Option 4">Option 4</option>
                               </select>
                             </td>
-                            {/* <td>
-                              <textarea
-                                className="form-control"
-                                id="idealAnswer"
-                                rows="1"
-                              ></textarea>
-                            </td> */}
                           </tr>
                         );
                       })}
@@ -170,20 +160,21 @@ const Quesans = (props) => {
                               <textarea
                                 className="form-control"
                                 id="question"
-                                rows="1"
+                                rows="2"
                               ></textarea>
                             </td>
                             <td>
-                              <input type="text" className="form-control" id="medialink" placeholder='Paste your link here' />
+                              <textarea rows="2" type="text" className="form-control" id="medialink" placeholder='Paste your link here' />
                             </td>
                             <td>
-                              <input type="text" className="form-control" id="hint" placeholder='Hints/Description' />
+                              <textarea rows="2" type="text" className="form-control" id="hint" placeholder='Hints/Description' />
                             </td>
                             <td>
                               <textarea
                                 className="form-control"
                                 id="idealAnswer"
-                                rows="1"
+                                placeholder="Ideal Answer..."
+                                rows="2"
                               ></textarea>
                             </td>
                           </tr>
@@ -211,6 +202,18 @@ const Quesans = (props) => {
                   Delete
                 </button>
               </div>
+              <hr />
+              <div className="form-check my-3">
+                <input onClick={handleCheck} className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                <label className="form-check-label" for="flexCheckDefault">
+                  Case-Study/Description Text :
+                </label>
+              </div>
+              {
+                checked && (
+                  <textarea className="form-control" onChange={(e) => e.target.value} id="caseStudy" rows="7"></textarea>
+                )
+              }
             </div>
             <div className="modal-footer">
               <div>
