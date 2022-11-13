@@ -7,7 +7,7 @@ const InteractionTranscript = () => {
       <div className="container my-5">
         <div className='d-flex justify-content-between my-5'>
           <h1>
-            <span className="badge" style={{ backgroundColor: "#414141", borderRadius: "0" }}><span className='me-1 fw-bold' style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer cloud transcript</span>
+            <span className="badge" style={{ backgroundColor: "#414141", borderRadius: "0" }}><span className='me-1 fw-bold' style={{ fontFamily: 'Brush Script MT' }}>A</span>nswer cloud transcript and feedback</span>
           </h1>
           <h3><span className="badge bg-danger" style={{ borderRadius: "0" }}>Experimental</span></h3>
         </div>
@@ -23,6 +23,9 @@ const InteractionTranscript = () => {
             realized I'm excited to take on a new opportunity. I've learned I work best on products that I love and use, and
             given that I'm a big user of your company’s products, I jumped at the chance to apply when I saw the open posting.
           </div>
+          <div className={styles.paras}>
+            In this section, each question specific feedback will be provided. If you do not see the feedback here, this feature is still in development.
+          </div>
           <h1 className="my-5">Question#2 : What was your favorite subject in college ? How do you think it will help in your career ?</h1>
           <div className={styles.para}>
             My English courses are most interesting and beneficial to me. I love creative and nonfiction writing. Whether I am
@@ -30,6 +33,9 @@ const InteractionTranscript = () => {
             English classes have been extremely beneficial in my other coursework, and I have developed tremendously as a
             writer. I have even published poetry in my college’s literary magazine and served as an assistant editor of the
             magazine for the past two years.
+          </div>
+          <div className={styles.paras}>
+            In this section, each question specific feedback will be provided. If you do not see the feedback here, this feature is still in development.
           </div>
           <h1 className="my-5">Question#3 : Could you walk me through the most challenging projects so far in your life ?</h1>
           <div className={styles.para}>
@@ -40,10 +46,16 @@ const InteractionTranscript = () => {
             us to change the entire plan. It turned out that they were unhappy with our first concept and stated that it differed too
             much from the initial idea that they had in mind.
           </div>
+          <div className={styles.paras}>
+            In this section, each question specific feedback will be provided. If you do not see the feedback here, this feature is still in development.
+          </div>
           <h1 className="my-5">Question#4 : Do you have any questions for me ?</h1>
           <div className={styles.para}>
             Thanks for giving me an opportunity to ask a question. As I am a Fresher and I am not familiar with this post. Can you
             just give me an idea for this post so I can prepare myself before joining the company?
+          </div>
+          <div className={styles.paras}>
+            In this section, each question specific feedback will be provided. If you do not see the feedback here, this feature is still in development.
           </div>
         </div>
       </div>
