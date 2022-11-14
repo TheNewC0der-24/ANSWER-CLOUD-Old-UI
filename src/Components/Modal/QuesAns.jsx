@@ -9,16 +9,6 @@ const Quesans = (props) => {
     setChecked(!checked);
   };
 
-  // const Add = () => {
-  //   setNoOfRows(noOfRows + 1);
-  //   props.handleClick(noOfRows+1);
-  // };
-
-  // const Delete = () => {
-  //   setNoOfRows(noOfRows - 1);
-  //   props.handleClick(noOfRows-1);
-  // };
-
   return (
     <>
       <style jsx="true">
