@@ -9,6 +9,16 @@ const Quesans = (props) => {
     setChecked(!checked);
   };
 
+  // const Add = () => {
+  //   setNoOfRows(noOfRows + 1);
+  //   props.handleClick(noOfRows+1);
+  // };
+
+  // const Delete = () => {
+  //   setNoOfRows(noOfRows - 1);
+  //   props.handleClick(noOfRows-1);
+  // };
+
   return (
     <>
       <style jsx="true">
@@ -198,7 +208,7 @@ const Quesans = (props) => {
                   type="submit"
                   className="btn btn-danger button"
                   onClick={() => setNoOfRows(noOfRows - 1)}
-                >
+                  >
                   Delete
                 </button>
               </div>
@@ -225,7 +235,7 @@ const Quesans = (props) => {
                 >
                   Close
                 </button>
-                <button type="button" className="btn btn-dark mx-1">
+                <button type="button" onClick={() => props.handleClick(noOfRows)} className="btn btn-dark mx-1">
                   Save changes
                 </button>
               </div>

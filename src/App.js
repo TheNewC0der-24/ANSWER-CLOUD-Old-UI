@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './Components/Navbar/Navbar';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -29,16 +29,27 @@ import Mcq from './Components/MCQ/Mcq';
 import Thanks from './Components/Videos/ThankYou';
 import Responses from './Components/Responses/Responses';
 import Summaryreport from './Components/report_summary/Report/Report'
+import Error from './Components/Error/Error'
 
 function App() {
-
+  const [error, setError] = useState(null);
+  const showError = (message, type) => {
+    setError({
+      msg: message,
+      type: type
+    })
+    setTimeout(() => {
+      setError(null);
+    }, 12000);
+  }
   return (
     <>
       <Router>
         <Navbar />
+        <Error error={error}/>
         <Routes>
           <Route exact path='/' element={<Dashboard />} />
-          <Route exact path='/internalbot' element={<InternalBot />} />
+          <Route exact path='/internalbot' element={<InternalBot showError={showError}/>} />
           <Route exact path='/externalbot' element={<ExternalBot />} />
           <Route exact path='/thankyou' element={<ThankYou />} />
           <Route exact path='/interaction' element={<Interaction />} />

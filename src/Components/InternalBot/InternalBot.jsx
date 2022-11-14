@@ -10,7 +10,7 @@ import Skills from '../Modal/Skills';
 
 import { Formik, Form, Field } from "formik";
 
-const Create = () => {
+const Create = (props) => {
 
     const navigate = useNavigate();
 
@@ -18,6 +18,8 @@ const Create = () => {
     const [certificate, setCertificate] = useState(false);
     const [name, setName] = useState(false);
     const [count, setCount] = useState(0);
+    const [counts, setCounts] = useState(0);
+    const [skill, setSkill] = useState("");
     const [value, setValue] = useState("SELECT...")
 
     const handleCertificate = () => {
@@ -25,10 +27,13 @@ const Create = () => {
         setDisabled(!disabled);
     }
 
-    // const handleCertificate = () => {
-    //     setCertificate(!certificate);
-    //     setDisabled(!disabled);
-    // }
+    const handleClick = (num) => {
+        setCounts(num);
+    }
+
+    const handleClickSkill = (Skills) => {
+        setSkill(current => current + Skills);
+    }
 
     const handleName = () => {
         setName(!name);
@@ -36,7 +41,15 @@ const Create = () => {
     }
 
     const onSubmit = () => {
-        navigate("/externalbot");
+        if(counts===0){
+            props.showError("Please add Questions", "danger");
+        }
+        else if(skill===""){
+            props.showError("Please add Skills", "danger");
+        }
+        else{
+            navigate("/externalbot");
+        }
     }
 
     const initialValues = {
@@ -277,7 +290,7 @@ const Create = () => {
                                             </div>
                                             <div className="col-md-6">
                                                 <div className="d-flex justify-content-between mb-3">
-                                                    <label htmlFor="question" className="form-label fw-bold">Skills <span className='badge badge bg-secondary'>skill name</span></label>
+                                                    <label htmlFor="question" className="form-label fw-bold">Skills: <span className='badge badge bg-secondary'>{skill}</span></label>
                                                     <button type="button" className="btn btn-outline-secondary button" data-bs-toggle="modal" data-bs-target="#skillModal">Add</button>
                                                 </div>
                                             </div>
@@ -507,7 +520,7 @@ const Create = () => {
                                             </div>
                                             <div className="col-md-6 m-auto">
                                                 <div className="d-flex justify-content-between mb-3">
-                                                    <label htmlFor="question" className="form-label fw-bold">Total Question: <span className='badge badge bg-secondary'>No.</span></label>
+                                                    <label htmlFor="question" className="form-label fw-bold">Total Question: <span className='badge badge bg-secondary'>{counts}</span></label>
                                                     <button type="button" className="btn btn-outline-secondary button" data-bs-toggle="modal" data-bs-target="#exampleModal">Add</button>
                                                 </div>
                                             </div>
@@ -524,8 +537,8 @@ const Create = () => {
                 </div>
             </div >
             {/* </div> */}
-            < Quesans value={value} />
-            <Skills />
+            < Quesans value={value} handleClick={handleClick}/>
+            <Skills handleClickSkill={handleClickSkill}/>
         </>
     )
 }

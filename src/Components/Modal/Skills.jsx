@@ -1,11 +1,12 @@
 import React from "react";
 import { skills } from "../../assets/Skills/skills";
 
-const Track = () => {
+const Track = (props) => {
   const style = {
     overflow: 'auto',
     height: '150px'
   }
+
   return (
     <>
       <div
@@ -32,7 +33,7 @@ const Track = () => {
               <div className="container">
                 <div className="d-flex justify-content-center gap-2 flex-wrap" style={{ cursor: "pointer" }}>
                   {skills.map((item) => (
-                    <h5>
+                    <h5 onClick={() => props.handleClickSkill(item.name)}>
                       <span key={item.id} className="badge" style={{ backgroundColor: "#414141", borderRadius: "0" }}>{item.name}</span>
                     </h5>
                   ))}
