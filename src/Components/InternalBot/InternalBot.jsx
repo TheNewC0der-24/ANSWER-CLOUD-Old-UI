@@ -41,7 +41,10 @@ const Create = (props) => {
     }
 
     const onSubmit = () => {
-        if(counts===0){
+        if(counts===0 && skill===""){
+            props.showError("Please add skills and Questions", "danger");
+        }
+        else if(counts===0){
             props.showError("Please add Questions", "danger");
         }
         else if(skill===""){
