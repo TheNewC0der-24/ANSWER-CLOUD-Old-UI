@@ -10,6 +10,7 @@ const AudioRecording = (props) => {
   const [audionotrecorded, setAudioNotRecorded] = useState(true);
   const [active, setActive] = useState(false);
 
+  // eslint-disable-next-line 
   const [auto, setAuto] = useState(true);
 
   //  ? setAuto(true) : setAuto(false);
